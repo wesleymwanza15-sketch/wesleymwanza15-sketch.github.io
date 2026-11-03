@@ -284,3 +284,25 @@ body {
   font-size: 0.8rem !important;
   color: var(--text-muted) !important;
 }
+/* Responsive Layout Adjustments */
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.story-container,
+.services-container,
+.painted-world-section,
+.portfolio-section {
+  width: 100% !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.visual-divider img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
