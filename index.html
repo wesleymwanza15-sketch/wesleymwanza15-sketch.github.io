@@ -11,17 +11,35 @@
 </head>
 <body>
 
-  <!-- Full-Screen Hero Section with Background Image -->
+  <!-- Floating Social & Contact Hover Buttons -->
+  <div class="floating-contact">
+    <a href="https://wa.me/260763533205" target="_blank" class="hover-btn whatsapp-btn" title="Chat on WhatsApp">
+      <span>WhatsApp</span>
+    </a>
+    <a href="https://www.instagram.com/phoenix_view_bwm?rpxt=OGt0YzgydmM1bWw3" target="_blank" class="hover-btn instagram-btn" title="Follow on Instagram">
+      <span>Instagram</span>
+    </a>
+  </div>
+
+  <!-- Hero Section with Animated Image Slider -->
   <header class="canva-hero">
+    <div class="hero-slider">
+      <div class="slide active" style="background-image: url('images/20260417_095932.jpeg');"></div>
+      <div class="slide" style="background-image: url('images/20251220_171955.jpg');"></div>
+      <div class="slide" style="background-image: url('images/20260416_165634.jpeg');"></div>
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Hi,<br>I Am Ben<br>Wesley Mwanza</h1>
       <p class="tagline">the world is like a canvas, grab your brush, let's paint!</p>
-      <a href="#services" class="cta-btn">Explore my services.</a>
+      <div class="hero-actions">
+        <a href="#portfolio" class="cta-btn">View My Work</a>
+        <a href="https://wa.me/260763533205" target="_blank" class="cta-btn secondary-btn">Get In Touch</a>
+      </div>
     </div>
   </header>
 
-  <!-- My Story Section (Light Editorial Block) -->
+  <!-- My Story Section -->
   <section id="about" class="story-section">
     <div class="story-container">
       <div class="story-left">
@@ -40,105 +58,62 @@
     </div>
   </section>
 
-  <!-- Full-Width Visual Divider Image -->
+  <!-- Visual Divider -->
   <div class="visual-divider">
-    <img src="images/20251220_171955.jpg" alt="Visual Divider Silhouette">
+    <img src="images/20251220_171955.jpg" alt="Visual Divider Silhouette" class="expandable">
   </div>
 
-  <!-- What I Can Do For You Section (Dark Block with Image Accent) -->
+  <!-- Services Section -->
   <section id="services" class="services-section">
     <div class="services-container">
-      
       <div class="services-title-col">
         <h2>What I can<br>do for you</h2>
         <div class="services-thumb">
-          <img src="images/20260107_064804.jpg" alt="Nature Detail">
+          <img src="images/20260107_064804.jpg" alt="Nature Detail" class="expandable">
         </div>
       </div>
 
       <div class="services-list-col">
-        
         <div class="service-item">
           <h3>Travel & Editorial Photography</h3>
           <p>High-impact visual storytelling capturing authentic landscapes, wildlife, culture, and destinations for magazines, travel brands, and tourism boards.</p>
         </div>
-
         <div class="service-item">
           <h3>Destination & Journey Documentation</h3>
           <p>Immersive visual and written coverage of tours, expeditions, and regional experiences tailored for travel platforms and editorial publications.</p>
         </div>
-
         <div class="service-item">
           <h3>Visual Brand Storytelling</h3>
           <p>Translating the heart of hospitality, outdoor gear, or eco-tourism initiatives into compelling photography and narrative content.</p>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- Painted World Nature Series Section (Clickable Album Link) -->
-  <section id="painted-world" class="painted-world-section">
-    <div class="painted-world-header">
-      <span class="series-tag">SPECIAL NATURE SERIES</span>
-      <h2>Painted World</h2>
-      <p class="series-intro">Treating landscapes like brushstrokes on a canvas—exploring the natural textures, rich wilderness, and vivid environments. Click to open the full album page.</p>
-    </div>
-
-    <!-- Clicking this card wrapper takes visitors straight to painted-world.html -->
-    <a href="painted-world.html" class="album-link-wrapper" style="text-decoration: none; color: inherit; display: block;">
-      <div class="painted-world-grid">
-        <div class="painted-card">
-          <img src="images/20251211_172339.jpg" alt="Painted World Series">
-          <div class="painted-caption">
-            <h3>Painted World Album <span style="font-size: 0.8rem; float: right; color: var(--accent-gold);">View Gallery →</span></h3>
-            <p>Explore the full nature series collection</p>
-          </div>
-        </div>
-      </div>
-    </a>
-  </section>
-
-  <!-- General Gallery Section -->
+  <!-- Unified Photography Portfolio Grid -->
   <section id="portfolio" class="portfolio-section">
     <div class="portfolio-header">
       <h2>A few things I'm proud of</h2>
+      <p class="subtitle">Click any image to view in full resolution</p>
     </div>
     
     <div class="portfolio-grid">
+      <!-- Recent / New Uploads -->
       <div class="portfolio-card">
-        <img src="images/20251220_171955.jpg" alt="Highland Ridges">
+        <img src="images/20260417_095932.jpeg" alt="Forest Horizon" class="expandable">
         <div class="card-caption">
-          <h3>Highland Ridges</h3>
-          <p>Chadiza Mountains</p>
+          <h3>Forest Horizon</h3>
+          <p>Chipata Series</p>
         </div>
       </div>
 
       <div class="portfolio-card">
-        <img src="images/20251223_164301 (2).jpg" alt="Victoria Falls">
+        <img src="images/20260417_093623.jpeg" alt="Nature Light" class="expandable">
         <div class="card-caption">
-          <h3>The Falls</h3>
-          <p>Victoria Falls</p>
+          <h3>Morning Light</h3>
+          <p>Zambian Landscape</p>
         </div>
       </div>
 
       <div class="portfolio-card">
-        <img src="images/20260108_170027 (2).jpg" alt="Wilderness Trails">
-        <div class="card-caption">
-          <h3>Wilderness Trails</h3>
-          <p>Zambia Landscape</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer / Contact -->
-  <footer class="canva-footer">
-    <p>Let's paint your canvas together.</p>
-    <a href="mailto:benmwanza15@gmail.com" class="footer-email">benmwanza15@gmail.com</a>
-    <p class="copyright">&copy; 2026 Phoenix View Media. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+        <img src="images/20260416_165634.jpeg" alt="Macro Leaf
