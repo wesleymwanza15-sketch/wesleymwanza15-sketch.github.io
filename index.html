@@ -3,75 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Passing Moments | Visual Stories & Landscape Photography</title>
+  <title>Ben Wesley Mwanza | Visual Storyteller & Photographer</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header class="hero">
+  <!-- Full-Screen Hero Section with Background Image -->
+  <header class="canva-hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Passing Moments</h1>
-      <p>Visual Stories & Landscape Photography</p>
+      <h1>Hi,<br>I Am Ben<br>Wesley Mwanza</h1>
+      <p class="tagline">the world is like a canvas, grab your brush, let's paint!</p>
+      <a href="#services" class="cta-btn">Explore my services.</a>
     </div>
   </header>
 
-  <main class="gallery-container">
-    <h2>Featured Series</h2>
-    <div class="grid">
+  <!-- My Story Section (Light Editorial Block) -->
+  <section id="about" class="story-section">
+    <div class="story-container">
+      <div class="story-left">
+        <h2>My story</h2>
+      </div>
+      <div class="story-right">
+        <p>My name is Ben Wesley Mwanza—though around here, you might know me as <strong>phoenix_view_bwm</strong>, or simply <em>the passing photographer</em>.</p>
+        <p>I'm a traveler, a writer, a developer, and a visual storyteller. But more than anything, I'm someone obsessed with the beauty of time.</p>
+        <p>Someone once told me, <em>"The version of you today isn't the version you will be tomorrow."</em></p>
+        <p>That thought stayed with me. It made me wonder: How do we hold onto who we are right now? How do we keep today alive for the person we become tomorrow?</p>
+        <p>Then I saw the camera.</p>
+        <p>It hit me—the power to freeze time was right there waiting. I grabbed my phone, opened the camera, and started shooting. I realized that if I could direct my lens right into those fleeting moments, I could freeze them forever. That way, whenever we miss a feeling, we can always wander back to the exact second it was captured and feel it all over again.</p>
+        <p>And here we are.</p>
+        <p>Welcome to a world of frozen frames—moments preserved through the View of Ben Wesley Mwanza and the spirit of the Phoenix. As a passing photographer, I'm just here capturing the journey... and maybe next, capturing a piece of yours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-Width Visual Divider Image -->
+  <div class="visual-divider">
+    <img src="images/20251220_171955.jpg" alt="Visual Divider Silhouette">
+  </div>
+
+  <!-- What I Can Do For You Section (Dark Block with Image Accent) -->
+  <section id="services" class="services-section">
+    <div class="services-container">
       
-      <div class="card">
-        <img src="images/20251220_160032 (1).jpg" alt="Chipata Forest" loading="lazy">
-        <div class="caption">
+      <div class="services-title-col">
+        <h2>What I can<br>do for you</h2>
+        <div class="services-thumb">
+          <img src="images/20260107_064804.jpg" alt="Nature Detail">
+        </div>
+      </div>
+
+      <div class="services-list-col">
+        
+        <div class="service-item">
+          <h3>Travel & Editorial Photography</h3>
+          <p>High-impact visual storytelling capturing authentic landscapes, wildlife, culture, and destinations for magazines, travel brands, and tourism boards.</p>
+        </div>
+
+        <div class="service-item">
+          <h3>Destination & Journey Documentation</h3>
+          <p>Immersive visual and written coverage of tours, expeditions, and regional experiences tailored for travel platforms and editorial publications.</p>
+        </div>
+
+        <div class="service-item">
+          <h3>Visual Brand Storytelling</h3>
+          <p>Translating the heart of hospitality, outdoor gear, or eco-tourism initiatives into compelling photography and narrative content.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="portfolio-header">
+      <h2>A few things I'm proud of</h2>
+    </div>
+    
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <img src="images/20251220_160032 (1).jpg" alt="Chipata Forest">
+        <div class="card-caption">
           <h3>Chipata Forest</h3>
           <p>Eastern Province, Zambia</p>
         </div>
       </div>
 
-      <div class="card">
-        <img src="images/20251220_171955.jpg" alt="Highland Ridges" loading="lazy">
-        <div class="caption">
-          <h3>Highland Ridges</h3>
-          <p>Chadiza Mountains</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="images/20251223_164301 (2).jpg" alt="The Falls" loading="lazy">
-        <div class="caption">
+      <div class="portfolio-card">
+        <img src="images/20251223_164301 (2).jpg" alt="Victoria Falls">
+        <div class="card-caption">
           <h3>The Falls</h3>
           <p>Victoria Falls</p>
         </div>
       </div>
 
-      <div class="card">
-        <img src="images/20260107_064804.jpg" alt="Cathedral Echoes" loading="lazy">
-        <div class="caption">
-          <h3>Cathedral Echoes</h3>
-          <p>Cathedral Hills</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="images/20260108_170027 (2).jpg" alt="Wilderness Trails" loading="lazy">
-        <div class="caption">
+      <div class="portfolio-card">
+        <img src="images/20260108_170027 (2).jpg" alt="Wilderness Trails">
+        <div class="card-caption">
           <h3>Wilderness Trails</h3>
           <p>Zambia Landscape</p>
         </div>
       </div>
 
-      <div class="card">
-        <img src="images/20260108_170330 (1).jpg" alt="Golden Hour" loading="lazy">
-        <div class="caption">
+      <div class="portfolio-card">
+        <img src="images/20260108_170330 (1).jpg" alt="Golden Hour">
+        <div class="card-caption">
           <h3>Golden Hour</h3>
           <p>Field Notes</p>
         </div>
       </div>
-
     </div>
-  </main>
+  </section>
 
-  <footer>
-    <p>&copy; 2026 Visual Portfolio. All rights reserved.</p>
+  <!-- Footer / Contact -->
+  <footer class="canva-footer">
+    <p>Let's paint your canvas together.</p>
+    <a href="mailto:benmwanza15@gmail.com" class="footer-email">benmwanza15@gmail.com</a>
+    <p class="copyright">&copy; 2026 Phoenix View Media. All rights reserved.</p>
   </footer>
 
 </body>
