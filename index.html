@@ -4,10 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ben Wesley Mwanza | Visual Storyteller & Photographer</title>
+  
+  <!-- Open Graph Meta Tags for Professional Social Sharing -->
+  <meta property="og:title" content="Ben Wesley Mwanza | Visual Storyteller & Photographer">
+  <meta property="og:description" content="Explore original travel, nature, and editorial photography captured through the view of Ben Wesley Mwanza.">
+  <meta property="og:image" content="images/20260416_165634.jpeg">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Category Filter Bar Styling */
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 35px;
+      padding: 0 20px;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-muted);
+      padding: 8px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent-gold, #c5a059);
+      color: #000;
+      border-color: var(--accent-gold, #c5a059);
+    }
+    .portfolio-card {
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    .portfolio-card.hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -60,7 +101,7 @@
 
   <!-- Visual Divider -->
   <div class="visual-divider">
-    <img src="images/20251220_171955.jpg" alt="Visual Divider Silhouette" class="expandable">
+    <img src="images/20251220_171955.jpg" alt="Visual Divider Silhouette" class="expandable" loading="lazy">
   </div>
 
   <!-- Services Section -->
@@ -69,7 +110,7 @@
       <div class="services-title-col">
         <h2>What I can<br>do for you</h2>
         <div class="services-thumb">
-          <img src="images/20260107_064804.jpg" alt="Nature Detail" class="expandable">
+          <img src="images/20260107_064804.jpg" alt="Nature Detail" class="expandable" loading="lazy">
         </div>
       </div>
 
@@ -90,276 +131,159 @@
     </div>
   </section>
 
-  <!-- Unified Photography Portfolio Grid -->
+  <!-- Unified Photography Portfolio Grid with Category Filters -->
   <section id="portfolio" class="portfolio-section">
     <div class="portfolio-header">
       <h2>A few things I'm proud of</h2>
       <p class="subtitle">Click any image to view in full resolution</p>
     </div>
+
+    <!-- Category Filter Navigation -->
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="chadiza">Chadiza Forest</button>
+      <button class="filter-btn" data-filter="road">Road & Journey</button>
+      <button class="filter-btn" data-filter="victoria">Victoria Falls</button>
+      <button class="filter-btn" data-filter="painted">Painted World</button>
+    </div>
     
     <div class="portfolio-grid">
-      <!-- 40 Newly Added Images Batch -->
-      <div class="portfolio-card">
-        <img src="images/20260108_170003 (1).jpeg" alt="Expedition View I" class="expandable">
-        <div class="card-caption"><h3>Expedition View I</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_160419.jpeg" alt="Highland Canopy" class="expandable">
-        <div class="card-caption"><h3>Highland Canopy</h3><p>Chadiza Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260108_170040.jpeg" alt="Expedition View II" class="expandable">
-        <div class="card-caption"><h3>Expedition View II</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260108_170011.jpeg" alt="Expedition View III" class="expandable">
-        <div class="card-caption"><h3>Expedition View III</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260107_064924 (6).jpeg" alt="Morning Flora" class="expandable">
-        <div class="card-caption"><h3>Morning Flora</h3><p>Botanical Study</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260215_113643.jpeg" alt="Mountain Pass I" class="expandable">
-        <div class="card-caption"><h3>Mountain Pass I</h3><p>Chadiza Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260510_142403.jpeg" alt="Spring Horizon I" class="expandable">
-        <div class="card-caption"><h3>Spring Horizon I</h3><p>Painted World Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260510_142228.jpeg" alt="Spring Horizon II" class="expandable">
-        <div class="card-caption"><h3>Spring Horizon II</h3><p>Painted World Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260817_155726.jpeg" alt="Midday Wilds" class="expandable">
-        <div class="card-caption"><h3>Midday Wilds</h3><p>Nature Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260510_104722 (3).jpeg" alt="Botanical Vista I" class="expandable">
-        <div class="card-caption"><h3>Botanical Vista I</h3><p>Botanical Study</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260510_104722.jpeg" alt="Botanical Vista II" class="expandable">
-        <div class="card-caption"><h3>Botanical Vista II</h3><p>Botanical Study</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251208_172239 (1).jpeg" alt="Dusk Study I" class="expandable">
-        <div class="card-caption"><h3>Dusk Study I</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260926_183115 (1).jpeg" alt="Equinox Light" class="expandable">
-        <div class="card-caption"><h3>Equinox Light</h3><p>Painted World Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251208_172036 (1).jpeg" alt="Dusk Study II" class="expandable">
-        <div class="card-caption"><h3>Dusk Study II</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251208_172157.jpeg" alt="Dusk Study III" class="expandable">
-        <div class="card-caption"><h3>Dusk Study III</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251208_172026 (1).jpeg" alt="Dusk Study IV" class="expandable">
-        <div class="card-caption"><h3>Dusk Study IV</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251213_175204.jpeg" alt="Evening Canopy I" class="expandable">
-        <div class="card-caption"><h3>Evening Canopy I</h3><p>Chadiza Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251213_175245.jpeg" alt="Evening Canopy II" class="expandable">
-        <div class="card-caption"><h3>Evening Canopy II</h3><p>Chadiza Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_160040.jpeg" alt="Ridge View" class="expandable">
-        <div class="card-caption"><h3>Ridge View</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260215_114003.jpeg" alt="Valley Prospect I" class="expandable">
-        <div class="card-caption"><h3>Valley Prospect I</h3><p>Chadiza Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260222_123857.jpeg" alt="Highland Terrain" class="expandable">
-        <div class="card-caption"><h3>Highland Terrain</h3><p>Chadiza Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260407_125528 (2).jpeg" alt="Spring Pathway I" class="expandable">
-        <div class="card-caption"><h3>Spring Pathway I</h3><p>Road & Journey Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260407_123038.jpeg" alt="Spring Pathway II" class="expandable">
-        <div class="card-caption"><h3>Spring Pathway II</h3><p>Road & Journey Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260215_113657 (1).jpeg" alt="Mountain Pass II" class="expandable">
-        <div class="card-caption"><h3>Mountain Pass II</h3><p>Chadiza Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260215_113701 (1).jpeg" alt="Mountain Pass III" class="expandable">
-        <div class="card-caption"><h3>Mountain Pass III</h3><p>Chadiza Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251003_181751 (3).jpeg" alt="Autumn Sunset" class="expandable">
-        <div class="card-caption"><h3>Autumn Sunset</h3><p>Painted World Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251120_183320 (4).jpeg" alt="Twilight Grove I" class="expandable">
-        <div class="card-caption"><h3>Twilight Grove I</h3><p>Nature Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251120_183142.jpeg" alt="Twilight Grove II" class="expandable">
-        <div class="card-caption"><h3>Twilight Grove II</h3><p>Nature Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251211_172402 (3).jpeg" alt="Painted Forest I" class="expandable">
-        <div class="card-caption"><h3>Painted Forest I</h3><p>Painted World Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251214_170908 (2).jpeg" alt="Winter Light I" class="expandable">
-        <div class="card-caption"><h3>Winter Light I</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251214_170939 (6).jpeg" alt="Winter Light II" class="expandable">
-        <div class="card-caption"><h3>Winter Light II</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251214_164905 (1).jpeg" alt="Forest Edge" class="expandable">
-        <div class="card-caption"><h3>Forest Edge</h3><p>Nature Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251219_173958.jpeg" alt="Solitary Trail I" class="expandable">
-        <div class="card-caption"><h3>Solitary Trail I</h3><p>Road & Journey Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251219_174730 (5).jpeg" alt="Solitary Trail II" class="expandable">
-        <div class="card-caption"><h3>Solitary Trail II</h3><p>Road & Journey Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_162318 (1).jpeg" alt="Highland Shadows" class="expandable">
-        <div class="card-caption"><h3>Highland Shadows</h3><p>Chadiza Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251223_174937 (1).jpeg" alt="Waterfall Mist I" class="expandable">
-        <div class="card-caption"><h3>Waterfall Mist I</h3><p>Victoria Falls Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251223_173828.jpeg" alt="Waterfall Mist II" class="expandable">
-        <div class="card-caption"><h3>Waterfall Mist II</h3><p>Victoria Falls Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_172010.jpeg" alt="Ridge Silhouette" class="expandable">
-        <div class="card-caption"><h3>Ridge Silhouette</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260215_113725.jpeg" alt="Valley Prospect II" class="expandable">
-        <div class="card-caption"><h3>Valley Prospect II</h3><p>Chadiza Series</p></div>
-      </div>
-
-      <!-- Core / Previous Portfolio Highlights -->
-      <div class="portfolio-card">
-        <img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable">
-        <div class="card-caption"><h3>The Open Highway</h3><p>Road & Journey Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260417_093623.jpeg" alt="Passing Through" class="expandable">
-        <div class="card-caption"><h3>Passing Through</h3><p>Road & Journey Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260416_165634.jpeg" alt="Chadiza Forest Canopy" class="expandable">
+      <!-- Chadiza Series Items -->
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20260416_165634.jpeg" alt="Chadiza Forest Canopy" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Chadiza Canopy</h3><p>Chadiza Forest Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20260416_165431 (1).jpeg" alt="Wilderness Textures" class="expandable">
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20260416_165431 (1).jpeg" alt="Wilderness Textures" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Wilderness Textures</h3><p>Chadiza Forest Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20260416_165448.jpeg" alt="Mountain Trail" class="expandable">
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20260416_165448.jpeg" alt="Mountain Trail" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Mountain Trail</h3><p>Chadiza Forest Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20260416_165455 (1).jpeg" alt="Forest Light" class="expandable">
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20260416_165455 (1).jpeg" alt="Forest Light" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Forest Light</h3><p>Chadiza Forest Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20260416_165638.jpeg" alt="Flora in Focus" class="expandable">
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20260416_165638.jpeg" alt="Flora in Focus" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Flora in Focus</h3><p>Chadiza Forest Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20260416_165846.jpeg" alt="Deep Woods" class="expandable">
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20260416_165846.jpeg" alt="Deep Woods" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Deep Woods</h3><p>Chadiza Forest Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20260416_165949 (2).jpeg" alt="Nature Horizon" class="expandable">
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20260416_165949 (2).jpeg" alt="Nature Horizon" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Nature Horizon</h3><p>Chadiza Forest Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_174531.jpeg" alt="Twilight Ridge" class="expandable">
-        <div class="card-caption"><h3>Twilight Ridge</h3><p>Landscapes & Journeys</p></div>
+
+      <!-- Road & Journey Series Items -->
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>The Open Highway</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_163953 (1).jpeg" alt="Highland View" class="expandable">
-        <div class="card-caption"><h3>Highland Horizon</h3><p>Landscapes & Journeys</p></div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260417_093623.jpeg" alt="Passing Through" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Passing Through</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_163327.jpeg" alt="Sunlit Foliage" class="expandable">
-        <div class="card-caption"><h3>Sunlit Foliage</h3><p>Nature Series</p></div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260407_125528 (2).jpeg" alt="Spring Pathway I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Spring Pathway I</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_161851.jpeg" alt="Forest Shadows" class="expandable">
-        <div class="card-caption"><h3>Forest Shadows</h3><p>Nature Series</p></div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260407_123038.jpeg" alt="Spring Pathway II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Spring Pathway II</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20251209_174113.jpeg" alt="Evening Perspective I" class="expandable">
-        <div class="card-caption"><h3>Evening Light I</h3><p>Painted World Series</p></div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20251219_173958.jpeg" alt="Solitary Trail I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Solitary Trail I</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20251209_174113 (1).jpeg" alt="Evening Perspective II" class="expandable">
-        <div class="card-caption"><h3>Evening Light II</h3><p>Painted World Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260102_174622.jpeg" alt="New Dawn Horizon" class="expandable">
-        <div class="card-caption"><h3>New Dawn Horizon</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260107_064814 (1).jpeg" alt="Botanical Detail" class="expandable">
-        <div class="card-caption"><h3>Morning Bloom</h3><p>Botanical Study</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260102_173343.jpeg" alt="Golden Hour Frame" class="expandable">
-        <div class="card-caption"><h3>Golden Hour</h3><p>Painted World Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20260101_182933.jpeg" alt="Dusk Valley" class="expandable">
-        <div class="card-caption"><h3>Dusk Valley</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_171203.jpeg" alt="Atmospheric Hill" class="expandable">
-        <div class="card-caption"><h3>Atmospheric Ridge</h3><p>Chadiza Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_171314.jpeg" alt="Cathedral Heights" class="expandable">
-        <div class="card-caption"><h3>Cathedral Heights</h3><p>Landscapes & Journeys</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_170743.jpeg" alt="Shadowed Pines" class="expandable">
-        <div class="card-caption"><h3>Shadowed Pines</h3><p>Nature Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251220_165053.jpeg" alt="Wilderness Meadow" class="expandable">
-        <div class="card-caption"><h3>Wilderness Meadow</h3><p>Nature Series</p></div>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/20251223_164301.jpeg" alt="Victoria Falls Edge" class="expandable">
+
+      <!-- Victoria Falls Series Items -->
+      <div class="portfolio-card" data-category="victoria">
+        <img src="images/20251223_164301.jpeg" alt="Victoria Falls Edge" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Knife Edge Perspective</h3><p>Victoria Falls Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/20251223_164250 (1).jpeg" alt="Victoria Falls Mist" class="expandable">
+      <div class="portfolio-card" data-category="victoria">
+        <img src="images/20251223_164250 (1).jpeg" alt="Victoria Falls Mist" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Rising Mist</h3><p>Victoria Falls Series</p></div>
       </div>
-      <div class="portfolio-card">
-        <img src="images/VideoCapture_20261006-221917 (1).jpeg" alt="Documentary Still" class="expandable">
-        <div class="card-caption"><h3>Documentary Still</h3><p>Film & Narrative Series</p></div>
+      <div class="portfolio-card" data-category="victoria">
+        <img src="images/20251223_174937 (1).jpeg" alt="Waterfall Mist I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Waterfall Mist I</h3><p>Victoria Falls Series</p></div>
+      </div>
+
+      <!-- Painted World & Landscapes Batch -->
+      <div class="portfolio-card" data-category="painted">
+        <img src="images/20251209_174113.jpeg" alt="Evening Perspective I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Evening Light I</h3><p>Painted World Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="painted">
+        <img src="images/20251209_174113 (1).jpeg" alt="Evening Perspective II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Evening Light II</h3><p>Painted World Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="painted">
+        <img src="images/20260102_173343.jpeg" alt="Golden Hour Frame" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Golden Hour</h3><p>Painted World Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="painted">
+        <img src="images/20251003_181751 (3).jpeg" alt="Autumn Sunset" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Autumn Sunset</h3><p>Painted World Series</p></div>
+      </div>
+      
+      <!-- General Landscapes & Expeditions -->
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260108_170003 (1).jpeg" alt="Expedition View I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Expedition View I</h3><p>Landscapes & Journeys</p></div>
+      </div>
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20251220_160419.jpeg" alt="Highland Canopy" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Highland Canopy</h3><p>Chadiza Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260108_170040.jpeg" alt="Expedition View II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Expedition View II</h3><p>Landscapes & Journeys</p></div>
+      </div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260108_170011.jpeg" alt="Expedition View III" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Expedition View III</h3><p>Landscapes & Journeys</p></div>
+      </div>
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20260107_064924 (6).jpeg" alt="Morning Flora" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Morning Flora</h3><p>Botanical Study</p></div>
+      </div>
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20260215_113643.jpeg" alt="Mountain Pass I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Mountain Pass I</h3><p>Chadiza Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="painted">
+        <img src="images/20260510_142403.jpeg" alt="Spring Horizon I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Spring Horizon I</h3><p>Painted World Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="painted">
+        <img src="images/20260510_142228.jpeg" alt="Spring Horizon II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Spring Horizon II</h3><p>Painted World Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20260817_155726.jpeg" alt="Midday Wilds" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Midday Wilds</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20251208_172239 (1).jpeg" alt="Dusk Study I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Dusk Study I</h3><p>Landscapes & Journeys</p></div>
+      </div>
+      <div class="portfolio-card" data-category="painted">
+        <img src="images/20260926_183115 (1).jpeg" alt="Equinox Light" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Equinox Light</h3><p>Painted World Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20251220_174531.jpeg" alt="Twilight Ridge" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Twilight Ridge</h3><p>Landscapes & Journeys</p></div>
+      </div>
+      <div class="portfolio-card" data-category="chadiza">
+        <img src="images/20251220_163327.jpeg" alt="Sunlit Foliage" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Sunlit Foliage</h3><p>Nature Series</p></div>
       </div>
     </div>
   </section>
@@ -387,14 +311,15 @@
     <p class="copyright">&copy; 2026 Phoenix View Media. All rights reserved.</p>
   </footer>
 
-  <!-- Lightbox Modal for Expanding Images -->
+  <!-- Lightbox Modal for Expanding Images with Ownership Credit -->
   <div id="image-modal" class="lightbox-modal">
     <span class="modal-close">&times;</span>
     <img class="modal-content" id="modal-img">
-    <div id="modal-caption"></div>
+    <div id="modal-caption" style="text-align: center; margin-top: 10px; color: #fff; font-family: 'Playfair Display', serif;"></div>
+    <div style="text-align: center; font-size: 0.8rem; color: #c5a059; margin-top: 5px; letter-spacing: 1px;">&copy; Phoenix View Media — Captured by Ben Wesley Mwanza</div>
   </div>
 
-  <!-- Interactive JavaScript for Slider and Expanding Modal -->
+  <!-- Interactive JavaScript for Slider, Filtering, and Lightbox -->
   <script>
     // Auto Image Slider
     const slides = document.querySelectorAll('.hero-slider .slide');
@@ -406,6 +331,28 @@
         slides[currentSlide].classList.add('active');
       }, 5000);
     }
+
+    // Portfolio Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        portfolioCards.forEach(card => {
+          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
 
     // Lightbox Expandable Modal
     const modal = document.getElementById('image-modal');
@@ -426,7 +373,7 @@
     });
 
     modal.addEventListener('click', (e) => {
-      if (e.target !== modalImg) {
+      if (e.target !== modalImg && e.target.tagName !== 'DIV' && e.target.tagName !== 'SPAN') {
         modal.style.display = "none";
       }
     });
