@@ -98,6 +98,7 @@
       margin-bottom: 15px;
       text-transform: uppercase;
     }
+
     /* Floating Ambient Audio Control Styling */
     .audio-player-container {
       position: fixed;
@@ -123,6 +124,26 @@
     }
     .audio-btn:hover {
       background: #c5a059;
+      color: #000;
+    }
+
+    /* Lightbox Fine Art Print Button */
+    .print-inquiry-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #c5a059;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+    }
+    .print-inquiry-btn:hover {
+      background: #fff;
       color: #000;
     }
   </style>
@@ -225,7 +246,7 @@
   <section id="portfolio" class="portfolio-section">
     <div class="portfolio-header">
       <h2>A few things I'm proud of</h2>
-      <p class="subtitle">Click any image to view in full resolution</p>
+      <p class="subtitle">Click any image to view in full resolution & request prints</p>
     </div>
 
     <!-- 3 Core Filter Buttons -->
@@ -526,12 +547,15 @@
     <p class="copyright">&copy; 2026 Phoenix View Media. All rights reserved.</p>
   </footer>
 
-  <!-- Lightbox Modal -->
+  <!-- Lightbox Modal with Interactive Print Inquiry -->
   <div id="image-modal" class="lightbox-modal">
     <span class="modal-close">&times;</span>
     <img class="modal-content" id="modal-img">
-    <div id="modal-caption" style="text-align: center; margin-top: 10px; color: #fff; font-family: 'Playfair Display', serif;"></div>
-    <div style="text-align: center; font-size: 0.8rem; color: #c5a059; margin-top: 5px; letter-spacing: 1px;">&copy; Phoenix View Media — Captured by Ben Wesley Mwanza (CMA 2026 Nominee)</div>
+    <div id="modal-caption" style="text-align: center; margin-top: 10px; color: #fff; font-family: 'Playfair Display', serif; font-size: 1.1rem;"></div>
+    <div style="text-align: center; margin-top: 12px;">
+      <a id="print-request-btn" href="#" target="_blank" class="print-inquiry-btn">🖼️ Request Fine Art Print</a>
+    </div>
+    <div style="text-align: center; font-size: 0.8rem; color: #c5a059; margin-top: 12px; letter-spacing: 1px;">&copy; Phoenix View Media — Captured by Ben Wesley Mwanza (CMA 2026 Nominee)</div>
   </div>
 
   <!-- Scripts -->
@@ -568,17 +592,23 @@
       });
     });
 
-    // Lightbox Modal
+    // Lightbox & Dynamic Print Inquiry Script
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const modalCaption = document.getElementById('modal-caption');
+    const printBtn = document.getElementById('print-request-btn');
     const closeBtn = document.querySelector('.modal-close');
 
     document.querySelectorAll('.expandable').forEach(img => {
       img.addEventListener('click', function() {
         modal.style.display = "flex";
         modalImg.src = this.src;
-        modalCaption.innerText = this.alt;
+        const photoTitle = this.alt || "Fine Art Photograph";
+        modalCaption.innerText = photoTitle;
+
+        // Dynamic WhatsApp Print Link Generation
+        const whatsappMsg = encodeURIComponent(`Hello Ben, I would like to inquire about licensing/purchasing a Fine Art Print of your photograph: "${photoTitle}" (from Phoenix View Media).`);
+        printBtn.href = `https://wa.me/260763533205?text=${whatsappMsg}`;
       });
     });
 
@@ -587,7 +617,7 @@
     });
 
     modal.addEventListener('click', (e) => {
-      if (e.target !== modalImg && e.target.tagName !== 'DIV' && e.target.tagName !== 'SPAN') {
+      if (e.target !== modalImg && e.target.tagName !== 'DIV' && e.target.tagName !== 'SPAN' && e.target !== printBtn) {
         modal.style.display = "none";
       }
     });
