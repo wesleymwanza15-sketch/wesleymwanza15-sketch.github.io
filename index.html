@@ -3,21 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ben Wesley Mwanza | Visual Storyteller & Photographer</title>
   
-  <!-- Open Graph Meta Tags for Professional Social Sharing -->
-  <meta property="og:title" content="Ben Wesley Mwanza | Visual Storyteller & Photographer">
-  <meta property="og:description" content="Explore original travel, nature, and editorial photography captured through the view of Ben Wesley Mwanza.">
-  <meta property="og:image" content="images/20260416_165634.jpeg">
-  <meta property="og:type" content="website">
+  <!-- Primary Search Engine SEO Meta Tags -->
+  <title>Ben Wesley Mwanza | CMA 2026 Nominated Visual Storyteller & Photographer</title>
+  <meta name="title" content="Ben Wesley Mwanza | CMA 2026 Nominated Visual Storyteller & Photographer">
+  <meta name="description" content="Official photography portfolio of Ben Wesley Mwanza (phoenix_view_bwm), CMA 2026 Photography Nominee and founder of Phoenix View Media. Exploring travel, nature, Chadiza forest, Victoria Falls, and high-contrast editorial storytelling across Zambia.">
+  <meta name="keywords" content="Ben Wesley Mwanza, phoenix_view_bwm, Phoenix View Media, CMA 2026 nominee, Creative Media Awards Zambia 2026, Zambian photographer, Lusaka photographer, travel photography Zambia, Chadiza forest series, Victoria Falls photography, African visual artist, the passing photographer">
+  <meta name="author" content="Ben Wesley Mwanza">
+  <meta name="robots" content="index, follow">
 
+  <!-- Open Graph / Social Media Sharing Tags (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wesleymwanza15-sketch.github.io/">
+  <meta property="og:title" content="Ben Wesley Mwanza | CMA 2026 Nominated Photographer & Visual Storyteller">
+  <meta property="og:description" content="Explore original travel, nature, and editorial photography captured through the view of Ben Wesley Mwanza (Phoenix View Media), recognized nominee in the 2026 Creative Media Awards.">
+  <meta property="og:image" content="https://wesleymwanza15-sketch.github.io/images/20260416_165634.jpeg">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ben Wesley Mwanza | CMA 2026 Nominated Visual Storyteller">
+  <meta name="twitter:description" content="Original nature, travel, and editorial photography across Zambia by Ben Wesley Mwanza (Phoenix View Media), CMA 2026 Nominee.">
+  <meta name="twitter:image" content="https://wesleymwanza15-sketch.github.io/images/20260416_165634.jpeg">
+
+  <!-- Search Engine Verification & Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ben Wesley Mwanza",
+    "alternateName": ["phoenix_view_bwm", "the passing photographer"],
+    "url": "https://wesleymwanza15-sketch.github.io/",
+    "jobTitle": "Creative Director & Photographer",
+    "award": "Creative Media Awards (CMA) Zambia 2026 Nominee - Photography",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Phoenix View Media"
+    },
+    "sameAs": [
+      "https://www.instagram.com/phoenix_view_bwm"
+    ]
+  }
+  </script>
+
+  <!-- Stylesheets & Typography Fonts -->
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   <style>
-    /* 3-Category Filter Bar Styling */
     .portfolio-filters {
       display: flex;
       justify-content: center;
@@ -29,7 +63,7 @@
     .filter-btn {
       background: transparent;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--text-muted, #a0a0a0);
+      color: #a0a0a0;
       padding: 10px 22px;
       border-radius: 25px;
       cursor: pointer;
@@ -38,9 +72,9 @@
       transition: all 0.3s ease;
     }
     .filter-btn:hover, .filter-btn.active {
-      background: var(--accent-gold, #c5a059);
+      background: #c5a059;
       color: #000;
-      border-color: var(--accent-gold, #c5a059);
+      border-color: #c5a059;
       font-weight: 600;
     }
     .portfolio-card {
@@ -49,11 +83,23 @@
     .portfolio-card.hidden {
       display: none;
     }
+    .cma-badge-tag {
+      display: inline-block;
+      background: rgba(197, 160, 89, 0.15);
+      border: 1px solid #c5a059;
+      color: #c5a059;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Floating Social & Contact Hover Buttons -->
+  <!-- Floating Contact Buttons -->
   <div class="floating-contact">
     <a href="https://wa.me/260763533205" target="_blank" class="hover-btn whatsapp-btn" title="Chat on WhatsApp">
       <span>WhatsApp</span>
@@ -63,7 +109,7 @@
     </a>
   </div>
 
-  <!-- Hero Section with Nature & Forest Image Slider -->
+  <!-- Hero Slider -->
   <header class="canva-hero">
     <div class="hero-slider">
       <div class="slide active" style="background-image: url('images/20260416_165634.jpeg');"></div>
@@ -72,6 +118,7 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
+      <span class="cma-badge-tag">CMA 2026 Nominee — Photography</span>
       <h1>Hi,<br>I Am Ben<br>Wesley Mwanza</h1>
       <p class="tagline">the world is like a canvas, grab your brush, let's paint!</p>
       <div class="hero-actions">
@@ -89,7 +136,7 @@
       </div>
       <div class="story-right">
         <p>My name is Ben Wesley Mwanza—though around here, you might know me as <strong>phoenix_view_bwm</strong>, or simply <em>the passing photographer</em>.</p>
-        <p>I'm a traveler, a writer, a developer, and a visual storyteller. But more than anything, I'm someone obsessed with the beauty of time.</p>
+        <p>I'm a traveler, a writer, a developer, and a visual storyteller. Recognized as a nominee in the <strong>2026 Creative Media Awards (CMA Zambia)</strong> for photography, I'm obsessed with documenting the natural atmosphere and human journey.</p>
         <p>Someone once told me, <em>"The version of you today isn't the version you will be tomorrow."</em></p>
         <p>That thought stayed with me. It made me wonder: How do we hold onto who we are right now? How do we keep today alive for the person we become tomorrow?</p>
         <p>Then I saw the camera.</p>
@@ -132,14 +179,14 @@
     </div>
   </section>
 
-  <!-- Unified Photography Portfolio Grid (3 Core Categories) -->
+  <!-- Gallery Section -->
   <section id="portfolio" class="portfolio-section">
     <div class="portfolio-header">
       <h2>A few things I'm proud of</h2>
       <p class="subtitle">Click any image to view in full resolution</p>
     </div>
 
-    <!-- Category Filter Navigation -->
+    <!-- 3 Core Filter Buttons -->
     <div class="portfolio-filters">
       <button class="filter-btn active" data-filter="all">All Work</button>
       <button class="filter-btn" data-filter="road">Road & Journey Series</button>
@@ -149,223 +196,290 @@
     
     <div class="portfolio-grid">
       
-      <!-- ==================== ROAD & JOURNEY SERIES ==================== -->
+      <!-- ======================================================= -->
+      <!-- 1. ROAD & JOURNEY SERIES (Highways, Trails, Paths, Walkways) -->
+      <!-- ======================================================= -->
       <div class="portfolio-card" data-category="road">
         <img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable" loading="lazy">
         <div class="card-caption"><h3>The Open Highway</h3><p>Road & Journey Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="road">
         <img src="images/20260417_093623.jpeg" alt="Passing Through" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Passing Through</h3><p>Road & Journey Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="road">
-        <img src="images/20260416_165634.jpeg" alt="Asphalt Canopy Curve" class="expandable" loading="lazy">
+        <img src="images/20260416_165634.jpeg" alt="Asphalt Canopy Road" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Asphalt Canopy</h3><p>Road & Journey Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="road">
-        <img src="images/20260416_165431 (1).jpeg" alt="Overpass Rail Perspective" class="expandable" loading="lazy">
+        <img src="images/20260416_165431 (1).jpeg" alt="Bridge Overpass Rail" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Overpass Perspective</h3><p>Road & Journey Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="road">
-        <img src="images/20260416_165448.jpeg" alt="Highway Overpass Rail" class="expandable" loading="lazy">
-        <div class="card-caption"><h3>Highway Overpass</h3><p>Road & Journey Series</p></div>
+        <img src="images/20260416_165448.jpeg" alt="Bridge Railing View" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Highway Railing</h3><p>Road & Journey Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="road">
-        <img src="images/20260416_165455 (1).jpeg" alt="Sunset Highway Rail" class="expandable" loading="lazy">
+        <img src="images/20260416_165455 (1).jpeg" alt="Sunset Highway Railing" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Sunset Highway</h3><p>Road & Journey Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="road">
-        <img src="images/20260407_125528 (2).jpeg" alt="Pedestrian Walkway" class="expandable" loading="lazy">
-        <div class="card-caption"><h3>Pedestrian Walkway</h3><p>Road & Journey Series</p></div>
+        <img src="images/20260407_125528 (2).jpeg" alt="Spring Pathway I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Spring Pathway I</h3><p>Road & Journey Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260407_123038.jpeg" alt="Travelers on the Road" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Travelers on the Road</h3><p>Road & Journey Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20251219_173958.jpeg" alt="Solitary Trail" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Solitary Trail</h3><p>Road & Journey Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20251219_174730 (5).jpeg" alt="Forest Trail" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Forest Trail</h3><p>Road & Journey Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260108_170003 (1).jpeg" alt="Expedition Path I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Expedition Path I</h3><p>Road & Journey Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260108_170040.jpeg" alt="Expedition Path II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Expedition Path II</h3><p>Road & Journey Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="road">
+        <img src="images/20260108_170011.jpeg" alt="Expedition Path III" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Expedition Path III</h3><p>Road & Journey Series</p></div>
       </div>
 
-      <div class="portfolio-card" data-category="road">
-        <img src="images/20260407_123038.jpeg" alt="Travelers on the Path" class="expandable" loading="lazy">
-        <div class="card-caption"><h3>Travelers on the Path</h3><p>Road & Journey Series</p></div>
-      </div>
 
-      <div class="portfolio-card" data-category="road">
-        <img src="images/20251219_173958.jpeg" alt="Solitary Road" class="expandable" loading="lazy">
-        <div class="card-caption"><h3>Solitary Road</h3><p>Road & Journey Series</p></div>
-      </div>
-
-      <div class="portfolio-card" data-category="road">
-        <img src="images/20251219_174730 (5).jpeg" alt="Trail into the Wild" class="expandable" loading="lazy">
-        <div class="card-caption"><h3>Trail into the Wild</h3><p>Road & Journey Series</p></div>
-      </div>
-
-      <!-- ==================== NATURE SERIES ==================== -->
+      <!-- ======================================================= -->
+      <!-- 2. NATURE SERIES (Forests, Waterfalls, Flora, Greenery, Hills) -->
+      <!-- ======================================================= -->
       <div class="portfolio-card" data-category="nature">
-        <img src="images/20260107_064924 (6).jpeg" alt="Spider Web in Green Foliage" class="expandable" loading="lazy">
+        <img src="images/20260107_064924 (6).jpeg" alt="Morning Dew Web" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Morning Dew Web</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
-        <img src="images/20251223_164301.jpeg" alt="Victoria Falls Edge Perspective" class="expandable" loading="lazy">
+        <img src="images/20251223_164301.jpeg" alt="Victoria Falls Edge" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Victoria Falls Edge</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
-        <img src="images/20251223_164250 (1).jpeg" alt="Victoria Falls Rising Mist" class="expandable" loading="lazy">
+        <img src="images/20251223_164250 (1).jpeg" alt="Victoria Falls Mist" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Victoria Falls Mist</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
-        <img src="images/20251223_174937 (1).jpeg" alt="Victoria Falls Panorama" class="expandable" loading="lazy">
+        <img src="images/20251223_174937 (1).jpeg" alt="Victoria Falls Horizon" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Victoria Falls Horizon</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
-        <img src="images/20251208_172239 (1).jpeg" alt="Green Wilds & White Blooms" class="expandable" loading="lazy">
-        <div class="card-caption"><h3>Green Wilds & Blooms</h3><p>Nature Series</p></div>
+        <img src="images/20251208_172239 (1).jpeg" alt="White Blooms" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>White Blooms</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
-        <img src="images/20260107_064814 (1).jpeg" alt="Morning Flora Bloom" class="expandable" loading="lazy">
+        <img src="images/20260107_064814 (1).jpeg" alt="Morning Bloom" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Morning Bloom</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
-        <img src="images/20260416_165638.jpeg" alt="Chadiza Forest Canopy" class="expandable" loading="lazy">
+        <img src="images/20260416_165638.jpeg" alt="Chadiza Canopy" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Chadiza Canopy</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
-        <img src="images/20260416_165846.jpeg" alt="Deep Woods & Foliage" class="expandable" loading="lazy">
+        <img src="images/20260416_165846.jpeg" alt="Deep Woods" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Deep Woods</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
         <img src="images/20260416_165949 (2).jpeg" alt="Green Horizon" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Green Horizon</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
         <img src="images/20251220_160419.jpeg" alt="Highland Canopy" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Highland Canopy</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
         <img src="images/20251220_163327.jpeg" alt="Sunlit Foliage" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Sunlit Foliage</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
         <img src="images/20251220_161851.jpeg" alt="Forest Shadows" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Forest Shadows</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
-        <img src="images/20251220_171203.jpeg" alt="Atmospheric Hill" class="expandable" loading="lazy">
+        <img src="images/20251220_171203.jpeg" alt="Atmospheric Ridge" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Atmospheric Ridge</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
         <img src="images/20251220_171314.jpeg" alt="Cathedral Heights" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Cathedral Heights</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
         <img src="images/20251220_170743.jpeg" alt="Shadowed Pines" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Shadowed Pines</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
         <img src="images/20251220_165053.jpeg" alt="Wilderness Meadow" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Wilderness Meadow</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
         <img src="images/20260102_174622.jpeg" alt="New Dawn Horizon" class="expandable" loading="lazy">
         <div class="card-caption"><h3>New Dawn Horizon</h3><p>Nature Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="nature">
         <img src="images/20260101_182933.jpeg" alt="Dusk Valley" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Dusk Valley</h3><p>Nature Series</p></div>
       </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20260817_155726.jpeg" alt="Midday Wilds" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Midday Wilds</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20260510_104722 (3).jpeg" alt="Botanical Vista I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Botanical Vista I</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20260510_104722.jpeg" alt="Botanical Vista II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Botanical Vista II</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251213_175204.jpeg" alt="Evening Canopy I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Evening Canopy I</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251213_175245.jpeg" alt="Evening Canopy II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Evening Canopy II</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251220_160040.jpeg" alt="Ridge View" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Ridge View</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20260215_114003.jpeg" alt="Valley Prospect I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Valley Prospect I</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20260222_123857.jpeg" alt="Highland Terrain" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Highland Terrain</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20260215_113657 (1).jpeg" alt="Mountain Pass II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Mountain Pass II</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20260215_113701 (1).jpeg" alt="Mountain Pass III" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Mountain Pass III</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251120_183320 (4).jpeg" alt="Twilight Grove I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Twilight Grove I</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251120_183142.jpeg" alt="Twilight Grove II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Twilight Grove II</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251214_170908 (2).jpeg" alt="Winter Light I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Winter Light I</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251214_170939 (6).jpeg" alt="Winter Light II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Winter Light II</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251214_164905 (1).jpeg" alt="Forest Edge" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Forest Edge</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251220_162318 (1).jpeg" alt="Highland Shadows" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Highland Shadows</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251223_173828.jpeg" alt="Waterfall Mist Detail" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Waterfall Mist Detail</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20251220_172010.jpeg" alt="Ridge Silhouette" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Ridge Silhouette</h3><p>Nature Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="nature">
+        <img src="images/20260215_113725.jpeg" alt="Valley Prospect II" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Valley Prospect II</h3><p>Nature Series</p></div>
+      </div>
 
-      <!-- ==================== PAINTED WORLD SERIES ==================== -->
+
+      <!-- ======================================================= -->
+      <!-- 3. PAINTED WORLD SERIES (Selective Red Tones, Craft Culture, High Contrast) -->
+      <!-- ======================================================= -->
       <div class="portfolio-card" data-category="painted">
-        <img src="images/20260215_113643.jpeg" alt="Beaded & Carved Crafts" class="expandable" loading="lazy">
+        <img src="images/20260215_113643.jpeg" alt="Beaded & Carved Keychains" class="expandable" loading="lazy">
         <div class="card-caption"><h3>African Crafts & Keychains</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
-        <img src="images/20260510_142403.jpeg" alt="Crochet Earrings Display" class="expandable" loading="lazy">
-        <div class="card-caption"><h3>Colorful Handcrafted Jewelry</h3><p>Painted World Series</p></div>
+        <img src="images/20260510_142403.jpeg" alt="Crochet Earrings" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Handcrafted Jewelry</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
-        <img src="images/20260510_142228.jpeg" alt="Wood Carvings of Zambia" class="expandable" loading="lazy">
+        <img src="images/20260510_142228.jpeg" alt="Wood Carvings" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Zambian Heritage Carvings</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
-        <img src="images/20260102_173343.jpeg" alt="Golden Hour Valley View" class="expandable" loading="lazy">
+        <img src="images/20260102_173343.jpeg" alt="Golden Hour Valley" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Golden Hour Valley</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
-        <img src="images/20251003_181751 (3).jpeg" alt="Crimson Bougainvillea & Blue Sky" class="expandable" loading="lazy">
+        <img src="images/20251003_181751 (3).jpeg" alt="Crimson Bougainvillea" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Crimson Floral Sky</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
-        <img src="images/20251208_172036 (1).jpeg" alt="Raindrops on Purple & Magenta Leaves" class="expandable" loading="lazy">
+        <img src="images/20251208_172036 (1).jpeg" alt="Magenta Raindrops" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Magenta Raindrops</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
-        <img src="images/20251208_172157.jpeg" alt="Dewdrops on Red Veined Leaves" class="expandable" loading="lazy">
+        <img src="images/20251208_172157.jpeg" alt="Red Veined Dewdrops" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Red Veined Dewdrops</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
-        <img src="images/20251208_172026 (1).jpeg" alt="Vibrant Rainbow over Green Field" class="expandable" loading="lazy">
+        <img src="images/20251208_172026 (1).jpeg" alt="Spectrum Rainbow" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Spectrum Rainbow</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
         <img src="images/20251209_174113.jpeg" alt="Crimson Harvest Fields" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Crimson Harvest Fields</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
         <img src="images/20251209_174113 (1).jpeg" alt="Evening Perspective" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Evening Light</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
         <img src="images/20260926_183115 (1).jpeg" alt="Equinox Light" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Equinox Light</h3><p>Painted World Series</p></div>
       </div>
-
       <div class="portfolio-card" data-category="painted">
         <img src="images/20251220_174531.jpeg" alt="Twilight Ridge" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Twilight Ridge</h3><p>Painted World Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="painted">
+        <img src="images/20251211_172402 (3).jpeg" alt="Painted Forest I" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Painted Forest I</h3><p>Painted World Series</p></div>
+      </div>
+      <div class="portfolio-card" data-category="painted">
+        <img src="images/VideoCapture_20261006-221917 (1).jpeg" alt="Documentary Still" class="expandable" loading="lazy">
+        <div class="card-caption"><h3>Documentary Still</h3><p>Painted World Series</p></div>
       </div>
 
     </div>
   </section>
 
-  <!-- Ownership & Copyright Policy Section -->
+  <!-- Ownership Policy Section -->
   <section class="policy-section" style="padding: 60px 20px; background-color: var(--bg-card); text-align: center; border-top: 1px solid rgba(255,255,255,0.08);">
     <div style="max-width: 800px; margin: 0 auto;">
-      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; color: var(--accent-gold, #c5a059);">Work & Ownership Policy</h3>
-      <p style="color: var(--text-muted, #a0a0a0); line-height: 1.7; font-size: 0.95rem;">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; color: #c5a059;">Work & Ownership Policy</h3>
+      <p style="color: #a0a0a0; line-height: 1.7; font-size: 0.95rem;">
         All visual content, photographs, editorial artwork, and creative media featured across this website were personally captured, created, and produced entirely by <strong>Ben Wesley Mwanza</strong> (Phoenix View Media). Every image from initial capture to final edit is original work owned exclusively by the site owner. Unauthorized reproduction, distribution, or commercial use without written consent is strictly prohibited.
       </p>
     </div>
   </section>
 
-  <!-- Footer / Contact -->
+  <!-- Footer -->
   <footer class="canva-footer">
     <p>Let's paint your canvas together.</p>
     <div class="footer-links">
@@ -378,17 +492,17 @@
     <p class="copyright">&copy; 2026 Phoenix View Media. All rights reserved.</p>
   </footer>
 
-  <!-- Lightbox Modal for Expanding Images with Ownership Credit -->
+  <!-- Lightbox Modal -->
   <div id="image-modal" class="lightbox-modal">
     <span class="modal-close">&times;</span>
     <img class="modal-content" id="modal-img">
     <div id="modal-caption" style="text-align: center; margin-top: 10px; color: #fff; font-family: 'Playfair Display', serif;"></div>
-    <div style="text-align: center; font-size: 0.8rem; color: #c5a059; margin-top: 5px; letter-spacing: 1px;">&copy; Phoenix View Media — Captured by Ben Wesley Mwanza</div>
+    <div style="text-align: center; font-size: 0.8rem; color: #c5a059; margin-top: 5px; letter-spacing: 1px;">&copy; Phoenix View Media — Captured by Ben Wesley Mwanza (CMA 2026 Nominee)</div>
   </div>
 
-  <!-- Interactive JavaScript for Slider, Filtering, and Lightbox -->
+  <!-- Scripts -->
   <script>
-    // Auto Image Slider
+    // Hero Slider
     const slides = document.querySelectorAll('.hero-slider .slide');
     let currentSlide = 0;
     if (slides.length > 0) {
@@ -399,7 +513,7 @@
       }, 5000);
     }
 
-    // Portfolio 3-Category Filtering
+    // Category Filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioCards = document.querySelectorAll('.portfolio-card');
 
@@ -420,7 +534,7 @@
       });
     });
 
-    // Lightbox Expandable Modal
+    // Lightbox Modal
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const modalCaption = document.getElementById('modal-caption');
