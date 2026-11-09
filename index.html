@@ -146,6 +146,39 @@
       background: #fff;
       color: #000;
     }
+
+    /* Verified Original Lightbox Metadata Badges */
+    .modal-metadata-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .meta-badge {
+      font-size: 0.75rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding: 4px 10px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .badge-verified {
+      background: rgba(46, 204, 113, 0.15);
+      border: 1px solid #2ecc71;
+      color: #2ecc71;
+    }
+    .badge-artist {
+      background: rgba(197, 160, 89, 0.15);
+      border: 1px solid #c5a059;
+      color: #c5a059;
+    }
+    .badge-series {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #d0d0d0;
+    }
   </style>
 </head>
 <body>
@@ -459,7 +492,7 @@
         <div class="card-caption"><h3>Sunlit Foliage</h3><p>Nature Series</p></div>
       </div>
 
-      <!-- 3. PAINTED WORLD SERIES (UPDATED WITH NEW BATCH) -->
+      <!-- 3. PAINTED WORLD SERIES -->
       <div class="portfolio-card" data-category="painted">
         <img src="images/20251208_065856 (2).jpeg" alt="Painted Dew Study I" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Dew Study I</h3><p>Painted World Series</p></div>
@@ -591,15 +624,23 @@
     <p class="copyright">&copy; 2026 Phoenix View Media. All rights reserved.</p>
   </footer>
 
-  <!-- Lightbox Modal with Interactive Print Inquiry -->
+  <!-- Lightbox Modal with Verified Original Badges & Interactive Print Inquiry -->
   <div id="image-modal" class="lightbox-modal">
     <span class="modal-close">&times;</span>
     <img class="modal-content" id="modal-img">
     <div id="modal-caption" style="text-align: center; margin-top: 10px; color: #fff; font-family: 'Playfair Display', serif; font-size: 1.1rem;"></div>
+    
+    <!-- Step 1: Verified Original Metadata Badges -->
+    <div class="modal-metadata-box">
+      <span class="meta-badge badge-verified">✓ Verified Original</span>
+      <span class="meta-badge badge-artist">Ben Wesley Mwanza</span>
+      <span id="modal-series-badge" class="meta-badge badge-series">Series Work</span>
+    </div>
+
     <div style="text-align: center; margin-top: 12px;">
       <a id="print-request-btn" href="#" target="_blank" class="print-inquiry-btn">🖼️ Request Fine Art Print</a>
     </div>
-    <div style="text-align: center; font-size: 0.8rem; color: #c5a059; margin-top: 12px; letter-spacing: 1px;">&copy; Phoenix View Media — Captured by Ben Wesley Mwanza (CMA 2026 Nominee)</div>
+    <div style="text-align: center; font-size: 0.8rem; color: #c5a059; margin-top: 12px; letter-spacing: 1px;">&copy; Phoenix View Media — CMA 2026 Photography Nominee</div>
   </div>
 
   <!-- Scripts -->
@@ -636,10 +677,11 @@
       });
     });
 
-    // Lightbox & Dynamic Print Inquiry Script
+    // Lightbox, Dynamic Print Inquiry & Metadata Script
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const modalCaption = document.getElementById('modal-caption');
+    const seriesBadge = document.getElementById('modal-series-badge');
     const printBtn = document.getElementById('print-request-btn');
     const closeBtn = document.querySelector('.modal-close');
 
@@ -649,6 +691,16 @@
         modalImg.src = this.src;
         const photoTitle = this.alt || "Fine Art Photograph";
         modalCaption.innerText = photoTitle;
+
+        // Detect parent card series
+        const parentCard = this.closest('.portfolio-card');
+        if (parentCard) {
+          const category = parentCard.getAttribute('data-category');
+          if (category === 'road') seriesBadge.innerText = 'Road & Journey Series';
+          else if (category === 'nature') seriesBadge.innerText = 'Nature Series';
+          else if (category === 'painted') seriesBadge.innerText = 'Painted World Series';
+          else seriesBadge.innerText = 'Archival Photograph';
+        }
 
         // Dynamic WhatsApp Print Link Generation
         const whatsappMsg = encodeURIComponent(`Hello Ben, I would like to inquire about licensing/purchasing a Fine Art Print of your photograph: "${photoTitle}" (from Phoenix View Media).`);
