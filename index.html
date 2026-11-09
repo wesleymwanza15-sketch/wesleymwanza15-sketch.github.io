@@ -211,7 +211,7 @@
     </a>
   </div>
 
-  <!-- Step 3: Floating Multi-Track Audio Playlist Controls -->
+  <!-- Multi-Track Audio Playlist Controls -->
   <div class="audio-player-container">
     <button id="prev-audio-btn" class="audio-btn nav-btn" title="Previous Track">⏮️</button>
     <button id="audio-toggle-btn" class="audio-btn">
@@ -221,7 +221,7 @@
     <button id="next-audio-btn" class="audio-btn nav-btn" title="Next Track">⏭️</button>
     
     <audio id="ambient-audio" preload="auto">
-      <source id="audio-source" src="audio/AURENZA_-_Breathe_In,_Let_Go(128k).m4a" type="audio/mp4">
+      <source id="audio-source" src="audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a" type="audio/mp4">
       Your browser does not support the audio element.
     </audio>
   </div>
@@ -739,15 +739,19 @@
       }
     });
 
-    // Step 3: Multi-Track Ambient Audio Playlist Script
+    // Step 3: Multi-Track Ambient Audio Playlist Script (Configured with your 3 uploaded tracks)
     const playlist = [
       {
-        title: "Aurenza - Breathe In, Let Go",
-        src: "audio/AURENZA_-_Breathe_In,_Let_Go(128k).m4a"
+        title: "Mr. Morale (ft. Tanna Leone)",
+        src: "audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a"
       },
       {
-        title: "Freeze the Frame (Ambient Mix)",
-        src: "audio/Freeze_the_Frame.mp3" // Add your downloaded Suno track here when ready!
+        title: "Majesty (Official)",
+        src: "audio/ISLY_-_MAJESTY__Offical_Video_(128k).m4a"
+      },
+      {
+        title: "The Unknown - Northwest Stories",
+        src: "audio/The Unknown - Northwest Stories.mp3"
       }
     ];
 
@@ -766,6 +770,9 @@
       ambientAudio.load();
       audioLabel.innerText = track.title;
     }
+
+    // Initialize first track on load
+    loadTrack(currentTrackIndex);
 
     // Play / Pause Toggle
     audioBtn.addEventListener('click', () => {
