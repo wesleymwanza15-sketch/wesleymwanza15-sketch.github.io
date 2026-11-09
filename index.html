@@ -99,18 +99,21 @@
       text-transform: uppercase;
     }
 
-    /* Floating Ambient Audio Control Styling */
+    /* Floating Multi-Track Audio Control Styling */
     .audio-player-container {
       position: fixed;
       bottom: 25px;
       left: 20px;
       z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
     .audio-btn {
       background: rgba(18, 18, 18, 0.85);
       border: 1px solid #c5a059;
       color: #c5a059;
-      padding: 10px 18px;
+      padding: 10px 16px;
       border-radius: 25px;
       cursor: pointer;
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -121,6 +124,9 @@
       backdrop-filter: blur(8px);
       box-shadow: 0 4px 20px rgba(0,0,0,0.4);
       transition: all 0.3s ease;
+    }
+    .audio-btn.nav-btn {
+      padding: 10px 12px;
     }
     .audio-btn:hover {
       background: #c5a059;
@@ -205,14 +211,17 @@
     </a>
   </div>
 
-  <!-- Floating Ambient Sound Player -->
+  <!-- Step 3: Floating Multi-Track Audio Playlist Controls -->
   <div class="audio-player-container">
+    <button id="prev-audio-btn" class="audio-btn nav-btn" title="Previous Track">⏮️</button>
     <button id="audio-toggle-btn" class="audio-btn">
       <span id="audio-icon">🎵</span>
       <span id="audio-label">Soundtrack: Off</span>
     </button>
-    <audio id="ambient-audio" loop preload="auto">
-      <source src="audio/AURENZA_-_Breathe_In,_Let_Go(128k).m4a" type="audio/mp4">
+    <button id="next-audio-btn" class="audio-btn nav-btn" title="Next Track">⏭️</button>
+    
+    <audio id="ambient-audio" preload="auto">
+      <source id="audio-source" src="audio/AURENZA_-_Breathe_In,_Let_Go(128k).m4a" type="audio/mp4">
       Your browser does not support the audio element.
     </audio>
   </div>
@@ -730,22 +739,68 @@
       }
     });
 
-    // Ambient Audio Control Script
+    // Step 3: Multi-Track Ambient Audio Playlist Script
+    const playlist = [
+      {
+        title: "Aurenza - Breathe In, Let Go",
+        src: "audio/AURENZA_-_Breathe_In,_Let_Go(128k).m4a"
+      },
+      {
+        title: "Freeze the Frame (Ambient Mix)",
+        src: "audio/Freeze_the_Frame.mp3" // Add your downloaded Suno track here when ready!
+      }
+    ];
+
+    let currentTrackIndex = 0;
     const ambientAudio = document.getElementById('ambient-audio');
+    const audioSource = document.getElementById('audio-source');
     const audioBtn = document.getElementById('audio-toggle-btn');
     const audioLabel = document.getElementById('audio-label');
     const audioIcon = document.getElementById('audio-icon');
+    const prevBtn = document.getElementById('prev-audio-btn');
+    const nextBtn = document.getElementById('next-audio-btn');
 
+    function loadTrack(index) {
+      const track = playlist[index];
+      audioSource.src = track.src;
+      ambientAudio.load();
+      audioLabel.innerText = track.title;
+    }
+
+    // Play / Pause Toggle
     audioBtn.addEventListener('click', () => {
       if (ambientAudio.paused) {
         ambientAudio.play();
-        audioLabel.innerText = "Soundtrack: Playing";
+        audioLabel.innerText = playlist[currentTrackIndex].title;
         audioIcon.innerText = "🔊";
       } else {
         ambientAudio.pause();
         audioLabel.innerText = "Soundtrack: Off";
         audioIcon.innerText = "🎵";
       }
+    });
+
+    // Next Track
+    nextBtn.addEventListener('click', () => {
+      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+      loadTrack(currentTrackIndex);
+      ambientAudio.play();
+      audioIcon.innerText = "🔊";
+    });
+
+    // Previous Track
+    prevBtn.addEventListener('click', () => {
+      currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+      loadTrack(currentTrackIndex);
+      ambientAudio.play();
+      audioIcon.innerText = "🔊";
+    });
+
+    // Auto-play next song when current track ends
+    ambientAudio.addEventListener('ended', () => {
+      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+      loadTrack(currentTrackIndex);
+      ambientAudio.play();
     });
 
     // Step 2: Intersection Observer for Scroll Animations
