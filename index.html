@@ -15,12 +15,15 @@
   <meta name="author" content="Ben Wesley Mwanza">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Sharing Tags -->
+  <!-- Open Graph / Social Media Sharing Tags (WhatsApp, Facebook, LinkedIn) -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Phoenix View Media">
   <meta property="og:url" content="https://wesleymwanza15-sketch.github.io/">
-  <meta property="og:title" content="Ben Wesley Mwanza | CMA 2026 Nominated Photographer & Visual Storyteller">
+  <meta property="og:title" content="Ben Wesley Mwanza — CMA 2026 Nominated Visual Storyteller">
   <meta property="og:description" content="Explore original travel, nature, and editorial photography captured through the view of Ben Wesley Mwanza (Phoenix View Media), recognized nominee in the 2026 Creative Media Awards.">
   <meta property="og:image" content="https://wesleymwanza15-sketch.github.io/images/20260416_165634.jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -72,16 +75,25 @@
       cursor: pointer;
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.9rem;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .filter-btn:hover, .filter-btn.active {
       background: #c5a059;
       color: #000;
       border-color: #c5a059;
       font-weight: 600;
+      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
     }
+    
+    /* Option A: Portfolio Card Micro-Interactions */
     .portfolio-card {
-      transition: transform 0.4s ease, opacity 0.4s ease;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, opacity 0.4s ease;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
     .portfolio-card.hidden {
       display: none;
@@ -131,6 +143,31 @@
     .audio-btn:hover {
       background: #c5a059;
       color: #000;
+    }
+
+    /* Option B: Now Playing Toast Notification Styling */
+    .toast-notification {
+      position: fixed;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      background: rgba(18, 18, 18, 0.9);
+      border: 1px solid #c5a059;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      opacity: 0;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+      pointer-events: none;
+    }
+    .toast-notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
     }
 
     /* Lightbox Fine Art Print Button */
@@ -186,7 +223,7 @@
       color: #d0d0d0;
     }
 
-    /* Step 2: Scroll Reveal Animations */
+    /* Scroll Reveal Animations */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -197,9 +234,25 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Story Quote Micro-Highlight */
+    .story-quote-card {
+      border-left: 3px solid #c5a059;
+      padding-left: 15px;
+      margin: 20px 0;
+      background: rgba(197, 160, 89, 0.04);
+      border-radius: 0 8px 8px 0;
+      transition: background 0.3s ease;
+    }
+    .story-quote-card:hover {
+      background: rgba(197, 160, 89, 0.09);
+    }
   </style>
 </head>
 <body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast-notification">🎵 Playing: Track Name</div>
 
   <!-- Floating Contact Buttons -->
   <div class="floating-contact">
@@ -254,7 +307,11 @@
       <div class="story-right reveal">
         <p>My name is Ben Wesley Mwanza—though around here, you might know me as <strong>phoenix_view_bwm</strong>, or simply <em>the passing photographer</em>.</p>
         <p>I'm a traveler, a writer, a developer, and a visual storyteller. Recognized as a nominee in the <strong>2026 Creative Media Awards (CMA Zambia)</strong> for photography, I'm obsessed with documenting the natural atmosphere and human journey.</p>
-        <p>Someone once told me, <em>"The version of you today isn't the version you will be tomorrow."</em></p>
+        
+        <div class="story-quote-card">
+          <p style="font-style: italic; color: #c5a059; margin: 0; padding: 10px 0;">"The version of you today isn't the version you will be tomorrow."</p>
+        </div>
+
         <p>That thought stayed with me. It made me wonder: How do we hold onto who we are right now? How do we keep today alive for the person we become tomorrow?</p>
         <p>Then I saw the camera.</p>
         <p>It hit me—the power to freeze time was right there waiting. I grabbed my phone, opened the camera, and started shooting. I realized that if I could direct my lens right into those fleeting moments, I could freeze them forever. That way, whenever we miss a feeling, we can always wander back to the exact second it was captured and feel it all over again.</p>
@@ -651,7 +708,7 @@
     <img class="modal-content" id="modal-img">
     <div id="modal-caption" style="text-align: center; margin-top: 10px; color: #fff; font-family: 'Playfair Display', serif; font-size: 1.1rem;"></div>
     
-    <!-- Step 1: Verified Original Metadata Badges -->
+    <!-- Verified Original Metadata Badges -->
     <div class="modal-metadata-box">
       <span class="meta-badge badge-verified">✓ Verified Original</span>
       <span class="meta-badge badge-artist">Ben Wesley Mwanza</span>
@@ -739,7 +796,7 @@
       }
     });
 
-    // Step 3: Multi-Track Ambient Audio Playlist Script (Configured with your 3 uploaded tracks)
+    // Multi-Track Ambient Audio Playlist & Toast Notification Script
     const playlist = [
       {
         title: "Mr. Morale (ft. Tanna Leone)",
@@ -756,6 +813,7 @@
     ];
 
     let currentTrackIndex = 0;
+    let toastTimeout;
     const ambientAudio = document.getElementById('ambient-audio');
     const audioSource = document.getElementById('audio-source');
     const audioBtn = document.getElementById('audio-toggle-btn');
@@ -763,6 +821,16 @@
     const audioIcon = document.getElementById('audio-icon');
     const prevBtn = document.getElementById('prev-audio-btn');
     const nextBtn = document.getElementById('next-audio-btn');
+    const toast = document.getElementById('toast');
+
+    function showToast(trackTitle) {
+      toast.innerText = `🎵 Now Playing: ${trackTitle}`;
+      toast.classList.add('show');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
 
     function loadTrack(index) {
       const track = playlist[index];
@@ -780,6 +848,7 @@
         ambientAudio.play();
         audioLabel.innerText = playlist[currentTrackIndex].title;
         audioIcon.innerText = "🔊";
+        showToast(playlist[currentTrackIndex].title);
       } else {
         ambientAudio.pause();
         audioLabel.innerText = "Soundtrack: Off";
@@ -793,6 +862,7 @@
       loadTrack(currentTrackIndex);
       ambientAudio.play();
       audioIcon.innerText = "🔊";
+      showToast(playlist[currentTrackIndex].title);
     });
 
     // Previous Track
@@ -801,6 +871,7 @@
       loadTrack(currentTrackIndex);
       ambientAudio.play();
       audioIcon.innerText = "🔊";
+      showToast(playlist[currentTrackIndex].title);
     });
 
     // Auto-play next song when current track ends
@@ -808,9 +879,10 @@
       currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
       loadTrack(currentTrackIndex);
       ambientAudio.play();
+      showToast(playlist[currentTrackIndex].title);
     });
 
-    // Step 2: Intersection Observer for Scroll Animations
+    // Intersection Observer for Scroll Animations
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
