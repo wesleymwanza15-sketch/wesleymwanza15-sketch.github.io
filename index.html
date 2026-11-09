@@ -179,6 +179,18 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: #d0d0d0;
     }
+
+    /* Step 2: Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -227,10 +239,10 @@
   <!-- My Story Section -->
   <section id="about" class="story-section">
     <div class="story-container">
-      <div class="story-left">
+      <div class="story-left reveal">
         <h2>My story</h2>
       </div>
-      <div class="story-right">
+      <div class="story-right reveal">
         <p>My name is Ben Wesley Mwanza—though around here, you might know me as <strong>phoenix_view_bwm</strong>, or simply <em>the passing photographer</em>.</p>
         <p>I'm a traveler, a writer, a developer, and a visual storyteller. Recognized as a nominee in the <strong>2026 Creative Media Awards (CMA Zambia)</strong> for photography, I'm obsessed with documenting the natural atmosphere and human journey.</p>
         <p>Someone once told me, <em>"The version of you today isn't the version you will be tomorrow."</em></p>
@@ -244,14 +256,14 @@
   </section>
 
   <!-- Visual Divider -->
-  <div class="visual-divider">
+  <div class="visual-divider reveal">
     <img src="images/20251220_171955.jpg" alt="Visual Divider Silhouette" class="expandable" loading="lazy">
   </div>
 
   <!-- Services Section -->
   <section id="services" class="services-section">
     <div class="services-container">
-      <div class="services-title-col">
+      <div class="services-title-col reveal">
         <h2>What I can<br>do for you</h2>
         <div class="services-thumb">
           <img src="images/20260107_064804.jpg" alt="Nature Detail" class="expandable" loading="lazy">
@@ -259,15 +271,15 @@
       </div>
 
       <div class="services-list-col">
-        <div class="service-item">
+        <div class="service-item reveal">
           <h3>Travel & Editorial Photography</h3>
           <p>High-impact visual storytelling capturing authentic landscapes, wildlife, culture, and destinations for magazines, travel brands, and tourism boards.</p>
         </div>
-        <div class="service-item">
+        <div class="service-item reveal">
           <h3>Destination & Journey Documentation</h3>
           <p>Immersive visual and written coverage of tours, expeditions, and regional experiences tailored for travel platforms and editorial publications.</p>
         </div>
-        <div class="service-item">
+        <div class="service-item reveal">
           <h3>Visual Brand Storytelling</h3>
           <p>Translating the heart of hospitality, outdoor gear, or eco-tourism initiatives into compelling photography and narrative content.</p>
         </div>
@@ -277,13 +289,13 @@
 
   <!-- Gallery Section -->
   <section id="portfolio" class="portfolio-section">
-    <div class="portfolio-header">
+    <div class="portfolio-header reveal">
       <h2>A few things I'm proud of</h2>
       <p class="subtitle">Click any image to view in full resolution & request prints</p>
     </div>
 
     <!-- 3 Core Filter Buttons -->
-    <div class="portfolio-filters">
+    <div class="portfolio-filters reveal">
       <button class="filter-btn active" data-filter="all">All Work</button>
       <button class="filter-btn" data-filter="road">Road & Journey Series</button>
       <button class="filter-btn" data-filter="nature">Nature Series</button>
@@ -293,307 +305,307 @@
     <div class="portfolio-grid">
       
       <!-- 1. ROAD & JOURNEY SERIES -->
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable" loading="lazy">
         <div class="card-caption"><h3>The Open Highway</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260417_093623.jpeg" alt="Passing Through" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Passing Through</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260416_165634.jpeg" alt="Asphalt Canopy Road" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Asphalt Canopy</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260416_165431 (1).jpeg" alt="Bridge Overpass Rail" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Overpass Perspective</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260416_165448.jpeg" alt="Bridge Railing View" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Highway Railing</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260416_165455 (1).jpeg" alt="Sunset Highway Railing" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Sunset Highway</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260407_125528 (2).jpeg" alt="Spring Pathway I" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Spring Pathway I</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260407_123038.jpeg" alt="Travelers on the Road" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Travelers on the Road</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20251219_173958.jpeg" alt="Solitary Trail" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Solitary Trail</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20251219_174730 (5).jpeg" alt="Forest Trail" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Forest Trail</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260108_170003 (1).jpeg" alt="Expedition Path I" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Expedition Path I</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260108_170040.jpeg" alt="Expedition Path II" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Expedition Path II</h3><p>Road & Journey Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="road">
+      <div class="portfolio-card reveal" data-category="road">
         <img src="images/20260108_170011.jpeg" alt="Expedition Path III" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Expedition Path III</h3><p>Road & Journey Series</p></div>
       </div>
 
       <!-- 2. NATURE SERIES -->
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/VideoCapture_20260407-230314.jpeg" alt="Twilight Nature Still" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Twilight Nature Still</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260407_132443.jpeg" alt="Spring Meadow Path" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Spring Meadow Path</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260407_130529.jpeg" alt="Sunlit Foliage Trail" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Sunlit Foliage Trail</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260407_131225.jpeg" alt="Forest Canopy Light" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Forest Canopy Light</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260407_130545.jpeg" alt="Woodland Perspective" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Woodland Perspective</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/VideoCapture_20260408-180522 (2).jpeg" alt="Evening Atmosphere Still" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Evening Atmosphere Still</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260407_143818.jpeg" alt="Afternoon Wilds" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Afternoon Wilds</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260407_143213.jpeg" alt="Lush Green Valley" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Lush Green Valley</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260407_140322 (2).jpeg" alt="Verdant Canopy" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Verdant Canopy</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/IMG_20260407_132916_921.jpeg" alt="Botanical Horizon" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Botanical Horizon</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251211_172402 (3).jpeg" alt="Painted Forest Light" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Forest Light</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251003_180506 (1).jpeg" alt="October Sunset Canopy" class="expandable" loading="lazy">
         <div class="card-caption"><h3>October Sunset Canopy</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251003_180528.jpeg" alt="Twilight Foliage" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Twilight Foliage</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260407_140319.jpeg" alt="Highland Meadow View" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Highland Meadow View</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251208_172015 (1).jpeg" alt="Dew-kissed Foliage" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Dew-kissed Foliage</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251204_091515.jpeg" alt="Morning Grove Study" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Morning Grove Study</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251209_172929.jpeg" alt="Golden Afternoon Ridge" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Golden Afternoon Ridge</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251209_172935.jpeg" alt="Sunlit Canopy Detail" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Sunlit Canopy Detail</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251208_065815.jpeg" alt="Early Sunbeam Forest" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Early Sunbeam Forest</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251208_065856.jpeg" alt="Morning Dew Macro" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Morning Dew Macro</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251030_181827.jpeg" alt="Late Dusk Wilds" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Late Dusk Wilds</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251208_172918 (5).jpeg" alt="Sunset Forest Edge" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Sunset Forest Edge</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251208_172021.jpeg" alt="Deep Woods Shadow" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Deep Woods Shadow</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251211_172215.jpeg" alt="Atmospheric Forest Path" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Atmospheric Forest Path</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251220_155118.jpeg" alt="Ridge Vista Horizon" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Ridge Vista Horizon</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260107_064924 (6).jpeg" alt="Morning Dew Web" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Morning Dew Web</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251223_164301.jpeg" alt="Victoria Falls Edge" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Victoria Falls Edge</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251223_164250 (1).jpeg" alt="Victoria Falls Mist" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Victoria Falls Mist</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251223_174937 (1).jpeg" alt="Victoria Falls Horizon" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Victoria Falls Horizon</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251208_172239 (1).jpeg" alt="White Blooms" class="expandable" loading="lazy">
         <div class="card-caption"><h3>White Blooms</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260107_064814 (1).jpeg" alt="Morning Bloom" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Morning Bloom</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260416_165638.jpeg" alt="Chadiza Canopy" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Chadiza Canopy</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260416_165846.jpeg" alt="Deep Woods" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Deep Woods</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20260416_165949 (2).jpeg" alt="Green Horizon" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Green Horizon</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251220_160419.jpeg" alt="Highland Canopy" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Highland Canopy</h3><p>Nature Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="nature">
+      <div class="portfolio-card reveal" data-category="nature">
         <img src="images/20251220_163327.jpeg" alt="Sunlit Foliage" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Sunlit Foliage</h3><p>Nature Series</p></div>
       </div>
 
       <!-- 3. PAINTED WORLD SERIES -->
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251208_065856 (2).jpeg" alt="Painted Dew Study I" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Dew Study I</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251211_173030.jpeg" alt="Painted Horizon I" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Horizon I</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251211_173030 (1).jpeg" alt="Painted Horizon II" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Horizon II</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251223_164301 (1).jpeg" alt="Painted Falls Mist" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Falls Mist</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20260102_173213.jpeg" alt="Painted Valley Light" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Valley Light</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20260102_170309 (1).jpeg" alt="Painted Sunset Glow" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Sunset Glow</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251211_172215 (4).jpeg" alt="Painted Forest Depth" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Forest Depth</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251220_173519 (1).jpeg" alt="Painted Ridge Glow" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Ridge Glow</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251209_172735 (7).jpeg" alt="Painted Field Study" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Field Study</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251208_065852 (2).jpeg" alt="Painted Dew Study II" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Dew Study II</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251120_183320 (4).jpeg" alt="Painted Twilight Grove I" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Twilight Grove I</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251120_183142.jpeg" alt="Painted Twilight Grove II" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Twilight Grove II</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20260510_104722 (3).jpeg" alt="Painted Botanical Vista" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Painted Botanical Vista</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20260215_113643.jpeg" alt="Beaded & Carved Keychains" class="expandable" loading="lazy">
         <div class="card-caption"><h3>African Crafts & Keychains</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20260510_142403.jpeg" alt="Crochet Earrings" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Handcrafted Jewelry</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20260510_142228.jpeg" alt="Wood Carvings" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Zambian Heritage Carvings</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20260102_173343.jpeg" alt="Golden Hour Valley" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Golden Hour Valley</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251003_181751 (3).jpeg" alt="Crimson Bougainvillea" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Crimson Floral Sky</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251208_172036 (1).jpeg" alt="Magenta Raindrops" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Magenta Raindrops</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251208_172157.jpeg" alt="Red Veined Dewdrops" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Red Veined Dewdrops</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251208_172026 (1).jpeg" alt="Spectrum Rainbow" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Spectrum Rainbow</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251209_174113.jpeg" alt="Crimson Harvest Fields" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Crimson Harvest Fields</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251209_174113 (1).jpeg" alt="Evening Perspective" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Evening Light</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20260926_183115 (1).jpeg" alt="Equinox Light" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Equinox Light</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/20251220_174531.jpeg" alt="Twilight Ridge" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Twilight Ridge</h3><p>Painted World Series</p></div>
       </div>
-      <div class="portfolio-card" data-category="painted">
+      <div class="portfolio-card reveal" data-category="painted">
         <img src="images/VideoCapture_20261006-221917 (1).jpeg" alt="Documentary Still" class="expandable" loading="lazy">
         <div class="card-caption"><h3>Documentary Still</h3><p>Painted World Series</p></div>
       </div>
@@ -602,7 +614,7 @@
   </section>
 
   <!-- Ownership Policy Section -->
-  <section class="policy-section" style="padding: 60px 20px; background-color: var(--bg-card); text-align: center; border-top: 1px solid rgba(255,255,255,0.08);">
+  <section class="policy-section reveal" style="padding: 60px 20px; background-color: var(--bg-card); text-align: center; border-top: 1px solid rgba(255,255,255,0.08);">
     <div style="max-width: 800px; margin: 0 auto;">
       <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; color: #c5a059;">Work & Ownership Policy</h3>
       <p style="color: #a0a0a0; line-height: 1.7; font-size: 0.95rem;">
@@ -612,7 +624,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="canva-footer">
+  <footer class="canva-footer reveal">
     <p>Let's paint your canvas together.</p>
     <div class="footer-links">
       <a href="mailto:benmwanza15@gmail.com" class="footer-link">benmwanza15@gmail.com</a>
@@ -735,6 +747,19 @@
         audioIcon.innerText = "🎵";
       }
     });
+
+    // Step 2: Intersection Observer for Scroll Animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
   </script>
 
 </body>
