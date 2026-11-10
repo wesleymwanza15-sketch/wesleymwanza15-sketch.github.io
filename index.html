@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phoenix View Media | Multi-Disciplinary Portfolio</title>
+  <title>Phoenix View Media | Creative Media Awards Nominee Portfolio</title>
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -60,29 +60,76 @@
       z-index: 1;
     }
 
-    /* Header & Branding */
-    header {
+    /* Rotating Hero Header Section */
+    .hero-header {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      padding: 60px 30px;
+      margin-bottom: 40px;
       text-align: center;
-      margin-bottom: 50px;
+      border: 1px solid var(--card-border);
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
     }
 
-    header h1 {
+    .hero-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to bottom, rgba(10,10,12,0.85), rgba(10,10,12,0.95));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cma-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px var(--accent-gold-glow);
+    }
+
+    .hero-header h1 {
       font-size: 3rem;
       letter-spacing: 2px;
       color: var(--text-main);
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       text-transform: uppercase;
     }
 
-    header h1 span {
+    .hero-header h1 span {
       color: var(--accent-gold);
     }
 
-    header p {
+    .bio-intro {
+      font-size: 1.25rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .hero-header p.bio-story {
       color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 0;
     }
 
     /* Audio Player Widget */
@@ -91,7 +138,7 @@
       border: 1px solid var(--card-border);
       border-radius: 12px;
       padding: 15px 25px;
-      margin: 30px auto 40px auto;
+      margin: 0 auto 40px auto;
       max-width: 500px;
       display: flex;
       align-items: center;
@@ -235,6 +282,9 @@
     .showcase-card img.expandable {
       cursor: pointer;
       transition: transform 0.3s ease;
+      width: 100%;
+      border-radius: 6px;
+      margin: 15px 0;
     }
 
     .showcase-card img.expandable:hover {
@@ -257,7 +307,16 @@
       border-radius: 4px;
     }
 
-    /* Responsive Pagination for Photography */
+    /* Photography Pagination */
+    .photo-page {
+      display: none;
+    }
+    .photo-page.active-page {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 25px;
+    }
+
     .pagination-controls {
       display: flex;
       justify-content: center;
@@ -279,6 +338,7 @@
       background: var(--accent-gold);
       color: #000;
       font-weight: bold;
+      border-color: var(--accent-gold);
     }
 
     /* Modal / Interactive Lightbox */
@@ -362,10 +422,9 @@
       z-index: 1001;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .showcase-grid { grid-template-columns: 1fr; }
+      .hero-header h1 { font-size: 2rem; }
+      .showcase-grid, .photo-page.active-page { grid-template-columns: 1fr; }
       #cursor-spotlight { display: none; }
     }
   </style>
@@ -377,10 +436,16 @@
 
   <div class="container">
     
-    <!-- Branding Header -->
-    <header>
-      <h1>Phoenix View <span>Media</span></h1>
-      <p>Multi-Disciplinary Creative Agency Showcase — Engineering, Visual Storytelling & Editorial Art Direction</p>
+    <!-- Rotating Hero Header with Bio, Story & CMA Nomination -->
+    <header class="hero-header" id="hero-banner">
+      <div class="hero-content">
+        <div class="cma-badge">
+          <i class="fas fa-award"></i> 2026 Creative Media Awards Nominee
+        </div>
+        <h1>Phoenix View <span>Media</span></h1>
+        <p class="bio-intro">Hi, I'm Ben Wesley Mwanza</p>
+        <p class="bio-story">Creative Director, Software Engineer & Visual Storyteller. I bridge the gap between technical mobile architectures and evocative, high-concept editorial media—capturing the raw textures of Zambian nature, scripting cinematic thrillers, and engineering seamless digital experiences.</p>
+      </div>
     </header>
 
     <!-- Multi-Track Ambient Audio Player -->
@@ -416,19 +481,20 @@
     </div>
 
     <!-- ==========================================
-       PANE 1: PHOTOGRAPHY SERIES
+       PANE 1: PHOTOGRAPHY SERIES WITH PAGINATION
        ========================================== -->
     <div id="photography-pane" class="discipline-pane active">
       <div class="section-header">
         <h2>Fine Art & Documentary Photography</h2>
         <p>Macro environmental documentation, urban perspective, and Zambian wilderness series.</p>
       </div>
-      <div class="showcase-grid" id="photo-grid">
-        <!-- Sample photography items -->
+
+      <!-- PAGE 1 OF PHOTOGRAPHY -->
+      <div class="photo-page active-page" id="photo-page-1">
         <div class="showcase-card reveal">
           <span class="showcase-tag">Macro Wilderness</span>
           <h3>Forest Floor Ecosystems</h3>
-          <img src="images/2_20261008_115127_0001.jpeg" alt="Macro Soil" class="expandable" style="width:100%; border-radius:6px; margin:15px 0;">
+          <img src="images/2_20261008_115127_0001.jpeg" alt="Macro Soil" class="expandable">
           <p>Detailed documentation of macro soil textures and architectural insect burrows.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Macro Lens</span>
@@ -439,13 +505,55 @@
         <div class="showcase-card reveal">
           <span class="showcase-tag">Landscape Series</span>
           <h3>Highland Horizon & Silhouettes</h3>
-          <img src="images/1_20261002_091657_0000.jpeg" alt="Silhouette Horizon" class="expandable" style="width:100%; border-radius:6px; margin:15px 0;">
+          <img src="images/1_20261002_091657_0000.jpeg" alt="Silhouette Horizon" class="expandable">
           <p>Cinematic mountain exploration captured during peak late-afternoon glow.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Landscape</span>
             <span class="tech-pill">Silhouette</span>
           </div>
         </div>
+
+        <div class="showcase-card reveal">
+          <span class="showcase-tag">Wilderness Series</span>
+          <h3>Chipata Forest Textures</h3>
+          <img src="images/1_20261008_115127_0000.jpeg" alt="Chipata Forest" class="expandable">
+          <p>Immersive framing of natural forest elements and canopy dynamics.</p>
+          <div class="tech-stack-badges">
+            <span class="tech-pill">Documentary</span>
+            <span class="tech-pill">Nature</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 2 OF PHOTOGRAPHY -->
+      <div class="photo-page" id="photo-page-2">
+        <div class="showcase-card reveal">
+          <span class="showcase-tag">Botanical Close-Up</span>
+          <h3>Scarlet Flora Study</h3>
+          <img src="images/1_20261023_121000_0000.jpeg" alt="Scarlet Flora" class="expandable">
+          <p>Close-up study of natural gradients and organic structures.</p>
+          <div class="tech-stack-badges">
+            <span class="tech-pill">Macro</span>
+            <span class="tech-pill">Color Theory</span>
+          </div>
+        </div>
+
+        <div class="showcase-card reveal">
+          <span class="showcase-tag">Countryside Series</span>
+          <h3>Zambian Agricultural Rhythm</h3>
+          <img src="images/3_20261023_121001_0002.jpeg" alt="Country Side" class="expandable">
+          <p>Documenting rural textures and agricultural landscapes from a unique vantage point.</p>
+          <div class="tech-stack-badges">
+            <span class="tech-pill">Fine Art</span>
+            <span class="tech-pill">Field Study</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photography Pagination Controls -->
+      <div class="pagination-controls">
+        <button class="page-btn active" onclick="switchPhotoPage(1, this)">1</button>
+        <button class="page-btn" onclick="switchPhotoPage(2, this)">2</button>
       </div>
     </div>
 
@@ -512,12 +620,11 @@
       </div>
 
       <div class="showcase-grid">
-
         <!-- 1. EXPLORE MAGAZINE COVER -->
         <div class="showcase-card reveal">
           <span class="showcase-tag">Travel Magazine Cover</span>
           <h3>EXPLORE: The Beauty of Mountains</h3>
-          <img src="images/1_20261002_091657_0000.jpeg" alt="EXPLORE Travel Magazine Cover" class="expandable" style="width: 100%; border-radius: 6px; margin: 15px 0;">
+          <img src="images/1_20261002_091657_0000.jpeg" alt="EXPLORE Travel Magazine Cover" class="expandable">
           <p>Signature cover concept for the EXPLORE publication series, featuring silhouette cinematography and high-contrast editorial typography.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Cover Art Direction</span>
@@ -530,7 +637,7 @@
         <div class="showcase-card reveal">
           <span class="showcase-tag">Editorial Feature — Spread 03</span>
           <h3>The Unseen World Beneath Our Feet</h3>
-          <img src="images/2_20261008_115127_0001.jpeg" alt="The Unseen World Beneath Our Feet" class="expandable" style="width: 100%; border-radius: 6px; margin: 15px 0;">
+          <img src="images/2_20261008_115127_0001.jpeg" alt="The Unseen World Beneath Our Feet" class="expandable">
           <p>Multi-column editorial spread exploring micro ecosystems, soil craftsmanship, and the hidden architectural marvels of the forest floor.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Macro Photography</span>
@@ -543,7 +650,7 @@
         <div class="showcase-card reveal">
           <span class="showcase-tag">Nature Lookbook Series</span>
           <h3>Crimson Tones: A Painted Garden Series</h3>
-          <img src="images/3_20261023_121001_0002.jpeg" alt="Crimson Tones Lookbook" class="expandable" style="width: 100%; border-radius: 6px; margin: 15px 0;">
+          <img src="images/3_20261023_121001_0002.jpeg" alt="Crimson Tones Lookbook" class="expandable">
           <p>Agricultural heritage meets artistic vision. Macro perspective capturing the dew-kissed texture and scarlet tones of the Zambian countryside.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Canva Editorial Design</span>
@@ -556,7 +663,7 @@
         <div class="showcase-card reveal">
           <span class="showcase-tag">Editorial Lookbook — Plate 02</span>
           <h3>Botanical Textures & Scarlet Tones</h3>
-          <img src="images/1_20261023_121000_0000.jpeg" alt="Lookbook Plate 02" class="expandable" style="width: 100%; border-radius: 6px; margin: 15px 0;">
+          <img src="images/1_20261023_121000_0000.jpeg" alt="Lookbook Plate 02" class="expandable">
           <p>A closer look at the organic lines and rich chromatic tones designed for publication layout.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Lookbook Spread</span>
@@ -568,14 +675,13 @@
         <div class="showcase-card reveal">
           <span class="showcase-tag">Editorial Lookbook — Plate 03</span>
           <h3>Silent Rhythm of the Countryside</h3>
-          <img src="images/2_20261023_121001_0001.jpeg" alt="Lookbook Plate 03" class="expandable" style="width: 100%; border-radius: 6px; margin: 15px 0;">
+          <img src="images/2_20261023_121001_0001.jpeg" alt="Lookbook Plate 03" class="expandable">
           <p>Balancing whitespace, structured typography, and high-impact macro imagery.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Editorial Design</span>
             <span class="tech-pill">Typography</span>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -611,7 +717,24 @@
       spotlight.style.top = e.clientY + 'px';
     });
 
-    /* 2. 3D Card Tilt Micro-Interactions */
+    /* 2. Rotating Hero Header Images (3 Backgrounds) */
+    const heroImages = [
+      "images/1_20261002_091657_0000.jpeg",
+      "images/2_20261008_115127_0001.jpeg",
+      "images/3_20261023_121001_0002.jpeg"
+    ];
+    let currentHeroIndex = 0;
+    const heroBanner = document.getElementById('hero-banner');
+
+    function rotateHeroBackground() {
+      currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+      heroBanner.style.backgroundImage = `url('${heroImages[currentHeroIndex]}')`;
+    }
+    // Initialize first image & set rotation interval (every 5 seconds)
+    heroBanner.style.backgroundImage = `url('${heroImages[0]}')`;
+    setInterval(rotateHeroBackground, 5000);
+
+    /* 3. 3D Card Tilt Micro-Interactions */
     document.querySelectorAll('.showcase-card').forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
@@ -624,7 +747,7 @@
       });
     });
 
-    /* 3. Multi-Disciplinary Tab Switching */
+    /* 4. Multi-Disciplinary Tab Switching */
     function switchTab(paneId) {
       document.querySelectorAll('.discipline-pane').forEach(pane => pane.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -633,7 +756,16 @@
       event.currentTarget.classList.add('active');
     }
 
-    /* 4. Interactive Lightbox Functionality */
+    /* 5. Photography Pagination Logic */
+    function switchPhotoPage(pageNum, btnElement) {
+      document.querySelectorAll('.photo-page').forEach(page => page.classList.remove('active-page'));
+      document.querySelectorAll('.pagination-controls .page-btn').forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById('photo-page-' + pageNum).classList.add('active-page');
+      btnElement.classList.add('active');
+    }
+
+    /* 6. Interactive Lightbox Functionality */
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxTitle = document.getElementById('lightbox-title');
@@ -656,15 +788,34 @@
       lightbox.classList.remove('active');
     }
 
-    /* 5. Audio Player Logic Placeholder */
+    /* 7. Multi-Track Audio Player Logic */
+    const playlist = [
+      { title: "Ambient Composition I", artist: "Phoenix Soundscapes" },
+      { title: "Zambian Horizons Theme", artist: "Phoenix Soundscapes" },
+      { title: "Golden Hour Instrumental", artist: "Phoenix Soundscapes" }
+    ];
+    let currentTrackIndex = 0;
     let isPlaying = false;
+
     function toggleAudio() {
       const btn = document.getElementById('play-pause-btn');
       isPlaying = !isPlaying;
       btn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
     }
-    function nextTrack() {}
-    function prevTrack() {}
+
+    function nextTrack() {
+      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+      updateTrackDisplay();
+    }
+
+    function prevTrack() {
+      currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+      updateTrackDisplay();
+    }
+
+    function updateTrackDisplay() {
+      document.getElementById('track-title').innerText = playlist[currentTrackIndex].title;
+    }
   </script>
 </body>
 </html>
