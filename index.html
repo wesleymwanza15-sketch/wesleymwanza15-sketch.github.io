@@ -3,10 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phoenix View Media | Creative Media Awards Nominee Portfolio</title>
   
+  <!-- Google Search Console Ownership Verification Tag -->
+  <meta name="google-site-verification" content="JyXSaaWSG6hu7IIQswfRuYDiZdcndnIPDrgWVcC2_sM" />
+
+  <!-- Primary Search Engine SEO Meta Tags -->
+  <title>Ben Wesley Mwanza | CMA 2026 Nominated Visual Storyteller & Developer</title>
+  <meta name="title" content="Ben Wesley Mwanza | CMA 2026 Nominated Visual Storyteller & Developer">
+  <meta name="description" content="Official portfolio of Ben Wesley Mwanza (phoenix_view_bwm), CMA 2026 Nominee, Photographer, App Architect, and Visual Storyteller. Founder of Phoenix View Media.">
+  <meta name="keywords" content="Ben Wesley Mwanza, phoenix_view_bwm, Phoenix View Media, CMA 2026 nominee, Zambian photographer, App developer Lusaka, Creative Director Zambia, the passing photographer">
+  <meta name="author" content="Ben Wesley Mwanza">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media Sharing Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Phoenix View Media">
+  <meta property="og:url" content="https://wesleymwanza15-sketch.github.io/">
+  <meta property="og:title" content="Ben Wesley Mwanza — Visual Storyteller & Developer">
+  <meta property="og:description" content="Explore photography series, app system architectures, and editorial storytelling by Ben Wesley Mwanza (Phoenix View Media).">
+  <meta property="og:image" content="https://wesleymwanza15-sketch.github.io/images/20260416_165634.jpeg">
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   <style>
     /* ==========================================
@@ -16,11 +39,11 @@
       --bg-dark: #0a0a0c;
       --card-bg: #141418;
       --card-border: #26262e;
-      --accent-gold: #d4af37;
-      --accent-gold-glow: rgba(212, 175, 55, 0.15);
+      --accent-gold: #c5a059;
+      --accent-gold-glow: rgba(197, 160, 89, 0.15);
       --text-main: #f0f0f5;
       --text-muted: #a0a0b0;
-      --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -32,26 +55,27 @@
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.6;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Ambient Gold Cursor Spotlight */
-    #cursor-spotlight {
+    /* Ambient Cursor Gold Spotlight Overlay */
+    .cursor-spotlight {
       position: fixed;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
+      top: 0;
+      left: 0;
+      width: 500px;
+      height: 500px;
       background: radial-gradient(circle, var(--accent-gold-glow) 0%, rgba(0,0,0,0) 70%);
+      border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
-      z-index: 0;
-      transition: transform 0.05s ease-out;
+      z-index: 9999;
+      transition: opacity 0.3s ease;
     }
 
-    /* Container & Wrapper */
     .container {
       max-width: 1300px;
       margin: 0 auto;
@@ -61,42 +85,58 @@
     }
 
     /* Rotating Hero Header Section */
-    .hero-header {
+    .canva-hero {
       position: relative;
       border-radius: 16px;
       overflow: hidden;
-      padding: 60px 30px;
+      padding: 80px 30px;
       margin-bottom: 40px;
       text-align: center;
       border: 1px solid var(--card-border);
-      background-size: cover;
-      background-position: center;
-      transition: background-image 1s ease-in-out;
+      background-color: #000;
     }
 
-    .hero-header::before {
-      content: '';
+    .hero-slider {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 1;
+    }
+
+    .hero-slider .slide {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .hero-slider .slide.active {
+      opacity: 0.35;
+    }
+
+    .hero-overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, rgba(10,10,12,0.85), rgba(10,10,12,0.95));
-      z-index: 1;
+      background: linear-gradient(to bottom, rgba(10,10,12,0.7), rgba(10,10,12,0.95));
+      z-index: 2;
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       max-width: 800px;
       margin: 0 auto;
     }
 
-    .cma-badge {
+    .cma-badge-tag {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(212, 175, 55, 0.15);
+      background: rgba(197, 160, 89, 0.15);
       border: 1px solid var(--accent-gold);
       color: var(--accent-gold);
-      padding: 6px 16px;
+      padding: 6px 18px;
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 700;
@@ -106,131 +146,178 @@
       box-shadow: 0 0 20px var(--accent-gold-glow);
     }
 
-    .hero-header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-      color: var(--text-main);
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      letter-spacing: 1px;
+      color: #fff;
       margin-bottom: 15px;
-      text-transform: uppercase;
+      line-height: 1.2;
     }
 
-    .hero-header h1 span {
+    .tagline {
       color: var(--accent-gold);
+      font-size: 1.15rem;
+      font-style: italic;
+      margin-bottom: 20px;
     }
 
-    .bio-intro {
-      font-size: 1.25rem;
-      color: var(--accent-gold);
-      font-weight: 600;
-      margin-bottom: 12px;
+    /* My Story Section */
+    .story-section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 50px;
     }
-
-    .hero-header p.bio-story {
+    .story-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .story-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #fff;
+    }
+    .story-right p {
       color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.7;
-      margin-bottom: 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
     }
-
-    /* Audio Player Widget */
-    .audio-player-container {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 15px 25px;
-      margin: 0 auto 40px auto;
-      max-width: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    .track-info {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .track-info i {
-      color: var(--accent-gold);
-      font-size: 1.2rem;
-    }
-
-    .audio-controls {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .audio-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-main);
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: var(--transition-smooth);
-    }
-
-    .audio-btn:hover {
-      color: var(--accent-gold);
-    }
+    .story-right strong { color: #fff; }
 
     /* Multi-Disciplinary Tab Navigation */
-    .tab-nav {
+    .discipline-nav {
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin-bottom: 40px;
+      margin: 20px auto 40px;
       flex-wrap: wrap;
     }
 
-    .tab-btn {
+    .discipline-btn {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      border: 1px solid rgba(197, 160, 89, 0.3);
       color: var(--text-muted);
-      padding: 12px 24px;
+      padding: 12px 26px;
       border-radius: 30px;
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 500;
       cursor: pointer;
       transition: var(--transition-smooth);
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
-    .tab-btn:hover, .tab-btn.active {
-      color: var(--accent-gold);
+    .discipline-btn:hover, .discipline-btn.active {
+      background: var(--accent-gold);
+      color: #000;
+      font-weight: 600;
       border-color: var(--accent-gold);
-      box-shadow: 0 0 15px var(--accent-gold-glow);
+      box-shadow: 0 6px 20px var(--accent-gold-glow);
     }
+
+    .discipline-pane { display: none; }
+    .discipline-pane.active { display: block; }
 
     /* Section Headers */
     .section-header {
+      text-align: center;
       margin-bottom: 30px;
     }
-
     .section-header h2 {
-      font-size: 2rem;
-      color: var(--text-main);
-      margin-bottom: 5px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 8px;
     }
-
     .section-header p {
       color: var(--text-muted);
       font-size: 0.95rem;
     }
 
     /* Grid Layouts & 3D Tilt Cards */
-    .discipline-pane {
-      display: none;
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
     }
 
-    .discipline-pane.active {
-      display: block;
+    .portfolio-card, .showcase-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+      perspective: 1000px;
     }
 
+    .portfolio-card.hidden { display: none !important; }
+
+    .portfolio-card:hover, .showcase-card:hover {
+      border-color: var(--accent-gold);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px var(--accent-gold-glow);
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .portfolio-card img:hover {
+      transform: scale(1.03);
+    }
+
+    .card-caption {
+      padding: 15px 20px;
+    }
+
+    .card-caption h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .card-caption p {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Portfolio Category Filters */
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 8px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: var(--transition-smooth);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent-gold);
+      color: #000;
+      border-color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    /* Showcase Grid for Software, Writing & Lookbooks */
     .showcase-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -238,25 +325,12 @@
     }
 
     .showcase-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
       padding: 25px;
-      position: relative;
-      transition: transform 0.1s ease-out, box-shadow 0.3s ease;
-      transform-style: preserve-3d;
-      perspective: 1000px;
-      overflow: hidden;
-    }
-
-    .showcase-card:hover {
-      border-color: rgba(212, 175, 55, 0.4);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px var(--accent-gold-glow);
     }
 
     .showcase-tag {
       display: inline-block;
-      background: rgba(212, 175, 55, 0.1);
+      background: rgba(197, 160, 89, 0.1);
       color: var(--accent-gold);
       padding: 4px 10px;
       border-radius: 4px;
@@ -268,9 +342,10 @@
     }
 
     .showcase-card h3 {
+      font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
       margin-bottom: 10px;
-      color: var(--text-main);
+      color: #fff;
     }
 
     .showcase-card p {
@@ -280,15 +355,14 @@
     }
 
     .showcase-card img.expandable {
-      cursor: pointer;
-      transition: transform 0.3s ease;
       width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      background: #000;
       border-radius: 6px;
       margin: 15px 0;
-    }
-
-    .showcase-card img.expandable:hover {
-      transform: scale(1.02);
+      cursor: pointer;
     }
 
     .tech-stack-badges {
@@ -300,260 +374,410 @@
 
     .tech-pill {
       background: #1a1a22;
-      border: 1px solid #2d2d38;
+      border: 1px solid var(--card-border);
       color: var(--text-muted);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       padding: 3px 8px;
       border-radius: 4px;
     }
 
-    /* Photography Pagination */
-    .photo-page {
-      display: none;
-    }
-    .photo-page.active-page {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 25px;
-    }
-
-    .pagination-controls {
+    /* Pagination */
+    .pagination-container {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      align-items: center;
+      gap: 15px;
       margin-top: 40px;
     }
 
     .page-btn {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      color: var(--text-main);
-      padding: 8px 16px;
-      border-radius: 6px;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 8px 20px;
+      border-radius: 20px;
       cursor: pointer;
+      font-weight: 600;
       transition: var(--transition-smooth);
     }
 
-    .page-btn.active, .page-btn:hover {
+    .page-btn:hover:not(:disabled) {
       background: var(--accent-gold);
       color: #000;
-      font-weight: bold;
-      border-color: var(--accent-gold);
     }
 
-    /* Modal / Interactive Lightbox */
+    .page-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      border-color: var(--card-border);
+      color: #666;
+    }
+
+    /* Audio Player Widget */
+    .audio-player-container {
+      position: fixed;
+      bottom: 25px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .audio-btn {
+      background: rgba(20, 20, 24, 0.9);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 10px 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      transition: var(--transition-smooth);
+    }
+
+    .audio-btn.nav-btn { padding: 10px 12px; }
+    .audio-btn:hover { background: var(--accent-gold); color: #000; }
+
+    /* Toast Notification */
+    .toast-notification {
+      position: fixed;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      background: rgba(20, 20, 24, 0.95);
+      border: 1px solid var(--accent-gold);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      opacity: 0;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+      pointer-events: none;
+    }
+    .toast-notification.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* Floating Contact Buttons */
+    .floating-contact {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .floating-contact a {
+      background: #25D366;
+      color: #fff;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: var(--transition-smooth);
+    }
+    .floating-contact a.instagram-btn { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+    .floating-contact a:hover { transform: scale(1.1); }
+
+    /* Lightbox Modal */
     .lightbox-modal {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.92);
-      z-index: 1000;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.94);
+      z-index: 10000;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       padding: 20px;
     }
-
-    .lightbox-modal.active {
-      display: flex;
-    }
-
-    .lightbox-content {
-      max-width: 900px;
-      width: 100%;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .lightbox-img-wrap img {
-      width: 100%;
+    .modal-content {
+      max-width: 90vw;
       max-height: 70vh;
       object-fit: contain;
-      background: #000;
+      border-radius: 8px;
     }
-
-    .lightbox-details {
-      padding: 20px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .verified-badge {
-      color: #4CAF50;
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .whatsapp-inquire-btn {
-      background: #25D366;
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 30px;
       color: #fff;
-      padding: 10px 18px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+    .modal-metadata-box {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .meta-badge {
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 12px;
+      text-transform: uppercase;
+    }
+    .badge-verified { background: rgba(46, 204, 113, 0.15); border: 1px solid #2ecc71; color: #2ecc71; }
+    .badge-artist { background: rgba(197, 160, 89, 0.15); border: 1px solid var(--accent-gold); color: var(--accent-gold); }
+    .badge-series { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #d0d0d0; }
+    
+    .print-inquiry-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      margin-top: 15px;
+      background: #25D366;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
       transition: var(--transition-smooth);
     }
+    .print-inquiry-btn:hover { opacity: 0.9; }
 
-    .whatsapp-inquire-btn:hover {
-      opacity: 0.9;
+    /* Footer */
+    canva-footer, footer {
+      text-align: center;
+      padding: 50px 20px;
+      border-top: 1px solid var(--card-border);
+      margin-top: 60px;
+      color: var(--text-muted);
     }
+    footer p { margin-bottom: 10px; }
+    .footer-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
+    .footer-link { color: var(--accent-gold); text-decoration: none; }
 
-    .lightbox-close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      color: #fff;
-      font-size: 1.8rem;
-      cursor: pointer;
-      z-index: 1001;
-    }
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 768px) {
-      .hero-header h1 { font-size: 2rem; }
-      .showcase-grid, .photo-page.active-page { grid-template-columns: 1fr; }
-      #cursor-spotlight { display: none; }
+      .story-container { grid-template-columns: 1fr; gap: 20px; }
+      .hero-content h1 { font-size: 2.3rem; }
+      #spotlight { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Ambient Gold Cursor Spotlight -->
-  <div id="cursor-spotlight"></div>
+  <!-- Ambient Cursor Gold Spotlight Overlay -->
+  <div class="cursor-spotlight" id="spotlight"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast-notification">🎵 Playing Track</div>
+
+  <!-- Floating Contact Buttons -->
+  <div class="floating-contact">
+    <a href="https://wa.me/260763533205" target="_blank" class="whatsapp-btn" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/phoenix_view_bwm" target="_blank" class="instagram-btn" title="Follow on Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <!-- Multi-Track Audio Playlist Controls -->
+  <div class="audio-player-container">
+    <button id="prev-audio-btn" class="audio-btn nav-btn" title="Previous Track"><i class="fas fa-step-backward"></i></button>
+    <button id="audio-toggle-btn" class="audio-btn">
+      <span id="audio-icon">🎵</span>
+      <span id="audio-label">Soundtrack: Off</span>
+    </button>
+    <button id="next-audio-btn" class="audio-btn nav-btn" title="Next Track"><i class="fas fa-step-forward"></i></button>
+    
+    <audio id="ambient-audio" preload="auto">
+      <source id="audio-source" src="audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a" type="audio/mp4">
+    </audio>
+  </div>
 
   <div class="container">
     
     <!-- Rotating Hero Header with Bio, Story & CMA Nomination -->
-    <header class="hero-header" id="hero-banner">
+    <header class="canva-hero">
+      <div class="hero-slider">
+        <div class="slide active" style="background-image: url('images/20260416_165634.jpeg');"></div>
+        <div class="slide" style="background-image: url('images/20251220_163327.jpeg');"></div>
+        <div class="slide" style="background-image: url('images/20260107_064814 (1).jpeg');"></div>
+      </div>
+      <div class="hero-overlay"></div>
       <div class="hero-content">
-        <div class="cma-badge">
+        <div class="cma-badge-tag">
           <i class="fas fa-award"></i> 2026 Creative Media Awards Nominee
         </div>
-        <h1>Phoenix View <span>Media</span></h1>
-        <p class="bio-intro">Hi, I'm Ben Wesley Mwanza</p>
-        <p class="bio-story">Creative Director, Software Engineer & Visual Storyteller. I bridge the gap between technical mobile architectures and evocative, high-concept editorial media—capturing the raw textures of Zambian nature, scripting cinematic thrillers, and engineering seamless digital experiences.</p>
+        <h1>Hi, I Am Ben Wesley Mwanza</h1>
+        <p class="tagline">the world is like a canvas, grab your brush, let's paint!</p>
       </div>
     </header>
 
-    <!-- Multi-Track Ambient Audio Player -->
-    <div class="audio-player-container">
-      <div class="track-info">
-        <i class="fas fa-compact-disc fa-spin"></i>
-        <div>
-          <strong id="track-title" style="display:block; font-size: 0.9rem;">Ambient Composition I</strong>
-          <span style="font-size: 0.75rem; color: var(--text-muted);">Phoenix Soundscapes</span>
+    <!-- My Story Section -->
+    <section id="about" class="story-section">
+      <div class="story-container">
+        <div class="story-left reveal">
+          <h2>My story</h2>
+        </div>
+        <div class="story-right reveal">
+          <p>My name is Ben Wesley Mwanza—though around here, you might know me as <strong>phoenix_view_bwm</strong>, or simply <em>the passing photographer</em>.</p>
+          <p>I am a traveler, a writer, a software architect, and a visual storyteller. Recognized as a nominee in the <strong>2026 Creative Media Awards (CMA Zambia)</strong>, I operate across both creative lens production and hard-coded digital infrastructure.</p>
+          
+          <div style="border-left: 3px solid var(--accent-gold); padding-left: 15px; margin: 20px 0; background: rgba(197, 160, 89, 0.04);">
+            <p style="font-style: italic; color: var(--accent-gold); margin: 0; padding: 10px 0;">"The version of you today isn't the version you will be tomorrow."</p>
+          </div>
+
+          <p>That thought stayed with me. It made me wonder: How do we hold onto who we are right now? How do we keep today alive for the person we become tomorrow?</p>
+          <p>Then I saw the camera and code editor. Welcome to a world of frozen frames and digital systems—preserved through the View of Ben Wesley Mwanza.</p>
         </div>
       </div>
-      <div class="audio-controls">
-        <button class="audio-btn" onclick="prevTrack()"><i class="fas fa-step-backward"></i></button>
-        <button class="audio-btn" id="play-pause-btn" onclick="toggleAudio()"><i class="fas fa-play"></i></button>
-        <button class="audio-btn" onclick="nextTrack()"><i class="fas fa-step-forward"></i></button>
-      </div>
-    </div>
+    </section>
 
     <!-- Multi-Disciplinary Tab Navigation -->
-    <div class="tab-nav">
-      <button class="tab-btn active" onclick="switchTab('photography-pane')">
-        <i class="fas fa-camera"></i> Photography Series
-      </button>
-      <button class="tab-btn" onclick="switchTab('apps-pane')">
-        <i class="fas fa-code"></i> App Systems & Architecture
-      </button>
-      <button class="tab-btn" onclick="switchTab('editorial-pane')">
-        <i class="fas fa-pen-nib"></i> Screenwriting & Editorial
-      </button>
-      <button class="tab-btn" onclick="switchTab('lookbooks-pane')">
-        <i class="fas fa-book-open"></i> Editorial Lookbooks
-      </button>
+    <div class="discipline-nav reveal">
+      <button class="discipline-btn active" data-tab="photography-pane"><i class="fas fa-camera"></i> Photography Series</button>
+      <button class="discipline-btn" data-tab="apps-pane"><i class="fas fa-code"></i> App Systems & Architecture</button>
+      <button class="discipline-btn" data-tab="editorial-pane"><i class="fas fa-pen-nib"></i> Screenwriting & Editorial</button>
+      <button class="discipline-btn" data-tab="lookbooks-pane"><i class="fas fa-book-open"></i> Editorial Lookbooks</button>
     </div>
 
     <!-- ==========================================
-       PANE 1: PHOTOGRAPHY SERIES WITH PAGINATION
+       PANE 1: PHOTOGRAPHY GALLERY WITH PAGINATION
        ========================================== -->
     <div id="photography-pane" class="discipline-pane active">
       <div class="section-header">
         <h2>Fine Art & Documentary Photography</h2>
         <p>Macro environmental documentation, urban perspective, and Zambian wilderness series.</p>
       </div>
+      
+      <!-- Filter Buttons -->
+      <div class="portfolio-filters reveal">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="road">Road & Journey Series</button>
+        <button class="filter-btn" data-filter="nature">Nature Series</button>
+        <button class="filter-btn" data-filter="painted">Painted World Series</button>
+      </div>
 
-      <!-- PAGE 1 OF PHOTOGRAPHY -->
-      <div class="photo-page active-page" id="photo-page-1">
-        <div class="showcase-card reveal">
-          <span class="showcase-tag">Macro Wilderness</span>
-          <h3>Forest Floor Ecosystems</h3>
-          <img src="images/2_20261008_115127_0001.jpeg" alt="Macro Soil" class="expandable">
-          <p>Detailed documentation of macro soil textures and architectural insect burrows.</p>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Macro Lens</span>
-            <span class="tech-pill">Natural Light</span>
-          </div>
+      <div class="portfolio-grid" id="photo-gallery-grid">
+        <!-- 1. ROAD & JOURNEY SERIES -->
+        <div class="portfolio-card reveal" data-category="road">
+          <img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>The Open Highway</h3><p>Road & Journey Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="road">
+          <img src="images/20260417_093623.jpeg" alt="Passing Through" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Passing Through</h3><p>Road & Journey Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="road">
+          <img src="images/20260416_165634.jpeg" alt="Asphalt Canopy Road" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Asphalt Canopy</h3><p>Road & Journey Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="road">
+          <img src="images/20260416_165431 (1).jpeg" alt="Bridge Overpass Rail" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Overpass Perspective</h3><p>Road & Journey Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="road">
+          <img src="images/20260416_165448.jpeg" alt="Bridge Railing View" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Highway Railing</h3><p>Road & Journey Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="road">
+          <img src="images/20260416_165455 (1).jpeg" alt="Sunset Highway Railing" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Sunset Highway</h3><p>Road & Journey Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="road">
+          <img src="images/20260407_125528 (2).jpeg" alt="Spring Pathway I" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Spring Pathway I</h3><p>Road & Journey Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="road">
+          <img src="images/20260407_123038.jpeg" alt="Travelers on the Road" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Travelers on the Road</h3><p>Road & Journey Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="road">
+          <img src="images/20251219_173958.jpeg" alt="Solitary Trail" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Solitary Trail</h3><p>Road & Journey Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="road">
+          <img src="images/20251219_174730 (5).jpeg" alt="Forest Trail" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Forest Trail</h3><p>Road & Journey Series</p></div>
         </div>
 
-        <div class="showcase-card reveal">
-          <span class="showcase-tag">Landscape Series</span>
-          <h3>Highland Horizon & Silhouettes</h3>
-          <img src="images/1_20261002_091657_0000.jpeg" alt="Silhouette Horizon" class="expandable">
-          <p>Cinematic mountain exploration captured during peak late-afternoon glow.</p>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Landscape</span>
-            <span class="tech-pill">Silhouette</span>
-          </div>
+        <!-- 2. NATURE SERIES -->
+        <div class="portfolio-card reveal" data-category="nature">
+          <img src="images/VideoCapture_20260407-230314.jpeg" alt="Twilight Nature Still" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Twilight Nature Still</h3><p>Nature Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="nature">
+          <img src="images/20260407_132443.jpeg" alt="Spring Meadow Path" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Spring Meadow Path</h3><p>Nature Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="nature">
+          <img src="images/20260407_130529.jpeg" alt="Sunlit Foliage Trail" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Sunlit Foliage Trail</h3><p>Nature Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="nature">
+          <img src="images/20260407_131225.jpeg" alt="Forest Canopy Light" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Forest Canopy Light</h3><p>Nature Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="nature">
+          <img src="images/20260407_130545.jpeg" alt="Woodland Perspective" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Woodland Perspective</h3><p>Nature Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="nature">
+          <img src="images/VideoCapture_20260408-180522 (2).jpeg" alt="Evening Atmosphere Still" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Evening Atmosphere Still</h3><p>Nature Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="nature">
+          <img src="images/20260407_143818.jpeg" alt="Afternoon Wilds" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Afternoon Wilds</h3><p>Nature Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="nature">
+          <img src="images/20260407_143213.jpeg" alt="Lush Green Valley" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Lush Green Valley</h3><p>Nature Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="nature">
+          <img src="images/20260407_140322 (2).jpeg" alt="Verdant Canopy" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Verdant Canopy</h3><p>Nature Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="nature">
+          <img src="images/IMG_20260407_132916_921.jpeg" alt="Botanical Horizon" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Botanical Horizon</h3><p>Nature Series</p></div>
         </div>
 
-        <div class="showcase-card reveal">
-          <span class="showcase-tag">Wilderness Series</span>
-          <h3>Chipata Forest Textures</h3>
-          <img src="images/1_20261008_115127_0000.jpeg" alt="Chipata Forest" class="expandable">
-          <p>Immersive framing of natural forest elements and canopy dynamics.</p>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Documentary</span>
-            <span class="tech-pill">Nature</span>
-          </div>
+        <!-- 3. PAINTED WORLD SERIES -->
+        <div class="portfolio-card reveal" data-category="painted">
+          <img src="images/20251208_065856 (2).jpeg" alt="Painted Dew Study I" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Painted Dew Study I</h3><p>Painted World Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="painted">
+          <img src="images/20251211_173030.jpeg" alt="Painted Horizon I" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Painted Horizon I</h3><p>Painted World Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="painted">
+          <img src="images/20251211_173030 (1).jpeg" alt="Painted Horizon II" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Painted Horizon II</h3><p>Painted World Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="painted">
+          <img src="images/20251223_164301 (1).jpeg" alt="Painted Falls Mist" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Painted Falls Mist</h3><p>Painted World Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="painted">
+          <img src="images/20260102_173213.jpeg" alt="Painted Valley Light" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Painted Valley Light</h3><p>Painted World Series</p></div>
+        </div>
+        <div class="portfolio-card reveal" data-category="painted">
+          <img src="images/20260102_170309 (1).jpeg" alt="Painted Sunset Glow" class="expandable" loading="lazy">
+          <div class="card-caption"><h3>Painted Sunset Glow</h3><p>Painted World Series</p></div>
         </div>
       </div>
 
-      <!-- PAGE 2 OF PHOTOGRAPHY -->
-      <div class="photo-page" id="photo-page-2">
-        <div class="showcase-card reveal">
-          <span class="showcase-tag">Botanical Close-Up</span>
-          <h3>Scarlet Flora Study</h3>
-          <img src="images/1_20261023_121000_0000.jpeg" alt="Scarlet Flora" class="expandable">
-          <p>Close-up study of natural gradients and organic structures.</p>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Macro</span>
-            <span class="tech-pill">Color Theory</span>
-          </div>
-        </div>
-
-        <div class="showcase-card reveal">
-          <span class="showcase-tag">Countryside Series</span>
-          <h3>Zambian Agricultural Rhythm</h3>
-          <img src="images/3_20261023_121001_0002.jpeg" alt="Country Side" class="expandable">
-          <p>Documenting rural textures and agricultural landscapes from a unique vantage point.</p>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Fine Art</span>
-            <span class="tech-pill">Field Study</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Photography Pagination Controls -->
-      <div class="pagination-controls">
-        <button class="page-btn active" onclick="switchPhotoPage(1, this)">1</button>
-        <button class="page-btn" onclick="switchPhotoPage(2, this)">2</button>
+      <!-- Pagination Navigation Controls -->
+      <div class="pagination-container reveal">
+        <button id="prev-page-btn" class="page-btn">← Previous</button>
+        <span id="page-indicator" style="font-size: 0.9rem; color: var(--text-muted);">Page 1 of 1</span>
+        <button id="next-page-btn" class="page-btn">Next →</button>
       </div>
     </div>
 
@@ -567,13 +791,24 @@
       </div>
       <div class="showcase-grid">
         <div class="showcase-card reveal">
-          <span class="showcase-tag">Mobile Application Platform</span>
-          <h3>All-In-One Delivery & Logistics Network</h3>
-          <p>Integrated mobile logistics platform engineered with real-time tracking, local payment gateway APIs, and offline SMS fallback capabilities.</p>
+          <span class="showcase-tag">Application Infrastructure</span>
+          <h3>Logistics & Regional Delivery Platform</h3>
+          <p>A full-stack, mobile-first logistics interface designed for high-density delivery routes, local mobile payment API integrations, and offline messaging functionality.</p>
           <div class="tech-stack-badges">
-            <span class="tech-pill">Software Architecture</span>
-            <span class="tech-pill">API Integration</span>
-            <span class="tech-pill">Mobile Engine</span>
+            <span class="tech-pill">Mobile Architecture</span>
+            <span class="tech-pill">REST APIs</span>
+            <span class="tech-pill">No-Code + Custom JS</span>
+          </div>
+        </div>
+
+        <div class="showcase-card reveal">
+          <span class="showcase-tag">Digital Platform</span>
+          <h3>Phoenix View Digital Media Portal</h3>
+          <p>High-performance client-side image rendering engine with dynamic category filtration, lightbox zoom overlays, and integrated ambient soundscape routing.</p>
+          <div class="tech-stack-badges">
+            <span class="tech-pill">HTML5 / CSS3</span>
+            <span class="tech-pill">GitHub Pages</span>
+            <span class="tech-pill">SEO Structured Data</span>
           </div>
         </div>
       </div>
@@ -589,22 +824,22 @@
       </div>
       <div class="showcase-grid">
         <div class="showcase-card reveal">
-          <span class="showcase-tag">Feature Film Screenplay</span>
-          <h3>Game of Couples</h3>
-          <p>A multi-couple dramatic thriller exploring human psychology, wilderness survival, and hidden motives during an isolated mountain hiking expedition.</p>
+          <span class="showcase-tag">Dramatic Thriller Script</span>
+          <h3>Game of Couples (Screenplay)</h3>
+          <p>A multi-couple dramatic thriller movie script following a wilderness hiking expedition that unspools secrets, romantic tension, and survival dynamics.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Screenwriting</span>
-            <span class="tech-pill">Dramatic Thriller</span>
+            <span class="tech-pill">Character Arc Structuring</span>
           </div>
         </div>
 
         <div class="showcase-card reveal">
           <span class="showcase-tag">Documentary Pitch Deck</span>
           <h3>The Frontline Keepers: Zambia’s Wildlife War</h3>
-          <p>Comprehensive multi-page pitch deck for a blue-chip natural history documentary series focusing on rangers and regional wildlife protection.</p>
+          <p>A comprehensive pitch deck for an international documentary series focusing on frontline conservation rangers, regional wildlife protection, and human drama.</p>
           <div class="tech-stack-badges">
-            <span class="tech-pill">Documentary Pitch</span>
-            <span class="tech-pill">Environmental Narrative</span>
+            <span class="tech-pill">Documentary Narrative</span>
+            <span class="tech-pill">Series Bible</span>
           </div>
         </div>
       </div>
@@ -624,7 +859,7 @@
         <div class="showcase-card reveal">
           <span class="showcase-tag">Travel Magazine Cover</span>
           <h3>EXPLORE: The Beauty of Mountains</h3>
-          <img src="images/1_20261002_091657_0000.jpeg" alt="EXPLORE Travel Magazine Cover" class="expandable">
+          <img src="images/1_20261002_091657_0000.jpeg" alt="EXPLORE Travel Magazine Cover" class="expandable" loading="lazy">
           <p>Signature cover concept for the EXPLORE publication series, featuring silhouette cinematography and high-contrast editorial typography.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Cover Art Direction</span>
@@ -637,12 +872,11 @@
         <div class="showcase-card reveal">
           <span class="showcase-tag">Editorial Feature — Spread 03</span>
           <h3>The Unseen World Beneath Our Feet</h3>
-          <img src="images/2_20261008_115127_0001.jpeg" alt="The Unseen World Beneath Our Feet" class="expandable">
+          <img src="images/2_20261008_115127_0001.jpeg" alt="The Unseen World Beneath Our Feet" class="expandable" loading="lazy">
           <p>Multi-column editorial spread exploring micro ecosystems, soil craftsmanship, and the hidden architectural marvels of the forest floor.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Macro Photography</span>
             <span class="tech-pill">Editorial Copywriting</span>
-            <span class="tech-pill">Publication Layout</span>
           </div>
         </div>
 
@@ -650,20 +884,19 @@
         <div class="showcase-card reveal">
           <span class="showcase-tag">Nature Lookbook Series</span>
           <h3>Crimson Tones: A Painted Garden Series</h3>
-          <img src="images/3_20261023_121001_0002.jpeg" alt="Crimson Tones Lookbook" class="expandable">
+          <img src="images/3_20261023_121001_0002.jpeg" alt="Crimson Tones Lookbook" class="expandable" loading="lazy">
           <p>Agricultural heritage meets artistic vision. Macro perspective capturing the dew-kissed texture and scarlet tones of the Zambian countryside.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Canva Editorial Design</span>
             <span class="tech-pill">Macro Photography</span>
-            <span class="tech-pill">Visual Storytelling</span>
           </div>
         </div>
 
-        <!-- 4. ADDITIONAL LOOKBOOK SPREAD 1 -->
+        <!-- 4. ADDITIONAL LOOKBOOK PLATE 02 -->
         <div class="showcase-card reveal">
           <span class="showcase-tag">Editorial Lookbook — Plate 02</span>
           <h3>Botanical Textures & Scarlet Tones</h3>
-          <img src="images/1_20261023_121000_0000.jpeg" alt="Lookbook Plate 02" class="expandable">
+          <img src="images/1_20261023_121000_0000.jpeg" alt="Lookbook Plate 02" class="expandable" loading="lazy">
           <p>A closer look at the organic lines and rich chromatic tones designed for publication layout.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Lookbook Spread</span>
@@ -671,11 +904,11 @@
           </div>
         </div>
 
-        <!-- 5. ADDITIONAL LOOKBOOK SPREAD 2 -->
+        <!-- 5. ADDITIONAL LOOKBOOK PLATE 03 -->
         <div class="showcase-card reveal">
           <span class="showcase-tag">Editorial Lookbook — Plate 03</span>
           <h3>Silent Rhythm of the Countryside</h3>
-          <img src="images/2_20261023_121001_0001.jpeg" alt="Lookbook Plate 03" class="expandable">
+          <img src="images/2_20261023_121001_0001.jpeg" alt="Lookbook Plate 03" class="expandable" loading="lazy">
           <p>Balancing whitespace, structured typography, and high-impact macro imagery.</p>
           <div class="tech-stack-badges">
             <span class="tech-pill">Editorial Design</span>
@@ -687,135 +920,252 @@
 
   </div>
 
-  <!-- Interactive Lightbox Modal -->
-  <div class="lightbox-modal" id="lightbox">
-    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <div class="lightbox-content">
-      <div class="lightbox-img-wrap">
-        <img id="lightbox-img" src="" alt="Expanded Preview">
-      </div>
-      <div class="lightbox-details">
-        <div>
-          <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Original Works</span>
-          <h4 id="lightbox-title" style="margin-top: 5px;">Design Title</h4>
-        </div>
-        <a id="whatsapp-link" href="#" target="_blank" class="whatsapp-inquire-btn">
-          <i class="fab fa-whatsapp"></i> Inquire Print / License
-        </a>
-      </div>
+  <!-- Footer -->
+  <footer>
+    <p>Let's paint your canvas together.</p>
+    <div class="footer-links">
+      <a href="mailto:benmwanza15@gmail.com" class="footer-link">benmwanza15@gmail.com</a>
+      <span>•</span>
+      <a href="https://wa.me/260763533205" target="_blank" class="footer-link">+260 76 3533205</a>
     </div>
+    <p>&copy; 2026 Phoenix View Media. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="lightbox-modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div id="modal-caption" style="text-align: center; margin-top: 10px; color: #fff; font-family: 'Playfair Display', serif; font-size: 1.1rem;"></div>
+    
+    <div class="modal-metadata-box">
+      <span class="meta-badge badge-verified">✓ Verified Original</span>
+      <span class="meta-badge badge-artist">Ben Wesley Mwanza</span>
+      <span id="modal-series-badge" class="meta-badge badge-series">Series Work</span>
+    </div>
+
+    <a id="print-request-btn" href="#" target="_blank" class="print-inquiry-btn">
+      <i class="fab fa-whatsapp"></i> Inquire Print / License
+    </a>
   </div>
 
-  <!-- ==========================================
-     INTERACTIVE JAVASCRIPT LOGIC
-     ========================================== -->
+  <!-- Scripts -->
   <script>
-    /* 1. Cursor Spotlight Tracking */
-    const spotlight = document.getElementById('cursor-spotlight');
-    document.addEventListener('mousemove', (e) => {
+    /* 1. Cursor Spotlight */
+    const spotlight = document.getElementById('spotlight');
+    window.addEventListener('mousemove', (e) => {
       spotlight.style.left = e.clientX + 'px';
       spotlight.style.top = e.clientY + 'px';
     });
 
-    /* 2. Rotating Hero Header Images (3 Backgrounds) */
-    const heroImages = [
-      "images/1_20261002_091657_0000.jpeg",
-      "images/2_20261008_115127_0001.jpeg",
-      "images/3_20261023_121001_0002.jpeg"
-    ];
-    let currentHeroIndex = 0;
-    const heroBanner = document.getElementById('hero-banner');
-
-    function rotateHeroBackground() {
-      currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
-      heroBanner.style.backgroundImage = `url('${heroImages[currentHeroIndex]}')`;
-    }
-    // Initialize first image & set rotation interval (every 5 seconds)
-    heroBanner.style.backgroundImage = `url('${heroImages[0]}')`;
-    setInterval(rotateHeroBackground, 5000);
-
-    /* 3. 3D Card Tilt Micro-Interactions */
-    document.querySelectorAll('.showcase-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
+    /* 2. 3D Tilt Effect */
+    document.querySelectorAll('.portfolio-card, .showcase-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        card.style.transform = `rotateY(${x / 20}deg) rotateX(${-y / 20}deg) translateZ(10px)`;
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
+        const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
       });
       card.addEventListener('mouseleave', () => {
-        card.style.transform = 'rotateY(0deg) rotateX(0deg) translateZ(0px)';
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
       });
     });
 
-    /* 4. Multi-Disciplinary Tab Switching */
-    function switchTab(paneId) {
-      document.querySelectorAll('.discipline-pane').forEach(pane => pane.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      
-      document.getElementById(paneId).classList.add('active');
-      event.currentTarget.classList.add('active');
+    /* 3. Multi-Disciplinary Tab Switching */
+    const disciplineBtns = document.querySelectorAll('.discipline-btn');
+    const disciplinePanes = document.querySelectorAll('.discipline-pane');
+
+    disciplineBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        disciplineBtns.forEach(b => b.classList.remove('active'));
+        disciplinePanes.forEach(p => p.classList.remove('active'));
+        
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+
+    /* 4. Hero Slider */
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    let currentSlide = 0;
+    if (slides.length > 0) {
+      setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 5000);
     }
 
-    /* 5. Photography Pagination Logic */
-    function switchPhotoPage(pageNum, btnElement) {
-      document.querySelectorAll('.photo-page').forEach(page => page.classList.remove('active-page'));
-      document.querySelectorAll('.pagination-controls .page-btn').forEach(btn => btn.classList.remove('active'));
-      
-      document.getElementById('photo-page-' + pageNum).classList.add('active-page');
-      btnElement.classList.add('active');
+    /* 5. Pagination & Category Filtering Engine */
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = Array.from(document.querySelectorAll('.portfolio-card'));
+    const prevPageBtn = document.getElementById('prev-page-btn');
+    const nextPageBtn = document.getElementById('next-page-btn');
+    const pageIndicator = document.getElementById('page-indicator');
+
+    let currentPage = 1;
+    const itemsPerPage = 20;
+    let currentFilter = 'all';
+
+    function getFilteredCards() {
+      if (currentFilter === 'all') return portfolioCards;
+      return portfolioCards.filter(card => card.getAttribute('data-category') === currentFilter);
     }
 
-    /* 6. Interactive Lightbox Functionality */
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxTitle = document.getElementById('lightbox-title');
-    const whatsappLink = document.getElementById('whatsapp-link');
+    function renderGallery() {
+      const filtered = getFilteredCards();
+      const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
 
-    document.addEventListener('click', e => {
-      if (e.target.classList.contains('expandable')) {
-        const imgSrc = e.target.getAttribute('src');
-        const cardTitle = e.target.parentElement.querySelector('h3').innerText;
-        
-        lightboxImg.src = imgSrc;
-        lightboxTitle.innerText = cardTitle;
-        whatsappLink.href = `https://wa.me/?text=Hello%20Phoenix%20View%20Media,%20I%20am%20interested%20in%20licensing/inquiring%20about:%20${encodeURIComponent(cardTitle)}`;
-        
-        lightbox.classList.add('active');
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+
+      portfolioCards.forEach(card => card.classList.add('hidden'));
+      filtered.slice(startIndex, endIndex).forEach(card => card.classList.remove('hidden'));
+
+      pageIndicator.innerText = `Page ${currentPage} of ${totalPages}`;
+      prevPageBtn.disabled = currentPage === 1;
+      nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        currentPage = 1;
+        renderGallery();
+      });
+    });
+
+    prevPageBtn.addEventListener('click', () => {
+      if (currentPage > 1) { currentPage--; renderGallery(); }
+    });
+
+    nextPageBtn.addEventListener('click', () => {
+      const totalPages = Math.ceil(getFilteredCards().length / itemsPerPage);
+      if (currentPage < totalPages) { currentPage++; renderGallery(); }
+    });
+
+    renderGallery();
+
+    /* 6. Lightbox & Print Request */
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalCaption = document.getElementById('modal-caption');
+    const seriesBadge = document.getElementById('modal-series-badge');
+    const printBtn = document.getElementById('print-request-btn');
+    const closeBtn = document.querySelector('.modal-close');
+
+    document.querySelectorAll('.expandable').forEach(img => {
+      img.addEventListener('click', function() {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+        const photoTitle = this.alt || "Fine Art Work";
+        modalCaption.innerText = photoTitle;
+
+        const parentCard = this.closest('.portfolio-card') || this.closest('.showcase-card');
+        if (parentCard && parentCard.classList.contains('portfolio-card')) {
+          const category = parentCard.getAttribute('data-category');
+          seriesBadge.innerText = category === 'road' ? 'Road & Journey Series' : category === 'nature' ? 'Nature Series' : 'Painted World Series';
+        } else {
+          seriesBadge.innerText = 'Editorial Lookbook Spread';
+        }
+
+        printBtn.href = `https://wa.me/260763533205?text=${encodeURIComponent(`Hello Ben, I am interested in licensing/inquiring about: "${photoTitle}" (Phoenix View Media).`)}`;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => { modal.style.display = "none"; });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg && e.target !== printBtn && !modalImg.contains(e.target)) {
+        modal.style.display = "none";
       }
     });
 
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-    }
-
-    /* 7. Multi-Track Audio Player Logic */
+    /* 7. Multi-Track Audio Playlist & Toast Notification */
     const playlist = [
-      { title: "Ambient Composition I", artist: "Phoenix Soundscapes" },
-      { title: "Zambian Horizons Theme", artist: "Phoenix Soundscapes" },
-      { title: "Golden Hour Instrumental", artist: "Phoenix Soundscapes" }
+      { title: "Mr. Morale (ft. Tanna Leone)", src: "audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a" },
+      { title: "Majesty (Official)", src: "audio/ISLY_-_MAJESTY__Offical_Video_(128k).m4a" },
+      { title: "The Unknown - Northwest Stories", src: "audio/The Unknown - Northwest Stories.mp3" }
     ];
+
     let currentTrackIndex = 0;
-    let isPlaying = false;
+    let toastTimeout;
+    const ambientAudio = document.getElementById('ambient-audio');
+    const audioSource = document.getElementById('audio-source');
+    const audioBtn = document.getElementById('audio-toggle-btn');
+    const audioLabel = document.getElementById('audio-label');
+    const audioIcon = document.getElementById('audio-icon');
+    const prevBtn = document.getElementById('prev-audio-btn');
+    const nextBtn = document.getElementById('next-audio-btn');
+    const toast = document.getElementById('toast');
 
-    function toggleAudio() {
-      const btn = document.getElementById('play-pause-btn');
-      isPlaying = !isPlaying;
-      btn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
+    function showToast(title) {
+      toast.innerText = `🎵 Now Playing: ${title}`;
+      toast.classList.add('show');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => { toast.classList.remove('show'); }, 3500);
     }
 
-    function nextTrack() {
+    function loadTrack(index) {
+      audioSource.src = playlist[index].src;
+      ambientAudio.load();
+      audioLabel.innerText = playlist[index].title;
+    }
+
+    loadTrack(currentTrackIndex);
+
+    audioBtn.addEventListener('click', () => {
+      if (ambientAudio.paused) {
+        ambientAudio.play();
+        audioIcon.innerText = "🔊";
+        showToast(playlist[currentTrackIndex].title);
+      } else {
+        ambientAudio.pause();
+        audioLabel.innerText = "Soundtrack: Off";
+        audioIcon.innerText = "🎵";
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
       currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-      updateTrackDisplay();
-    }
+      loadTrack(currentTrackIndex);
+      ambientAudio.play();
+      audioIcon.innerText = "🔊";
+      showToast(playlist[currentTrackIndex].title);
+    });
 
-    function prevTrack() {
+    prevBtn.addEventListener('click', () => {
       currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
-      updateTrackDisplay();
-    }
+      loadTrack(currentTrackIndex);
+      ambientAudio.play();
+      audioIcon.innerText = "🔊";
+      showToast(playlist[currentTrackIndex].title);
+    });
 
-    function updateTrackDisplay() {
-      document.getElementById('track-title').innerText = playlist[currentTrackIndex].title;
-    }
+    ambientAudio.addEventListener('ended', () => {
+      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+      loadTrack(currentTrackIndex);
+      ambientAudio.play();
+      showToast(playlist[currentTrackIndex].title);
+    });
+
+    /* 8. Intersection Observer */
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   </script>
+
 </body>
 </html>
