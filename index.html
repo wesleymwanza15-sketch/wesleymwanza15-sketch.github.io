@@ -8,10 +8,10 @@
   <meta name="google-site-verification" content="JyXSaaWSG6hu7IIQswfRuYDiZdcndnIPDrgWVcC2_sM" />
 
   <!-- Primary Search Engine SEO Meta Tags -->
-  <title>Ben Wesley Mwanza | Visual Archivist & Developer | CMA 2026 Nominee</title>
-  <meta name="title" content="Ben Wesley Mwanza | Visual Archivist & Developer | CMA 2026 Nominee">
-  <meta name="description" content="Official portfolio of Ben Wesley Mwanza (phoenix_view_bwm), Visual Archivist & Developer, CMA 2026 Best Documentary Photography Nominee. Founder of Phoenix View Media.">
-  <meta name="keywords" content="Ben Wesley Mwanza, Visual Archivist, Developer, phoenix_view_bwm, Phoenix View Media, CMA 2026 best documentary photography, Zambian photographer, App developer Lusaka">
+  <title>Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media</title>
+  <meta name="title" content="Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media">
+  <meta name="description" content="Official platform of Ben Wesley Mwanza (phoenix_view_bwm), Visual Archivist, App Developer, and CMA 2026 Best Documentary Photography Nominee. Founder of Phoenix View Media.">
+  <meta name="keywords" content="Ben Wesley Mwanza, Visual Archivist, Developer, phoenix_view_bwm, Phoenix View Media, CMA 2026 best documentary photography, Zambian photographer, App developer Lusaka, cultural grants, eco-lodge media packaging">
   <meta name="author" content="Ben Wesley Mwanza">
   <meta name="robots" content="index, follow">
 
@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="Phoenix View Media">
   <meta property="og:url" content="https://wesleymwanza15-sketch.github.io/">
   <meta property="og:title" content="Ben Wesley Mwanza — Visual Archivist & Developer">
-  <meta property="og:description" content="Explore photography series, app system architectures, and editorial storytelling by Ben Wesley Mwanza (Phoenix View Media).">
+  <meta property="og:description" content="Explore photography series, institutional grant roadmaps, eco-lodge partnerships, and collaborative media by Ben Wesley Mwanza.">
   <meta property="og:image" content="https://wesleymwanza15-sketch.github.io/images/20260416_165634.jpeg">
 
   <!-- JSON-LD Structured Data for Enhanced SEO -->
@@ -39,7 +39,7 @@
       "@type": "Organization",
       "name": "Phoenix View Media"
     },
-    "knowsAbout": ["Documentary Photography", "Software Architecture", "Screenwriting", "Editorial Design"]
+    "knowsAbout": ["Documentary Photography", "Software Architecture", "Screenwriting", "Cultural Grants", "Eco-Lodge Media Packaging"]
   }
   </script>
 
@@ -458,6 +458,52 @@
     }
     [data-theme="light"] .reader-btn:hover { color: #000; }
 
+    /* Strategic Roadmap Section Styles */
+    .strategy-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--card-border);
+      margin-top: 60px;
+    }
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .strategy-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    .strategy-card:hover {
+      border-color: var(--accent-gold);
+      box-shadow: 0 10px 30px var(--accent-gold-glow);
+    }
+    .strategy-num {
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: rgba(197, 160, 89, 0.08);
+      font-weight: 700;
+    }
+    .strategy-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+    .strategy-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
     /* Pagination Controls */
     .pagination-container {
       display: flex;
@@ -672,7 +718,7 @@
       font-size: 1.8rem;
       cursor: pointer;
     }
-    .reader- close:hover { color: var(--text-main); }
+    .reader-close:hover { color: var(--text-main); }
 
     /* Footer */
     footer {
@@ -978,7 +1024,7 @@
     </div>
 
     <!-- ==========================================
-       PANE 3: SCREENWRITING & EDITORIAL TEXT
+       PANE 3: SCREENWRITING & EDITORIAL
        ========================================== -->
     <div id="editorial-pane" class="discipline-pane">
       <div class="section-header">
@@ -1024,8 +1070,7 @@
       </div>
 
       <div class="showcase-grid">
-
-        <!-- 1. EXPLORE MAGAZINE COVER -->
+        <!-- Lookbook Cards 1 through 25 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Travel Magazine Cover</span>
@@ -1033,13 +1078,8 @@
             <img src="images/1_20261002_091657_0000.jpeg" alt="EXPLORE Travel Magazine Cover" class="expandable" loading="lazy">
             <p>Signature cover concept for the EXPLORE publication series, featuring silhouette cinematography and high-contrast editorial typography.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Cover Art Direction</span>
-            <span class="tech-pill">Typography</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Cover Art</span><span class="tech-pill">Typography</span></div>
         </div>
-
-        <!-- 2. THE UNSEEN WORLD BENEATH OUR FEET -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Feature — Spread 03</span>
@@ -1047,13 +1087,8 @@
             <img src="images/2_20261008_115127_0001.jpeg" alt="The Unseen World Beneath Our Feet" class="expandable" loading="lazy">
             <p>Multi-column editorial spread exploring micro ecosystems, soil craftsmanship, and the hidden architectural marvels of the forest floor.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Macro Photography</span>
-            <span class="tech-pill">Editorial Copywriting</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Macro Photography</span><span class="tech-pill">Editorial Copy</span></div>
         </div>
-
-        <!-- 3. CRIMSON TONES: PAINTED GARDEN -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Nature Lookbook Series</span>
@@ -1061,13 +1096,8 @@
             <img src="images/3_20261023_121001_0002.jpeg" alt="Crimson Tones Lookbook" class="expandable" loading="lazy">
             <p>Agricultural heritage meets artistic vision. Macro perspective capturing the dew-kissed texture and scarlet tones of the Zambian countryside.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Canva Editorial Design</span>
-            <span class="tech-pill">Visual Storytelling</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Canva Editorial</span><span class="tech-pill">Visual Storytelling</span></div>
         </div>
-
-        <!-- 4. LOOKBOOK SPREAD 04 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 02</span>
@@ -1075,13 +1105,8 @@
             <img src="images/1_20261023_121000_0000.jpeg" alt="Lookbook Plate 02" class="expandable" loading="lazy">
             <p>A closer look at the organic lines and rich chromatic tones designed for publication layout.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Lookbook Spread</span>
-            <span class="tech-pill">Macro Art</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Lookbook Spread</span><span class="tech-pill">Macro Art</span></div>
         </div>
-
-        <!-- 5. LOOKBOOK SPREAD 05 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 03</span>
@@ -1089,13 +1114,8 @@
             <img src="images/2_20261023_121001_0001.jpeg" alt="Lookbook Plate 03" class="expandable" loading="lazy">
             <p>Balancing whitespace, structured typography, and high-impact macro imagery.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Editorial Design</span>
-            <span class="tech-pill">Typography</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Editorial Design</span><span class="tech-pill">Typography</span></div>
         </div>
-
-        <!-- 6. LOOKBOOK SPREAD 06 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 04</span>
@@ -1103,13 +1123,8 @@
             <img src="images/4_20261023_121001_0003.jpeg" alt="Lookbook Plate 04" class="expandable" loading="lazy">
             <p>Study of shadow framing and organic geometry within nature series spreads.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Publication Layout</span>
-            <span class="tech-pill">Art Direction</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Publication Layout</span><span class="tech-pill">Art Direction</span></div>
         </div>
-
-        <!-- 7. LOOKBOOK SPREAD 07 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 05</span>
@@ -1117,13 +1132,8 @@
             <img src="images/5_20261023_121001_0004.jpeg" alt="Lookbook Plate 05" class="expandable" loading="lazy">
             <p>Wide perspective editorial spread featuring deep green foliage and natural lighting.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Landscape Spread</span>
-            <span class="tech-pill">Editorial Copy</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Landscape Spread</span><span class="tech-pill">Editorial Copy</span></div>
         </div>
-
-        <!-- 8. LOOKBOOK SPREAD 08 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 06</span>
@@ -1131,13 +1141,8 @@
             <img src="images/6_20261023_121001_0005.jpeg" alt="Lookbook Plate 06" class="expandable" loading="lazy">
             <p>Editorial arrangement capturing woodland atmosphere and ambient forest lighting.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Canopy Series</span>
-            <span class="tech-pill">Lookbook Layout</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Canopy Series</span><span class="tech-pill">Lookbook Layout</span></div>
         </div>
-
-        <!-- 9. LOOKBOOK SPREAD 09 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 07</span>
@@ -1145,13 +1150,8 @@
             <img src="images/7_20261023_121001_0006.jpeg" alt="Lookbook Plate 07" class="expandable" loading="lazy">
             <p>High-resolution botanical close-ups prepared for print and digital publication.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Macro Detail</span>
-            <span class="tech-pill">Print Ready</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Macro Detail</span><span class="tech-pill">Print Ready</span></div>
         </div>
-
-        <!-- 10. UNSEEN WORLD SPREAD 01 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Unseen World — Spread 01</span>
@@ -1159,13 +1159,8 @@
             <img src="images/1_20261008_115127_0000.jpeg" alt="Unseen World Opening Plate" class="expandable" loading="lazy">
             <p>Title spread introducing readers to macro micro-ecosystems and natural soil layers.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Editorial Lead</span>
-            <span class="tech-pill">Storytelling</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Editorial Lead</span><span class="tech-pill">Storytelling</span></div>
         </div>
-
-        <!-- 11. UNSEEN WORLD SPREAD 02 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Unseen World — Spread 02</span>
@@ -1173,13 +1168,8 @@
             <img src="images/3_20261008_115127_0002.jpeg" alt="Unseen World Spread 02" class="expandable" loading="lazy">
             <p>Macro analysis of organic textures and forest floor biodiversity.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Field Research</span>
-            <span class="tech-pill">Macro Lens</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Field Research</span><span class="tech-pill">Macro Lens</span></div>
         </div>
-
-        <!-- 12. UNSEEN WORLD SPREAD 04 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Unseen World — Spread 04</span>
@@ -1187,13 +1177,8 @@
             <img src="images/4_20261008_115127_0003.jpeg" alt="Unseen World Spread 04" class="expandable" loading="lazy">
             <p>Documenting insect architecture and subtle environmental shifts on the forest floor.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Documentary Frame</span>
-            <span class="tech-pill">Editorial</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Documentary Frame</span><span class="tech-pill">Editorial</span></div>
         </div>
-
-        <!-- 13. UNSEEN WORLD SPREAD 05 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Unseen World — Spread 05</span>
@@ -1201,13 +1186,8 @@
             <img src="images/5_20261008_115128_0004.jpeg" alt="Unseen World Spread 05" class="expandable" loading="lazy">
             <p>Summary spread combining prose, macro imagery, and publication closing layout.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Closing Spread</span>
-            <span class="tech-pill">Prose & Copy</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Closing Spread</span><span class="tech-pill">Prose & Copy</span></div>
         </div>
-
-        <!-- 14. EXPLORE SERIES SPREAD 02 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">EXPLORE Series — Plate 02</span>
@@ -1215,13 +1195,8 @@
             <img src="images/2_20261002_091657_0001.jpeg" alt="Mountain Ridge Silhouette" class="expandable" loading="lazy">
             <p>Cinematic mountain ridge silhouette captured during peak sunset glow.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Landscape</span>
-            <span class="tech-pill">Silhouette</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Landscape</span><span class="tech-pill">Silhouette</span></div>
         </div>
-
-        <!-- 15. EXPLORE SERIES SPREAD 03 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">EXPLORE Series — Plate 03</span>
@@ -1229,13 +1204,8 @@
             <img src="images/3_20261002_091657_0002.jpeg" alt="Highland Peak Exploration" class="expandable" loading="lazy">
             <p>Dramatic vista layout from the mountain series editorial compilation.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Vista Spread</span>
-            <span class="tech-pill">Fine Art</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Vista Spread</span><span class="tech-pill">Fine Art</span></div>
         </div>
-
-        <!-- 16. EXPLORE SERIES SPREAD 04 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">EXPLORE Series — Plate 04</span>
@@ -1243,13 +1213,8 @@
             <img src="images/4_20261002_091657_0003.jpeg" alt="Solitary Expedition Path" class="expandable" loading="lazy">
             <p>Editorial framing of winding trails and remote highland exploration.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Travel Series</span>
-            <span class="tech-pill">Editorial Layout</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Travel Series</span><span class="tech-pill">Editorial Layout</span></div>
         </div>
-
-        <!-- 17. EXPLORE SERIES SPREAD 05 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">EXPLORE Series — Plate 05</span>
@@ -1257,13 +1222,8 @@
             <img src="images/5_20261002_091657_0004.jpeg" alt="Highland Canopy Spread" class="expandable" loading="lazy">
             <p>Closing magazine plate highlighting sky gradients and high-contrast canopy lines.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Sky Gradients</span>
-            <span class="tech-pill">Magazine Plate</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Sky Gradients</span><span class="tech-pill">Magazine Plate</span></div>
         </div>
-
-        <!-- 18. WHITE & BLACK LIGHT MODERN MINIMAL (0000) -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Modern Minimal Plate I</span>
@@ -1271,13 +1231,8 @@
             <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035035_0000.jpeg" alt="White and Black Light Modern Minimal Plate I" class="expandable" loading="lazy">
             <p>Light modern minimal aesthetic layout emphasizing clean lines, crisp contrast, and sophisticated typography.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Light Minimal</span>
-            <span class="tech-pill">Plate I</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Light Minimal</span><span class="tech-pill">Plate I</span></div>
         </div>
-
-        <!-- 19. WHITE & BLACK LIGHT MODERN MINIMAL (0001) -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Modern Minimal Plate II</span>
@@ -1285,13 +1240,8 @@
             <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0001.jpeg" alt="White and Black Light Modern Minimal Plate II" class="expandable" loading="lazy">
             <p>Balanced whitespace composition tailored for high-end digital editorial portfolios and layout frames.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Whitespace</span>
-            <span class="tech-pill">Plate II</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Whitespace</span><span class="tech-pill">Plate II</span></div>
         </div>
-
-        <!-- 20. WHITE & BLACK LIGHT MODERN MINIMAL (0002) -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Modern Minimal Plate III</span>
@@ -1299,13 +1249,8 @@
             <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0002.jpeg" alt="White and Black Light Modern Minimal Plate III" class="expandable" loading="lazy">
             <p>Refined publication spread featuring structured content blocks, subtle framing, and elegant typography.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Structured Grid</span>
-            <span class="tech-pill">Plate III</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Structured Grid</span><span class="tech-pill">Plate III</span></div>
         </div>
-
-        <!-- 21. WHITE & BLACK LIGHT MODERN MINIMAL (0004) -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Modern Minimal Plate IV</span>
@@ -1313,13 +1258,8 @@
             <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0004.jpeg" alt="White and Black Light Modern Minimal Plate IV" class="expandable" loading="lazy">
             <p>Clean minimal visual curation designed for contemporary artistic profiles and lookbook presentation.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Modern Minimal</span>
-            <span class="tech-pill">Plate IV</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Modern Minimal</span><span class="tech-pill">Plate IV</span></div>
         </div>
-
-        <!-- 22. WHITE & BLACK LIGHT MODERN MINIMAL (0005) -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Modern Minimal Plate V</span>
@@ -1327,56 +1267,73 @@
             <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0005.jpeg" alt="White and Black Light Modern Minimal Plate V" class="expandable" loading="lazy">
             <p>Concluding plate of the light minimalist series focusing on tonal depth and visual balance.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Tonal Balance</span>
-            <span class="tech-pill">Plate V</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Tonal Balance</span><span class="tech-pill">Plate V</span></div>
         </div>
-
-        <!-- 23. WHITE BLACK MINIMALIST TEAM INTRODUCTION (104415) -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Team Story Introduction I</span>
             <h3>White Black Minimalist Team Profile I</h3>
-            <img src="images/White Black Minimalist Team Introduction Instagram Story_20260805_104415_0000.jpeg" alt="White Black Minimalist Team Profile I" class="expandable" loading="lazy">
+            <img src="images/White Black Minimalist Team Introduction Instagram Story_20260805_104415_0000.jpeg" alt="Team Profile I" class="expandable" loading="lazy">
             <p>Clean minimalist layout highlighting creative collaboration, team structure, and leadership presentation.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Team Profile</span>
-            <span class="tech-pill">Instagram Story</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Team Profile</span><span class="tech-pill">Instagram Story</span></div>
         </div>
-
-        <!-- 24. WHITE BLACK MINIMALIST TEAM INTRODUCTION (110829) -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Team Story Introduction II</span>
             <h3>White Black Minimalist Team Profile II</h3>
-            <img src="images/White Black Minimalist Team Introduction Instagram Story_20260805_110829_0000.jpeg" alt="White Black Minimalist Team Profile II" class="expandable" loading="lazy">
+            <img src="images/White Black Minimalist Team Introduction Instagram Story_20260805_110829_0000.jpeg" alt="Team Profile II" class="expandable" loading="lazy">
             <p>Secondary professional introduction spread optimized for digital storytelling and partner highlights.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Collaboration</span>
-            <span class="tech-pill">Story Layout</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Collaboration</span><span class="tech-pill">Story Layout</span></div>
         </div>
-
-        <!-- 25. MONOCHROME MINIMALIST FASHION -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Monochrome Lookbook Story</span>
             <h3>Monochrome Minimalist Fashion Lookbook</h3>
-            <img src="images/Monochrome Minimalist Fashion Instagram Story_20260805_110509_0000.jpeg" alt="Monochrome Minimalist Fashion Instagram Story" class="expandable" loading="lazy">
+            <img src="images/Monochrome Minimalist Fashion Instagram Story_20260805_110509_0000.jpeg" alt="Monochrome Fashion Story" class="expandable" loading="lazy">
             <p>High-contrast monochrome aesthetic exploring fashion lookbooks, styling palettes, and modern layout composition.</p>
           </div>
-          <div class="tech-stack-badges">
-            <span class="tech-pill">Fashion Lookbook</span>
-            <span class="tech-pill">Monochrome</span>
-          </div>
+          <div class="tech-stack-badges"><span class="tech-pill">Fashion Lookbook</span><span class="tech-pill">Monochrome</span></div>
         </div>
-
       </div>
     </div>
+
+    <!-- ==========================================
+       STRATEGIC ROADMAP & ECO-SYSTEM PILLARS
+       ========================================== -->
+    <section class="strategy-section">
+      <div class="section-header reveal">
+        <h2>Phoenix Engine Ecosystem & Strategic Roadmap</h2>
+        <p>Institutional validation, community impact, and commercial value-exchange frameworks.</p>
+      </div>
+
+      <div class="strategy-grid">
+        <div class="strategy-card reveal">
+          <div class="strategy-num">01</div>
+          <h3>Institutional & Grant Validation</h3>
+          <p>Structuring Phoenix View Media for formal partnerships with cultural preservation bodies and the National Arts Council. Securing archival grants to fund large-scale Zambian environmental documentation.</p>
+        </div>
+
+        <div class="strategy-card reveal">
+          <div class="strategy-num">02</div>
+          <h3>Youth Sanctuary & Creative Incubator</h3>
+          <p>Building a long-term physical and digital sanctuary designed to uplift vulnerable youth and emerging local talent, passing down technical skills in software architecture and visual storytelling.</p>
+        </div>
+
+        <div class="strategy-card reveal">
+          <div class="strategy-num">03</div>
+          <h3>Eco-Lodge & Canvas Equipment Partnerships</h3>
+          <p>Providing high-end value-exchange packaging for eco-lodges and expedition clubs—integrating professional photography licensing, media production, and product placement utilizing family-manufactured canvas camping equipment.</p>
+        </div>
+
+        <div class="strategy-card reveal">
+          <div class="strategy-num">04</div>
+          <h3>Cross-Border Collaborative Networks</h3>
+          <p>Co-directing cross-border documentary initiatives with regional creators like Khangelani Dhlamini, fashion styling collaborations with Elizabeth Mwanza (`soultribe`), and travel media development with Mzansi Destinations.</p>
+        </div>
+      </div>
+    </section>
 
   </div>
 
@@ -1447,7 +1404,7 @@
     });
 
     /* 3. 3D Tilt Effect */
-    document.querySelectorAll('.portfolio-card, .showcase-card').forEach(card => {
+    document.querySelectorAll('.portfolio-card, .showcase-card, .strategy-card').forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
