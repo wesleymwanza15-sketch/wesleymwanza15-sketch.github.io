@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="Phoenix View Media">
   <meta property="og:url" content="https://wesleymwanza15-sketch.github.io/">
   <meta property="og:title" content="Ben Wesley Mwanza — Visual Archivist & Developer">
-  <meta property="og:description" content="Explore photography series, app system architectures, institutional grant roadmaps, and editorial storytelling by Ben Wesley Mwanza (Phoenix View Media).">
+  <meta property="og:description" content="Explore photography series, app system architectures, institutional grant roadmaps, and B2B digital services by Ben Wesley Mwanza (Phoenix View Media).">
   <meta property="og:image" content="https://wesleymwanza15-sketch.github.io/images/20260416_165634.jpeg">
 
   <!-- JSON-LD Structured Data for Enhanced SEO -->
@@ -186,7 +186,7 @@
       text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
-    /* Professional Accolades Banner */
+    /* Accolades Banner */
     .accolades-banner {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -231,15 +231,15 @@
 
     /* Tabs & Filters */
     .discipline-nav, .portfolio-filters {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 20px auto 40px;
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px auto 40px;
     }
     .discipline-btn, .filter-btn {
       background: var(--card-bg);
       border: 1px solid rgba(197,160,89,0.3);
       color: var(--text-muted);
-      padding: 11px 24px;
+      padding: 10px 20px;
       border-radius: 30px;
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       font-weight: 500;
       transition: var(--transition);
     }
@@ -323,7 +323,10 @@
       border-radius: 4px;
     }
 
-    .reader-btn {
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       background: transparent;
       border: 1px solid var(--accent-gold);
       color: var(--accent-gold);
@@ -331,12 +334,26 @@
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 600;
+      text-decoration: none;
       transition: var(--transition);
       align-self: flex-start;
       margin-top: 15px;
     }
-    .reader-btn:hover { background: var(--accent-gold); color: #fff; }
-    [data-theme="light"] .reader-btn:hover { color: #000; }
+    .action-btn:hover { background: var(--accent-gold); color: #fff; }
+    [data-theme="light"] .action-btn:hover { color: #000; }
+
+    /* Canvas Lab Demo Box */
+    .lab-canvas-container {
+      background: #000;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      width: 100%;
+      height: 250px;
+      position: relative;
+      overflow: hidden;
+      margin: 15px 0;
+    }
+    canvas { display: block; width: 100%; height: 100%; }
 
     /* Strategic Roadmap Section */
     .strategy-section {
@@ -476,7 +493,7 @@
     }
     .print-inquiry-btn:hover { opacity: 0.9; }
 
-    /* Interactive Document Reader Modal */
+    /* Document Reader Modal */
     .reader-modal {
       display: none;
       position: fixed; inset: 0;
@@ -509,14 +526,14 @@
     .footer-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
     .footer-link { color: var(--accent-gold); text-decoration: none; }
 
-    /* Reveal */
+    /* Reveal (with No-JS Fallback) */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
     }
     .reveal.active { opacity: 1; transform: translateY(0); }
-
+    
     @media (max-width: 768px) {
       .story-container { grid-template-columns: 1fr; gap: 20px; }
       .hero-content h1 { font-size: 2.3rem; }
@@ -524,6 +541,13 @@
       .widget-dock { bottom: 15px; left: 10px; right: 10px; justify-content: center; }
     }
   </style>
+
+  <!-- No-JS Fallback to Ensure Content is Always Visible -->
+  <noscript>
+    <style>
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 </head>
 <body data-theme="dark">
 
@@ -572,7 +596,7 @@
       </div>
     </header>
 
-    <!-- Professional Accolades & Institutional Credibility Banner -->
+    <!-- Professional Accolades Banner -->
     <div class="accolades-banner reveal">
       <div class="accolade-card">
         <i class="fas fa-award"></i>
@@ -619,9 +643,11 @@
       <button class="discipline-btn" data-tab="apps-pane"><i class="fas fa-code"></i> App Systems & Architecture</button>
       <button class="discipline-btn" data-tab="editorial-pane"><i class="fas fa-pen-nib"></i> Screenwriting & Editorial</button>
       <button class="discipline-btn" data-tab="lookbooks-pane"><i class="fas fa-book-open"></i> Editorial Lookbooks</button>
+      <button class="discipline-btn" data-tab="services-pane"><i class="fas fa-briefcase"></i> Business Solutions</button>
+      <button class="discipline-btn" data-tab="lab-pane"><i class="fas fa-flask"></i> Project Laboratory</button>
     </div>
 
-    <!-- Photography Pane (All 26 Photos) -->
+    <!-- Photography Pane -->
     <div id="photography-pane" class="discipline-pane active">
       <div class="section-header">
         <h2>Fine Art & Documentary Photography</h2>
@@ -636,7 +662,7 @@
       </div>
 
       <div class="portfolio-grid" id="photo-gallery-grid">
-        <!-- 1. ROAD & JOURNEY SERIES (10) -->
+        <!-- 1. ROAD & JOURNEY SERIES -->
         <div class="portfolio-card reveal" data-category="road">
           <img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable" loading="lazy" decoding="async">
           <div class="card-caption"><h3>The Open Highway</h3><p>Road & Journey Series</p></div>
@@ -678,7 +704,7 @@
           <div class="card-caption"><h3>Forest Trail</h3><p>Road & Journey Series</p></div>
         </div>
 
-        <!-- 2. NATURE SERIES (10) -->
+        <!-- 2. NATURE SERIES -->
         <div class="portfolio-card reveal" data-category="nature">
           <img src="images/VideoCapture_20260407-230314.jpeg" alt="Twilight Nature Still" class="expandable" loading="lazy" decoding="async">
           <div class="card-caption"><h3>Twilight Nature Still</h3><p>Nature Series</p></div>
@@ -720,7 +746,7 @@
           <div class="card-caption"><h3>Botanical Horizon</h3><p>Nature Series</p></div>
         </div>
 
-        <!-- 3. PAINTED WORLD SERIES (6) -->
+        <!-- 3. PAINTED WORLD SERIES -->
         <div class="portfolio-card reveal" data-category="painted">
           <img src="images/20251208_065856 (2).jpeg" alt="Painted Dew Study I" class="expandable" loading="lazy" decoding="async">
           <div class="card-caption"><h3>Painted Dew Study I</h3><p>Painted World Series</p></div>
@@ -805,7 +831,7 @@
               <span class="tech-pill">Character Arc Structuring</span>
             </div>
           </div>
-          <button class="reader-btn" data-doc="game-of-couples"><i class="fas fa-book-open"></i> Read Synopsis</button>
+          <button class="action-btn reader-btn" data-doc="game-of-couples"><i class="fas fa-book-open"></i> Read Synopsis</button>
         </div>
         <div class="showcase-card reveal">
           <div>
@@ -817,19 +843,19 @@
               <span class="tech-pill">Series Bible</span>
             </div>
           </div>
-          <button class="reader-btn" data-doc="frontline-keepers"><i class="fas fa-book-open"></i> Read Pitch Overview</button>
+          <button class="action-btn reader-btn" data-doc="frontline-keepers"><i class="fas fa-book-open"></i> Read Pitch Overview</button>
         </div>
       </div>
     </div>
 
-    <!-- Lookbooks Pane (All 25 Spreads) -->
+    <!-- Lookbooks Pane -->
     <div id="lookbooks-pane" class="discipline-pane">
       <div class="section-header reveal">
         <h2>Editorial Lookbooks & Publication Design</h2>
         <p>High-concept digital & print editorial layouts combining macro photography, bespoke typography, and narrative copywriting.</p>
       </div>
       <div class="showcase-grid">
-        <!-- 1 -->
+        <!-- 25 Lookbooks Spreads Included -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Travel Magazine Cover</span>
@@ -839,7 +865,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Cover Art</span><span class="tech-pill">Typography</span></div>
         </div>
-        <!-- 2 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Feature — Spread 03</span>
@@ -849,7 +874,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Macro Photography</span><span class="tech-pill">Editorial Copy</span></div>
         </div>
-        <!-- 3 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Nature Lookbook Series</span>
@@ -859,7 +883,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Canva Editorial</span><span class="tech-pill">Visual Storytelling</span></div>
         </div>
-        <!-- 4 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 02</span>
@@ -869,7 +892,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Lookbook Spread</span><span class="tech-pill">Macro Art</span></div>
         </div>
-        <!-- 5 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 03</span>
@@ -879,7 +901,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Editorial Design</span><span class="tech-pill">Typography</span></div>
         </div>
-        <!-- 6 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 04</span>
@@ -889,7 +910,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Publication Layout</span><span class="tech-pill">Art Direction</span></div>
         </div>
-        <!-- 7 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 05</span>
@@ -899,7 +919,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Landscape Spread</span><span class="tech-pill">Editorial Copy</span></div>
         </div>
-        <!-- 8 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 06</span>
@@ -909,7 +928,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Canopy Series</span><span class="tech-pill">Lookbook Layout</span></div>
         </div>
-        <!-- 9 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Editorial Lookbook — Plate 07</span>
@@ -919,7 +937,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Macro Detail</span><span class="tech-pill">Print Ready</span></div>
         </div>
-        <!-- 10 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Unseen World — Spread 01</span>
@@ -929,7 +946,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Editorial Lead</span><span class="tech-pill">Storytelling</span></div>
         </div>
-        <!-- 11 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Unseen World — Spread 02</span>
@@ -939,7 +955,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Field Research</span><span class="tech-pill">Macro Lens</span></div>
         </div>
-        <!-- 12 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Unseen World — Spread 04</span>
@@ -949,7 +964,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Documentary Frame</span><span class="tech-pill">Editorial</span></div>
         </div>
-        <!-- 13 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Unseen World — Spread 05</span>
@@ -959,7 +973,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Closing Spread</span><span class="tech-pill">Prose & Copy</span></div>
         </div>
-        <!-- 14 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">EXPLORE Series — Plate 02</span>
@@ -969,7 +982,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Landscape</span><span class="tech-pill">Silhouette</span></div>
         </div>
-        <!-- 15 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">EXPLORE Series — Plate 03</span>
@@ -979,7 +991,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Vista Spread</span><span class="tech-pill">Fine Art</span></div>
         </div>
-        <!-- 16 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">EXPLORE Series — Plate 04</span>
@@ -989,7 +1000,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Travel Series</span><span class="tech-pill">Editorial Layout</span></div>
         </div>
-        <!-- 17 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">EXPLORE Series — Plate 05</span>
@@ -999,7 +1009,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Sky Gradients</span><span class="tech-pill">Magazine Plate</span></div>
         </div>
-        <!-- 18 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Modern Minimal Plate I</span>
@@ -1009,7 +1018,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Light Minimal</span><span class="tech-pill">Plate I</span></div>
         </div>
-        <!-- 19 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Modern Minimal Plate II</span>
@@ -1019,7 +1027,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Whitespace</span><span class="tech-pill">Plate II</span></div>
         </div>
-        <!-- 20 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Modern Minimal Plate III</span>
@@ -1029,7 +1036,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Structured Grid</span><span class="tech-pill">Plate III</span></div>
         </div>
-        <!-- 21 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Modern Minimal Plate IV</span>
@@ -1039,7 +1045,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Modern Minimal</span><span class="tech-pill">Plate IV</span></div>
         </div>
-        <!-- 22 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Modern Minimal Plate V</span>
@@ -1049,7 +1054,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Tonal Balance</span><span class="tech-pill">Plate V</span></div>
         </div>
-        <!-- 23 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Team Story Introduction I</span>
@@ -1059,7 +1063,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Team Profile</span><span class="tech-pill">Instagram Story</span></div>
         </div>
-        <!-- 24 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Team Story Introduction II</span>
@@ -1069,7 +1072,6 @@
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Collaboration</span><span class="tech-pill">Story Layout</span></div>
         </div>
-        <!-- 25 -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Monochrome Lookbook Story</span>
@@ -1078,6 +1080,79 @@
             <p>High-contrast monochrome aesthetic exploring fashion lookbooks, styling palettes, and modern layout composition.</p>
           </div>
           <div class="tech-stack-badges"><span class="tech-pill">Fashion Lookbook</span><span class="tech-pill">Monochrome</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business Solutions Pane (New Phoenix Core V1 B2B Module) -->
+    <div id="services-pane" class="discipline-pane">
+      <div class="section-header">
+        <h2>Business Solutions & Professional Services</h2>
+        <p>Custom-coded digital experiences, high-performance portfolios, and expedition media packages.</p>
+      </div>
+      <div class="showcase-grid">
+        <div class="showcase-card reveal">
+          <div>
+            <span class="showcase-tag">B2B Service</span>
+            <h3>Custom Front-End Applications</h3>
+            <p>Lightning-fast, zero-dependency web interfaces, portfolio architectures, and responsive digital platforms engineered specifically for brands and creators.</p>
+            <div class="tech-stack-badges">
+              <span class="tech-pill">Vanilla Architecture</span>
+              <span class="tech-pill">High Performance</span>
+            </div>
+          </div>
+          <a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20am%20interested%20in%20inquiring%20about%20Custom%20Front-End%20Development%20(Phoenix%20View%20Media)." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Service</a>
+        </div>
+
+        <div class="showcase-card reveal">
+          <div>
+            <span class="showcase-tag">B2B Service</span>
+            <h3>Eco-Lodge & Expedition Media Packaging</h3>
+            <p>Professional photography licensing, visual storytelling, and product placement integration leveraging custom manufactured canvas camping gear for remote wilderness tourism.</p>
+            <div class="tech-stack-badges">
+              <span class="tech-pill">Tourism Media</span>
+              <span class="tech-pill">Photography Licensing</span>
+            </div>
+          </div>
+          <a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20am%20interested%20in%20Eco-Lodge%20Media%20Packaging%20and%20Expedition%20Partnerships." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Partnership</a>
+        </div>
+
+        <div class="showcase-card reveal">
+          <div>
+            <span class="showcase-tag">B2B Service</span>
+            <h3>Digital Archives & Cultural Portals</h3>
+            <p>Structured, searchable long-term digital vaults and lookbook publications designed for cultural institutions, publishers, and documentary archives.</p>
+            <div class="tech-stack-badges">
+              <span class="tech-pill">Archival Systems</span>
+              <span class="tech-pill">Editorial Design</span>
+            </div>
+          </div>
+          <a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20would%20like%20to%20discuss%20Digital%20Archival%20Development." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Laboratory Pane (New Native JS Interactive Sandbox) -->
+    <div id="lab-pane" class="discipline-pane">
+      <div class="section-header">
+        <h2>Project Laboratory & Interactive Sandbox</h2>
+        <p>Experimental native JavaScript simulations, canvas graphics, and generative visual mechanics.</p>
+      </div>
+      <div class="showcase-grid">
+        <div class="showcase-card reveal" style="grid-column: 1 / -1;">
+          <div>
+            <span class="showcase-tag">Interactive Simulation</span>
+            <h3>Phoenix Particle Flow Simulator</h3>
+            <p>A native HTML5 Canvas simulation rendering real-time interactive particle physics responding to cursor positioning—demonstrating raw browser graphics rendering without heavy libraries.</p>
+            <div class="lab-canvas-container">
+              <canvas id="labCanvas"></canvas>
+            </div>
+            <div class="tech-stack-badges">
+              <span class="tech-pill">Canvas 2D API</span>
+              <span class="tech-pill">RequestAnimationFrame</span>
+              <span class="tech-pill">Pure JavaScript</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1142,7 +1217,7 @@
     </a>
   </div>
 
-  <!-- Interactive Document Reader Modal -->
+  <!-- Document Reader Modal -->
   <div id="reader-modal" class="reader-modal" role="dialog" aria-modal="true" aria-label="Document reader">
     <div class="reader-card">
       <span class="reader-close" aria-label="Close">&times;</span>
@@ -1187,7 +1262,7 @@
       themeLabel.textContent = isDark ? 'Dark Mode' : 'Light Mode';
     });
 
-    // 3. 3D Tilt (deferred + desktop only)
+    // 3. 3D Tilt
     function initTilt() {
       if (prefersReducedMotion || window.innerWidth < 900) return;
       document.querySelectorAll('.portfolio-card, .showcase-card, .strategy-card').forEach(card => {
@@ -1350,7 +1425,7 @@
       }
     });
 
-    // 9. Multi-Track Audio Playlist
+    // 9. Multi-Track Audio Playlist (with Safe Promise Handling)
     const playlist = [
       { title: "Mr. Morale (ft. Tanna Leone)", src: "audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a", type: "audio/mp4" },
       { title: "Majesty (Official)", src: "audio/ISLY_-_MAJESTY__Offical_Video_(128k).m4a", type: "audio/mp4" },
@@ -1388,13 +1463,26 @@
       audioLabel.textContent = "Soundtrack: Off";
     }
 
+    function safePlayAudio() {
+      if (!playlist.length) return;
+      const playPromise = ambientAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          audioIcon.textContent = "🔊";
+          audioLabel.textContent = playlist[currentTrackIndex].title;
+          showToast(playlist[currentTrackIndex].title);
+        }).catch(error => {
+          console.warn("Audio playback prevented or failed:", error);
+          audioLabel.textContent = "Soundtrack: Off";
+          audioIcon.textContent = "🎵";
+        });
+      }
+    }
+
     audioBtn?.addEventListener('click', () => {
       if (!playlist.length) return;
       if (ambientAudio.paused) {
-        ambientAudio.play();
-        audioIcon.textContent = "🔊";
-        audioLabel.textContent = playlist[currentTrackIndex].title;
-        showToast(playlist[currentTrackIndex].title);
+        safePlayAudio();
       } else {
         ambientAudio.pause();
         audioLabel.textContent = "Soundtrack: Off";
@@ -1406,29 +1494,80 @@
       if (!playlist.length) return;
       currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
       loadTrack(currentTrackIndex);
-      ambientAudio.play();
-      audioIcon.textContent = "🔊";
-      showToast(playlist[currentTrackIndex].title);
+      safePlayAudio();
     });
 
     prevBtn?.addEventListener('click', () => {
       if (!playlist.length) return;
       currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
       loadTrack(currentTrackIndex);
-      ambientAudio.play();
-      audioIcon.textContent = "🔊";
-      showToast(playlist[currentTrackIndex].title);
+      safePlayAudio();
     });
 
     ambientAudio?.addEventListener('ended', () => {
       if (!playlist.length) return;
       currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
       loadTrack(currentTrackIndex);
-      ambientAudio.play();
-      showToast(playlist[currentTrackIndex].title);
+      safePlayAudio();
     });
 
-    // 10. Reveal Observer
+    // 10. Project Laboratory Canvas Particle Simulation
+    const labCanvas = document.getElementById('labCanvas');
+    if (labCanvas) {
+      const ctx = labCanvas.getContext('2d');
+      let animationFrameId;
+      let particles = [];
+      const particleCount = 35;
+
+      function resizeCanvas() {
+        labCanvas.width = labCanvas.parentElement.clientWidth;
+        labCanvas.height = labCanvas.parentElement.clientHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = Math.random() * labCanvas.width;
+          this.y = Math.random() * labCanvas.height;
+          this.vx = (Math.random() - 0.5) * 1.2;
+          this.vy = (Math.random() - 0.5) * 1.2;
+          this.radius = Math.random() * 2 + 1;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > labCanvas.width || this.y < 0 || this.y > labCanvas.height) {
+            this.reset();
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = '#c5a059';
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+
+      function animateLab() {
+        ctx.clearRect(0, 0, labCanvas.width, labCanvas.height);
+        particles.forEach(p => {
+          p.update();
+          p.draw();
+        });
+        animationFrameId = requestAnimationFrame(animateLab);
+      }
+      animateLab();
+    }
+
+    // 11. Reveal Observer
     const revealObserver = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
