@@ -1,1587 +1,1559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Google Search Console -->
-  <meta name="google-site-verification" content="JyXSaaWSG6hu7IIQswfRuYDiZdcndnIPDrgWVcC2_sM" />
-
-  <!-- Primary SEO -->
-  <title>Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media</title>
-  <meta name="title" content="Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media">
-  <meta name="description" content="Official platform of Ben Wesley Mwanza (phoenix_view_bwm), Visual Archivist, Developer, and CMA 2026 Best Documentary Photography Nominee. Founder of Phoenix View Media.">
-  <meta name="keywords" content="Ben Wesley Mwanza, Visual Archivist, Developer, phoenix_view_bwm, Phoenix View Media, CMA 2026 best documentary photography, Zambian photographer, App developer Lusaka, Creative Director Zambia, the passing photographer, cultural grants, eco-lodge media packaging">
-  <meta name="author" content="Ben Wesley Mwanza">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Phoenix View Media">
-  <meta property="og:url" content="https://wesleymwanza15-sketch.github.io/">
-  <meta property="og:title" content="Ben Wesley Mwanza — Visual Archivist & Developer">
-  <meta property="og:description" content="Explore photography series, app system architectures, institutional grant roadmaps, and B2B digital services by Ben Wesley Mwanza (Phoenix View Media).">
-  <meta property="og:image" content="https://wesleymwanza15-sketch.github.io/images/20260416_165634.jpeg">
-
-  <!-- JSON-LD Structured Data for Enhanced SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ben Wesley Mwanza",
-    "alternateName": "phoenix_view_bwm",
-    "jobTitle": "Visual Archivist & Developer",
-    "url": "https://wesleymwanza15-sketch.github.io/",
-    "sameAs": [
-      "https://www.instagram.com/phoenix_view_bwm"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Phoenix View Media"
-    },
-    "knowsAbout": ["Documentary Photography", "Software Architecture", "Screenwriting", "Cultural Grants", "Eco-Lodge Media Packaging"]
-  }
-  </script>
-
-  <!-- Performance: Preconnect & Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Preload LCP hero image -->
-  <link rel="preload" as="image" href="images/20260416_165634.jpeg" fetchpriority="high">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    /* ===== THEME & DESIGN SYSTEM ===== */
-    :root {
-      --bg-dark: #0a0a0c;
-      --card-bg: #141418;
-      --card-border: #26262e;
-      --accent-gold: #c5a059;
-      --accent-gold-glow: rgba(197, 160, 89, 0.22);
-      --text-main: #f0f0f5;
-      --text-muted: #a0a0b0;
-      --hero-overlay-1: rgba(10,10,12,0.25);
-      --hero-overlay-2: rgba(10,10,12,0.55);
-      --transition: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-      --radius: 12px;
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-    }
-
-    [data-theme="light"] {
-      --bg-dark: #f8f9fa;
-      --card-bg: #ffffff;
-      --card-border: #e2e2e9;
-      --accent-gold: #a67c2e;
-      --accent-gold-glow: rgba(166, 124, 46, 0.15);
-      --text-main: #1a1a22;
-      --text-muted: #666675;
-      --hero-overlay-1: rgba(248,249,250,0.15);
-      --hero-overlay-2: rgba(248,249,250,0.45);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg-dark);
-      color: var(--text-main);
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      overflow-x: hidden;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      -webkit-font-smoothing: antialiased;
-    }
-    img { max-width: 100%; height: auto; display: block; }
-    button { font-family: inherit; cursor: pointer; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .cursor-spotlight { display: none !important; }
-    }
-
-    .cursor-spotlight {
-      position: fixed;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, var(--accent-gold-glow) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      opacity: 0.7;
-      will-change: transform;
-    }
-
-    .container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Hero */
-    .canva-hero {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      padding: 90px 30px;
-      margin-bottom: 40px;
-      text-align: center;
-      border: 1px solid rgba(197, 160, 89, 0.35);
-      background: #000;
-      contain: layout paint;
-    }
-    .hero-slider { position: absolute; inset: 0; z-index: 1; }
-    .hero-slider .slide {
-      position: absolute; inset: 0;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1.6s ease-in-out;
-    }
-    .hero-slider .slide.active { opacity: 0.92; }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, var(--hero-overlay-1), var(--hero-overlay-2));
-      z-index: 2;
-    }
-    .hero-content { position: relative; z-index: 3; max-width: 850px; margin: 0 auto; }
-    .cma-badge-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--card-bg);
-      border: 1px solid var(--accent-gold);
-      color: var(--accent-gold);
-      padding: 8px 20px;
-      border-radius: 25px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 25px var(--accent-gold-glow);
-      backdrop-filter: blur(8px);
-    }
-    .hero-content h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.3rem, 5vw, 3.2rem);
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-      line-height: 1.2;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-    }
-    .tagline {
-      color: var(--accent-gold);
-      font-size: 1.2rem;
-      font-style: italic;
-      margin-bottom: 20px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-    }
-
-    /* Accolades Banner */
-    .accolades-banner {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-bottom: 50px;
-    }
-    .accolade-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      padding: 24px;
-      text-align: center;
-      transition: var(--transition);
-      contain: layout paint style;
-    }
-    .accolade-card:hover {
-      border-color: var(--accent-gold);
-      transform: translateY(-3px);
-    }
-    .accolade-card i {
-      color: var(--accent-gold);
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-    }
-    .accolade-card h4 {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-      color: var(--text-main);
-    }
-    .accolade-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* Story */
-    .story-section { padding: 60px 0; border-bottom: 1px solid var(--card-border); margin-bottom: 50px; }
-    .story-container { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start; }
-    .story-left h2 { font-family: var(--font-serif); font-size: 2.5rem; }
-    .story-right p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; }
-    .story-right strong { color: var(--text-main); }
-
-    /* Tabs & Filters */
-    .discipline-nav, .portfolio-filters {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px auto 40px;
-    }
-    .discipline-btn, .filter-btn {
-      background: var(--card-bg);
-      border: 1px solid rgba(197,160,89,0.3);
-      color: var(--text-muted);
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      transition: var(--transition);
-    }
-    .discipline-btn:hover, .discipline-btn.active,
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--accent-gold);
-      color: #fff;
-      border-color: var(--accent-gold);
-      box-shadow: 0 6px 20px var(--accent-gold-glow);
-      font-weight: 600;
-    }
-    [data-theme="light"] .discipline-btn.active,
-    [data-theme="light"] .filter-btn.active { color: #000; }
-
-    .discipline-pane { display: none; }
-    .discipline-pane.active { display: block; }
-
-    /* Section headers */
-    .section-header { text-align: center; margin-bottom: 30px; }
-    .section-header h2 { font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 8px; }
-    .section-header p { color: var(--text-muted); font-size: 0.95rem; }
-
-    /* Grids & Cards */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 25px;
-    }
-    .portfolio-card, .showcase-card, .strategy-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, border-color 0.3s ease;
-      contain: layout paint style;
-    }
-    .portfolio-card.hidden { display: none !important; }
-    .portfolio-card:hover, .showcase-card:hover, .strategy-card:hover {
-      border-color: var(--accent-gold);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.18), 0 0 20px var(--accent-gold-glow);
-    }
-    .portfolio-card img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      cursor: pointer;
-      transition: transform 0.45s ease;
-    }
-    .portfolio-card img:hover { transform: scale(1.04); }
-    .card-caption { padding: 15px 20px; }
-    .card-caption h3 { font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 4px; }
-    .card-caption p { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-
-    .showcase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
-    .showcase-card { padding: 25px; display: flex; flex-direction: column; justify-content: space-between; }
-    .showcase-tag {
-      display: inline-block;
-      background: rgba(197,160,89,0.1);
-      color: var(--accent-gold);
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-    .showcase-card h3 { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 10px; }
-    .showcase-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px; }
-    .showcase-card img.expandable {
-      width: 100%; max-height: 400px; object-fit: contain;
-      background: #000; border-radius: 6px; margin: 15px 0; cursor: pointer;
-    }
-    .tech-stack-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px; }
-    .tech-pill {
-      background: var(--bg-dark);
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
-      font-size: 0.7rem;
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-
-    .action-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      border: 1px solid var(--accent-gold);
-      color: var(--accent-gold);
-      padding: 8px 18px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: var(--transition);
-      align-self: flex-start;
-      margin-top: 15px;
-    }
-    .action-btn:hover { background: var(--accent-gold); color: #fff; }
-    [data-theme="light"] .action-btn:hover { color: #000; }
-
-    /* Canvas Lab Demo Box */
-    .lab-canvas-container {
-      background: #000;
-      border: 1px solid var(--card-border);
-      border-radius: 8px;
-      width: 100%;
-      height: 250px;
-      position: relative;
-      overflow: hidden;
-      margin: 15px 0;
-    }
-    canvas { display: block; width: 100%; height: 100%; }
-
-    /* Strategic Roadmap Section */
-    .strategy-section {
-      padding: 60px 0;
-      border-top: 1px solid var(--card-border);
-      margin-top: 60px;
-    }
-    .strategy-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-    .strategy-card {
-      padding: 30px;
-      position: relative;
-    }
-    .strategy-num {
-      position: absolute;
-      top: -10px;
-      right: 15px;
-      font-family: var(--font-serif);
-      font-size: 4rem;
-      color: rgba(197, 160, 89, 0.08);
-      font-weight: 700;
-      pointer-events: none;
-    }
-    .strategy-card h3 {
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
-      color: var(--text-main);
-      margin-bottom: 12px;
-    }
-    .strategy-card p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.7;
-    }
-
-    /* Pagination */
-    .pagination-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 40px; }
-    .page-btn {
-      background: var(--card-bg);
-      border: 1px solid var(--accent-gold);
-      color: var(--accent-gold);
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    .page-btn:hover:not(:disabled) { background: var(--accent-gold); color: #fff; }
-    [data-theme="light"] .page-btn:hover:not(:disabled) { color: #000; }
-    .page-btn:disabled { opacity: 0.3; cursor: not-allowed; border-color: var(--card-border); color: #666; }
-
-    /* Widgets */
-    .widget-dock {
-      position: fixed; bottom: 25px; left: 20px; z-index: 999;
-      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-    }
-    .audio-player-container { display: flex; align-items: center; gap: 6px; }
-    .audio-btn, .theme-toggle-btn {
-      background: var(--card-bg);
-      border: 1px solid var(--accent-gold);
-      color: var(--accent-gold);
-      padding: 10px 16px;
-      border-radius: 25px;
-      font-size: 0.85rem;
-      display: flex; align-items: center; gap: 8px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: var(--transition);
-    }
-    .audio-btn.nav-btn { padding: 10px 12px; }
-    .audio-btn:hover, .theme-toggle-btn:hover { background: var(--accent-gold); color: #fff; }
-    [data-theme="light"] .audio-btn:hover,
-    [data-theme="light"] .theme-toggle-btn:hover { color: #000; }
-
-    .floating-contact {
-      position: fixed; bottom: 25px; right: 20px; z-index: 999;
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .floating-contact a {
-      width: 45px; height: 45px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; text-decoration: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: var(--transition);
-    }
-    .floating-contact a.whatsapp-btn { background: #25D366; }
-    .floating-contact a.instagram-btn {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    }
-    .floating-contact a:hover { transform: scale(1.1); }
-
-    /* Toast */
-    .toast-notification {
-      position: fixed; top: 25px; left: 50%;
-      transform: translateX(-50%) translateY(-100px);
-      background: var(--card-bg);
-      border: 1px solid var(--accent-gold);
-      color: var(--text-main);
-      padding: 10px 24px;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 6px 25px rgba(0,0,0,0.4);
-      z-index: 1000;
-      opacity: 0;
-      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.5s ease;
-      pointer-events: none;
-    }
-    .toast-notification.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-
-    /* Lightbox */
-    .lightbox-modal {
-      display: none;
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.94);
-      z-index: 10000;
-      justify-content: center; align-items: center;
-      flex-direction: column; padding: 20px;
-    }
-    .modal-content { max-width: 90vw; max-height: 70vh; object-fit: contain; border-radius: 8px; }
-    .modal-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 2.5rem; cursor: pointer; line-height: 1; }
-    .modal-metadata-box { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; justify-content: center; }
-    .meta-badge { font-size: 0.75rem; padding: 4px 12px; border-radius: 12px; text-transform: uppercase; }
-    .badge-verified { background: rgba(46,204,113,0.15); border: 1px solid #2ecc71; color: #2ecc71; }
-    .badge-artist { background: rgba(197,160,89,0.15); border: 1px solid var(--accent-gold); color: var(--accent-gold); }
-    .badge-series { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #d0d0d0; }
-    .print-inquiry-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-top: 15px;
-      background: #25D366; color: #fff;
-      padding: 10px 22px; border-radius: 30px;
-      font-size: 0.85rem; font-weight: 600;
-      text-decoration: none; transition: var(--transition);
-    }
-    .print-inquiry-btn:hover { opacity: 0.9; }
-
-    /* Document Reader Modal */
-    .reader-modal {
-      display: none;
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.92);
-      z-index: 10000;
-      justify-content: center; align-items: center;
-      padding: 20px;
-    }
-    .reader-card {
-      background: var(--card-bg);
-      border: 1px solid var(--accent-gold);
-      border-radius: var(--radius);
-      max-width: 800px; width: 100%;
-      max-height: 85vh; overflow-y: auto;
-      padding: 40px; position: relative;
-    }
-    .reader-card h2 { font-family: var(--font-serif); font-size: 2rem; color: var(--text-main); margin-bottom: 10px; }
-    .reader-card .subtitle { color: var(--accent-gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; }
-    .reader-card p { color: var(--text-muted); line-height: 1.8; margin-bottom: 15px; }
-    .reader-close { position: absolute; top: 25px; right: 25px; color: var(--text-muted); font-size: 1.8rem; cursor: pointer; line-height: 1; }
-    .reader-close:hover { color: var(--text-main); }
-
-    /* Footer */
-    footer {
-      text-align: center; padding: 50px 20px;
-      border-top: 1px solid var(--card-border);
-      margin-top: 60px; color: var(--text-muted);
-    }
-    footer p { margin-bottom: 10px; }
-    .footer-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
-    .footer-link { color: var(--accent-gold); text-decoration: none; }
-
-    /* Reveal (with No-JS Fallback) */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
-    }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    
-    @media (max-width: 768px) {
-      .story-container { grid-template-columns: 1fr; gap: 20px; }
-      .hero-content h1 { font-size: 2.3rem; }
-      #spotlight { display: none; }
-      .widget-dock { bottom: 15px; left: 10px; right: 10px; justify-content: center; }
-    }
-  </style>
-
-  <!-- No-JS Fallback to Ensure Content is Always Visible -->
-  <noscript>
-    <style>
-      .reveal { opacity: 1 !important; transform: none !important; }
-    </style>
-  </noscript>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+​<!-- Google Search Console Ownership Verification -->
+<meta name="google-site-verification" content="JyXSaaWSG6hu7IIQswfRuYDiZdcndnIPDrgWVcC2_sM" />
+​<!-- Primary SEO -->
+<title>Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media</title>
+<meta name="title" content="Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media">
+<meta name="description" content="Official platform of Ben Wesley Mwanza (phoenix_view_bwm), Visual Archivist, Developer, and CMA 2026 Best Documentary Photography Nominee. Founder of Phoenix View Media.">
+<meta name="keywords" content="Ben Wesley Mwanza, Visual Archivist, Developer, phoenix_view_bwm, Phoenix View Media, CMA 2026 best documentary photography, Zambian photographer, App developer Lusaka, Creative Director Zambia, the passing photographer, cultural grants, eco-lodge media packaging">
+<meta name="author" content="Ben Wesley Mwanza">
+<meta name="robots" content="index, follow">
+​<!-- Open Graph / Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Phoenix View Media">
+<meta property="og:url" content="https://wesleymwanza15-sketch.github.io/">
+<meta property="og:title" content="Ben Wesley Mwanza — Visual Archivist & Developer">
+<meta property="og:description" content="Explore photography series, app system architectures, institutional grant roadmaps, and B2B digital services by Ben Wesley Mwanza (Phoenix View Media).">
+<meta property="og:image" content="https://wesleymwanza15-sketch.github.io/images/20260416_165634.jpeg">
+​<!-- JSON-LD Structured Data for Enhanced SEO -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Person",
+"name": "Ben Wesley Mwanza",
+"alternateName": "phoenix_view_bwm",
+"jobTitle": "Visual Archivist & Developer",
+"url": "https://wesleymwanza15-sketch.github.io/",
+"sameAs": [
+"https://www.instagram.com/phoenix_view_bwm"
+],
+"worksFor": {
+"@type": "Organization",
+"name": "Phoenix View Media"
+},
+"knowsAbout": ["Documentary Photography", "Software Architecture", "Screenwriting", "Cultural Grants", "Eco-Lodge Media Packaging"]
+}
+</script>
+​<!-- Performance: Preconnect & Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+​<!-- Preload LCP Hero Image -->
+<link rel="preload" as="image" href="images/20260416_165634.jpeg" fetchpriority="high">
+​<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+​<!-- Three.js Library for Realtime 3D WebGL Visuals -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+​<!-- Progressive Resilience Guard: Fallback for disabled/stalled JS -->
+<noscript>
+<style>
+.reveal { opacity: 1 !important; transform: none !important; }
+.cursor-spotlight { display: none !important; }
+.portfolio-card.hidden { display: block !important; }
+</style>
+</noscript>
+​<style>
+/* ===== PHOENIX ENGINE DESIGN SYSTEM ===== */
+:root {
+--bg-dark: #0a0a0c;
+--card-bg: #141418;
+--card-border: #26262e;
+--accent-gold: #c5a059;
+--accent-gold-glow: rgba(197, 160, 89, 0.22);
+--text-main: #f0f0f5;
+--text-muted: #a0a0b0;
+--hero-overlay-1: rgba(10,10,12,0.25);
+--hero-overlay-2: rgba(10,10,12,0.55);
+--transition: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+--radius: 12px;
+--font-serif: 'Playfair Display', Georgia, serif;
+--font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+​[data-theme="light"] {
+--bg-dark: #f8f9fa;
+--card-bg: #ffffff;
+--card-border: #e2e2e9;
+--accent-gold: #a67c2e;
+--accent-gold-glow: rgba(166, 124, 46, 0.15);
+--text-main: #1a1a22;
+--text-muted: #666675;
+--hero-overlay-1: rgba(248,249,250,0.15);
+--hero-overlay-2: rgba(248,249,250,0.45);
+}
+​*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+background: var(--bg-dark);
+color: var(--text-main);
+font-family: var(--font-sans);
+line-height: 1.6;
+overflow-x: hidden;
+transition: background-color 0.3s ease, color 0.3s ease;
+-webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+button { font-family: inherit; cursor: pointer; }
+​@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+scroll-behavior: auto !important;
+}
+.cursor-spotlight { display: none !important; }
+}
+​.cursor-spotlight {
+position: fixed;
+width: 500px; height: 500px;
+background: radial-gradient(circle, var(--accent-gold-glow) 0%, transparent 70%);
+border-radius: 50%;
+pointer-events: none;
+transform: translate(-50%, -50%);
+z-index: 9999;
+opacity: 0.7;
+will-change: transform;
+}
+​.container {
+max-width: 1300px;
+margin: 0 auto;
+padding: 40px 20px;
+position: relative;
+z-index: 1;
+}
+​/* Hero */
+.canva-hero {
+position: relative;
+border-radius: 16px;
+overflow: hidden;
+padding: 90px 30px;
+margin-bottom: 40px;
+text-align: center;
+border: 1px solid rgba(197, 160, 89, 0.35);
+background: #000;
+contain: layout paint;
+}
+.hero-slider { position: absolute; inset: 0; z-index: 1; }
+.hero-slider .slide {
+position: absolute; inset: 0;
+background-size: cover;
+background-position: center;
+opacity: 0;
+transition: opacity 1.6s ease-in-out;
+}
+.hero-slider .slide.active { opacity: 0.92; }
+.hero-overlay {
+position: absolute; inset: 0;
+background: linear-gradient(to bottom, var(--hero-overlay-1), var(--hero-overlay-2));
+z-index: 2;
+}
+.hero-content { position: relative; z-index: 3; max-width: 850px; margin: 0 auto; }
+.cma-badge-tag {
+display: inline-flex; align-items: center; gap: 8px;
+background: var(--card-bg);
+border: 1px solid var(--accent-gold);
+color: var(--accent-gold);
+padding: 8px 20px;
+border-radius: 25px;
+font-size: 0.85rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+margin-bottom: 20px;
+box-shadow: 0 0 25px var(--accent-gold-glow);
+backdrop-filter: blur(8px);
+}
+.hero-content h1 {
+font-family: var(--font-serif);
+font-size: clamp(2.3rem, 5vw, 3.2rem);
+letter-spacing: 1px;
+margin-bottom: 15px;
+line-height: 1.2;
+text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+}
+.tagline {
+color: var(--accent-gold);
+font-size: 1.2rem;
+font-style: italic;
+margin-bottom: 20px;
+text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+​/* Accolades Banner */
+.accolades-banner {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+margin-bottom: 50px;
+}
+.accolade-card {
+background: var(--card-bg);
+border: 1px solid var(--card-border);
+border-radius: var(--radius);
+padding: 24px;
+text-align: center;
+transition: var(--transition);
+contain: layout paint style;
+}
+.accolade-card:hover {
+border-color: var(--accent-gold);
+transform: translateY(-3px);
+}
+.accolade-card i {
+color: var(--accent-gold);
+font-size: 1.8rem;
+margin-bottom: 12px;
+}
+.accolade-card h4 {
+font-family: var(--font-serif);
+font-size: 1.1rem;
+margin-bottom: 6px;
+color: var(--text-main);
+}
+.accolade-card p {
+font-size: 0.85rem;
+color: var(--text-muted);
+}
+​/* Story */
+.story-section { padding: 60px 0; border-bottom: 1px solid var(--card-border); margin-bottom: 50px; }
+.story-container { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start; }
+.story-left h2 { font-family: var(--font-serif); font-size: 2.5rem; }
+.story-right p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; }
+.story-right strong { color: var(--text-main); }
+​/* Tabs & Filters */
+.discipline-nav, .portfolio-filters {
+display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px auto 40px;
+}
+.discipline-btn, .filter-btn {
+background: var(--card-bg);
+border: 1px solid rgba(197,160,89,0.3);
+color: var(--text-muted);
+padding: 10px 20px;
+border-radius: 30px;
+font-size: 0.88rem;
+font-weight: 500;
+transition: var(--transition);
+}
+.discipline-btn:hover, .discipline-btn.active,
+.filter-btn:hover, .filter-btn.active {
+background: var(--accent-gold);
+color: #fff;
+border-color: var(--accent-gold);
+box-shadow: 0 6px 20px var(--accent-gold-glow);
+font-weight: 600;
+}
+[data-theme="light"] .discipline-btn.active,
+[data-theme="light"] .filter-btn.active { color: #000; }
+​.discipline-pane { display: none; }
+.discipline-pane.active { display: block; }
+​/* Section headers */
+.section-header { text-align: center; margin-bottom: 30px; }
+.section-header h2 { font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 8px; }
+.section-header p { color: var(--text-muted); font-size: 0.95rem; }
+​/* Grids & Cards */
+.portfolio-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 25px;
+}
+.portfolio-card, .showcase-card, .strategy-card {
+background: var(--card-bg);
+border: 1px solid var(--card-border);
+border-radius: var(--radius);
+overflow: hidden;
+transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, border-color 0.3s ease;
+contain: layout paint style;
+}
+.portfolio-card.hidden { display: none !important; }
+.portfolio-card:hover, .showcase-card:hover, .strategy-card:hover {
+border-color: var(--accent-gold);
+box-shadow: 0 15px 35px rgba(0,0,0,0.18), 0 0 20px var(--accent-gold-glow);
+}
+.portfolio-card img {
+width: 100%;
+height: 320px;
+object-fit: cover;
+cursor: pointer;
+transition: transform 0.45s ease;
+}
+.portfolio-card img:hover { transform: scale(1.04); }
+.card-caption { padding: 15px 20px; }
+.card-caption h3 { font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 4px; }
+.card-caption p { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+​.showcase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+.showcase-card { padding: 25px; display: flex; flex-direction: column; justify-content: space-between; }
+.showcase-tag {
+display: inline-block;
+background: rgba(197,160,89,0.1);
+color: var(--accent-gold);
+padding: 4px 10px;
+border-radius: 4px;
+font-size: 0.75rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 12px;
+}
+.showcase-card h3 { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 10px; }
+.showcase-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px; }
+.showcase-card img.expandable {
+width: 100%; max-height: 400px; object-fit: contain;
+background: #000; border-radius: 6px; margin: 15px 0; cursor: pointer;
+}
+.tech-stack-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px; }
+.tech-pill {
+background: var(--bg-dark);
+border: 1px solid var(--card-border);
+color: var(--text-muted);
+font-size: 0.7rem;
+padding: 3px 8px;
+border-radius: 4px;
+}
+​.action-btn {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: transparent;
+border: 1px solid var(--accent-gold);
+color: var(--accent-gold);
+padding: 8px 18px;
+border-radius: 20px;
+font-size: 0.85rem;
+font-weight: 600;
+text-decoration: none;
+transition: var(--transition);
+align-self: flex-start;
+margin-top: 15px;
+}
+.action-btn:hover { background: var(--accent-gold); color: #fff; }
+[data-theme="light"] .action-btn:hover { color: #000; }
+​/* WebGL Interactive Blob Canvas Container (NOTA® Style) */
+.lab-canvas-container {
+background: radial-gradient(circle at center, #181822 0%, #050508 100%);
+border: 1px solid var(--card-border);
+border-radius: 12px;
+width: 100%;
+height: 480px;
+position: relative;
+overflow: hidden;
+margin: 20px 0;
+box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+}
+.lab-overlay-text {
+position: absolute;
+bottom: 25px;
+left: 25px;
+z-index: 5;
+pointer-events: none;
+}
+.lab-overlay-text h4 {
+font-family: var(--font-serif);
+font-size: 1.4rem;
+color: var(--text-main);
+letter-spacing: 1px;
+}
+.lab-overlay-text p {
+font-size: 0.8rem;
+color: var(--accent-gold);
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+.lab-hint-badge {
+position: absolute;
+top: 20px;
+right: 20px;
+z-index: 5;
+background: rgba(10, 10, 12, 0.75);
+border: 1px solid var(--accent-gold);
+color: var(--accent-gold);
+padding: 6px 14px;
+border-radius: 20px;
+font-size: 0.75rem;
+letter-spacing: 1px;
+text-transform: uppercase;
+backdrop-filter: blur(8px);
+pointer-events: none;
+}
+canvas#webgl-blob-canvas { display: block; width: 100%; height: 100%; }
+​/* Strategic Roadmap Section */
+.strategy-section {
+padding: 60px 0;
+border-top: 1px solid var(--card-border);
+margin-top: 60px;
+}
+.strategy-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
+margin-top: 30px;
+}
+.strategy-card {
+padding: 30px;
+position: relative;
+}
+.strategy-num {
+position: absolute;
+top: -10px;
+right: 15px;
+font-family: var(--font-serif);
+font-size: 4rem;
+color: rgba(197, 160, 89, 0.08);
+font-weight: 700;
+pointer-events: none;
+}
+.strategy-card h3 {
+font-family: var(--font-serif);
+font-size: 1.3rem;
+color: var(--text-main);
+margin-bottom: 12px;
+}
+.strategy-card p {
+color: var(--text-muted);
+font-size: 0.92rem;
+line-height: 1.7;
+}
+​/* Pagination */
+.pagination-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 40px; }
+.page-btn {
+background: var(--card-bg);
+border: 1px solid var(--accent-gold);
+color: var(--accent-gold);
+padding: 8px 20px;
+border-radius: 20px;
+font-weight: 600;
+transition: var(--transition);
+}
+.page-btn:hover:not(:disabled) { background: var(--accent-gold); color: #fff; }
+[data-theme="light"] .page-btn:hover:not(:disabled) { color: #000; }
+.page-btn:disabled { opacity: 0.3; cursor: not-allowed; border-color: var(--card-border); color: #666; }
+​/* Widgets */
+.widget-dock {
+position: fixed; bottom: 25px; left: 20px; z-index: 999;
+display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.audio-player-container { display: flex; align-items: center; gap: 6px; }
+.audio-btn, .theme-toggle-btn {
+background: var(--card-bg);
+border: 1px solid var(--accent-gold);
+color: var(--accent-gold);
+padding: 10px 16px;
+border-radius: 25px;
+font-size: 0.85rem;
+display: flex; align-items: center; gap: 8px;
+backdrop-filter: blur(8px);
+box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+transition: var(--transition);
+}
+.audio-btn.nav-btn { padding: 10px 12px; }
+.audio-btn:hover, .theme-toggle-btn:hover { background: var(--accent-gold); color: #fff; }
+[data-theme="light"] .audio-btn:hover,
+[data-theme="light"] .theme-toggle-btn:hover { color: #000; }
+​.floating-contact {
+position: fixed; bottom: 25px; right: 20px; z-index: 999;
+display: flex; flex-direction: column; gap: 10px;
+}
+.floating-contact a {
+width: 45px; height: 45px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+color: #fff; text-decoration: none;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+transition: var(--transition);
+}
+.floating-contact a.whatsapp-btn { background: #25D366; }
+.floating-contact a.instagram-btn {
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.floating-contact a:hover { transform: scale(1.1); }
+​/* Toast */
+.toast-notification {
+position: fixed; top: 25px; left: 50%;
+transform: translateX(-50%) translateY(-100px);
+background: var(--card-bg);
+border: 1px solid var(--accent-gold);
+color: var(--text-main);
+padding: 10px 24px;
+border-radius: 30px;
+font-size: 0.85rem;
+backdrop-filter: blur(10px);
+box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+z-index: 1000;
+opacity: 0;
+transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.5s ease;
+pointer-events: none;
+}
+.toast-notification.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+​/* Lightbox */
+.lightbox-modal {
+display: none;
+position: fixed; inset: 0;
+background: rgba(0,0,0,0.94);
+z-index: 10000;
+justify-content: center; align-items: center;
+flex-direction: column; padding: 20px;
+}
+.modal-content { max-width: 90vw; max-height: 70vh; object-fit: contain; border-radius: 8px; }
+.modal-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 2.5rem; cursor: pointer; line-height: 1; }
+.modal-metadata-box { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+.meta-badge { font-size: 0.75rem; padding: 4px 12px; border-radius: 12px; text-transform: uppercase; }
+.badge-verified { background: rgba(46,204,113,0.15); border: 1px solid #2ecc71; color: #2ecc71; }
+.badge-artist { background: rgba(197,160,89,0.15); border: 1px solid var(--accent-gold); color: var(--accent-gold); }
+.badge-series { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #d0d0d0; }
+.print-inquiry-btn {
+display: inline-flex; align-items: center; gap: 8px;
+margin-top: 15px;
+background: #25D366; color: #fff;
+padding: 10px 22px; border-radius: 30px;
+font-size: 0.85rem; font-weight: 600;
+text-decoration: none; transition: var(--transition);
+}
+.print-inquiry-btn:hover { opacity: 0.9; }
+​/* Document Reader Modal */
+.reader-modal {
+display: none;
+position: fixed; inset: 0;
+background: rgba(0,0,0,0.92);
+z-index: 10000;
+justify-content: center; align-items: center;
+padding: 20px;
+}
+.reader-card {
+background: var(--card-bg);
+border: 1px solid var(--accent-gold);
+border-radius: var(--radius);
+max-width: 800px; width: 100%;
+max-height: 85vh; overflow-y: auto;
+padding: 40px; position: relative;
+}
+.reader-card h2 { font-family: var(--font-serif); font-size: 2rem; color: var(--text-main); margin-bottom: 10px; }
+.reader-card .subtitle { color: var(--accent-gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; }
+.reader-card p { color: var(--text-muted); line-height: 1.8; margin-bottom: 15px; }
+.reader-close { position: absolute; top: 25px; right: 25px; color: var(--text-muted); font-size: 1.8rem; cursor: pointer; line-height: 1; }
+.reader-close:hover { color: var(--text-main); }
+​/* Footer */
+footer {
+text-align: center; padding: 50px 20px;
+border-top: 1px solid var(--card-border);
+margin-top: 60px; color: var(--text-muted);
+}
+footer p { margin-bottom: 10px; }
+.footer-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
+.footer-link { color: var(--accent-gold); text-decoration: none; }
+​/* Reveal (with No-JS Fallback) */
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.active { opacity: 1; transform: translateY(0); }
+​@media (max-width: 768px) {
+.story-container { grid-template-columns: 1fr; gap: 20px; }
+.hero-content h1 { font-size: 2.3rem; }
+#spotlight { display: none; }
+.widget-dock { bottom: 15px; left: 10px; right: 10px; justify-content: center; }
+.lab-canvas-container { height: 350px; }
+}
+</style>
 </head>
 <body data-theme="dark">
-
-  <div class="cursor-spotlight" id="spotlight"></div>
-  <div id="toast" class="toast-notification">🎵 Playing Track</div>
-
-  <div class="floating-contact">
-    <a href="https://wa.me/260763533205" target="_blank" rel="noopener" class="whatsapp-btn" title="Chat on WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/phoenix_view_bwm" target="_blank" rel="noopener" class="instagram-btn" title="Follow on Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-  </div>
-
-  <div class="widget-dock">
-    <button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme" aria-label="Toggle theme">
-      <span id="theme-icon">☀️</span>
-      <span id="theme-label">Light Mode</span>
-    </button>
-    <div class="audio-player-container">
-      <button id="prev-audio-btn" class="audio-btn nav-btn" title="Previous Track" aria-label="Previous track"><i class="fas fa-step-backward"></i></button>
-      <button id="audio-toggle-btn" class="audio-btn" aria-label="Play or pause soundtrack">
-        <span id="audio-icon">🎵</span>
-        <span id="audio-label">Soundtrack: Off</span>
-      </button>
-      <button id="next-audio-btn" class="audio-btn nav-btn" title="Next Track" aria-label="Next track"><i class="fas fa-step-forward"></i></button>
-    </div>
-  </div>
-
-  <audio id="ambient-audio" preload="none">
-    <source id="audio-source" src="audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a" type="audio/mp4">
-  </audio>
-
-  <div class="container">
-    <!-- Hero -->
-    <header class="canva-hero">
-      <div class="hero-slider">
-        <div class="slide active" style="background-image: url('images/20260416_165634.jpeg');" fetchpriority="high"></div>
-        <div class="slide" style="background-image: url('images/20251220_163327.jpeg');"></div>
-        <div class="slide" style="background-image: url('images/20260107_064814 (1).jpeg');"></div>
-      </div>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="cma-badge-tag">
-          <i class="fas fa-award"></i> 2026 Creative Media Awards — Best Documentary Photography Nominee
-        </div>
-        <h1>Ben Wesley Mwanza</h1>
-        <p class="tagline">Visual Archivist & Developer — the world is like a canvas, grab your brush, let's paint!</p>
-      </div>
-    </header>
-
-    <!-- Professional Accolades Banner -->
-    <div class="accolades-banner reveal">
-      <div class="accolade-card">
-        <i class="fas fa-award"></i>
-        <h4>CMA 2026 Nomination</h4>
-        <p>Shortlisted Nominee for Best Documentary Photography, recognizing exceptional regional visual storytelling.</p>
-      </div>
-      <div class="accolade-card">
-        <i class="fas fa-code-branch"></i>
-        <h4>Full-Stack Architecture</h4>
-        <p>Combining custom software engineering, mobile-first logistics tools, and static portfolio deployments.</p>
-      </div>
-      <div class="accolade-card">
-        <i class="fas fa-film"></i>
-        <h4>Cinematic & Editorial</h4>
-        <p>Author of original screenplays, documentary series bibles, and high-concept publication lookbooks.</p>
-      </div>
-    </div>
-
-    <!-- Story -->
-    <section id="about" class="story-section">
-      <div class="story-container">
-        <div class="story-left reveal">
-          <h2>My story</h2>
-        </div>
-        <div class="story-right reveal">
-          <p>My name is Ben Wesley Mwanza—though around here, you might know me as <strong>phoenix_view_bwm</strong>, or simply <em>the passing photographer</em>.</p>
-          <p>I am a traveler, a writer, a software architect, and a visual storyteller. Recognized as a nominee for <strong>Best Documentary Photography at the 2026 Creative Media Awards (CMA Zambia)</strong>, I operate at the intersection of creative lens production and hard-coded digital infrastructure.</p>
-          
-          <div style="border-left: 3px solid var(--accent-gold); padding-left: 18px; margin: 25px 0; background: rgba(197, 160, 89, 0.05); border-radius: 0 8px 8px 0;">
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 1px;">Someone once told me;</p>
-            <p style="font-style: italic; color: var(--accent-gold); font-size: 1.1rem; margin: 0; padding-bottom: 8px;">"The version of you today isn't the version you will be tomorrow."</p>
-          </div>
-
-          <p>That thought stayed with me. It made me wonder: <em>How do we hold onto who we are right now? How do we keep today alive for the person we become tomorrow?</em></p>
-          <p>Then I looked at the camera and the code editor, and asked myself: <em>How can I combine these two worlds?</em></p>
-          <p>That moment birthed my answer. Welcome to a world of frozen frames and digital systems—preserved through the View of Ben Wesley Mwanza.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Discipline Tabs -->
-    <div class="discipline-nav reveal">
-      <button class="discipline-btn active" data-tab="photography-pane"><i class="fas fa-camera"></i> Photography Series</button>
-      <button class="discipline-btn" data-tab="apps-pane"><i class="fas fa-code"></i> App Systems & Architecture</button>
-      <button class="discipline-btn" data-tab="editorial-pane"><i class="fas fa-pen-nib"></i> Screenwriting & Editorial</button>
-      <button class="discipline-btn" data-tab="lookbooks-pane"><i class="fas fa-book-open"></i> Editorial Lookbooks</button>
-      <button class="discipline-btn" data-tab="services-pane"><i class="fas fa-briefcase"></i> Business Solutions</button>
-      <button class="discipline-btn" data-tab="lab-pane"><i class="fas fa-flask"></i> Project Laboratory</button>
-    </div>
-
-    <!-- Photography Pane -->
-    <div id="photography-pane" class="discipline-pane active">
-      <div class="section-header">
-        <h2>Fine Art & Documentary Photography</h2>
-        <p>Macro environmental documentation, urban perspective, and Zambian wilderness series.</p>
-      </div>
-      
-      <div class="portfolio-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn" data-filter="road">Road & Journey Series</button>
-        <button class="filter-btn" data-filter="nature">Nature Series</button>
-        <button class="filter-btn" data-filter="painted">Painted World Series</button>
-      </div>
-
-      <div class="portfolio-grid" id="photo-gallery-grid">
-        <!-- 1. ROAD & JOURNEY SERIES -->
-        <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>The Open Highway</h3><p>Road & Journey Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260417_093623.jpeg" alt="Passing Through" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Passing Through</h3><p>Road & Journey Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260416_165634.jpeg" alt="Asphalt Canopy Road" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Asphalt Canopy</h3><p>Road & Journey Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260416_165431 (1).jpeg" alt="Bridge Overpass Rail" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Overpass Perspective</h3><p>Road & Journey Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260416_165448.jpeg" alt="Bridge Railing View" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Highway Railing</h3><p>Road & Journey Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260416_165455 (1).jpeg" alt="Sunset Highway Railing" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Sunset Highway</h3><p>Road & Journey Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260407_125528 (2).jpeg" alt="Spring Pathway I" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Spring Pathway I</h3><p>Road & Journey Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260407_123038.jpeg" alt="Travelers on the Road" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Travelers on the Road</h3><p>Road & Journey Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20251219_173958.jpeg" alt="Solitary Trail" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Solitary Trail</h3><p>Road & Journey Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20251219_174730 (5).jpeg" alt="Forest Trail" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Forest Trail</h3><p>Road & Journey Series</p></div>
-        </div>
-
-        <!-- 2. NATURE SERIES -->
-        <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/VideoCapture_20260407-230314.jpeg" alt="Twilight Nature Still" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Twilight Nature Still</h3><p>Nature Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_132443.jpeg" alt="Spring Meadow Path" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Spring Meadow Path</h3><p>Nature Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_130529.jpeg" alt="Sunlit Foliage Trail" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Sunlit Foliage Trail</h3><p>Nature Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_131225.jpeg" alt="Forest Canopy Light" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Forest Canopy Light</h3><p>Nature Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_130545.jpeg" alt="Woodland Perspective" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Woodland Perspective</h3><p>Nature Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/VideoCapture_20260408-180522 (2).jpeg" alt="Evening Atmosphere Still" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Evening Atmosphere Still</h3><p>Nature Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_143818.jpeg" alt="Afternoon Wilds" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Afternoon Wilds</h3><p>Nature Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_143213.jpeg" alt="Lush Green Valley" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Lush Green Valley</h3><p>Nature Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_140322 (2).jpeg" alt="Verdant Canopy" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Verdant Canopy</h3><p>Nature Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/IMG_20260407_132916_921.jpeg" alt="Botanical Horizon" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Botanical Horizon</h3><p>Nature Series</p></div>
-        </div>
-
-        <!-- 3. PAINTED WORLD SERIES -->
-        <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20251208_065856 (2).jpeg" alt="Painted Dew Study I" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Painted Dew Study I</h3><p>Painted World Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20251211_173030.jpeg" alt="Painted Horizon I" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Painted Horizon I</h3><p>Painted World Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20251211_173030 (1).jpeg" alt="Painted Horizon II" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Painted Horizon II</h3><p>Painted World Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20251223_164301 (1).jpeg" alt="Painted Falls Mist" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Painted Falls Mist</h3><p>Painted World Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20260102_173213.jpeg" alt="Painted Valley Light" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Painted Valley Light</h3><p>Painted World Series</p></div>
-        </div>
-        <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20260102_170309 (1).jpeg" alt="Painted Sunset Glow" class="expandable" loading="lazy" decoding="async">
-          <div class="card-caption"><h3>Painted Sunset Glow</h3><p>Painted World Series</p></div>
-        </div>
-      </div>
-
-      <div class="pagination-container reveal">
-        <button id="prev-page-btn" class="page-btn">← Previous</button>
-        <span id="page-indicator" style="font-size: 0.9rem; color: var(--text-muted);">Page 1 of 1</span>
-        <button id="next-page-btn" class="page-btn">Next →</button>
-      </div>
-    </div>
-
-    <!-- Apps Pane -->
-    <div id="apps-pane" class="discipline-pane">
-      <div class="section-header">
-        <h2>Software Architecture & Logistics Platforms</h2>
-        <p>Custom mobile systems, payment API integrations, and offline-capable web infrastructures.</p>
-      </div>
-      <div class="showcase-grid">
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Application Infrastructure</span>
-            <h3>Logistics & Regional Delivery Platform</h3>
-            <p>A full-stack, mobile-first logistics interface designed for high-density delivery routes, local mobile payment API integrations, and offline messaging functionality.</p>
-            <div class="tech-stack-badges">
-              <span class="tech-pill">Mobile Architecture</span>
-              <span class="tech-pill">REST APIs</span>
-              <span class="tech-pill">No-Code + Custom JS</span>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Digital Platform</span>
-            <h3>Phoenix View Digital Media Portal</h3>
-            <p>High-performance client-side image rendering engine with dynamic category filtration, lightbox zoom overlays, and integrated ambient soundscape routing.</p>
-            <div class="tech-stack-badges">
-              <span class="tech-pill">HTML5 / CSS3</span>
-              <span class="tech-pill">GitHub Pages</span>
-              <span class="tech-pill">SEO Structured Data</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Editorial Pane -->
-    <div id="editorial-pane" class="discipline-pane">
-      <div class="section-header">
-        <h2>Screenplays & Documentary Pitch Decks</h2>
-        <p>Original cinematic thrillers, environmental documentary decks, and reflective prose.</p>
-      </div>
-      <div class="showcase-grid">
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Dramatic Thriller Script</span>
-            <h3>Game of Couples (Screenplay)</h3>
-            <p>A multi-couple dramatic thriller movie script following a wilderness hiking expedition that unspools secrets, romantic tension, and survival dynamics.</p>
-            <div class="tech-stack-badges">
-              <span class="tech-pill">Screenwriting</span>
-              <span class="tech-pill">Character Arc Structuring</span>
-            </div>
-          </div>
-          <button class="action-btn reader-btn" data-doc="game-of-couples"><i class="fas fa-book-open"></i> Read Synopsis</button>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Documentary Pitch Deck</span>
-            <h3>The Frontline Keepers: Zambia’s Wildlife War</h3>
-            <p>A comprehensive pitch deck for an international documentary series focusing on frontline conservation rangers, regional wildlife protection, and human drama.</p>
-            <div class="tech-stack-badges">
-              <span class="tech-pill">Documentary Narrative</span>
-              <span class="tech-pill">Series Bible</span>
-            </div>
-          </div>
-          <button class="action-btn reader-btn" data-doc="frontline-keepers"><i class="fas fa-book-open"></i> Read Pitch Overview</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Lookbooks Pane -->
-    <div id="lookbooks-pane" class="discipline-pane">
-      <div class="section-header reveal">
-        <h2>Editorial Lookbooks & Publication Design</h2>
-        <p>High-concept digital & print editorial layouts combining macro photography, bespoke typography, and narrative copywriting.</p>
-      </div>
-      <div class="showcase-grid">
-        <!-- 25 Lookbooks Spreads Included -->
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Travel Magazine Cover</span>
-            <h3>EXPLORE: The Beauty of Mountains</h3>
-            <img src="images/1_20261002_091657_0000.jpeg" alt="EXPLORE Travel Magazine Cover" class="expandable" loading="lazy" decoding="async">
-            <p>Signature cover concept for the EXPLORE publication series, featuring silhouette cinematography and high-contrast editorial typography.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Cover Art</span><span class="tech-pill">Typography</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Feature — Spread 03</span>
-            <h3>The Unseen World Beneath Our Feet</h3>
-            <img src="images/2_20261008_115127_0001.jpeg" alt="The Unseen World Beneath Our Feet" class="expandable" loading="lazy" decoding="async">
-            <p>Multi-column editorial spread exploring micro ecosystems, soil craftsmanship, and the hidden architectural marvels of the forest floor.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Macro Photography</span><span class="tech-pill">Editorial Copy</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Nature Lookbook Series</span>
-            <h3>Crimson Tones: A Painted Garden Series</h3>
-            <img src="images/3_20261023_121001_0002.jpeg" alt="Crimson Tones Lookbook" class="expandable" loading="lazy" decoding="async">
-            <p>Agricultural heritage meets artistic vision. Macro perspective capturing the dew-kissed texture and scarlet tones of the Zambian countryside.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Canva Editorial</span><span class="tech-pill">Visual Storytelling</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 02</span>
-            <h3>Botanical Textures & Scarlet Tones</h3>
-            <img src="images/1_20261023_121000_0000.jpeg" alt="Lookbook Plate 02" class="expandable" loading="lazy" decoding="async">
-            <p>A closer look at the organic lines and rich chromatic tones designed for publication layout.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Lookbook Spread</span><span class="tech-pill">Macro Art</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 03</span>
-            <h3>Silent Rhythm of the Countryside</h3>
-            <img src="images/2_20261023_121001_0001.jpeg" alt="Lookbook Plate 03" class="expandable" loading="lazy" decoding="async">
-            <p>Balancing whitespace, structured typography, and high-impact macro imagery.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Editorial Design</span><span class="tech-pill">Typography</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 04</span>
-            <h3>Highland Shadows & Foliage</h3>
-            <img src="images/4_20261023_121001_0003.jpeg" alt="Lookbook Plate 04" class="expandable" loading="lazy" decoding="async">
-            <p>Study of shadow framing and organic geometry within nature series spreads.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Publication Layout</span><span class="tech-pill">Art Direction</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 05</span>
-            <h3>Verdant Horizons & Deep Forest</h3>
-            <img src="images/5_20261023_121001_0004.jpeg" alt="Lookbook Plate 05" class="expandable" loading="lazy" decoding="async">
-            <p>Wide perspective editorial spread featuring deep green foliage and natural lighting.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Landscape Spread</span><span class="tech-pill">Editorial Copy</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 06</span>
-            <h3>Canopy Perspectives & Twilight Glow</h3>
-            <img src="images/6_20261023_121001_0005.jpeg" alt="Lookbook Plate 06" class="expandable" loading="lazy" decoding="async">
-            <p>Editorial arrangement capturing woodland atmosphere and ambient forest lighting.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Canopy Series</span><span class="tech-pill">Lookbook Layout</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 07</span>
-            <h3>Botanical Macro Geometry</h3>
-            <img src="images/7_20261023_121001_0006.jpeg" alt="Lookbook Plate 07" class="expandable" loading="lazy" decoding="async">
-            <p>High-resolution botanical close-ups prepared for print and digital publication.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Macro Detail</span><span class="tech-pill">Print Ready</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Unseen World — Spread 01</span>
-            <h3>Forest Floor Exploration: Opening Plate</h3>
-            <img src="images/1_20261008_115127_0000.jpeg" alt="Unseen World Opening Plate" class="expandable" loading="lazy" decoding="async">
-            <p>Title spread introducing readers to macro micro-ecosystems and natural soil layers.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Editorial Lead</span><span class="tech-pill">Storytelling</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Unseen World — Spread 02</span>
-            <h3>Micro Ecosystems & Soil Texture</h3>
-            <img src="images/3_20261008_115127_0002.jpeg" alt="Unseen World Spread 02" class="expandable" loading="lazy" decoding="async">
-            <p>Macro analysis of organic textures and forest floor biodiversity.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Field Research</span><span class="tech-pill">Macro Lens</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Unseen World — Spread 04</span>
-            <h3>Architectural Soil Burrows</h3>
-            <img src="images/4_20261008_115127_0003.jpeg" alt="Unseen World Spread 04" class="expandable" loading="lazy" decoding="async">
-            <p>Documenting insect architecture and subtle environmental shifts on the forest floor.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Documentary Frame</span><span class="tech-pill">Editorial</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Unseen World — Spread 05</span>
-            <h3>Concluding Field Notes</h3>
-            <img src="images/5_20261008_115128_0004.jpeg" alt="Unseen World Spread 05" class="expandable" loading="lazy" decoding="async">
-            <p>Summary spread combining prose, macro imagery, and publication closing layout.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Closing Spread</span><span class="tech-pill">Prose & Copy</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">EXPLORE Series — Plate 02</span>
-            <h3>Mountain Ridge Silhouette</h3>
-            <img src="images/2_20261002_091657_0001.jpeg" alt="Mountain Ridge Silhouette" class="expandable" loading="lazy" decoding="async">
-            <p>Cinematic mountain ridge silhouette captured during peak sunset glow.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Landscape</span><span class="tech-pill">Silhouette</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">EXPLORE Series — Plate 03</span>
-            <h3>Highland Peak Exploration</h3>
-            <img src="images/3_20261002_091657_0002.jpeg" alt="Highland Peak Exploration" class="expandable" loading="lazy" decoding="async">
-            <p>Dramatic vista layout from the mountain series editorial compilation.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Vista Spread</span><span class="tech-pill">Fine Art</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">EXPLORE Series — Plate 04</span>
-            <h3>Solitary Expedition Path</h3>
-            <img src="images/4_20261002_091657_0003.jpeg" alt="Solitary Expedition Path" class="expandable" loading="lazy" decoding="async">
-            <p>Editorial framing of winding trails and remote highland exploration.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Travel Series</span><span class="tech-pill">Editorial Layout</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">EXPLORE Series — Plate 05</span>
-            <h3>Highland Canopy & Evening Sky</h3>
-            <img src="images/5_20261002_091657_0004.jpeg" alt="Highland Canopy Spread" class="expandable" loading="lazy" decoding="async">
-            <p>Closing magazine plate highlighting sky gradients and high-contrast canopy lines.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Sky Gradients</span><span class="tech-pill">Magazine Plate</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Modern Minimal Plate I</span>
-            <h3>White & Black Light Modern Minimal — Plate I</h3>
-            <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035035_0000.jpeg" alt="White and Black Light Modern Minimal Plate I" class="expandable" loading="lazy" decoding="async">
-            <p>Light modern minimal aesthetic layout emphasizing clean lines, crisp contrast, and sophisticated typography.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Light Minimal</span><span class="tech-pill">Plate I</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Modern Minimal Plate II</span>
-            <h3>White & Black Light Modern Minimal — Plate II</h3>
-            <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0001.jpeg" alt="White and Black Light Modern Minimal Plate II" class="expandable" loading="lazy" decoding="async">
-            <p>Balanced whitespace composition tailored for high-end digital editorial portfolios and layout frames.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Whitespace</span><span class="tech-pill">Plate II</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Modern Minimal Plate III</span>
-            <h3>White & Black Light Modern Minimal — Plate III</h3>
-            <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0002.jpeg" alt="White and Black Light Modern Minimal Plate III" class="expandable" loading="lazy" decoding="async">
-            <p>Refined publication spread featuring structured content blocks, subtle framing, and elegant typography.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Structured Grid</span><span class="tech-pill">Plate III</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Modern Minimal Plate IV</span>
-            <h3>White & Black Light Modern Minimal — Plate IV</h3>
-            <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0004.jpeg" alt="White and Black Light Modern Minimal Plate IV" class="expandable" loading="lazy" decoding="async">
-            <p>Clean minimal visual curation designed for contemporary artistic profiles and lookbook presentation.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Modern Minimal</span><span class="tech-pill">Plate IV</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Modern Minimal Plate V</span>
-            <h3>White & Black Light Modern Minimal — Plate V</h3>
-            <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0005.jpeg" alt="White and Black Light Modern Minimal Plate V" class="expandable" loading="lazy" decoding="async">
-            <p>Concluding plate of the light minimalist series focusing on tonal depth and visual balance.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Tonal Balance</span><span class="tech-pill">Plate V</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Team Story Introduction I</span>
-            <h3>White Black Minimalist Team Profile I</h3>
-            <img src="images/White Black Minimalist Team Introduction Instagram Story_20260805_104415_0000.jpeg" alt="Team Profile I" class="expandable" loading="lazy" decoding="async">
-            <p>Clean minimalist layout highlighting creative collaboration, team structure, and leadership presentation.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Team Profile</span><span class="tech-pill">Instagram Story</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Team Story Introduction II</span>
-            <h3>White Black Minimalist Team Profile II</h3>
-            <img src="images/White Black Minimalist Team Introduction Instagram Story_20260805_110829_0000.jpeg" alt="Team Profile II" class="expandable" loading="lazy" decoding="async">
-            <p>Secondary professional introduction spread optimized for digital storytelling and partner highlights.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Collaboration</span><span class="tech-pill">Story Layout</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Monochrome Lookbook Story</span>
-            <h3>Monochrome Minimalist Fashion Lookbook</h3>
-            <img src="images/Monochrome Minimalist Fashion Instagram Story_20260805_110509_0000.jpeg" alt="Monochrome Fashion Story" class="expandable" loading="lazy" decoding="async">
-            <p>High-contrast monochrome aesthetic exploring fashion lookbooks, styling palettes, and modern layout composition.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Fashion Lookbook</span><span class="tech-pill">Monochrome</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Business Solutions Pane (New Phoenix Core V1 B2B Module) -->
-    <div id="services-pane" class="discipline-pane">
-      <div class="section-header">
-        <h2>Business Solutions & Professional Services</h2>
-        <p>Custom-coded digital experiences, high-performance portfolios, and expedition media packages.</p>
-      </div>
-      <div class="showcase-grid">
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">B2B Service</span>
-            <h3>Custom Front-End Applications</h3>
-            <p>Lightning-fast, zero-dependency web interfaces, portfolio architectures, and responsive digital platforms engineered specifically for brands and creators.</p>
-            <div class="tech-stack-badges">
-              <span class="tech-pill">Vanilla Architecture</span>
-              <span class="tech-pill">High Performance</span>
-            </div>
-          </div>
-          <a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20am%20interested%20in%20inquiring%20about%20Custom%20Front-End%20Development%20(Phoenix%20View%20Media)." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Service</a>
-        </div>
-
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">B2B Service</span>
-            <h3>Eco-Lodge & Expedition Media Packaging</h3>
-            <p>Professional photography licensing, visual storytelling, and product placement integration leveraging custom manufactured canvas camping gear for remote wilderness tourism.</p>
-            <div class="tech-stack-badges">
-              <span class="tech-pill">Tourism Media</span>
-              <span class="tech-pill">Photography Licensing</span>
-            </div>
-          </div>
-          <a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20am%20interested%20in%20Eco-Lodge%20Media%20Packaging%20and%20Expedition%20Partnerships." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Partnership</a>
-        </div>
-
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">B2B Service</span>
-            <h3>Digital Archives & Cultural Portals</h3>
-            <p>Structured, searchable long-term digital vaults and lookbook publications designed for cultural institutions, publishers, and documentary archives.</p>
-            <div class="tech-stack-badges">
-              <span class="tech-pill">Archival Systems</span>
-              <span class="tech-pill">Editorial Design</span>
-            </div>
-          </div>
-          <a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20would%20like%20to%20discuss%20Digital%20Archival%20Development." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Archive</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project Laboratory Pane (New Native JS Interactive Sandbox) -->
-    <div id="lab-pane" class="discipline-pane">
-      <div class="section-header">
-        <h2>Project Laboratory & Interactive Sandbox</h2>
-        <p>Experimental native JavaScript simulations, canvas graphics, and generative visual mechanics.</p>
-      </div>
-      <div class="showcase-grid">
-        <div class="showcase-card reveal" style="grid-column: 1 / -1;">
-          <div>
-            <span class="showcase-tag">Interactive Simulation</span>
-            <h3>Phoenix Particle Flow Simulator</h3>
-            <p>A native HTML5 Canvas simulation rendering real-time interactive particle physics responding to cursor positioning—demonstrating raw browser graphics rendering without heavy libraries.</p>
-            <div class="lab-canvas-container">
-              <canvas id="labCanvas"></canvas>
-            </div>
-            <div class="tech-stack-badges">
-              <span class="tech-pill">Canvas 2D API</span>
-              <span class="tech-pill">RequestAnimationFrame</span>
-              <span class="tech-pill">Pure JavaScript</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Strategic Roadmap & Eco-System Pillars -->
-    <section class="strategy-section">
-      <div class="section-header reveal">
-        <h2>Phoenix Engine Ecosystem & Strategic Roadmap</h2>
-        <p>Institutional validation, community impact, and commercial value-exchange frameworks.</p>
-      </div>
-
-      <div class="strategy-grid">
-        <div class="strategy-card reveal">
-          <div class="strategy-num">01</div>
-          <h3>Institutional & Grant Validation</h3>
-          <p>Structuring Phoenix View Media for formal partnerships with cultural preservation bodies and the National Arts Council. Securing archival grants to fund large-scale Zambian environmental documentation.</p>
-        </div>
-
-        <div class="strategy-card reveal">
-          <div class="strategy-num">02</div>
-          <h3>Youth Sanctuary & Creative Incubator</h3>
-          <p>Building a long-term physical and digital sanctuary designed to uplift vulnerable youth and emerging local talent, passing down technical skills in software architecture and visual storytelling.</p>
-        </div>
-
-        <div class="strategy-card reveal">
-          <div class="strategy-num">03</div>
-          <h3>Eco-Lodge & Canvas Equipment Partnerships</h3>
-          <p>Providing high-end value-exchange packaging for eco-lodges and expedition clubs—integrating professional photography licensing, media production, and product placement utilizing family-manufactured canvas camping equipment.</p>
-        </div>
-
-        <div class="strategy-card reveal">
-          <div class="strategy-num">04</div>
-          <h3>Cross-Border Collaborative Networks</h3>
-          <p>Co-directing cross-border documentary initiatives with regional creators like Khangelani Dhlamini, fashion styling collaborations with Elizabeth Mwanza (`soultribe`), and travel media development with Mzansi Destinations.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <footer>
-    <p>Let's paint your canvas together.</p>
-    <div class="footer-links">
-      <a href="mailto:benmwanza15@gmail.com" class="footer-link">benmwanza15@gmail.com</a>
-      <span>•</span>
-      <a href="https://wa.me/260763533205" target="_blank" rel="noopener" class="footer-link">+260 76 3533205</a>
-    </div>
-    <p>&copy; 2026 Phoenix View Media. All rights reserved.</p>
-  </footer>
-
-  <!-- Lightbox -->
-  <div id="image-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image lightbox">
-    <span class="modal-close" aria-label="Close">&times;</span>
-    <img class="modal-content" id="modal-img" alt="">
-    <div id="modal-caption" style="text-align: center; margin-top: 10px; color: #fff; font-family: var(--font-serif); font-size: 1.1rem;"></div>
-    <div class="modal-metadata-box">
-      <span class="meta-badge badge-verified">✓ Verified Original</span>
-      <span class="meta-badge badge-artist">Ben Wesley Mwanza</span>
-      <span id="modal-series-badge" class="meta-badge badge-series">Series Work</span>
-    </div>
-    <a id="print-request-btn" href="#" target="_blank" rel="noopener" class="print-inquiry-btn">
-      <i class="fab fa-whatsapp"></i> Inquire Print / License
-    </a>
-  </div>
-
-  <!-- Document Reader Modal -->
-  <div id="reader-modal" class="reader-modal" role="dialog" aria-modal="true" aria-label="Document reader">
-    <div class="reader-card">
-      <span class="reader-close" aria-label="Close">&times;</span>
-      <div id="reader-body"></div>
-    </div>
-  </div>
-
-  <script>
-  (function() {
-    'use strict';
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // 1. Cursor Spotlight
-    const spotlight = document.getElementById('spotlight');
-    if (spotlight && !prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
-      let ticking = false;
-      window.addEventListener('mousemove', (e) => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            spotlight.style.left = e.clientX + 'px';
-            spotlight.style.top = e.clientY + 'px';
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }, { passive: true });
-    } else if (spotlight) {
-      spotlight.style.display = 'none';
-    }
-
-    // 2. Theme Toggle
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const themeIcon = document.getElementById('theme-icon');
-    const themeLabel = document.getElementById('theme-label');
-    const body = document.body;
-
-    themeToggleBtn?.addEventListener('click', () => {
-      const isDark = body.getAttribute('data-theme') === 'dark';
-      body.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      themeIcon.textContent = isDark ? '🌙' : '☀️';
-      themeLabel.textContent = isDark ? 'Dark Mode' : 'Light Mode';
-    });
-
-    // 3. 3D Tilt
-    function initTilt() {
-      if (prefersReducedMotion || window.innerWidth < 900) return;
-      document.querySelectorAll('.portfolio-card, .showcase-card, .strategy-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -5;
-          const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 5;
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-        }, { passive: true });
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-        }, { passive: true });
-      });
-    }
-
-    // 4. Discipline Tabs
-    document.querySelectorAll('.discipline-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.discipline-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.discipline-pane').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.dataset.tab)?.classList.add('active');
-      });
-    });
-
-    // 5. Hero Slider
-    const slides = document.querySelectorAll('.hero-slider .slide');
-    if (slides.length > 1 && !prefersReducedMotion) {
-      let current = 0;
-      setInterval(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-      }, 5500);
-    }
-
-    // 6. Gallery Filter + Pagination
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioCards = Array.from(document.querySelectorAll('.portfolio-card'));
-    const prevPageBtn = document.getElementById('prev-page-btn');
-    const nextPageBtn = document.getElementById('next-page-btn');
-    const pageIndicator = document.getElementById('page-indicator');
-
-    let currentPage = 1;
-    const itemsPerPage = 12;
-    let currentFilter = 'all';
-
-    function getFiltered() {
-      return currentFilter === 'all' ? portfolioCards : portfolioCards.filter(c => c.dataset.category === currentFilter);
-    }
-
-    function renderGallery() {
-      const filtered = getFiltered();
-      const totalPages = Math.max(1, Math.ceil(filtered.length / itemsPerPage));
-      currentPage = Math.min(Math.max(1, currentPage), totalPages);
-      const start = (currentPage - 1) * itemsPerPage;
-      const end = start + itemsPerPage;
-
-      portfolioCards.forEach(c => c.classList.add('hidden'));
-      filtered.slice(start, end).forEach(c => c.classList.remove('hidden'));
-
-      if (pageIndicator) pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
-      if (prevPageBtn) prevPageBtn.disabled = currentPage === 1;
-      if (nextPageBtn) nextPageBtn.disabled = currentPage === totalPages;
-    }
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.dataset.filter;
-        currentPage = 1;
-        renderGallery();
-      });
-    });
-
-    prevPageBtn?.addEventListener('click', () => { if (currentPage > 1) { currentPage--; renderGallery(); } });
-    nextPageBtn?.addEventListener('click', () => {
-      const total = Math.ceil(getFiltered().length / itemsPerPage);
-      if (currentPage < total) { currentPage++; renderGallery(); }
-    });
-
-    renderGallery();
-
-    // 7. Lightbox
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('modal-img');
-    const modalCaption = document.getElementById('modal-caption');
-    const seriesBadge = document.getElementById('modal-series-badge');
-    const printBtn = document.getElementById('print-request-btn');
-    const closeBtn = document.querySelector('.modal-close');
-
-    document.querySelectorAll('.expandable').forEach(img => {
-      img.addEventListener('click', function() {
-        if (!modal) return;
-        modal.style.display = 'flex';
-        modalImg.src = this.currentSrc || this.src;
-        modalCaption.textContent = this.alt || 'Fine Art Work';
-
-        const parent = this.closest('.portfolio-card') || this.closest('.showcase-card');
-        if (parent?.classList.contains('portfolio-card')) {
-          const cat = parent.dataset.category;
-          seriesBadge.textContent = cat === 'road' ? 'Road & Journey Series' :
-                                    cat === 'nature' ? 'Nature Series' : 'Painted World Series';
-        } else {
-          seriesBadge.textContent = 'Editorial Lookbook Spread';
-        }
-
-        printBtn.href = `https://wa.me/260763533205?text=${encodeURIComponent(`Hello Ben, I am interested in licensing/inquiring about: "${this.alt}" (Phoenix View Media).`)}`;
-      });
-    });
-
-    closeBtn?.addEventListener('click', () => modal.style.display = 'none');
-    modal?.addEventListener('click', (e) => {
-      if (e.target === modal || e.target === closeBtn) modal.style.display = 'none';
-    });
-
-    // 8. Interactive Document Reader Modal
-    const readerModal = document.getElementById('reader-modal');
-    const readerBody = document.getElementById('reader-body');
-    const readerCloseBtn = document.querySelector('.reader-close');
-
-    const documentTexts = {
-      "game-of-couples": `
-        <h2>Game of Couples</h2>
-        <div class="subtitle">Feature Film Screenplay Synopsis</div>
-        <p><strong>Logline:</strong> Four couples embark on an elite wilderness hiking expedition across rugged remote terrain, only to discover that deep-seated secrets, unresolved tensions, and psychological survival dynamics will test their bonds far beyond the trail.</p>
-        <p><strong>Narrative Arc:</strong> The narrative builds as an atmospheric slow-burn thriller. Initially framed as a restorative weekend retreat, shifting environmental obstacles and psychological confrontations strip away polite façades. Each character is forced to confront what loyalty truly means when isolation sets in.</p>
-        <p><strong>Development Focus:</strong> Written by Ben Wesley Mwanza, the screenplay merges high-stakes dramatic tension with rich visual framing of untamed wilderness landscapes.</p>
-      `,
-      "frontline-keepers": `
-        <h2>The Frontline Keepers: Zambia’s Wildlife War</h2>
-        <div class="subtitle">International Documentary Series Bible & Pitch Deck</div>
-        <p><strong>Overview:</strong> A premium natural history and human-interest documentary series following the dedicated rangers, conservationists, and local communities on the frontline of wildlife preservation in Zambia.</p>
-        <p><strong>Core Focus:</strong> Beyond traditional wildlife documentary formats, <em>The Frontline Keepers</em> zeroes in on the human element—the daily sacrifices, tactical tracking units, and community-led conservation value exchanges that safeguard regional heritage.</p>
-        <p><strong>Production Vision:</strong> Produced by Phoenix View Media, combining macro cinematography, intimate portraiture, and compelling field audio.</p>
-      `
-    };
-
-    document.querySelectorAll('.reader-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const docKey = btn.dataset.doc;
-        if (!readerModal || !readerBody) return;
-        readerBody.innerHTML = documentTexts[docKey] || '<p>Document content unavailable.</p>';
-        readerModal.style.display = 'flex';
-      });
-    });
-
-    readerCloseBtn?.addEventListener('click', () => readerModal.style.display = 'none');
-    readerModal?.addEventListener('click', (e) => {
-      if (e.target === readerModal) readerModal.style.display = 'none';
-    });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        if (modal) modal.style.display = 'none';
-        if (readerModal) readerModal.style.display = 'none';
-      }
-    });
-
-    // 9. Multi-Track Audio Playlist (with Safe Promise Handling)
-    const playlist = [
-      { title: "Mr. Morale (ft. Tanna Leone)", src: "audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a", type: "audio/mp4" },
-      { title: "Majesty (Official)", src: "audio/ISLY_-_MAJESTY__Offical_Video_(128k).m4a", type: "audio/mp4" },
-      { title: "The Unknown - Northwest Stories", src: "audio/The Unknown - Northwest Stories.mp3", type: "audio/mpeg" }
-    ];
-    let currentTrackIndex = 0;
-    const ambientAudio = document.getElementById('ambient-audio');
-    const audioSource = document.getElementById('audio-source');
-    const audioBtn = document.getElementById('audio-toggle-btn');
-    const audioLabel = document.getElementById('audio-label');
-    const audioIcon = document.getElementById('audio-icon');
-    const prevBtn = document.getElementById('prev-audio-btn');
-    const nextBtn = document.getElementById('next-audio-btn');
-    const toast = document.getElementById('toast');
-    let toastTimeout;
-
-    function showToast(title) {
-      if (!toast) return;
-      toast.textContent = `🎵 Now Playing: ${title}`;
-      toast.classList.add('show');
-      clearTimeout(toastTimeout);
-      toastTimeout = setTimeout(() => toast.classList.remove('show'), 3500);
-    }
-
-    function loadTrack(index) {
-      if (!playlist.length) return;
-      audioSource.src = playlist[index].src;
-      audioSource.type = playlist[index].type;
-      ambientAudio.load();
-      audioLabel.textContent = playlist[index].title;
-    }
-
-    if (playlist.length) {
-      loadTrack(0);
-      audioLabel.textContent = "Soundtrack: Off";
-    }
-
-    function safePlayAudio() {
-      if (!playlist.length) return;
-      const playPromise = ambientAudio.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          audioIcon.textContent = "🔊";
-          audioLabel.textContent = playlist[currentTrackIndex].title;
-          showToast(playlist[currentTrackIndex].title);
-        }).catch(error => {
-          console.warn("Audio playback prevented or failed:", error);
-          audioLabel.textContent = "Soundtrack: Off";
-          audioIcon.textContent = "🎵";
-        });
-      }
-    }
-
-    audioBtn?.addEventListener('click', () => {
-      if (!playlist.length) return;
-      if (ambientAudio.paused) {
-        safePlayAudio();
-      } else {
-        ambientAudio.pause();
-        audioLabel.textContent = "Soundtrack: Off";
-        audioIcon.textContent = "🎵";
-      }
-    });
-
-    nextBtn?.addEventListener('click', () => {
-      if (!playlist.length) return;
-      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-      loadTrack(currentTrackIndex);
-      safePlayAudio();
-    });
-
-    prevBtn?.addEventListener('click', () => {
-      if (!playlist.length) return;
-      currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
-      loadTrack(currentTrackIndex);
-      safePlayAudio();
-    });
-
-    ambientAudio?.addEventListener('ended', () => {
-      if (!playlist.length) return;
-      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-      loadTrack(currentTrackIndex);
-      safePlayAudio();
-    });
-
-    // 10. Project Laboratory Canvas Particle Simulation
-    const labCanvas = document.getElementById('labCanvas');
-    if (labCanvas) {
-      const ctx = labCanvas.getContext('2d');
-      let animationFrameId;
-      let particles = [];
-      const particleCount = 35;
-
-      function resizeCanvas() {
-        labCanvas.width = labCanvas.parentElement.clientWidth;
-        labCanvas.height = labCanvas.parentElement.clientHeight;
-      }
-      window.addEventListener('resize', resizeCanvas);
-      resizeCanvas();
-
-      class Particle {
-        constructor() {
-          this.reset();
-        }
-        reset() {
-          this.x = Math.random() * labCanvas.width;
-          this.y = Math.random() * labCanvas.height;
-          this.vx = (Math.random() - 0.5) * 1.2;
-          this.vy = (Math.random() - 0.5) * 1.2;
-          this.radius = Math.random() * 2 + 1;
-        }
-        update() {
-          this.x += this.vx;
-          this.y += this.vy;
-          if (this.x < 0 || this.x > labCanvas.width || this.y < 0 || this.y > labCanvas.height) {
-            this.reset();
-          }
-        }
-        draw() {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-          ctx.fillStyle = '#c5a059';
-          ctx.fill();
-        }
-      }
-
-      for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-      }
-
-      function animateLab() {
-        ctx.clearRect(0, 0, labCanvas.width, labCanvas.height);
-        particles.forEach(p => {
-          p.update();
-          p.draw();
-        });
-        animationFrameId = requestAnimationFrame(animateLab);
-      }
-      animateLab();
-    }
-
-    // 11. Reveal Observer
-    const revealObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // Init tilt after load
-    window.addEventListener('load', initTilt);
-  })();
-  </script>
+​<div class="cursor-spotlight" id="spotlight"></div>
+<div id="toast" class="toast-notification">🎵 Playing Track</div>
+​<div class="floating-contact">
+<a href="https://wa.me/260763533205" target="_blank" rel="noopener" class="whatsapp-btn" title="Chat on WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://www.instagram.com/phoenix_view_bwm" target="_blank" rel="noopener" class="instagram-btn" title="Follow on Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
+​<div class="widget-dock">
+<button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme" aria-label="Toggle theme">
+<span id="theme-icon">☀️</span>
+<span id="theme-label">Light Mode</span>
+</button>
+<div class="audio-player-container">
+<button id="prev-audio-btn" class="audio-btn nav-btn" title="Previous Track" aria-label="Previous track"><i class="fas fa-step-backward"></i></button>
+<button id="audio-toggle-btn" class="audio-btn" aria-label="Play or pause soundtrack">
+<span id="audio-icon">🎵</span>
+<span id="audio-label">Soundtrack: Off</span>
+</button>
+<button id="next-audio-btn" class="audio-btn nav-btn" title="Next Track" aria-label="Next track"><i class="fas fa-step-forward"></i></button>
+</div>
+</div>
+​<audio id="ambient-audio" preload="none">
+<source id="audio-source" src="audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a" type="audio/mp4">
+</audio>
+​<div class="container">
+<!-- Hero -->
+<header class="canva-hero">
+<div class="hero-slider">
+<div class="slide active" style="background-image: url('images/20260416_165634.jpeg');" fetchpriority="high"></div>
+<div class="slide" style="background-image: url('images/20251220_163327.jpeg');"></div>
+<div class="slide" style="background-image: url('images/20260107_064814 (1).jpeg');"></div>
+</div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="cma-badge-tag">
+<i class="fas fa-award"></i> 2026 Creative Media Awards — Best Documentary Photography Nominee
+</div>
+<h1>Ben Wesley Mwanza</h1>
+<p class="tagline">Visual Archivist & Developer — the world is like a canvas, grab your brush, let's paint!</p>
+</div>
+</header>
+​<!-- Professional Accolades Banner -->
+<div class="accolades-banner reveal">
+<div class="accolade-card">
+<i class="fas fa-award"></i>
+<h4>CMA 2026 Nomination</h4>
+<p>Shortlisted Nominee for Best Documentary Photography, recognizing exceptional regional visual storytelling.</p>
+</div>
+<div class="accolade-card">
+<i class="fas fa-code-branch"></i>
+<h4>Full-Stack Architecture</h4>
+<p>Combining custom software engineering, mobile-first logistics tools, and static portfolio deployments.</p>
+</div>
+<div class="accolade-card">
+<i class="fas fa-film"></i>
+<h4>Cinematic & Editorial</h4>
+<p>Author of original screenplays, documentary series bibles, and high-concept publication lookbooks.</p>
+</div>
+</div>
+​<!-- Story -->
+<section id="about" class="story-section">
+<div class="story-container">
+<div class="story-left reveal">
+<h2>My story</h2>
+</div>
+<div class="story-right reveal">
+<p>My name is Ben Wesley Mwanza—though around here, you might know me as <strong>phoenix_view_bwm</strong>, or simply <em>the passing photographer</em>.</p>
+<p>I am a traveler, a writer, a software architect, and a visual storyteller. Recognized as a nominee for <strong>Best Documentary Photography at the 2026 Creative Media Awards (CMA Zambia)</strong>, I operate at the intersection of creative lens production and hard-coded digital infrastructure.</p>
+​<div style="border-left: 3px solid var(--accent-gold); padding-left: 18px; margin: 25px 0; background: rgba(197, 160, 89, 0.05); border-radius: 0 8px 8px 0;">
+<p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 1px;">Someone once told me;</p>
+<p style="font-style: italic; color: var(--accent-gold); font-size: 1.1rem; margin: 0; padding-bottom: 8px;">"The version of you today isn't the version you will be tomorrow."</p>
+</div>
+​<p>That thought stayed with me. It made me wonder: <em>How do we hold onto who we are right now? How do we keep today alive for the person we become tomorrow?</em></p>
+<p>Then I looked at the camera and the code editor, and asked myself: <em>How can I combine these two worlds?</em></p>
+<p>That moment birthed my answer. Welcome to a world of frozen frames and digital systems—preserved through the View of Ben Wesley Mwanza.</p>
+</div>
+</div>
+</section>
+​<!-- Discipline Tabs -->
+<div class="discipline-nav reveal">
+<button class="discipline-btn active" data-tab="photography-pane"><i class="fas fa-camera"></i> Photography Series</button>
+<button class="discipline-btn" data-tab="apps-pane"><i class="fas fa-code"></i> App Systems & Architecture</button>
+<button class="discipline-btn" data-tab="editorial-pane"><i class="fas fa-pen-nib"></i> Screenwriting & Editorial</button>
+<button class="discipline-btn" data-tab="lookbooks-pane"><i class="fas fa-book-open"></i> Editorial Lookbooks</button>
+<button class="discipline-btn" data-tab="services-pane"><i class="fas fa-briefcase"></i> Business Solutions</button>
+<button class="discipline-btn" data-tab="lab-pane"><i class="fas fa-cube"></i> Project Laboratory</button>
+</div>
+​<!-- Photography Pane -->
+<div id="photography-pane" class="discipline-pane active">
+<div class="section-header">
+<h2>Fine Art & Documentary Photography</h2>
+<p>Macro environmental documentation, urban perspective, and Zambian wilderness series.</p>
+</div>
+​<div class="portfolio-filters reveal">
+<button class="filter-btn active" data-filter="all">All Work</button>
+<button class="filter-btn" data-filter="road">Road & Journey Series</button>
+<button class="filter-btn" data-filter="nature">Nature Series</button>
+<button class="filter-btn" data-filter="painted">Painted World Series</button>
+</div>
+​<div class="portfolio-grid" id="photo-gallery-grid">
+<!-- 1. ROAD & JOURNEY SERIES (10) -->
+<div class="portfolio-card reveal" data-category="road">
+<img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>The Open Highway</h3><p>Road & Journey Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="road">
+<img src="images/20260417_093623.jpeg" alt="Passing Through" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Passing Through</h3><p>Road & Journey Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="road">
+<img src="images/20260416_165634.jpeg" alt="Asphalt Canopy Road" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Asphalt Canopy</h3><p>Road & Journey Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="road">
+<img src="images/20260416_165431 (1).jpeg" alt="Bridge Overpass Rail" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Overpass Perspective</h3><p>Road & Journey Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="road">
+<img src="images/20260416_165448.jpeg" alt="Bridge Railing View" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Highway Railing</h3><p>Road & Journey Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="road">
+<img src="images/20260416_165455 (1).jpeg" alt="Sunset Highway Railing" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Sunset Highway</h3><p>Road & Journey Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="road">
+<img src="images/20260407_125528 (2).jpeg" alt="Spring Pathway I" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Spring Pathway I</h3><p>Road & Journey Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="road">
+<img src="images/20260407_123038.jpeg" alt="Travelers on the Road" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Travelers on the Road</h3><p>Road & Journey Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="road">
+<img src="images/20251219_173958.jpeg" alt="Solitary Trail" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Solitary Trail</h3><p>Road & Journey Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="road">
+<img src="images/20251219_174730 (5).jpeg" alt="Forest Trail" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Forest Trail</h3><p>Road & Journey Series</p></div>
+</div>
+​<!-- 2. NATURE SERIES (10) -->
+<div class="portfolio-card reveal" data-category="nature">
+<img src="images/VideoCapture_20260407-230314.jpeg" alt="Twilight Nature Still" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Twilight Nature Still</h3><p>Nature Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="nature">
+<img src="images/20260407_132443.jpeg" alt="Spring Meadow Path" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Spring Meadow Path</h3><p>Nature Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="nature">
+<img src="images/20260407_130529.jpeg" alt="Sunlit Foliage Trail" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Sunlit Foliage Trail</h3><p>Nature Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="nature">
+<img src="images/20260407_131225.jpeg" alt="Forest Canopy Light" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Forest Canopy Light</h3><p>Nature Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="nature">
+<img src="images/20260407_130545.jpeg" alt="Woodland Perspective" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Woodland Perspective</h3><p>Nature Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="nature">
+<img src="images/VideoCapture_20260408-180522 (2).jpeg" alt="Evening Atmosphere Still" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Evening Atmosphere Still</h3><p>Nature Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="nature">
+<img src="images/20260407_143818.jpeg" alt="Afternoon Wilds" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Afternoon Wilds</h3><p>Nature Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="nature">
+<img src="images/20260407_143213.jpeg" alt="Lush Green Valley" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Lush Green Valley</h3><p>Nature Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="nature">
+<img src="images/20260407_140322 (2).jpeg" alt="Verdant Canopy" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Verdant Canopy</h3><p>Nature Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="nature">
+<img src="images/IMG_20260407_132916_921.jpeg" alt="Botanical Horizon" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Botanical Horizon</h3><p>Nature Series</p></div>
+</div>
+​<!-- 3. PAINTED WORLD SERIES (6) -->
+<div class="portfolio-card reveal" data-category="painted">
+<img src="images/20251208_065856 (2).jpeg" alt="Painted Dew Study I" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Painted Dew Study I</h3><p>Painted World Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="painted">
+<img src="images/20251211_173030.jpeg" alt="Painted Horizon I" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Painted Horizon I</h3><p>Painted World Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="painted">
+<img src="images/20251211_173030 (1).jpeg" alt="Painted Horizon II" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Painted Horizon II</h3><p>Painted World Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="painted">
+<img src="images/20251223_164301 (1).jpeg" alt="Painted Falls Mist" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Painted Falls Mist</h3><p>Painted World Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="painted">
+<img src="images/20260102_173213.jpeg" alt="Painted Valley Light" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Painted Valley Light</h3><p>Painted World Series</p></div>
+</div>
+<div class="portfolio-card reveal" data-category="painted">
+<img src="images/20260102_170309 (1).jpeg" alt="Painted Sunset Glow" class="expandable" loading="lazy" decoding="async">
+<div class="card-caption"><h3>Painted Sunset Glow</h3><p>Painted World Series</p></div>
+</div>
+</div>
+​<div class="pagination-container reveal">
+<button id="prev-page-btn" class="page-btn">← Previous</button>
+<span id="page-indicator" style="font-size: 0.9rem; color: var(--text-muted);">Page 1 of 1</span>
+<button id="next-page-btn" class="page-btn">Next →</button>
+</div>
+</div>
+​<!-- Apps Pane -->
+<div id="apps-pane" class="discipline-pane">
+<div class="section-header">
+<h2>Software Architecture & Logistics Platforms</h2>
+<p>Custom mobile systems, payment API integrations, and offline-capable web infrastructures.</p>
+</div>
+<div class="showcase-grid">
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Application Infrastructure</span>
+<h3>Logistics & Regional Delivery Platform</h3>
+<p>A full-stack, mobile-first logistics interface designed for high-density delivery routes, local mobile payment API integrations, and offline messaging functionality.</p>
+<div class="tech-stack-badges">
+<span class="tech-pill">Mobile Architecture</span>
+<span class="tech-pill">REST APIs</span>
+<span class="tech-pill">No-Code + Custom JS</span>
+</div>
+</div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Digital Platform</span>
+<h3>Phoenix View Digital Media Portal</h3>
+<p>High-performance client-side image rendering engine with dynamic category filtration, lightbox zoom overlays, and integrated ambient soundscape routing.</p>
+<div class="tech-stack-badges">
+<span class="tech-pill">HTML5 / CSS3</span>
+<span class="tech-pill">GitHub Pages</span>
+<span class="tech-pill">SEO Structured Data</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+​<!-- Editorial Pane -->
+<div id="editorial-pane" class="discipline-pane">
+<div class="section-header">
+<h2>Screenplays & Documentary Pitch Decks</h2>
+<p>Original cinematic thrillers, environmental documentary decks, and reflective prose.</p>
+</div>
+<div class="showcase-grid">
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Dramatic Thriller Script</span>
+<h3>Game of Couples (Screenplay)</h3>
+<p>A multi-couple dramatic thriller movie script following a wilderness hiking expedition that unspools secrets, romantic tension, and survival dynamics.</p>
+<div class="tech-stack-badges">
+<span class="tech-pill">Screenwriting</span>
+<span class="tech-pill">Character Arc Structuring</span>
+</div>
+</div>
+<button class="action-btn reader-btn" data-doc="game-of-couples"><i class="fas fa-book-open"></i> Read Synopsis</button>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Documentary Pitch Deck</span>
+<h3>The Frontline Keepers: Zambia’s Wildlife War</h3>
+<p>A comprehensive pitch deck for an international documentary series focusing on frontline conservation rangers, regional wildlife protection, and human drama.</p>
+<div class="tech-stack-badges">
+<span class="tech-pill">Documentary Narrative</span>
+<span class="tech-pill">Series Bible</span>
+</div>
+</div>
+<button class="action-btn reader-btn" data-doc="frontline-keepers"><i class="fas fa-book-open"></i> Read Pitch Overview</button>
+</div>
+</div>
+</div>
+​<!-- Lookbooks Pane (25 Spreads) -->
+<div id="lookbooks-pane" class="discipline-pane">
+<div class="section-header reveal">
+<h2>Editorial Lookbooks & Publication Design</h2>
+<p>High-concept digital & print editorial layouts combining macro photography, bespoke typography, and narrative copywriting.</p>
+</div>
+<div class="showcase-grid">
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Travel Magazine Cover</span>
+<h3>EXPLORE: The Beauty of Mountains</h3>
+<img src="images/1_20261002_091657_0000.jpeg" alt="EXPLORE Travel Magazine Cover" class="expandable" loading="lazy" decoding="async">
+<p>Signature cover concept for the EXPLORE publication series, featuring silhouette cinematography and high-contrast editorial typography.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Cover Art</span><span class="tech-pill">Typography</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Editorial Feature — Spread 03</span>
+<h3>The Unseen World Beneath Our Feet</h3>
+<img src="images/2_20261008_115127_0001.jpeg" alt="The Unseen World Beneath Our Feet" class="expandable" loading="lazy" decoding="async">
+<p>Multi-column editorial spread exploring micro ecosystems, soil craftsmanship, and the hidden architectural marvels of the forest floor.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Macro Photography</span><span class="tech-pill">Editorial Copy</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Nature Lookbook Series</span>
+<h3>Crimson Tones: A Painted Garden Series</h3>
+<img src="images/3_20261023_121001_0002.jpeg" alt="Crimson Tones Lookbook" class="expandable" loading="lazy" decoding="async">
+<p>Agricultural heritage meets artistic vision. Macro perspective capturing the dew-kissed texture and scarlet tones of the Zambian countryside.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Canva Editorial</span><span class="tech-pill">Visual Storytelling</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Editorial Lookbook — Plate 02</span>
+<h3>Botanical Textures & Scarlet Tones</h3>
+<img src="images/1_20261023_121000_0000.jpeg" alt="Lookbook Plate 02" class="expandable" loading="lazy" decoding="async">
+<p>A closer look at the organic lines and rich chromatic tones designed for publication layout.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Lookbook Spread</span><span class="tech-pill">Macro Art</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Editorial Lookbook — Plate 03</span>
+<h3>Silent Rhythm of the Countryside</h3>
+<img src="images/2_20261023_121001_0001.jpeg" alt="Lookbook Plate 03" class="expandable" loading="lazy" decoding="async">
+<p>Balancing whitespace, structured typography, and high-impact macro imagery.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Editorial Design</span><span class="tech-pill">Typography</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Editorial Lookbook — Plate 04</span>
+<h3>Highland Shadows & Foliage</h3>
+<img src="images/4_20261023_121001_0003.jpeg" alt="Lookbook Plate 04" class="expandable" loading="lazy" decoding="async">
+<p>Study of shadow framing and organic geometry within nature series spreads.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Publication Layout</span><span class="tech-pill">Art Direction</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Editorial Lookbook — Plate 05</span>
+<h3>Verdant Horizons & Deep Forest</h3>
+<img src="images/5_20261023_121001_0004.jpeg" alt="Lookbook Plate 05" class="expandable" loading="lazy" decoding="async">
+<p>Wide perspective editorial spread featuring deep green foliage and natural lighting.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Landscape Spread</span><span class="tech-pill">Editorial Copy</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Editorial Lookbook — Plate 06</span>
+<h3>Canopy Perspectives & Twilight Glow</h3>
+<img src="images/6_20261023_121001_0005.jpeg" alt="Lookbook Plate 06" class="expandable" loading="lazy" decoding="async">
+<p>Editorial arrangement capturing woodland atmosphere and ambient forest lighting.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Canopy Series</span><span class="tech-pill">Lookbook Layout</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Editorial Lookbook — Plate 07</span>
+<h3>Botanical Macro Geometry</h3>
+<img src="images/7_20261023_121001_0006.jpeg" alt="Lookbook Plate 07" class="expandable" loading="lazy" decoding="async">
+<p>High-resolution botanical close-ups prepared for print and digital publication.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Macro Detail</span><span class="tech-pill">Print Ready</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Unseen World — Spread 01</span>
+<h3>Forest Floor Exploration: Opening Plate</h3>
+<img src="images/1_20261008_115127_0000.jpeg" alt="Unseen World Opening Plate" class="expandable" loading="lazy" decoding="async">
+<p>Title spread introducing readers to macro micro-ecosystems and natural soil layers.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Editorial Lead</span><span class="tech-pill">Storytelling</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Unseen World — Spread 02</span>
+<h3>Micro Ecosystems & Soil Texture</h3>
+<img src="images/3_20261008_115127_0002.jpeg" alt="Unseen World Spread 02" class="expandable" loading="lazy" decoding="async">
+<p>Macro analysis of organic textures and forest floor biodiversity.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Field Research</span><span class="tech-pill">Macro Lens</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Unseen World — Spread 04</span>
+<h3>Architectural Soil Burrows</h3>
+<img src="images/4_20261008_115127_0003.jpeg" alt="Unseen World Spread 04" class="expandable" loading="lazy" decoding="async">
+<p>Documenting insect architecture and subtle environmental shifts on the forest floor.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Documentary Frame</span><span class="tech-pill">Editorial</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Unseen World — Spread 05</span>
+<h3>Concluding Field Notes</h3>
+<img src="images/5_20261008_115128_0004.jpeg" alt="Unseen World Spread 05" class="expandable" loading="lazy" decoding="async">
+<p>Summary spread combining prose, macro imagery, and publication closing layout.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Closing Spread</span><span class="tech-pill">Prose & Copy</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">EXPLORE Series — Plate 02</span>
+<h3>Mountain Ridge Silhouette</h3>
+<img src="images/2_20261002_091657_0001.jpeg" alt="Mountain Ridge Silhouette" class="expandable" loading="lazy" decoding="async">
+<p>Cinematic mountain ridge silhouette captured during peak sunset glow.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Landscape</span><span class="tech-pill">Silhouette</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">EXPLORE Series — Plate 03</span>
+<h3>Highland Peak Exploration</h3>
+<img src="images/3_20261002_091657_0002.jpeg" alt="Highland Peak Exploration" class="expandable" loading="lazy" decoding="async">
+<p>Dramatic vista layout from the mountain series editorial compilation.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Vista Spread</span><span class="tech-pill">Fine Art</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">EXPLORE Series — Plate 04</span>
+<h3>Solitary Expedition Path</h3>
+<img src="images/4_20261002_091657_0003.jpeg" alt="Solitary Expedition Path" class="expandable" loading="lazy" decoding="async">
+<p>Editorial framing of winding trails and remote highland exploration.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Travel Series</span><span class="tech-pill">Editorial Layout</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">EXPLORE Series — Plate 05</span>
+<h3>Highland Canopy & Evening Sky</h3>
+<img src="images/5_20261002_091657_0004.jpeg" alt="Highland Canopy Spread" class="expandable" loading="lazy" decoding="async">
+<p>Closing magazine plate highlighting sky gradients and high-contrast canopy lines.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Sky Gradients</span><span class="tech-pill">Magazine Plate</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Modern Minimal Plate I</span>
+<h3>White & Black Light Modern Minimal — Plate I</h3>
+<img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035035_0000.jpeg" alt="White and Black Light Modern Minimal Plate I" class="expandable" loading="lazy" decoding="async">
+<p>Light modern minimal aesthetic layout emphasizing clean lines, crisp contrast, and sophisticated typography.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Light Minimal</span><span class="tech-pill">Plate I</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Modern Minimal Plate II</span>
+<h3>White & Black Light Modern Minimal — Plate II</h3>
+<img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0001.jpeg" alt="White and Black Light Modern Minimal Plate II" class="expandable" loading="lazy" decoding="async">
+<p>Balanced whitespace composition tailored for high-end digital editorial portfolios and layout frames.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Whitespace</span><span class="tech-pill">Plate II</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Modern Minimal Plate III</span>
+<h3>White & Black Light Modern Minimal — Plate III</h3>
+<img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0002.jpeg" alt="White and Black Light Modern Minimal Plate III" class="expandable" loading="lazy" decoding="async">
+<p>Refined publication spread featuring structured content blocks, subtle framing, and elegant typography.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Structured Grid</span><span class="tech-pill">Plate III</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Modern Minimal Plate IV</span>
+<h3>White & Black Light Modern Minimal — Plate IV</h3>
+<img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0004.jpeg" alt="White and Black Light Modern Minimal Plate IV" class="expandable" loading="lazy" decoding="async">
+<p>Clean minimal visual curation designed for contemporary artistic profiles and lookbook presentation.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Modern Minimal</span><span class="tech-pill">Plate IV</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Modern Minimal Plate V</span>
+<h3>White & Black Light Modern Minimal — Plate V</h3>
+<img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0005.jpeg" alt="White and Black Light Modern Minimal Plate V" class="expandable" loading="lazy" decoding="async">
+<p>Concluding plate of the light minimalist series focusing on tonal depth and visual balance.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Tonal Balance</span><span class="tech-pill">Plate V</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Team Story Introduction I</span>
+<h3>White Black Minimalist Team Profile I</h3>
+<img src="images/White Black Minimalist Team Introduction Instagram Story_20260805_104415_0000.jpeg" alt="Team Profile I" class="expandable" loading="lazy" decoding="async">
+<p>Clean minimalist layout highlighting creative collaboration, team structure, and leadership presentation.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Team Profile</span><span class="tech-pill">Instagram Story</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Team Story Introduction II</span>
+<h3>White Black Minimalist Team Profile II</h3>
+<img src="images/White Black Minimalist Team Introduction Instagram Story_20260805_110829_0000.jpeg" alt="Team Profile II" class="expandable" loading="lazy" decoding="async">
+<p>Secondary professional introduction spread optimized for digital storytelling and partner highlights.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Collaboration</span><span class="tech-pill">Story Layout</span></div>
+</div>
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">Monochrome Lookbook Story</span>
+<h3>Monochrome Minimalist Fashion Lookbook</h3>
+<img src="images/Monochrome Minimalist Fashion Instagram Story_20260805_110509_0000.jpeg" alt="Monochrome Fashion Story" class="expandable" loading="lazy" decoding="async">
+<p>High-contrast monochrome aesthetic exploring fashion lookbooks, styling palettes, and modern layout composition.</p>
+</div>
+<div class="tech-stack-badges"><span class="tech-pill">Fashion Lookbook</span><span class="tech-pill">Monochrome</span></div>
+</div>
+</div>
+</div>
+​<!-- Business Solutions Pane -->
+<div id="services-pane" class="discipline-pane">
+<div class="section-header">
+<h2>Business Solutions & Professional Services</h2>
+<p>Custom-coded digital experiences, high-performance portfolios, and expedition media packages.</p>
+</div>
+<div class="showcase-grid">
+<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">B2B Service</span>
+<h3>Custom Front-End Applications</h3>
+<p>Lightning-fast, zero-dependency web interfaces, portfolio architectures, and responsive digital platforms engineered specifically for brands and creators.</p>
+<div class="tech-stack-badges">
+<span class="tech-pill">Vanilla Architecture</span>
+<span class="tech-pill">High Performance</span>
+</div>
+</div>
+<a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20am%20interested%20in%20inquiring%20about%20Custom%20Front-End%20Development%20(Phoenix%20View%20Media)." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Service</a>
+</div>
+​<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">B2B Service</span>
+<h3>Eco-Lodge & Expedition Media Packaging</h3>
+<p>Professional photography licensing, visual storytelling, and product placement integration leveraging custom manufactured canvas camping gear for remote wilderness tourism.</p>
+<div class="tech-stack-badges">
+<span class="tech-pill">Tourism Media</span>
+<span class="tech-pill">Photography Licensing</span>
+</div>
+</div>
+<a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20am%20interested%20in%20Eco-Lodge%20Media%20Packaging%20and%20Expedition%20Partnerships." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Partnership</a>
+</div>
+​<div class="showcase-card reveal">
+<div>
+<span class="showcase-tag">B2B Service</span>
+<h3>Digital Archives & Cultural Portals</h3>
+<p>Structured, searchable long-term digital vaults and lookbook publications designed for cultural institutions, publishers, and documentary archives.</p>
+<div class="tech-stack-badges">
+<span class="tech-pill">Archival Systems</span>
+<span class="tech-pill">Editorial Design</span>
+</div>
+</div>
+<a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20would%20like%20to%20discuss%20Digital%20Archival%20Development." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Archive</a>
+</div>
+</div>
+</div>
+​<!-- Project Laboratory Pane (3D Interactive WebGL Organic Liquid Mesh Engine) -->
+<div id="lab-pane" class="discipline-pane">
+<div class="section-header">
+<h2>Project Laboratory — Realtime WebGL Studio Engine</h2>
+<p>Interactive 3D morphing organic mesh shader, dynamic lighting calculations, and real-time vertex displacement.</p>
+</div>
+<div class="showcase-grid">
+<div class="showcase-card reveal" style="grid-column: 1 / -1; padding: 15px;">
+<div class="lab-canvas-container" id="webgl-container">
+<span class="lab-hint-badge"><i class="fas fa-hand-pointer"></i> Move Cursor to Distort 3D Mesh</span>
+<div class="lab-overlay-text">
+<h4>INTERACTIVE SHADER DEFORMATION</h4>
+<p>PHOENIX LABS // WEBGL 3D VERTEX NOISE</p>
+</div>
+<canvas id="webgl-blob-canvas"></canvas>
+</div>
+<div class="tech-stack-badges" style="padding: 10px 15px;">
+<span class="tech-pill">Three.js WebGL</span>
+<span class="tech-pill">Perlin Vertex Deformation</span>
+<span class="tech-pill">Physical Material Sheen</span>
+<span class="tech-pill">Interactive Raycaster</span>
+</div>
+</div>
+</div>
+</div>
+​<!-- Strategic Roadmap Section -->
+<section class="strategy-section">
+<div class="section-header reveal">
+<h2>Phoenix Engine Ecosystem & Strategic Roadmap</h2>
+<p>Institutional validation, community impact, and commercial value-exchange frameworks.</p>
+</div>
+​<div class="strategy-grid">
+<div class="strategy-card reveal">
+<div class="strategy-num">01</div>
+<h3>Institutional & Grant Validation</h3>
+<p>Structuring Phoenix View Media for formal partnerships with cultural preservation bodies and the National Arts Council. Securing archival grants to fund large-scale Zambian environmental documentation.</p>
+</div>
+​<div class="strategy-card reveal">
+<div class="strategy-num">02</div>
+<h3>Youth Sanctuary & Creative Incubator</h3>
+<p>Building a long-term physical and digital sanctuary designed to uplift vulnerable youth and emerging local talent, passing down technical skills in software architecture and visual storytelling.</p>
+</div>
+​<div class="strategy-card reveal">
+<div class="strategy-num">03</div>
+<h3>Eco-Lodge & Canvas Equipment Partnerships</h3>
+<p>Providing high-end value-exchange packaging for eco-lodges and expedition clubs—integrating professional photography licensing, media production, and product placement utilizing family-manufactured canvas camping equipment.</p>
+</div>
+​<div class="strategy-card reveal">
+<div class="strategy-num">04</div>
+<h3>Cross-Border Collaborative Networks</h3>
+<p>Co-directing cross-border documentary initiatives with regional creators like Khangelani Dhlamini, fashion styling collaborations with Elizabeth Mwanza (soultribe), and travel media development with Mzansi Destinations.</p>
+</div>
+</div>
+</section>
+</div>
+​<footer>
+<p>Let's paint your canvas together.</p>
+<div class="footer-links">
+<a href="mailto:benmwanza15@gmail.com" class="footer-link">benmwanza15@gmail.com</a>
+<span>•</span>
+<a href="https://wa.me/260763533205" target="_blank" rel="noopener" class="footer-link">+260 76 3533205</a>
+</div>
+<p>© 2026 Phoenix View Media. All rights reserved.</p>
+</footer>
+​<!-- Lightbox -->
+<div id="image-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image lightbox">
+<span class="modal-close" aria-label="Close">×</span>
+<img class="modal-content" id="modal-img" alt="">
+<div id="modal-caption" style="text-align: center; margin-top: 10px; color: #fff; font-family: var(--font-serif); font-size: 1.1rem;"></div>
+<div class="modal-metadata-box">
+<span class="meta-badge badge-verified">✓ Verified Original</span>
+<span class="meta-badge badge-artist">Ben Wesley Mwanza</span>
+<span id="modal-series-badge" class="meta-badge badge-series">Series Work</span>
+</div>
+<a id="print-request-btn" href="#" target="_blank" rel="noopener" class="print-inquiry-btn">
+<i class="fab fa-whatsapp"></i> Inquire Print / License
+</a>
+</div>
+​<!-- Document Reader Modal -->
+<div id="reader-modal" class="reader-modal" role="dialog" aria-modal="true" aria-label="Document reader">
+<div class="reader-card">
+<span class="reader-close" aria-label="Close">×</span>
+<div id="reader-body"></div>
+</div>
+</div>
+​<script>
+(function() {
+'use strict';
+​const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+​// 1. Cursor Spotlight
+const spotlight = document.getElementById('spotlight');
+if (spotlight && !prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
+let ticking = false;
+window.addEventListener('mousemove', (e) => {
+if (!ticking) {
+requestAnimationFrame(() => {
+spotlight.style.left = e.clientX + 'px';
+spotlight.style.top = e.clientY + 'px';
+ticking = false;
+});
+ticking = true;
+}
+}, { passive: true });
+} else if (spotlight) {
+spotlight.style.display = 'none';
+}
+​// 2. Theme Toggle
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
+const themeIcon = document.getElementById('theme-icon');
+const themeLabel = document.getElementById('theme-label');
+const body = document.body;
+​themeToggleBtn?.addEventListener('click', () => {
+const isDark = body.getAttribute('data-theme') === 'dark';
+body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+themeIcon.textContent = isDark ? '🌙' : '☀️';
+themeLabel.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+});
+​// 3. 3D Tilt Effect
+function initTilt() {
+if (prefersReducedMotion || window.innerWidth < 900) return;
+document.querySelectorAll('.portfolio-card, .showcase-card, .strategy-card, .accolade-card').forEach(card => {
+card.addEventListener('mousemove', (e) => {
+const rect = card.getBoundingClientRect();
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -5;
+const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 5;
+card.style.transform = perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px);
+}, { passive: true });
+​card.addEventListener('mouseleave', () => {
+card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+}, { passive: true });
+});
+}
+​// 4. Discipline Tabs
+document.querySelectorAll('.discipline-btn').forEach(btn => {
+btn.addEventListener('click', () => {
+document.querySelectorAll('.discipline-btn').forEach(b => b.classList.remove('active'));
+document.querySelectorAll('.discipline-pane').forEach(p => p.classList.remove('active'));
+btn.classList.add('active');
+const activePane = document.getElementById(btn.dataset.tab);
+activePane?.classList.add('active');
+​// Trigger WebGL resize when Lab pane becomes visible
+if (btn.dataset.tab === 'lab-pane' && window.triggerLabResize) {
+setTimeout(window.triggerLabResize, 50);
+}
+});
+});
+​// 5. Hero Slider
+const slides = document.querySelectorAll('.hero-slider .slide');
+if (slides.length > 1 && !prefersReducedMotion) {
+let current = 0;
+setInterval(() => {
+slides[current].classList.remove('active');
+current = (current + 1) % slides.length;
+slides[current].classList.add('active');
+}, 5500);
+}
+​// 6. Gallery Filter + Pagination
+const filterButtons = document.querySelectorAll('.filter-btn');
+const portfolioCards = Array.from(document.querySelectorAll('.portfolio-card'));
+const prevPageBtn = document.getElementById('prev-page-btn');
+const nextPageBtn = document.getElementById('next-page-btn');
+const pageIndicator = document.getElementById('page-indicator');
+​let currentPage = 1;
+const itemsPerPage = 12;
+let currentFilter = 'all';
+​function getFiltered() {
+return currentFilter === 'all' ? portfolioCards : portfolioCards.filter(c => c.dataset.category === currentFilter);
+}
+​function renderGallery() {
+const filtered = getFiltered();
+const totalPages = Math.max(1, Math.ceil(filtered.length / itemsPerPage));
+currentPage = Math.min(Math.max(1, currentPage), totalPages);
+const start = (currentPage - 1) * itemsPerPage;
+const end = start + itemsPerPage;
+​portfolioCards.forEach(c => c.classList.add('hidden'));
+filtered.slice(start, end).forEach(c => c.classList.remove('hidden'));
+​if (pageIndicator) pageIndicator.textContent = Page ${currentPage} of ${totalPages};
+if (prevPageBtn) prevPageBtn.disabled = currentPage === 1;
+if (nextPageBtn) nextPageBtn.disabled = currentPage === totalPages;
+}
+​filterButtons.forEach(btn => {
+btn.addEventListener('click', () => {
+filterButtons.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+currentFilter = btn.dataset.filter;
+currentPage = 1;
+renderGallery();
+});
+});
+​prevPageBtn?.addEventListener('click', () => { if (currentPage > 1) { currentPage--; renderGallery(); } });
+nextPageBtn?.addEventListener('click', () => {
+const total = Math.ceil(getFiltered().length / itemsPerPage);
+if (currentPage < total) { currentPage++; renderGallery(); }
+});
+​renderGallery();
+​// 7. Lightbox
+const modal = document.getElementById('image-modal');
+const modalImg = document.getElementById('modal-img');
+const modalCaption = document.getElementById('modal-caption');
+const seriesBadge = document.getElementById('modal-series-badge');
+const printBtn = document.getElementById('print-request-btn');
+const closeBtn = document.querySelector('.modal-close');
+​document.querySelectorAll('.expandable').forEach(img => {
+img.addEventListener('click', function() {
+if (!modal) return;
+modal.style.display = 'flex';
+modalImg.src = this.currentSrc || this.src;
+modalCaption.textContent = this.alt || 'Fine Art Work';
+​const parent = this.closest('.portfolio-card') || this.closest('.showcase-card');
+if (parent?.classList.contains('portfolio-card')) {
+const cat = parent.dataset.category;
+seriesBadge.textContent = cat === 'road' ? 'Road & Journey Series' :
+cat === 'nature' ? 'Nature Series' : 'Painted World Series';
+} else {
+seriesBadge.textContent = 'Editorial Lookbook Spread';
+}
+​printBtn.href = https://wa.me/260763533205?text=${encodeURIComponent(Hello Ben, I am interested in licensing/inquiring about: "${this.alt}" (Phoenix View Media).)};
+});
+});
+​closeBtn?.addEventListener('click', () => modal.style.display = 'none');
+modal?.addEventListener('click', (e) => {
+if (e.target === modal || e.target === closeBtn) modal.style.display = 'none';
+});
+​// 8. Interactive Document Reader Modal
+const readerModal = document.getElementById('reader-modal');
+const readerBody = document.getElementById('reader-body');
+const readerCloseBtn = document.querySelector('.reader-close');
+​const documentTexts = {
+"game-of-couples": <h2>Game of Couples</h2> <div class="subtitle">Feature Film Screenplay Synopsis</div> <p><strong>Logline:</strong> Four couples embark on an elite wilderness hiking expedition across rugged remote terrain, only to discover that deep-seated secrets, unresolved tensions, and psychological survival dynamics will test their bonds far beyond the trail.</p> <p><strong>Narrative Arc:</strong> The narrative builds as an atmospheric slow-burn thriller. Initially framed as a restorative weekend retreat, shifting environmental obstacles and psychological confrontations strip away polite façades. Each character is forced to confront what loyalty truly means when isolation sets in.</p> <p><strong>Development Focus:</strong> Written by Ben Wesley Mwanza, the screenplay merges high-stakes dramatic tension with rich visual framing of untamed wilderness landscapes.</p>,
+"frontline-keepers": <h2>The Frontline Keepers: Zambia’s Wildlife War</h2> <div class="subtitle">International Documentary Series Bible & Pitch Deck</div> <p><strong>Overview:</strong> A premium natural history and human-interest documentary series following the dedicated rangers, conservationists, and local communities on the frontline of wildlife preservation in Zambia.</p> <p><strong>Core Focus:</strong> Beyond traditional wildlife documentary formats, <em>The Frontline Keepers</em> zeroes in on the human element—the daily sacrifices, tactical tracking units, and community-led conservation value exchanges that safeguard regional heritage.</p> <p><strong>Production Vision:</strong> Produced by Phoenix View Media, combining macro cinematography, intimate portraiture, and compelling field audio.</p>
+};
+​document.querySelectorAll('.reader-btn').forEach(btn => {
+btn.addEventListener('click', () => {
+const docKey = btn.dataset.doc;
+if (!readerModal || !readerBody) return;
+readerBody.innerHTML = documentTexts[docKey] || '<p>Document content unavailable.</p>';
+readerModal.style.display = 'flex';
+});
+});
+​readerCloseBtn?.addEventListener('click', () => readerModal.style.display = 'none');
+readerModal?.addEventListener('click', (e) => {
+if (e.target === readerModal) readerModal.style.display = 'none';
+});
+​document.addEventListener('keydown', e => {
+if (e.key === 'Escape') {
+if (modal) modal.style.display = 'none';
+if (readerModal) readerModal.style.display = 'none';
+}
+});
+​// 9. Multi-Track Audio Playlist
+const playlist = [
+{ title: "Mr. Morale (ft. Tanna Leone)", src: "audio/Kendrick_Lamar_-_Mr.Morale_ft.Tanna_Leone_Official_Audio(128k).m4a", type: "audio/mp4" },
+{ title: "Majesty (Official)", src: "audio/ISLY-MAJESTY__Offical_Video(128k).m4a", type: "audio/mp4" },
+{ title: "The Unknown - Northwest Stories", src: "audio/The Unknown - Northwest Stories.mp3", type: "audio/mpeg" }
+];
+let currentTrackIndex = 0;
+const ambientAudio = document.getElementById('ambient-audio');
+const audioSource = document.getElementById('audio-source');
+const audioBtn = document.getElementById('audio-toggle-btn');
+const audioLabel = document.getElementById('audio-label');
+const audioIcon = document.getElementById('audio-icon');
+const prevBtn = document.getElementById('prev-audio-btn');
+const nextBtn = document.getElementById('next-audio-btn');
+const toast = document.getElementById('toast');
+let toastTimeout;
+​function showToast(title) {
+if (!toast) return;
+toast.textContent = 🎵 Now Playing: ${title};
+toast.classList.add('show');
+clearTimeout(toastTimeout);
+toastTimeout = setTimeout(() => toast.classList.remove('show'), 3500);
+}
+​function loadTrack(index) {
+if (!playlist.length) return;
+audioSource.src = playlist[index].src;
+audioSource.type = playlist[index].type;
+ambientAudio.load();
+audioLabel.textContent = playlist[index].title;
+}
+​if (playlist.length) {
+loadTrack(0);
+audioLabel.textContent = "Soundtrack: Off";
+}
+​function safePlayAudio() {
+if (!playlist.length) return;
+const playPromise = ambientAudio.play();
+if (playPromise !== undefined) {
+playPromise.then(() => {
+audioIcon.textContent = "🔊";
+audioLabel.textContent = playlist[currentTrackIndex].title;
+showToast(playlist[currentTrackIndex].title);
+}).catch(error => {
+console.warn("Audio playback prevented or failed:", error);
+audioLabel.textContent = "Soundtrack: Off";
+audioIcon.textContent = "🎵";
+});
+}
+}
+​audioBtn?.addEventListener('click', () => {
+if (!playlist.length) return;
+if (ambientAudio.paused) {
+safePlayAudio();
+} else {
+ambientAudio.pause();
+audioLabel.textContent = "Soundtrack: Off";
+audioIcon.textContent = "🎵";
+}
+});
+​nextBtn?.addEventListener('click', () => {
+if (!playlist.length) return;
+currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+loadTrack(currentTrackIndex);
+safePlayAudio();
+});
+​prevBtn?.addEventListener('click', () => {
+if (!playlist.length) return;
+currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+loadTrack(currentTrackIndex);
+safePlayAudio();
+});
+​ambientAudio?.addEventListener('ended', () => {
+if (!playlist.length) return;
+currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+loadTrack(currentTrackIndex);
+safePlayAudio();
+});
+​// 10. REALTIME THREE.JS 3D ORGANIC LIQUID MESH ENGINE (NOTA® Inspired)
+function initWebGLBlob() {
+const container = document.getElementById('webgl-container');
+const canvas = document.getElementById('webgl-blob-canvas');
+if (!container || !canvas || typeof THREE === 'undefined') return;
+​const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+camera.position.z = 6;
+​const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+renderer.setSize(container.clientWidth, container.clientHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+​// 3D Geometry + Geometry Vertices Backup for Wave Deformation
+const geometry = new THREE.IcosahedronGeometry(2, 64);
+const originalPositions = geometry.attributes.position.clone();
+​// Iridescent Studio Physical Material
+const material = new THREE.MeshPhysicalMaterial({
+color: 0x9b82fd,
+emissive: 0x110b28,
+roughness: 0.18,
+metalness: 0.85,
+clearcoat: 1.0,
+clearcoatRoughness: 0.1,
+reflectivity: 0.9,
+wireframe: false
+});
+​const blobMesh = new THREE.Mesh(geometry, material);
+scene.add(blobMesh);
+​// Studio Lighting Palette (Violet / Amber Gold / Cyan Accent Lights)
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+scene.add(ambientLight);
+​const light1 = new THREE.PointLight(0xc5a059, 2.5, 50); // Phoenix Amber Gold
+light1.position.set(5, 5, 5);
+scene.add(light1);
+​const light2 = new THREE.PointLight(0x7653fe, 3.0, 50); // Electric Violet
+light2.position.set(-5, -5, 5);
+scene.add(light2);
+​const light3 = new THREE.PointLight(0x38bdf8, 1.8, 50); // Ice Blue
+light3.position.set(0, 5, -5);
+scene.add(light3);
+​// Interactive Mouse Distortion & Wave Frequency Tracking
+let mouseX = 0, mouseY = 0;
+let targetX = 0, targetY = 0;
+​container.addEventListener('mousemove', (e) => {
+const rect = container.getBoundingClientRect();
+mouseX = ((e.clientX - rect.left) / container.clientWidth) * 2 - 1;
+mouseY = -(((e.clientY - rect.top) / container.clientHeight) * 2 - 1);
+}, { passive: true });
+​const clock = new THREE.Clock();
+​function animateWebGL() {
+requestAnimationFrame(animateWebGL);
+​const time = clock.getElapsedTime();
+targetX += (mouseX - targetX) * 0.05;
+targetY += (mouseY - targetY) * 0.05;
+​// Blob 3D Dynamic Rotation
+blobMesh.rotation.y = time * 0.2;
+blobMesh.rotation.x = targetY * 0.5;
+blobMesh.rotation.z = targetX * 0.3;
+​// Vertex Deformation Math (Perlin-Style Wave Distortion)
+const positions = geometry.attributes.position;
+const orig = originalPositions.array;
+const pos = positions.array;
+​for (let i = 0; i < pos.length; i += 3) {
+const vx = orig[i];
+const vy = orig[i + 1];
+const vz = orig[i + 2];
+​// Complex Trigonometric Wave Modulation
+const wave = Math.sin(vx * 2.5 + time * 1.8) *
+Math.cos(vy * 2.5 + time * 1.5) *
+Math.sin(vz * 2.5 + time * 1.2);
+​const mouseDistortion = (Math.sin(vx * targetX * 3 + vy * targetY * 3) + 1) * 0.15;
+const factor = 1 + wave * 0.12 + mouseDistortion;
+​pos[i] = vx * factor;
+pos[i + 1] = vy * factor;
+pos[i + 2] = vz * factor;
+}
+​positions.needsUpdate = true;
+geometry.computeVertexNormals();
+​// Animate Light Colors dynamically for iridescent glow
+light1.position.x = Math.sin(time * 0.8) * 6;
+light1.position.y = Math.cos(time * 0.6) * 6;
+light2.position.x = Math.cos(time * 0.7) * -6;
+​renderer.render(scene, camera);
+}
+​if (!prefersReducedMotion) {
+animateWebGL();
+} else {
+renderer.render(scene, camera);
+}
+​window.triggerLabResize = () => {
+camera.aspect = container.clientWidth / container.clientHeight;
+camera.updateProjectionMatrix();
+renderer.setSize(container.clientWidth, container.clientHeight);
+};
+​window.addEventListener('resize', window.triggerLabResize);
+}
+​// 11. Reveal Observer
+const revealObserver = new IntersectionObserver((entries, obs) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('active');
+obs.unobserve(entry.target);
+}
+});
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+​document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+​// Initialize 3D Tilt & WebGL Blob on Window Load
+window.addEventListener('load', () => {
+initTilt();
+initWebGLBlob();
+});
+})();
+</script>
 </body>
-</html>
+  </html>
