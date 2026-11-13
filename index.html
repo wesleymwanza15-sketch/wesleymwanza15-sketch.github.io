@@ -58,25 +58,25 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
-    /* ===== LUXURY DARK-MODE EDITORIAL & ARCHITECTURAL GLASS SYSTEM ===== */
+    /* ===== WORLD-CLASS LUXURY EDITORIAL SYSTEM ===== */
     :root {
       --bg-dark: #050507;
       --bg-elevated: #0b0b0e;
-      --card-bg: rgba(15, 15, 19, 0.72);
+      --card-bg: rgba(15, 15, 19, 0.75);
       --card-bg-solid: #101014;
       --card-border: rgba(255, 255, 255, 0.08);
-      --card-border-hover: rgba(197, 160, 89, 0.55);
+      --card-border-hover: rgba(197, 160, 89, 0.6);
       --accent-gold: #c5a059;
       --accent-gold-light: #e2c285;
-      --accent-gold-glow: rgba(197, 160, 89, 0.18);
-      --accent-ember: rgba(185, 65, 35, 0.14);
+      --accent-gold-glow: rgba(197, 160, 89, 0.2);
+      --accent-ember: rgba(185, 65, 35, 0.16);
       --text-main: #f4f4f6;
       --text-muted: #8c8c9e;
       --hero-overlay-1: rgba(5, 5, 7, 0.35);
-      --hero-overlay-2: rgba(5, 5, 7, 0.85);
-      --glass-blur: blur(18px);
+      --hero-overlay-2: rgba(5, 5, 7, 0.88);
+      --glass-blur: blur(20px);
       --transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      --radius: 10px;
+      --radius: 12px;
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
     }
@@ -84,18 +84,18 @@
     [data-theme="light"] {
       --bg-dark: #f4f3ef;
       --bg-elevated: #eae8e1;
-      --card-bg: rgba(255, 255, 255, 0.82);
+      --card-bg: rgba(255, 255, 255, 0.85);
       --card-bg-solid: #ffffff;
       --card-border: rgba(20, 20, 25, 0.1);
       --card-border-hover: rgba(166, 124, 46, 0.65);
       --accent-gold: #9e7427;
       --accent-gold-light: #b88c3a;
-      --accent-gold-glow: rgba(158, 116, 39, 0.14);
+      --accent-gold-glow: rgba(158, 116, 39, 0.15);
       --accent-ember: rgba(185, 65, 35, 0.06);
       --text-main: #141418;
       --text-muted: #5a5a68;
       --hero-overlay-1: rgba(244, 243, 239, 0.2);
-      --hero-overlay-2: rgba(244, 243, 239, 0.75);
+      --hero-overlay-2: rgba(244, 243, 239, 0.78);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -140,10 +140,73 @@
       will-change: transform;
     }
 
+    /* ===== FLOATING EDITORIAL HEADER (CAPPEN / WONDERLAND INFLUENCE)[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span) ===== */
+    .floating-header {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 1280px;
+      background: rgba(10, 10, 14, 0.82);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      border-radius: 8px;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+      transition: var(--transition);
+    }
+    [data-theme="light"] .floating-header {
+      background: rgba(255, 255, 255, 0.88);
+    }
+    .header-brand {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      letter-spacing: 0.05em;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-brand span {
+      color: var(--accent-gold);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      border-left: 1px solid rgba(255,255,255,0.2);
+      padding-left: 10px;
+    }
+    .header-nav {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .header-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .header-nav a:hover {
+      color: var(--accent-gold-light);
+    }
+    @media (max-width: 900px) {
+      .header-nav { display: none; }
+    }
+
     .container {
       max-width: 1320px;
       margin: 0 auto;
-      padding: 40px 24px;
+      padding: 120px 24px 40px; /* Offset for floating header */
       position: relative;
       z-index: 1;
     }
@@ -156,7 +219,7 @@
       padding: 110px 36px;
       margin-bottom: 48px;
       text-align: center;
-      border: 1px solid rgba(197, 160, 89, 0.28);
+      border: 1px solid rgba(197, 160, 89, 0.3);
       background: #030304;
       box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.08);
       contain: layout paint;
@@ -204,7 +267,7 @@
     .hero-content { position: relative; z-index: 4; max-width: 880px; margin: 0 auto; }
     .cma-badge-tag {
       display: inline-flex; align-items: center; gap: 10px;
-      background: rgba(12, 12, 16, 0.75);
+      background: rgba(12, 12, 16, 0.78);
       border: 1px solid rgba(197, 160, 89, 0.45);
       color: var(--accent-gold-light);
       padding: 8px 22px;
@@ -233,6 +296,100 @@
       font-style: italic;
       margin-bottom: 20px;
       text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+    }
+
+    /* ===== HORIZONTAL CINEMA REEL STRIP (WORLD-CLASS INTERACTIVE ELEMENT) ===== */
+    .cinema-reel-section {
+      margin: 50px 0;
+      padding: 30px 0;
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      position: relative;
+    }
+    .cinema-reel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      padding: 0 10px;
+    }
+    .cinema-reel-header h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+    .cinema-reel-header span {
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+    .cinema-reel-track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding: 10px 4px 25px;
+    }
+    .cinema-reel-track::-webkit-scrollbar { display: none; }
+    .cinema-reel-card {
+      min-width: 380px;
+      height: 240px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      background: var(--card-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+    }
+    .cinema-reel-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.6), 0 0 20px var(--accent-gold-glow);
+    }
+    .cinema-reel-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.65;
+      transition: opacity 0.4s ease, transform 0.6s ease;
+    }
+    .cinema-reel-card:hover img {
+      opacity: 0.85;
+      transform: scale(1.04);
+    }
+    .cinema-reel-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5,5,7,0.95), rgba(5,5,7,0.4) 60%, transparent);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .cinema-reel-tag {
+      font-size: 0.65rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .cinema-reel-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .cinema-reel-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
 
     /* Accolades Banner */
@@ -298,7 +455,7 @@
     .story-right p { color: var(--text-muted); font-size: 1.04rem; line-height: 1.85; margin-bottom: 20px; }
     .story-right strong { color: var(--text-main); font-weight: 600; }
 
-    /* Tabs & Filters (Architectural Glass Bar) */
+    /* Tabs & Filters */
     .discipline-nav, .portfolio-filters {
       display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 24px auto 44px;
     }
@@ -352,7 +509,7 @@
       letter-spacing: 0.02em;
     }
 
-    /* Grids & Cards with Feature 2 Optical Loupe Support */
+    /* Grids & Cards with Optical Loupe Support */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -586,7 +743,7 @@
     .page-btn:hover:not(:disabled) { background: var(--accent-gold); color: #050507; }
     .page-btn:disabled { opacity: 0.3; cursor: not-allowed; border-color: var(--card-border); color: #666; }
 
-    /* Widgets & Feature 3 Audio Pulse */
+    /* Widgets & Audio Pulse */
     .widget-dock {
       position: fixed; bottom: 25px; left: 24px; z-index: 999;
       display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
@@ -614,7 +771,6 @@
     .audio-btn.nav-btn { padding: 9px 12px; }
     .audio-btn:hover, .theme-toggle-btn:hover { background: var(--accent-gold); color: #050507; }
 
-    /* Feature 3 Reactive Pulse */
     .audio-btn.active-pulse {
       border-color: #25D366;
       box-shadow: 0 0 22px rgba(37, 211, 102, 0.45);
@@ -728,7 +884,7 @@
     .footer-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
     .footer-link { color: var(--accent-gold); text-decoration: none; letter-spacing: 0.04em; }
 
-    /* Reveal (with No-JS Fallback) */
+    /* Reveal */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -746,7 +902,6 @@
     }
   </style>
 
-  <!-- No-JS Fallback to Ensure Content is Always Visible -->
   <noscript>
     <style>
       .reveal { opacity: 1 !important; transform: none !important; }
@@ -757,6 +912,20 @@
 
   <div class="cursor-spotlight" id="spotlight"></div>
   <div id="toast" class="toast-notification">🎵 Playing Track</div>
+
+  <!-- FLOATING EDITORIAL HEADER -->
+  <header class="floating-header">
+    <a href="#" class="header-brand">Ben Wesley Mwanza <span>Visual Archivist</span></a>
+    <nav>
+      <ul class="header-nav">
+        <li><a href="#about">Story</a></li>
+        <li><a href="#photography-pane">Photography</a></li>
+        <li><a href="#editorial-pane">Screenplays</a></li>
+        <li><a href="#lookbooks-pane">Lookbooks</a></li>
+        <li><a href="#lab-pane">WebGL Lab</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <div class="floating-contact">
     <a href="https://wa.me/260763533205" target="_blank" rel="noopener" class="whatsapp-btn" title="Chat on WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -803,6 +972,40 @@
         <p class="tagline">Visual Archivist & Developer — the world is like a canvas, grab your brush, let's paint!</p>
       </div>
     </header>
+
+    <!-- HORIZONTAL CINEMA REEL STRIP -->
+    <div class="cinema-reel-section reveal">
+      <div class="cinema-reel-header">
+        <h3>Featured Cinematic Works</h3>
+        <span>Scroll to Explore ➔</span>
+      </div>
+      <div class="cinema-reel-track">
+        <div class="cinema-reel-card reader-btn" data-doc="victoria-falls-script">
+          <img src="images/20251223_164301 (1).jpeg" alt="Thunder on the Edge">
+          <div class="cinema-reel-overlay">
+            <span class="cinema-reel-tag">Feature Film Screenplay</span>
+            <div class="cinema-reel-title">Thunder on the Edge</div>
+            <div class="cinema-reel-desc">A high-stakes heritage thriller at Victoria Falls.</div>
+          </div>
+        </div>
+        <div class="cinema-reel-card reader-btn" data-doc="game-of-couples">
+          <img src="images/20251219_173958.jpeg" alt="Game of Couples">
+          <div class="cinema-reel-overlay">
+            <span class="cinema-reel-tag">Dramatic Thriller</span>
+            <div class="cinema-reel-title">Game of Couples</div>
+            <div class="cinema-reel-desc">Four couples on a wilderness expedition unspooling secrets.</div>
+          </div>
+        </div>
+        <div class="cinema-reel-card reader-btn" data-doc="frontline-keepers">
+          <img src="images/20260407_143818.jpeg" alt="The Frontline Keepers">
+          <div class="cinema-reel-overlay">
+            <span class="cinema-reel-tag">Documentary Series Bible</span>
+            <div class="cinema-reel-title">The Frontline Keepers</div>
+            <div class="cinema-reel-desc">Zambia's wildlife war and frontline conservation rangers.</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Professional Accolades Banner -->
     <div class="accolades-banner reveal">
