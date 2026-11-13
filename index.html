@@ -278,7 +278,7 @@
     .section-header h2 { font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 8px; }
     .section-header p { color: var(--text-muted); font-size: 0.95rem; }
 
-    /* Grids & Cards */
+    /* Grids & Cards with Feature 2 Optical Loupe Support */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -297,14 +297,70 @@
       border-color: var(--accent-gold);
       box-shadow: 0 15px 35px rgba(0,0,0,0.18), 0 0 20px var(--accent-gold-glow);
     }
+    
+    .portfolio-card {
+      position: relative;
+      cursor: crosshair;
+    }
     .portfolio-card img {
       width: 100%;
       height: 320px;
       object-fit: cover;
-      cursor: pointer;
-      transition: transform 0.45s ease;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
     }
     .portfolio-card img:hover { transform: scale(1.04); }
+
+    /* Optical Loupe Magnifier Lens */
+    .loupe-lens {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-gold);
+      background-repeat: no-repeat;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 0 20px rgba(197,160,89,0.3);
+      pointer-events: none;
+      display: none;
+      z-index: 10;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Archival Telemetry HUD on Hover */
+    .archival-hud {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(10,10,12,0.95), rgba(10,10,12,0.6) 70%, transparent);
+      padding: 20px 15px 15px;
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 5;
+      pointer-events: none;
+    }
+    .portfolio-card:hover .archival-hud {
+      transform: translateY(0);
+    }
+    .hud-tag {
+      font-size: 0.7rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 3px;
+      font-weight: 700;
+    }
+    .hud-title {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .hud-specs {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
     .card-caption { padding: 15px 20px; }
     .card-caption h3 { font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 4px; }
     .card-caption p { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
@@ -684,111 +740,319 @@
       <div class="portfolio-grid" id="photo-gallery-grid">
         <!-- 1. ROAD & JOURNEY SERIES -->
         <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">The Open Highway</div>
+              <div class="hud-specs">Aperture: f/2.8 • ISO 100 • Lusaka Corridor</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>The Open Highway</h3><p>Road & Journey Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260417_093623.jpeg" alt="Passing Through" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260417_093623.jpeg" alt="Passing Through" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Passing Through</div>
+              <div class="hud-specs">Aperture: f/4.0 • ISO 200 • Regional Transit</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Passing Through</h3><p>Road & Journey Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260416_165634.jpeg" alt="Asphalt Canopy Road" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260416_165634.jpeg" alt="Asphalt Canopy Road" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Asphalt Canopy</div>
+              <div class="hud-specs">Aperture: f/2.0 • ISO 100 • Highway Framing</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Asphalt Canopy</h3><p>Road & Journey Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260416_165431 (1).jpeg" alt="Bridge Overpass Rail" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260416_165431 (1).jpeg" alt="Bridge Overpass Rail" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Overpass Perspective</div>
+              <div class="hud-specs">Aperture: f/2.8 • ISO 100 • Urban Transition</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Overpass Perspective</h3><p>Road & Journey Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260416_165448.jpeg" alt="Bridge Railing View" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260416_165448.jpeg" alt="Bridge Railing View" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Highway Railing</div>
+              <div class="hud-specs">Aperture: f/3.5 • ISO 100 • Linear Architecture</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Highway Railing</h3><p>Road & Journey Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260416_165455 (1).jpeg" alt="Sunset Highway Railing" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260416_165455 (1).jpeg" alt="Sunset Highway Railing" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Sunset Highway</div>
+              <div class="hud-specs">Aperture: f/2.2 • ISO 200 • Golden Hour Transit</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Sunset Highway</h3><p>Road & Journey Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260407_125528 (2).jpeg" alt="Spring Pathway I" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260407_125528 (2).jpeg" alt="Spring Pathway I" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Spring Pathway I</div>
+              <div class="hud-specs">Aperture: f/2.0 • ISO 100 • Trail Documentation</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Spring Pathway I</h3><p>Road & Journey Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20260407_123038.jpeg" alt="Travelers on the Road" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260407_123038.jpeg" alt="Travelers on the Road" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Travelers on the Road</div>
+              <div class="hud-specs">Aperture: f/4.0 • ISO 100 • Human Journey</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Travelers on the Road</h3><p>Road & Journey Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20251219_173958.jpeg" alt="Solitary Trail" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20251219_173958.jpeg" alt="Solitary Trail" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2025 Series</div>
+              <div class="hud-title">Solitary Trail</div>
+              <div class="hud-specs">Aperture: f/2.8 • ISO 200 • Remote Wilderness</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Solitary Trail</h3><p>Road & Journey Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="road">
-          <img src="images/20251219_174730 (5).jpeg" alt="Forest Trail" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20251219_174730 (5).jpeg" alt="Forest Trail" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2025 Series</div>
+              <div class="hud-title">Forest Trail</div>
+              <div class="hud-specs">Aperture: f/2.0 • ISO 400 • Woodland Path</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Forest Trail</h3><p>Road & Journey Series</p></div>
         </div>
 
         <!-- 2. NATURE SERIES -->
         <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/VideoCapture_20260407-230314.jpeg" alt="Twilight Nature Still" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/VideoCapture_20260407-230314.jpeg" alt="Twilight Nature Still" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Twilight Nature Still</div>
+              <div class="hud-specs">Aperture: f/1.8 • ISO 800 • Evening Environment</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Twilight Nature Still</h3><p>Nature Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_132443.jpeg" alt="Spring Meadow Path" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260407_132443.jpeg" alt="Spring Meadow Path" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Spring Meadow Path</div>
+              <div class="hud-specs">Aperture: f/2.8 • ISO 100 • Botanical Macro</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Spring Meadow Path</h3><p>Nature Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_130529.jpeg" alt="Sunlit Foliage Trail" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260407_130529.jpeg" alt="Sunlit Foliage Trail" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Sunlit Foliage Trail</div>
+              <div class="hud-specs">Aperture: f/2.2 • ISO 100 • Backlit Canopy</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Sunlit Foliage Trail</h3><p>Nature Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_131225.jpeg" alt="Forest Canopy Light" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260407_131225.jpeg" alt="Forest Canopy Light" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Forest Canopy Light</div>
+              <div class="hud-specs">Aperture: f/3.2 • ISO 200 • Light Rays</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Forest Canopy Light</h3><p>Nature Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_130545.jpeg" alt="Woodland Perspective" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260407_130545.jpeg" alt="Woodland Perspective" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Woodland Perspective</div>
+              <div class="hud-specs">Aperture: f/2.8 • ISO 100 • Tree Line Geometry</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Woodland Perspective</h3><p>Nature Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/VideoCapture_20260408-180522 (2).jpeg" alt="Evening Atmosphere Still" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/VideoCapture_20260408-180522 (2).jpeg" alt="Evening Atmosphere Still" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Evening Atmosphere Still</div>
+              <div class="hud-specs">Aperture: f/2.0 • ISO 400 • Atmospheric Mood</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Evening Atmosphere Still</h3><p>Nature Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_143818.jpeg" alt="Afternoon Wilds" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260407_143818.jpeg" alt="Afternoon Wilds" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Afternoon Wilds</div>
+              <div class="hud-specs">Aperture: f/4.0 • ISO 100 • Wilderness Vista</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Afternoon Wilds</h3><p>Nature Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_143213.jpeg" alt="Lush Green Valley" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260407_143213.jpeg" alt="Lush Green Valley" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Lush Green Valley</div>
+              <div class="hud-specs">Aperture: f/3.5 • ISO 100 • Valley Ecosystem</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Lush Green Valley</h3><p>Nature Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/20260407_140322 (2).jpeg" alt="Verdant Canopy" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260407_140322 (2).jpeg" alt="Verdant Canopy" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Verdant Canopy</div>
+              <div class="hud-specs">Aperture: f/2.8 • ISO 200 • Forest Density</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Verdant Canopy</h3><p>Nature Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="nature">
-          <img src="images/IMG_20260407_132916_921.jpeg" alt="Botanical Horizon" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/IMG_20260407_132916_921.jpeg" alt="Botanical Horizon" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Botanical Horizon</div>
+              <div class="hud-specs">Aperture: f/2.2 • ISO 100 • Macro Horizon</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Botanical Horizon</h3><p>Nature Series</p></div>
         </div>
 
         <!-- 3. PAINTED WORLD SERIES -->
         <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20251208_065856 (2).jpeg" alt="Painted Dew Study I" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20251208_065856 (2).jpeg" alt="Painted Dew Study I" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2025 Series</div>
+              <div class="hud-title">Painted Dew Study I</div>
+              <div class="hud-specs">Aperture: f/1.8 • ISO 100 • Macro Floral</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Painted Dew Study I</h3><p>Painted World Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20251211_173030.jpeg" alt="Painted Horizon I" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20251211_173030.jpeg" alt="Painted Horizon I" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2025 Series</div>
+              <div class="hud-title">Painted Horizon I</div>
+              <div class="hud-specs">Aperture: f/4.0 • ISO 200 • Chromatic Gradient</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Painted Horizon I</h3><p>Painted World Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20251211_173030 (1).jpeg" alt="Painted Horizon II" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20251211_173030 (1).jpeg" alt="Painted Horizon II" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2025 Series</div>
+              <div class="hud-title">Painted Horizon II</div>
+              <div class="hud-specs">Aperture: f/3.5 • ISO 200 • Sunset Palette</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Painted Horizon II</h3><p>Painted World Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20251223_164301 (1).jpeg" alt="Painted Falls Mist" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20251223_164301 (1).jpeg" alt="Painted Falls Mist" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2025 Series</div>
+              <div class="hud-title">Painted Falls Mist</div>
+              <div class="hud-specs">Aperture: f/5.6 • ISO 100 • Water Vapor Study</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Painted Falls Mist</h3><p>Painted World Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20260102_173213.jpeg" alt="Painted Valley Light" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260102_173213.jpeg" alt="Painted Valley Light" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Painted Valley Light</div>
+              <div class="hud-specs">Aperture: f/2.8 • ISO 100 • Valley Illumination</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Painted Valley Light</h3><p>Painted World Series</p></div>
         </div>
         <div class="portfolio-card reveal" data-category="painted">
-          <img src="images/20260102_170309 (1).jpeg" alt="Painted Sunset Glow" class="expandable" loading="lazy" decoding="async">
+          <div style="position: relative; overflow: hidden;">
+            <img src="images/20260102_170309 (1).jpeg" alt="Painted Sunset Glow" class="expandable" loading="lazy" decoding="async">
+            <div class="loupe-lens"></div>
+            <div class="archival-hud">
+              <div class="hud-tag">Archival Plate // 2026 Series</div>
+              <div class="hud-title">Painted Sunset Glow</div>
+              <div class="hud-specs">Aperture: f/2.2 • ISO 200 • Ambient Twilight</div>
+            </div>
+          </div>
           <div class="card-caption"><h3>Painted Sunset Glow</h3><p>Painted World Series</p></div>
         </div>
       </div>
@@ -1515,7 +1779,41 @@
       render();
     })();
 
-    // 7. Gallery Filter + Pagination
+    // 7. INTERACTIVE OPTICAL LOUPE & SHADER HOVER (FEATURE 2)
+    (function initOpticalLoupe() {
+      if (window.matchMedia('(pointer: coarse)').matches) return; // Skip on mobile touch devices
+
+      document.querySelectorAll('.portfolio-card').forEach(card => {
+        const img = card.querySelector('.expandable');
+        const lens = card.querySelector('.loupe-lens');
+        if (!img || !lens) return;
+
+        card.addEventListener('mouseenter', () => {
+          lens.style.display = 'block';
+          lens.style.backgroundImage = `url('${img.currentSrc || img.src}')`;
+          lens.style.backgroundSize = `${img.clientWidth * 2.2}px ${img.clientHeight * 2.2}px`;
+        });
+
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          lens.style.left = `${x}px`;
+          lens.style.top = `${y}px`;
+
+          const bgX = (x / rect.width) * 100;
+          const bgY = (y / rect.height) * 100;
+          lens.style.backgroundPosition = `${bgX}% ${bgY}%`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          lens.style.display = 'none';
+        });
+      });
+    })();
+
+    // 8. Gallery Filter + Pagination
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioCards = Array.from(document.querySelectorAll('.portfolio-card'));
     const prevPageBtn = document.getElementById('prev-page-btn');
@@ -1563,7 +1861,7 @@
 
     renderGallery();
 
-    // 8. Lightbox
+    // 9. Lightbox
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const modalCaption = document.getElementById('modal-caption');
@@ -1596,7 +1894,7 @@
       if (e.target === modal || e.target === closeBtn) modal.style.display = 'none';
     });
 
-    // 9. Interactive Document Reader Modal
+    // 10. Interactive Document Reader Modal
     const readerModal = document.getElementById('reader-modal');
     const readerBody = document.getElementById('reader-body');
     const readerCloseBtn = document.querySelector('.reader-close');
@@ -1639,7 +1937,7 @@
       }
     });
 
-    // 10. Multi-Track Audio Playlist
+    // 11. Multi-Track Audio Playlist
     const playlist = [
       { title: "Mr. Morale (ft. Tanna Leone)", src: "audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a", type: "audio/mp4" },
       { title: "Majesty (Official)", src: "audio/ISLY_-_MAJESTY__Offical_Video_(128k).m4a", type: "audio/mp4" },
@@ -1725,7 +2023,7 @@
       safePlayAudio();
     });
 
-    // 11. WebGL Studio Engine (Three.js 3D Fluid Sphere)
+    // 12. WebGL Studio Engine (Three.js 3D Fluid Sphere)
     const container = document.getElementById('labCanvasContainer');
     const canvas = document.getElementById('labCanvas');
     
@@ -1825,7 +2123,7 @@
       animateLab();
     }
 
-    // 12. Reveal Observer
+    // 13. Reveal Observer
     const revealObserver = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
