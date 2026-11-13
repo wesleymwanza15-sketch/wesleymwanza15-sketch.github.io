@@ -11,7 +11,7 @@
   <title>Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media</title>
   <meta name="title" content="Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media">
   <meta name="description" content="Official platform of Ben Wesley Mwanza (phoenix_view_bwm), Visual Archivist, Developer, and CMA 2026 Best Documentary Photography Nominee. Founder of Phoenix View Media.">
-  <meta name="keywords" content="Ben Wesley Mwanza, Visual Archivist, Developer, phoenix_view_bwm, Phoenix View Media, CMA 2026 best documentary photography, Zambian photographer, App developer Lusaka, Creative Director Zambia, the passing photographer, cultural grants, eco-lodge media packaging">
+  <meta name="keywords" content="Ben Wesley Mwanza, Visual Archivist, Developer, phoenix_view_bwm, Phoenix View Media, CMA 2026 best documentary photography, Zambian photographer, App developer Lusaka, Creative Director Zambia">
   <meta name="author" content="Ben Wesley Mwanza">
   <meta name="robots" content="index, follow">
 
@@ -140,7 +140,7 @@
       will-change: transform;
     }
 
-    /* ===== FLOATING EDITORIAL HEADER (CAPPEN / WONDERLAND INFLUENCE)[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span) ===== */
+    /* ===== FLOATING EDITORIAL HEADER (CLEANED OF NAME BLOCK) ===== */
     .floating-header {
       position: fixed;
       top: 20px;
@@ -153,7 +153,7 @@
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1px solid rgba(197, 160, 89, 0.3);
       border-radius: 8px;
-      padding: 12px 24px;
+      padding: 12px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -167,20 +167,10 @@
     .header-brand {
       font-family: var(--font-serif);
       font-size: 1.05rem;
-      letter-spacing: 0.05em;
-      color: var(--text-main);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .header-brand span {
+      letter-spacing: 0.08em;
       color: var(--accent-gold);
-      font-size: 0.72rem;
+      text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      border-left: 1px solid rgba(255,255,255,0.2);
-      padding-left: 10px;
     }
     .header-nav {
       display: flex;
@@ -206,7 +196,7 @@
     .container {
       max-width: 1320px;
       margin: 0 auto;
-      padding: 120px 24px 40px; /* Offset for floating header */
+      padding: 120px 24px 40px;
       position: relative;
       z-index: 1;
     }
@@ -254,10 +244,8 @@
     
     #hero-atmosphere-canvas {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       z-index: 3;
       pointer-events: none;
       opacity: 0.9;
@@ -298,7 +286,7 @@
       text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
     }
 
-    /* ===== HORIZONTAL CINEMA REEL STRIP (WORLD-CLASS INTERACTIVE ELEMENT) ===== */
+    /* ===== HORIZONTAL CINEMA REEL STRIP (UPDATED IMAGERY) ===== */
     .cinema-reel-section {
       margin: 50px 0;
       padding: 30px 0;
@@ -357,11 +345,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.65;
+      opacity: 0.72;
       transition: opacity 0.4s ease, transform 0.6s ease;
     }
     .cinema-reel-card:hover img {
-      opacity: 0.85;
+      opacity: 0.9;
       transform: scale(1.04);
     }
     .cinema-reel-overlay {
@@ -494,7 +482,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Section headers */
     .section-header { text-align: center; margin-bottom: 36px; }
     .section-header h2 {
       font-family: var(--font-serif);
@@ -509,7 +496,7 @@
       letter-spacing: 0.02em;
     }
 
-    /* Grids & Cards with Optical Loupe Support */
+    /* Grids & Cards */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -563,9 +550,7 @@
     /* Archival Telemetry HUD on Hover */
     .archival-hud {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       background: linear-gradient(to top, rgba(5, 5, 7, 0.96), rgba(5, 5, 7, 0.72) 70%, transparent);
       padding: 24px 18px 16px;
       transform: translateY(100%);
@@ -704,8 +689,7 @@
     }
     .strategy-num {
       position: absolute;
-      top: 10px;
-      right: 20px;
+      top: 10px; right: 20px;
       font-family: var(--font-serif);
       font-size: 3.6rem;
       color: rgba(197, 160, 89, 0.12);
@@ -913,9 +897,9 @@
   <div class="cursor-spotlight" id="spotlight"></div>
   <div id="toast" class="toast-notification">🎵 Playing Track</div>
 
-  <!-- FLOATING EDITORIAL HEADER -->
+  <!-- FLOATING EDITORIAL HEADER (NAME REMOVED) -->
   <header class="floating-header">
-    <a href="#" class="header-brand">Ben Wesley Mwanza <span>Visual Archivist</span></a>
+    <a href="#" class="header-brand">Phoenix View Media</a>
     <nav>
       <ul class="header-nav">
         <li><a href="#about">Story</a></li>
@@ -973,35 +957,38 @@
       </div>
     </header>
 
-    <!-- HORIZONTAL CINEMA REEL STRIP -->
+    <!-- HORIZONTAL CINEMA REEL STRIP (UPDATED WITH YOUR EXACT REQUESTED IMAGES) -->
     <div class="cinema-reel-section reveal">
       <div class="cinema-reel-header">
         <h3>Featured Cinematic Works</h3>
         <span>Scroll to Explore ➔</span>
       </div>
       <div class="cinema-reel-track">
+        <!-- Victoria Falls / Thunder on the Edge -> Bridge Image -->
         <div class="cinema-reel-card reader-btn" data-doc="victoria-falls-script">
-          <img src="images/20251223_164301 (1).jpeg" alt="Thunder on the Edge">
+          <img src="images/VideoCapture_20260407-230314 (1).jpeg" alt="Thunder on the Edge">
           <div class="cinema-reel-overlay">
             <span class="cinema-reel-tag">Feature Film Screenplay</span>
             <div class="cinema-reel-title">Thunder on the Edge</div>
             <div class="cinema-reel-desc">A high-stakes heritage thriller at Victoria Falls.</div>
           </div>
         </div>
-        <div class="cinema-reel-card reader-btn" data-doc="game-of-couples">
-          <img src="images/20251219_173958.jpeg" alt="Game of Couples">
-          <div class="cinema-reel-overlay">
-            <span class="cinema-reel-tag">Dramatic Thriller</span>
-            <div class="cinema-reel-title">Game of Couples</div>
-            <div class="cinema-reel-desc">Four couples on a wilderness expedition unspooling secrets.</div>
-          </div>
-        </div>
+        <!-- Frontline Keepers -> Setting Sun & Rock Pool Image -->
         <div class="cinema-reel-card reader-btn" data-doc="frontline-keepers">
-          <img src="images/20260407_143818.jpeg" alt="The Frontline Keepers">
+          <img src="images/20251220_172010.jpeg" alt="The Frontline Keepers">
           <div class="cinema-reel-overlay">
             <span class="cinema-reel-tag">Documentary Series Bible</span>
             <div class="cinema-reel-title">The Frontline Keepers</div>
             <div class="cinema-reel-desc">Zambia's wildlife war and frontline conservation rangers.</div>
+          </div>
+        </div>
+        <!-- Game of Couples -> Landscape Image -->
+        <div class="cinema-reel-card reader-btn" data-doc="game-of-couples">
+          <img src="images/20260108_170003 (1).jpeg" alt="Game of Couples">
+          <div class="cinema-reel-overlay">
+            <span class="cinema-reel-tag">Dramatic Thriller</span>
+            <div class="cinema-reel-title">Game of Couples</div>
+            <div class="cinema-reel-desc">Four couples on a wilderness expedition unspooling secrets.</div>
           </div>
         </div>
       </div>
@@ -1073,7 +1060,7 @@
       </div>
 
       <div class="portfolio-grid" id="photo-gallery-grid">
-        <!-- 1. ROAD & JOURNEY SERIES -->
+        <!-- ROAD & JOURNEY SERIES -->
         <div class="portfolio-card reveal" data-category="road">
           <div style="position: relative; overflow: hidden;">
             <img src="images/20260417_095932.jpeg" alt="The Open Highway" class="expandable" loading="lazy" decoding="async">
@@ -1195,7 +1182,7 @@
           <div class="card-caption"><h3>Forest Trail</h3><p>Road & Journey Series</p></div>
         </div>
 
-        <!-- 2. NATURE SERIES -->
+        <!-- NATURE SERIES -->
         <div class="portfolio-card reveal" data-category="nature">
           <div style="position: relative; overflow: hidden;">
             <img src="images/VideoCapture_20260407-230314.jpeg" alt="Twilight Nature Still" class="expandable" loading="lazy" decoding="async">
@@ -1317,7 +1304,7 @@
           <div class="card-caption"><h3>Botanical Horizon</h3><p>Nature Series</p></div>
         </div>
 
-        <!-- 3. PAINTED WORLD SERIES -->
+        <!-- PAINTED WORLD SERIES -->
         <div class="portfolio-card reveal" data-category="painted">
           <div style="position: relative; overflow: hidden;">
             <img src="images/20251208_065856 (2).jpeg" alt="Painted Dew Study I" class="expandable" loading="lazy" decoding="async">
@@ -1488,7 +1475,7 @@
         <p>High-concept digital & print editorial layouts combining macro photography, bespoke typography, and narrative copywriting.</p>
       </div>
       <div class="showcase-grid">
-        <!-- 25 Lookbooks Spreads Included -->
+        <!-- Lookbook Spreads -->
         <div class="showcase-card reveal">
           <div>
             <span class="showcase-tag">Travel Magazine Cover</span>
@@ -1935,7 +1922,7 @@
       }, 5500);
     }
 
-    // 6. HERO ATMOSPHERIC PARTICLE & LIGHT FIELD ENGINE (FEATURE 1)
+    // 6. HERO ATMOSPHERIC PARTICLE & LIGHT FIELD ENGINE
     (function initHeroAtmosphere() {
       const canvas = document.getElementById('hero-atmosphere-canvas');
       if (!canvas) return;
@@ -1946,34 +1933,22 @@
       let animationFrameId;
       let isVisible = true;
 
-      const pointer = {
-        x: null,
-        y: null,
-        targetX: null,
-        targetY: null,
-        radius: 160
-      };
+      const pointer = { x: null, y: null, targetX: null, targetY: null, radius: 160 };
 
-      function getParticleCount() {
-        return window.innerWidth < 768 ? 42 : 85;
-      }
+      function getParticleCount() { return window.innerWidth < 768 ? 42 : 85; }
 
       function resize() {
         const rect = canvas.parentElement.getBoundingClientRect();
         dpr = Math.min(window.devicePixelRatio || 1, 2);
         width = rect.width;
         height = rect.height;
-
         canvas.width = width * dpr;
         canvas.height = height * dpr;
         ctx.scale(dpr, dpr);
       }
 
       class LightParticle {
-        constructor() {
-          this.reset(true);
-        }
-
+        constructor() { this.reset(true); }
         reset(initial = false) {
           this.x = Math.random() * width;
           this.y = initial ? Math.random() * height : height + 10;
@@ -1985,11 +1960,9 @@
           this.pulsePhase = Math.random() * Math.PI * 2;
           this.isWarm = Math.random() > 0.35;
         }
-
         update() {
           this.pulsePhase += this.pulseSpeed;
           const currentAlpha = this.alpha + Math.sin(this.pulsePhase) * 0.12;
-
           this.x += this.baseSpeedX;
           this.y += this.baseSpeedY;
 
@@ -1997,7 +1970,6 @@
             const dx = pointer.x - this.x;
             const dy = pointer.y - this.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-
             if (dist < pointer.radius && dist > 1) {
               const force = (pointer.radius - dist) / pointer.radius;
               const angle = Math.atan2(dy, dx);
@@ -2012,13 +1984,10 @@
 
           return Math.max(0.05, Math.min(0.85, currentAlpha));
         }
-
         draw(alpha) {
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fillStyle = this.isWarm
-            ? `rgba(197, 160, 89, ${alpha})`
-            : `rgba(180, 195, 215, ${alpha * 0.8})`;
+          ctx.fillStyle = this.isWarm ? `rgba(197, 160, 89, ${alpha})` : `rgba(180, 195, 215, ${alpha * 0.8})`;
           ctx.fill();
         }
       }
@@ -2026,9 +1995,7 @@
       function buildParticles() {
         particles = [];
         const count = getParticleCount();
-        for (let i = 0; i < count; i++) {
-          particles.push(new LightParticle());
-        }
+        for (let i = 0; i < count; i++) particles.push(new LightParticle());
       }
 
       function drawConnections() {
@@ -2038,7 +2005,6 @@
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-
             if (dist < maxDist) {
               const lineAlpha = (1 - dist / maxDist) * 0.14;
               ctx.beginPath();
@@ -2083,24 +2049,15 @@
       }
 
       window.addEventListener('mousemove', (e) => {
-        if (e.clientY <= canvas.getBoundingClientRect().bottom) {
-          updatePointer(e.clientX, e.clientY);
-        } else {
-          pointer.targetX = null;
-          pointer.targetY = null;
-        }
+        if (e.clientY <= canvas.getBoundingClientRect().bottom) updatePointer(e.clientX, e.clientY);
+        else { pointer.targetX = null; pointer.targetY = null; }
       }, { passive: true });
 
       window.addEventListener('touchmove', (e) => {
-        if (e.touches.length > 0) {
-          updatePointer(e.touches[0].clientX, e.touches[0].clientY);
-        }
+        if (e.touches.length > 0) updatePointer(e.touches[0].clientX, e.touches[0].clientY);
       }, { passive: true });
 
-      window.addEventListener('touchend', () => {
-        pointer.targetX = null;
-        pointer.targetY = null;
-      }, { passive: true });
+      window.addEventListener('touchend', () => { pointer.targetX = null; pointer.targetY = null; }, { passive: true });
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -2111,27 +2068,22 @@
       }, { threshold: 0.05 });
 
       observer.observe(canvas);
-
       document.addEventListener('visibilitychange', () => {
         const wasVisible = isVisible;
         isVisible = !document.hidden;
         if (isVisible && !wasVisible) render();
       });
 
-      window.addEventListener('resize', () => {
-        resize();
-        buildParticles();
-      }, { passive: true });
+      window.addEventListener('resize', () => { resize(); buildParticles(); }, { passive: true });
 
       resize();
       buildParticles();
       render();
     })();
 
-    // 7. INTERACTIVE OPTICAL LOUPE & SHADER HOVER (FEATURE 2)
+    // 7. OPTICAL LOUPE
     (function initOpticalLoupe() {
       if (window.matchMedia('(pointer: coarse)').matches) return;
-
       document.querySelectorAll('.portfolio-card').forEach(card => {
         const img = card.querySelector('.expandable');
         const lens = card.querySelector('.loupe-lens');
@@ -2142,23 +2094,15 @@
           lens.style.backgroundImage = `url('${img.currentSrc || img.src}')`;
           lens.style.backgroundSize = `${img.clientWidth * 2.2}px ${img.clientHeight * 2.2}px`;
         });
-
         card.addEventListener('mousemove', (e) => {
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
-
           lens.style.left = `${x}px`;
           lens.style.top = `${y}px`;
-
-          const bgX = (x / rect.width) * 100;
-          const bgY = (y / rect.height) * 100;
-          lens.style.backgroundPosition = `${bgX}% ${bgY}%`;
+          lens.style.backgroundPosition = `${(x / rect.width) * 100}% ${(y / rect.height) * 100}%`;
         });
-
-        card.addEventListener('mouseleave', () => {
-          lens.style.display = 'none';
-        });
+        card.addEventListener('mouseleave', () => { lens.style.display = 'none'; });
       });
     })();
 
@@ -2239,11 +2183,9 @@
     });
 
     closeBtn?.addEventListener('click', () => modal.style.display = 'none');
-    modal?.addEventListener('click', (e) => {
-      if (e.target === modal || e.target === closeBtn) modal.style.display = 'none';
-    });
+    modal?.addEventListener('click', (e) => { if (e.target === modal || e.target === closeBtn) modal.style.display = 'none'; });
 
-    // 10. Interactive Document Reader Modal
+    // 10. Document Reader Modal
     const readerModal = document.getElementById('reader-modal');
     const readerBody = document.getElementById('reader-body');
     const readerCloseBtn = document.querySelector('.reader-close');
@@ -2254,22 +2196,18 @@
         <div class="subtitle">Feature Film Screenplay Synopsis</div>
         <p><strong>Logline:</strong> Four couples embark on an elite wilderness hiking expedition across rugged remote terrain, only to discover that deep-seated secrets, unresolved tensions, and psychological survival dynamics will test their bonds far beyond the trail.</p>
         <p><strong>Narrative Arc:</strong> The narrative builds as an atmospheric slow-burn thriller. Initially framed as a restorative weekend retreat, shifting environmental obstacles and psychological confrontations strip away polite façades. Each character is forced to confront what loyalty truly means when isolation sets in.</p>
-        <p><strong>Development Focus:</strong> Written by Ben Wesley Mwanza, the screenplay merges high-stakes dramatic tension with rich visual framing of untamed wilderness landscapes.</p>
       `,
       "frontline-keepers": `
         <h2>The Frontline Keepers: Zambia’s Wildlife War</h2>
         <div class="subtitle">International Documentary Series Bible & Pitch Deck</div>
         <p><strong>Overview:</strong> A premium natural history and human-interest documentary series following the dedicated rangers, conservationists, and local communities on the frontline of wildlife preservation in Zambia.</p>
         <p><strong>Core Focus:</strong> Beyond traditional wildlife documentary formats, <em>The Frontline Keepers</em> zeroes in on the human element—the daily sacrifices, tactical tracking units, and community-led conservation value exchanges that safeguard regional heritage.</p>
-        <p><strong>Production Vision:</strong> Produced by Phoenix View Media, combining macro cinematography, intimate portraiture, and compelling field audio.</p>
       `,
       "victoria-falls-script": `
         <h2>Thunder on the Edge</h2>
         <div class="subtitle">Victoria Falls Feature Film Screenplay Concept & Bible</div>
         <p><strong>Logline:</strong> When a high-stakes archival recovery mission intersects with a historic heritage heist at the roaring gorges of Victoria Falls, an independent archivist and a local ranger must race against time through mist, rainforest trails, and border currents to protect a priceless historical artifact.</p>
-        <p><strong>Act I — The Descent into the Smoke:</strong> Sweeping aerial cinematography over the Batoka Gorge during peak rainy season. The sheer volume of water generates the iconic cloud known locally as <em>Mosi-oa-Tunya</em> (The Smoke That Thunders). Our protagonist arrives on a field assignment to document rare archival plates.</p>
-        <p><strong>Act II — The Knife Edge Confrontation:</strong> As torrential mist blankets the Knife Edge Bridge, an attempt to intercept stolen cultural archives turns into a vertical pursuit along slippery cliff edges and rainforest paths where sound and shadow create psychological hazards.</p>
-        <p><strong>Act III — Preservation & Resolution:</strong> Climaxing at sunset over the gorge where shifting light creates permanent rainbows across the spray, securing the historical archives and cementing a powerful narrative about cultural preservation.</p>
+        <p><strong>Act I — The Descent into the Smoke:</strong> Sweeping aerial cinematography over the Batoka Gorge during peak rainy season. The sheer volume of water generates the iconic cloud known locally as <em>Mosi-oa-Tunya</em> (The Smoke That Thunders).</p>
       `
     };
 
@@ -2283,9 +2221,7 @@
     });
 
     readerCloseBtn?.addEventListener('click', () => readerModal.style.display = 'none');
-    readerModal?.addEventListener('click', (e) => {
-      if (e.target === readerModal) readerModal.style.display = 'none';
-    });
+    readerModal?.addEventListener('click', (e) => { if (e.target === readerModal) readerModal.style.display = 'none'; });
 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
@@ -2294,7 +2230,7 @@
       }
     });
 
-    // 11. MULTI-TRACK AUDIO PLAYLIST & FEATURE 3 (WEB AUDIO API VISUALIZER)
+    // 11. AUDIO PLAYLIST & ANALYZER
     const playlist = [
       { title: "Mr. Morale (ft. Tanna Leone)", src: "audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a", type: "audio/mp4" },
       { title: "Majesty (Official)", src: "audio/ISLY_-_MAJESTY__Offical_Video_(128k).m4a", type: "audio/mp4" },
@@ -2311,7 +2247,6 @@
     const toast = document.getElementById('toast');
     let toastTimeout;
 
-    // Web Audio API Frequency Analyser State
     let audioCtx, analyser, dataArray, sourceNode;
     let isAnalyzerInitialized = false;
 
@@ -2322,11 +2257,9 @@
         audioCtx = new AudioContext();
         analyser = audioCtx.createAnalyser();
         analyser.fftSize = 64;
-        
         sourceNode = audioCtx.createMediaElementSource(ambientAudio);
         sourceNode.connect(analyser);
         analyser.connect(audioCtx.destination);
-        
         dataArray = new Uint8Array(analyser.frequencyBinCount);
         isAnalyzerInitialized = true;
         monitorAudioFrequencies();
@@ -2340,13 +2273,8 @@
         analyser.getByteFrequencyData(dataArray);
         let sum = 0;
         for(let i = 0; i < 4; i++) { sum += dataArray[i]; }
-        const avg = sum / 4;
-
-        if (avg > 120) {
-          audioBtn.classList.add('active-pulse');
-        } else {
-          audioBtn.classList.remove('active-pulse');
-        }
+        if (sum / 4 > 120) audioBtn.classList.add('active-pulse');
+        else audioBtn.classList.remove('active-pulse');
       } else {
         audioBtn?.classList.remove('active-pulse');
       }
@@ -2376,29 +2304,22 @@
 
     function safePlayAudio() {
       if (!playlist.length) return;
-      if (audioCtx && audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-      const playPromise = ambientAudio.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          audioIcon.textContent = "🔊";
-          audioLabel.textContent = playlist[currentTrackIndex].title;
-          showToast(playlist[currentTrackIndex].title);
-          initAudioAnalyzer();
-        }).catch(error => {
-          console.warn("Audio playback prevented or failed:", error);
-          audioLabel.textContent = "Soundtrack: Off";
-          audioIcon.textContent = "🎵";
-        });
-      }
+      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+      ambientAudio.play().then(() => {
+        audioIcon.textContent = "🔊";
+        audioLabel.textContent = playlist[currentTrackIndex].title;
+        showToast(playlist[currentTrackIndex].title);
+        initAudioAnalyzer();
+      }).catch(error => {
+        audioLabel.textContent = "Soundtrack: Off";
+        audioIcon.textContent = "🎵";
+      });
     }
 
     audioBtn?.addEventListener('click', () => {
       if (!playlist.length) return;
-      if (ambientAudio.paused) {
-        safePlayAudio();
-      } else {
+      if (ambientAudio.paused) safePlayAudio();
+      else {
         ambientAudio.pause();
         audioLabel.textContent = "Soundtrack: Off";
         audioIcon.textContent = "🎵";
@@ -2427,7 +2348,7 @@
       safePlayAudio();
     });
 
-    // 12. WebGL Studio Engine (Three.js 3D Fluid Sphere)
+    // 12. WebGL Studio Engine
     const container = document.getElementById('labCanvasContainer');
     const canvas = document.getElementById('labCanvas');
     
@@ -2440,50 +2361,28 @@
       renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-      const ambientLight = new THREE.AmbientLight(0xffffff, 1.4);
-      scene.add(ambientLight);
-
-      const pointLight1 = new THREE.PointLight(0xc5a059, 3.5, 50);
-      pointLight1.position.set(4, 4, 4);
-      scene.add(pointLight1);
-
-      const pointLight2 = new THREE.PointLight(0x7653fe, 2.5, 50);
-      pointLight2.position.set(-4, -4, 2);
-      scene.add(pointLight2);
+      scene.add(new THREE.AmbientLight(0xffffff, 1.4));
+      const pLight1 = new THREE.PointLight(0xc5a059, 3.5, 50);
+      pLight1.position.set(4, 4, 4);
+      scene.add(pLight1);
 
       const geometry = new THREE.SphereGeometry(1.2, 64, 64);
-      const material = new THREE.MeshPhysicalMaterial({
-        color: 0x141418,
-        metalness: 0.88,
-        roughness: 0.12,
-        clearcoat: 1.0,
-        clearcoatRoughness: 0.1
-      });
-
+      const material = new THREE.MeshPhysicalMaterial({ color: 0x141418, metalness: 0.88, roughness: 0.12, clearcoat: 1.0 });
       const sphere = new THREE.Mesh(geometry, material);
       scene.add(sphere);
 
-      const positionAttribute = geometry.attributes.position;
-      const initialPositions = [];
-      for (let i = 0; i < positionAttribute.count; i++) {
-        const vertex = new THREE.Vector3();
-        vertex.fromBufferAttribute(positionAttribute, i);
-        initialPositions.push(vertex.clone());
+      const posAttr = geometry.attributes.position;
+      const initPos = [];
+      for (let i = 0; i < posAttr.count; i++) {
+        const v = new THREE.Vector3();
+        v.fromBufferAttribute(posAttr, i);
+        initPos.push(v.clone());
       }
 
-      let mouseX = 0, mouseY = 0;
-      let targetX = 0, targetY = 0;
-
+      let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
       window.addEventListener('mousemove', (e) => {
         mouseX = (e.clientX - window.innerWidth / 2) * 0.002;
         mouseY = (e.clientY - window.innerHeight / 2) * 0.002;
-      }, { passive: true });
-
-      window.addEventListener('touchmove', (e) => {
-        if (e.touches.length > 0) {
-          mouseX = (e.touches[0].clientX - window.innerWidth / 2) * 0.003;
-          mouseY = (e.touches[0].clientY - window.innerHeight / 2) * 0.003;
-        }
       }, { passive: true });
 
       window.addEventListener('resize', () => {
@@ -2494,32 +2393,22 @@
       });
 
       const clock = new THREE.Clock();
-
       function animateLab() {
         requestAnimationFrame(animateLab);
-        const elapsedTime = clock.getElapsedTime();
-
+        const t = clock.getElapsedTime();
         targetX += (mouseX - targetX) * 0.05;
         targetY += (mouseY - targetY) * 0.05;
+        sphere.rotation.y = t * 0.2 + targetX;
+        sphere.rotation.x = t * 0.12 + targetY;
 
-        sphere.rotation.y = elapsedTime * 0.2 + targetX;
-        sphere.rotation.x = elapsedTime * 0.12 + targetY;
-
-        for (let i = 0; i < positionAttribute.count; i++) {
-          const initPos = initialPositions[i];
-          const waveX = Math.sin(elapsedTime * 2.0 + initPos.y * 3.0) * 0.1;
-          const waveY = Math.cos(elapsedTime * 1.7 + initPos.x * 3.0) * 0.1;
-          
-          positionAttribute.setXYZ(
-            i,
-            initPos.x + waveX,
-            initPos.y + waveY,
-            initPos.z + (waveX + waveY) * 0.5
-          );
+        for (let i = 0; i < posAttr.count; i++) {
+          const ip = initPos[i];
+          const wx = Math.sin(t * 2.0 + ip.y * 3.0) * 0.1;
+          const wy = Math.cos(t * 1.7 + ip.x * 3.0) * 0.1;
+          posAttr.setXYZ(i, ip.x + wx, ip.y + wy, ip.z + (wx + wy) * 0.5);
         }
-        positionAttribute.needsUpdate = true;
+        posAttr.needsUpdate = true;
         geometry.computeVertexNormals();
-
         renderer.render(scene, camera);
       }
       animateLab();
@@ -2536,7 +2425,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
     window.addEventListener('load', initTilt);
   })();
   </script>
