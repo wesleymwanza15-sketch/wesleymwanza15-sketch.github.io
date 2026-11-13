@@ -131,7 +131,7 @@
       z-index: 1;
     }
 
-    /* Hero */
+    /* Hero & Atmospheric Canvas Engine */
     .canva-hero {
       position: relative;
       border-radius: 16px;
@@ -157,7 +157,20 @@
       background: linear-gradient(to bottom, var(--hero-overlay-1), var(--hero-overlay-2));
       z-index: 2;
     }
-    .hero-content { position: relative; z-index: 3; max-width: 850px; margin: 0 auto; }
+    
+    #hero-atmosphere-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0.85;
+      transition: opacity 0.6s ease;
+    }
+
+    .hero-content { position: relative; z-index: 4; max-width: 850px; margin: 0 auto; }
     .cma-badge-tag {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--card-bg);
@@ -582,7 +595,7 @@
   </audio>
 
   <div class="container">
-    <!-- Hero -->
+    <!-- Hero with Atmospheric Particle & Light Field Engine -->
     <header class="canva-hero">
       <div class="hero-slider">
         <div class="slide active" style="background-image: url('images/20260416_165634.jpeg');" fetchpriority="high"></div>
@@ -590,6 +603,10 @@
         <div class="slide" style="background-image: url('images/20260107_064814 (1).jpeg');"></div>
       </div>
       <div class="hero-overlay"></div>
+      
+      <!-- HERO ATMOSPHERIC CANVAS ENGINE -->
+      <canvas id="hero-atmosphere-canvas" aria-hidden="true"></canvas>
+
       <div class="hero-content">
         <div class="cma-badge-tag">
           <i class="fas fa-award"></i> 2026 Creative Media Awards — Best Documentary Photography Nominee
@@ -1305,7 +1322,200 @@
       }, 5500);
     }
 
-    // 6. Gallery Filter + Pagination
+    // 6. HERO ATMOSPHERIC PARTICLE & LIGHT FIELD ENGINE (STEP 1)
+    (function initHeroAtmosphere() {
+      const canvas = document.getElementById('hero-atmosphere-canvas');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      let width, height, dpr;
+      let particles = [];
+      let animationFrameId;
+      let isVisible = true;
+
+      const pointer = {
+        x: null,
+        y: null,
+        targetX: null,
+        targetY: null,
+        radius: 160
+      };
+
+      function getParticleCount() {
+        return window.innerWidth < 768 ? 42 : 85;
+      }
+
+      function resize() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = rect.width;
+        height = rect.height;
+
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.scale(dpr, dpr);
+      }
+
+      class LightParticle {
+        constructor() {
+          this.reset(true);
+        }
+
+        reset(initial = false) {
+          this.x = Math.random() * width;
+          this.y = initial ? Math.random() * height : height + 10;
+          this.size = Math.random() * 2.2 + 0.6;
+          this.baseSpeedX = (Math.random() - 0.5) * 0.35;
+          this.baseSpeedY = -(Math.random() * 0.4 + 0.15);
+          this.alpha = Math.random() * 0.55 + 0.15;
+          this.pulseSpeed = Math.random() * 0.02 + 0.005;
+          this.pulsePhase = Math.random() * Math.PI * 2;
+          this.isWarm = Math.random() > 0.35;
+        }
+
+        update() {
+          this.pulsePhase += this.pulseSpeed;
+          const currentAlpha = this.alpha + Math.sin(this.pulsePhase) * 0.12;
+
+          this.x += this.baseSpeedX;
+          this.y += this.baseSpeedY;
+
+          if (pointer.x !== null && pointer.y !== null) {
+            const dx = pointer.x - this.x;
+            const dy = pointer.y - this.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < pointer.radius && dist > 1) {
+              const force = (pointer.radius - dist) / pointer.radius;
+              const angle = Math.atan2(dy, dx);
+              this.x += Math.cos(angle + 0.35) * force * 1.4;
+              this.y += Math.sin(angle + 0.35) * force * 1.4;
+            }
+          }
+
+          if (this.y < -15) this.reset(false);
+          if (this.x < -15) this.x = width + 15;
+          if (this.x > width + 15) this.x = -15;
+
+          return Math.max(0.05, Math.min(0.85, currentAlpha));
+        }
+
+        draw(alpha) {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = this.isWarm
+            ? `rgba(197, 160, 89, ${alpha})` // Phoenix Gold
+            : `rgba(180, 195, 215, ${alpha * 0.8})`; // Silver Halide
+          ctx.fill();
+        }
+      }
+
+      function buildParticles() {
+        particles = [];
+        const count = getParticleCount();
+        for (let i = 0; i < count; i++) {
+          particles.push(new LightParticle());
+        }
+      }
+
+      function drawConnections() {
+        const maxDist = window.innerWidth < 768 ? 85 : 115;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < maxDist) {
+              const lineAlpha = (1 - dist / maxDist) * 0.14;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(197, 160, 89, ${lineAlpha})`;
+              ctx.lineWidth = 0.6;
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function render() {
+        if (!isVisible) return;
+        ctx.clearRect(0, 0, width, height);
+
+        if (pointer.targetX !== null && pointer.targetY !== null) {
+          pointer.x = pointer.x === null ? pointer.targetX : pointer.x + (pointer.targetX - pointer.x) * 0.12;
+          pointer.y = pointer.y === null ? pointer.targetY : pointer.y + (pointer.targetY - pointer.y) * 0.12;
+
+          const glow = ctx.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, pointer.radius * 1.3);
+          glow.addColorStop(0, 'rgba(197, 160, 89, 0.08)');
+          glow.addColorStop(1, 'rgba(197, 160, 89, 0)');
+          ctx.fillStyle = glow;
+          ctx.fillRect(0, 0, width, height);
+        }
+
+        for (let i = 0; i < particles.length; i++) {
+          const alpha = particles[i].update();
+          particles[i].draw(alpha);
+        }
+
+        drawConnections();
+        animationFrameId = requestAnimationFrame(render);
+      }
+
+      function updatePointer(clientX, clientY) {
+        const rect = canvas.getBoundingClientRect();
+        pointer.targetX = clientX - rect.left;
+        pointer.targetY = clientY - rect.top;
+      }
+
+      window.addEventListener('mousemove', (e) => {
+        if (e.clientY <= canvas.getBoundingClientRect().bottom) {
+          updatePointer(e.clientX, e.clientY);
+        } else {
+          pointer.targetX = null;
+          pointer.targetY = null;
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+          updatePointer(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        pointer.targetX = null;
+        pointer.targetY = null;
+      }, { passive: true });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const wasVisible = isVisible;
+          isVisible = entry.isIntersecting && !document.hidden;
+          if (isVisible && !wasVisible) render();
+        });
+      }, { threshold: 0.05 });
+
+      observer.observe(canvas);
+
+      document.addEventListener('visibilitychange', () => {
+        const wasVisible = isVisible;
+        isVisible = !document.hidden;
+        if (isVisible && !wasVisible) render();
+      });
+
+      window.addEventListener('resize', () => {
+        resize();
+        buildParticles();
+      }, { passive: true });
+
+      resize();
+      buildParticles();
+      render();
+    })();
+
+    // 7. Gallery Filter + Pagination
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioCards = Array.from(document.querySelectorAll('.portfolio-card'));
     const prevPageBtn = document.getElementById('prev-page-btn');
@@ -1353,7 +1563,7 @@
 
     renderGallery();
 
-    // 7. Lightbox
+    // 8. Lightbox
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const modalCaption = document.getElementById('modal-caption');
@@ -1386,7 +1596,7 @@
       if (e.target === modal || e.target === closeBtn) modal.style.display = 'none';
     });
 
-    // 8. Interactive Document Reader Modal
+    // 9. Interactive Document Reader Modal
     const readerModal = document.getElementById('reader-modal');
     const readerBody = document.getElementById('reader-body');
     const readerCloseBtn = document.querySelector('.reader-close');
@@ -1429,7 +1639,7 @@
       }
     });
 
-    // 9. Multi-Track Audio Playlist
+    // 10. Multi-Track Audio Playlist
     const playlist = [
       { title: "Mr. Morale (ft. Tanna Leone)", src: "audio/Kendrick_Lamar_-_Mr._Morale_ft._Tanna_Leone_Official_Audio_(128k).m4a", type: "audio/mp4" },
       { title: "Majesty (Official)", src: "audio/ISLY_-_MAJESTY__Offical_Video_(128k).m4a", type: "audio/mp4" },
@@ -1515,7 +1725,7 @@
       safePlayAudio();
     });
 
-    // 10. WebGL Studio Engine (Three.js 3D Fluid Sphere)
+    // 11. WebGL Studio Engine (Three.js 3D Fluid Sphere)
     const container = document.getElementById('labCanvasContainer');
     const canvas = document.getElementById('labCanvas');
     
@@ -1615,7 +1825,7 @@
       animateLab();
     }
 
-    // 11. Reveal Observer
+    // 12. Reveal Observer
     const revealObserver = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1633,4 +1843,3 @@
   </script>
 </body>
 </html>
-
