@@ -193,12 +193,56 @@
       .header-nav { display: none; }
     }
 
+    /* Mobile Sticky Quick-Jump Pill Bar */
+    .mobile-quick-nav {
+      display: none;
+      position: fixed;
+      top: 80px;
+      left: 0; right: 0;
+      background: rgba(10, 10, 14, 0.9);
+      backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+      padding: 10px 16px;
+      z-index: 998;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+    .mobile-quick-nav::-webkit-scrollbar { display: none; }
+    .mobile-quick-nav-track {
+      display: inline-flex;
+      gap: 10px;
+    }
+    .mobile-nav-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .mobile-nav-pill:active, .mobile-nav-pill.active {
+      background: rgba(197, 160, 89, 0.2);
+      color: var(--accent-gold-light);
+      border-color: var(--accent-gold);
+    }
+    @media (max-width: 900px) {
+      .mobile-quick-nav { display: block; }
+    }
+
     .container {
       max-width: 1320px;
       margin: 0 auto;
       padding: 120px 24px 40px;
       position: relative;
       z-index: 1;
+    }
+    @media (max-width: 900px) {
+      .container { padding-top: 145px; }
     }
 
     /* Hero & Atmospheric Canvas Engine */
@@ -965,6 +1009,7 @@
       .canva-hero::after { display: none; }
       #spotlight { display: none; }
       .widget-dock { bottom: 15px; left: 10px; right: 10px; justify-content: center; }
+      .audio-btn span:nth-child(2) { max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     }
   </style>
 
@@ -993,6 +1038,19 @@
     </nav>
   </header>
 
+  <!-- MOBILE STICKY QUICK-JUMP PILL BAR -->
+  <nav class="mobile-quick-nav" aria-label="Mobile quick navigation">
+    <div class="mobile-quick-nav-track">
+      <a href="#about" class="mobile-nav-pill">Story</a>
+      <a href="#photography-pane" class="mobile-nav-pill" onclick="openDisciplineTab('photography-pane', false); return false;">Photography</a>
+      <a href="#apps-pane" class="mobile-nav-pill" onclick="openDisciplineTab('apps-pane', false); return false;">Apps</a>
+      <a href="#editorial-pane" class="mobile-nav-pill" onclick="openDisciplineTab('editorial-pane', false); return false;">Screenplays</a>
+      <a href="#lookbooks-pane" class="mobile-nav-pill" onclick="openDisciplineTab('lookbooks-pane', false); return false;">Lookbooks</a>
+      <a href="#services-pane" class="mobile-nav-pill" onclick="openDisciplineTab('services-pane', false); return false;">Services</a>
+      <a href="#lab-pane" class="mobile-nav-pill" onclick="openDisciplineTab('lab-pane', true); return false;">3D Lab</a>
+    </div>
+  </nav>
+
   <div class="floating-contact">
     <a href="https://wa.me/260763533205" target="_blank" rel="noopener" class="whatsapp-btn" title="Chat on WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.instagram.com/phoenix_view_bwm" target="_blank" rel="noopener" class="instagram-btn" title="Follow on Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1001,7 +1059,7 @@
   <div class="widget-dock">
     <button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme" aria-label="Toggle theme">
       <span id="theme-icon">☀️</span>
-      <span id="theme-label">Light Mode</span>
+      <span id="theme-label">Light</span>
     </button>
     <div class="audio-player-container">
       <button id="prev-audio-btn" class="audio-btn nav-btn" title="Previous Track" aria-label="Previous track"><i class="fas fa-step-backward"></i></button>
@@ -1984,7 +2042,7 @@
       const isDark = body.getAttribute('data-theme') === 'dark';
       body.setAttribute('data-theme', isDark ? 'light' : 'dark');
       themeIcon.textContent = isDark ? '🌙' : '☀️';
-      themeLabel.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+      themeLabel.textContent = isDark ? 'Dark' : 'Light';
     });
 
     // 3. 3D Tilt
@@ -2005,8 +2063,8 @@
       });
     }
 
-    // 4. Discipline Tabs & Hero Quick-Launch Helper
-    function openDisciplineTab(tabId, triggerFlare = false) {
+    // 4. Discipline Tabs & Navigation Helpers
+    window.openDisciplineTab = function(tabId, triggerFlare = false) {
       const targetBtn = document.querySelector(`.discipline-btn[data-tab="${tabId}"]`);
       const targetPane = document.getElementById(tabId);
       if (!targetBtn || !targetPane) return;
@@ -2020,21 +2078,31 @@
       if (triggerFlare && typeof window.ignitePhoenixLab === 'function') {
         setTimeout(() => window.ignitePhoenixLab(), 450);
       }
-    }
+    };
 
     document.querySelectorAll('.discipline-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        openDisciplineTab(btn.dataset.tab, false);
+        window.openDisciplineTab(btn.dataset.tab, false);
       });
     });
 
     document.getElementById('hero-launch-phoenix')?.addEventListener('click', () => {
-      openDisciplineTab('lab-pane', true);
+      window.openDisciplineTab('lab-pane', true);
     });
     document.querySelector('.header-nav a[href="#lab-pane"]')?.addEventListener('click', (e) => {
       e.preventDefault();
-      openDisciplineTab('lab-pane', true);
+      window.openDisciplineTab('lab-pane', true);
     });
+
+    // Highlight active mobile quick nav pill on scroll
+    const mobilePills = document.querySelectorAll('.mobile-nav-pill');
+    window.addEventListener('scroll', () => {
+      let scrollPos = window.scrollY + 200;
+      if (scrollPos > document.getElementById('lab-pane')?.offsetTop) {
+        mobilePills.forEach(p => p.classList.remove('active'));
+        document.querySelector('.mobile-nav-pill[href="#lab-pane"]')?.classList.add('active');
+      }
+    }, { passive: true });
 
     // 5. Hero Slider
     const slides = document.querySelectorAll('.hero-slider .slide');
