@@ -174,7 +174,8 @@
     }
     .header-nav {
       display: flex;
-      gap: 24px;
+      align-items: center;
+      gap: 22px;
       list-style: none;
     }
     .header-nav a {
@@ -188,6 +189,22 @@
     }
     .header-nav a:hover {
       color: var(--accent-gold-light);
+    }
+    .header-commission-btn {
+      background: rgba(197, 160, 89, 0.14);
+      border: 1px solid rgba(197, 160, 89, 0.55);
+      color: var(--accent-gold-light);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      transition: var(--transition);
+    }
+    .header-commission-btn:hover {
+      background: var(--accent-gold);
+      color: #050507;
     }
     @media (max-width: 900px) {
       .header-nav { display: none; }
@@ -229,6 +246,11 @@
       background: rgba(197, 160, 89, 0.2);
       color: var(--accent-gold-light);
       border-color: var(--accent-gold);
+    }
+    .mobile-nav-pill.gold-pill {
+      border-color: rgba(197, 160, 89, 0.5);
+      color: var(--accent-gold-light);
+      background: rgba(197, 160, 89, 0.1);
     }
     @media (max-width: 900px) {
       .mobile-quick-nav { display: block; }
@@ -330,12 +352,18 @@
       text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
     }
 
-    /* Hero Quick-Launch CTA Button */
+    /* Hero Action Row */
+    .hero-cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
     .hero-lab-cta {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin-top: 14px;
       background: rgba(197, 160, 89, 0.14);
       border: 1px solid rgba(197, 160, 89, 0.65);
       color: var(--accent-gold-light);
@@ -352,6 +380,27 @@
     .hero-lab-cta:hover {
       background: var(--accent-gold);
       color: #050507;
+      transform: translateY(-2px);
+    }
+    .hero-secondary-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(12, 12, 16, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #fff;
+      padding: 11px 24px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      backdrop-filter: var(--glass-blur);
+      transition: var(--transition);
+    }
+    .hero-secondary-cta:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold-light);
       transform: translateY(-2px);
     }
 
@@ -890,7 +939,7 @@
       position: fixed; bottom: 25px; right: 24px; z-index: 999;
       display: flex; flex-direction: column; gap: 10px;
     }
-    .floating-contact a {
+    .floating-contact a, .floating-contact button {
       width: 44px; height: 44px; border-radius: 6px;
       display: flex; align-items: center; justify-content: center;
       color: #fff; text-decoration: none;
@@ -898,11 +947,16 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
       transition: var(--transition);
     }
+    .floating-contact button.estimator-fab {
+      background: linear-gradient(135deg, #c5a059, #8f6b29);
+      color: #050507;
+      font-size: 1rem;
+    }
     .floating-contact a.whatsapp-btn { background: #1ea851; }
     .floating-contact a.instagram-btn {
       background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     }
-    .floating-contact a:hover { transform: translateY(-3px) scale(1.05); }
+    .floating-contact a:hover, .floating-contact button:hover { transform: translateY(-3px) scale(1.05); }
 
     /* Toast */
     .toast-notification {
@@ -950,9 +1004,10 @@
     .print-inquiry-btn {
       display: inline-flex; align-items: center; gap: 8px;
       margin-top: 16px;
-      background: #1ea851; color: #fff;
+      background: var(--accent-gold); color: #050507;
+      border: none;
       padding: 10px 22px; border-radius: 4px;
-      font-size: 0.8rem; font-weight: 600;
+      font-size: 0.8rem; font-weight: 700;
       letter-spacing: 0.08em; text-transform: uppercase;
       text-decoration: none; transition: var(--transition);
     }
@@ -983,6 +1038,168 @@
     .reader-close { position: absolute; top: 25px; right: 25px; color: var(--text-muted); font-size: 1.8rem; cursor: pointer; line-height: 1; }
     .reader-close:hover { color: var(--text-main); }
 
+    /* ===== B2B COMMISSION & PRINT LICENSING ESTIMATOR MODAL ===== */
+    .estimator-modal {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(3, 3, 5, 0.94);
+      backdrop-filter: blur(18px);
+      z-index: 10002;
+      justify-content: center; align-items: center;
+      padding: 18px;
+    }
+    .estimator-card {
+      background: var(--card-bg-solid);
+      border: 1px solid rgba(197, 160, 89, 0.5);
+      border-radius: 14px;
+      max-width: 780px; width: 100%;
+      max-height: 90vh; overflow-y: auto;
+      padding: 36px; position: relative;
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.92), 0 0 35px var(--accent-gold-glow);
+    }
+    .estimator-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+    }
+    .estimator-header h2 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: 1.9rem;
+      color: var(--text-main);
+    }
+    .estimator-close {
+      color: var(--text-muted);
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+      background: none;
+      border: none;
+    }
+    .estimator-close:hover { color: var(--accent-gold); }
+    .est-group { margin-bottom: 22px; }
+    .est-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-gold);
+      margin-bottom: 10px;
+    }
+    .est-options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 10px;
+    }
+    .est-option-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 12px 14px;
+      border-radius: 6px;
+      text-align: left;
+      transition: var(--transition);
+    }
+    .est-option-btn strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.84rem;
+      margin-bottom: 3px;
+    }
+    .est-option-btn span {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .est-option-btn.active {
+      background: rgba(197, 160, 89, 0.14);
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 18px var(--accent-gold-glow);
+    }
+    .est-option-btn.active strong { color: var(--accent-gold-light); }
+    .est-addon-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+    .est-addon-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      padding: 10px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+    .est-addon-item:hover { border-color: rgba(197, 160, 89, 0.45); }
+    .est-addon-item input { accent-color: var(--accent-gold); width: 16px; height: 16px; }
+    .est-input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .est-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .est-input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+    }
+    .est-summary-box {
+      background: rgba(197, 160, 89, 0.07);
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .est-price-display .est-usd {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      color: var(--accent-gold-light);
+      line-height: 1.1;
+    }
+    .est-price-display .est-zmw {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .est-submit-btn {
+      background: #1ea851;
+      color: #fff;
+      border: none;
+      padding: 13px 24px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(30, 168, 81, 0.35);
+      transition: var(--transition);
+    }
+    .est-submit-btn:hover { transform: translateY(-2px); opacity: 0.94; }
+
     /* Footer */
     footer {
       text-align: center; padding: 56px 20px;
@@ -1010,6 +1227,8 @@
       #spotlight { display: none; }
       .widget-dock { bottom: 15px; left: 10px; right: 10px; justify-content: center; }
       .audio-btn span:nth-child(2) { max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .estimator-card { padding: 24px 18px; }
+      .est-input-row { grid-template-columns: 1fr; }
     }
   </style>
 
@@ -1034,6 +1253,7 @@
         <li><a href="#editorial-pane">Screenplays</a></li>
         <li><a href="#lookbooks-pane">Lookbooks</a></li>
         <li><a href="#lab-pane">WebGL Lab</a></li>
+        <li><button type="button" class="header-commission-btn" onclick="openEstimatorModal('web')">Commission</button></li>
       </ul>
     </nav>
   </header>
@@ -1041,6 +1261,7 @@
   <!-- MOBILE STICKY QUICK-JUMP PILL BAR -->
   <nav class="mobile-quick-nav" aria-label="Mobile quick navigation">
     <div class="mobile-quick-nav-track">
+      <button type="button" class="mobile-nav-pill gold-pill" onclick="openEstimatorModal('web')"><i class="fas fa-calculator"></i> Estimator</button>
       <a href="#about" class="mobile-nav-pill">Story</a>
       <a href="#photography-pane" class="mobile-nav-pill" onclick="openDisciplineTab('photography-pane', false); return false;">Photography</a>
       <a href="#apps-pane" class="mobile-nav-pill" onclick="openDisciplineTab('apps-pane', false); return false;">Apps</a>
@@ -1052,6 +1273,7 @@
   </nav>
 
   <div class="floating-contact">
+    <button type="button" class="estimator-fab" onclick="openEstimatorModal('web')" title="B2B & Print Licensing Estimator" aria-label="Open Project Estimator"><i class="fas fa-calculator"></i></button>
     <a href="https://wa.me/260763533205" target="_blank" rel="noopener" class="whatsapp-btn" title="Chat on WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.instagram.com/phoenix_view_bwm" target="_blank" rel="noopener" class="instagram-btn" title="Follow on Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
   </div>
@@ -1094,9 +1316,14 @@
         </div>
         <h1>Ben Wesley Mwanza</h1>
         <p class="tagline">Visual Archivist & Developer — the world is like a canvas, grab your brush, let's paint!</p>
-        <button id="hero-launch-phoenix" class="hero-lab-cta" type="button">
-          <i class="fas fa-fire"></i> Launch Interactive 3D Phoenix
-        </button>
+        <div class="hero-cta-row">
+          <button id="hero-launch-phoenix" class="hero-lab-cta" type="button">
+            <i class="fas fa-fire"></i> Launch Interactive 3D Phoenix
+          </button>
+          <button class="hero-secondary-cta" type="button" onclick="openEstimatorModal('web')">
+            <i class="fas fa-file-invoice-dollar"></i> Estimate Project / Print
+          </button>
+        </div>
       </div>
     </header>
 
@@ -1864,7 +2091,7 @@
               <span class="tech-pill">High Performance</span>
             </div>
           </div>
-          <a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20am%20interested%20in%20inquiring%20about%20Custom%20Front-End%20Development%20(Phoenix%20View%20Media)." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Service</a>
+          <button type="button" class="action-btn" onclick="openEstimatorModal('web')"><i class="fas fa-calculator"></i> Configure & Estimate</button>
         </div>
 
         <div class="showcase-card reveal">
@@ -1877,7 +2104,7 @@
               <span class="tech-pill">Photography Licensing</span>
             </div>
           </div>
-          <a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20am%20interested%20in%20Eco-Lodge%20Media%20Packaging%20and%20Expedition%20Partnerships." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Partnership</a>
+          <button type="button" class="action-btn" onclick="openEstimatorModal('lodge')"><i class="fas fa-calculator"></i> Configure Package</button>
         </div>
 
         <div class="showcase-card reveal">
@@ -1890,7 +2117,7 @@
               <span class="tech-pill">Editorial Design</span>
             </div>
           </div>
-          <a href="https://wa.me/260763533205?text=Hello%20Ben,%20I%20would%20like%20to%20discuss%20Digital%20Archival%20Development." target="_blank" rel="noopener" class="action-btn"><i class="fab fa-whatsapp"></i> Inquire Archive</a>
+          <button type="button" class="action-btn" onclick="openEstimatorModal('archive')"><i class="fas fa-calculator"></i> Configure Portal</button>
         </div>
       </div>
     </div>
@@ -1966,7 +2193,7 @@
     </section>
   </div>
 
-  <!-- Trust, Disclosure & Ethics Assurance Block (Integrated into Footer Section) -->
+  <!-- Trust, Disclosure & Ethics Assurance Block -->
   <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 24px; margin: 40px auto; max-width: 800px; text-align: center;">
     <span class="showcase-tag" style="margin-bottom: 10px;"><i class="fas fa-shield-alt"></i> Archival Integrity & Transparency</span>
     <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 8px; color: var(--text-main);">Verified Human & Original Media Commitment</h4>
@@ -1995,9 +2222,9 @@
       <span class="meta-badge badge-artist">Ben Wesley Mwanza</span>
       <span id="modal-series-badge" class="meta-badge badge-series">Series Work</span>
     </div>
-    <a id="print-request-btn" href="#" target="_blank" rel="noopener" class="print-inquiry-btn">
-      <i class="fab fa-whatsapp"></i> Inquire Print / License
-    </a>
+    <button id="print-request-btn" type="button" class="print-inquiry-btn">
+      <i class="fas fa-calculator"></i> Estimate Print / License
+    </button>
   </div>
 
   <!-- Document Reader Modal -->
@@ -2005,6 +2232,97 @@
     <div class="reader-card">
       <span class="reader-close" aria-label="Close">&times;</span>
       <div id="reader-body"></div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE B2B COMMISSION & PRINT LICENSING ESTIMATOR MODAL -->
+  <div id="estimator-modal" class="estimator-modal" role="dialog" aria-modal="true" aria-label="Project and Print Licensing Estimator">
+    <div class="estimator-card">
+      <div class="estimator-header">
+        <div>
+          <span class="showcase-tag" style="margin-bottom: 6px;">Phoenix View Media // Commercial Desk</span>
+          <h2>Commission & Licensing Estimator</h2>
+        </div>
+        <button type="button" class="estimator-close" id="estimator-close-btn" aria-label="Close Estimator">&times;</button>
+      </div>
+
+      <div class="est-group">
+        <label class="est-label">1. Select Discipline or Licensing Track</label>
+        <div class="est-options-grid" id="est-service-grid">
+          <button type="button" class="est-option-btn active" data-service="web" data-base="450">
+            <strong>Custom Web App</strong>
+            <span>Portfolios & interactive platforms</span>
+          </button>
+          <button type="button" class="est-option-btn" data-service="lodge" data-base="650">
+            <strong>Eco-Lodge Media</strong>
+            <span>Expedition & camp visual suites</span>
+          </button>
+          <button type="button" class="est-option-btn" data-service="archive" data-base="550">
+            <strong>Archival Portal</strong>
+            <span>Institutional vaults & lookbooks</span>
+          </button>
+          <button type="button" class="est-option-btn" data-service="print" data-base="120">
+            <strong>Print / Art License</strong>
+            <span>Signed plates & commercial rights</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="est-group">
+        <label class="est-label">2. Scope & Usage Tier</label>
+        <div class="est-options-grid" id="est-tier-grid">
+          <button type="button" class="est-option-btn active" data-tier="Standard / Editorial" data-mult="1">
+            <strong>Standard Tier</strong>
+            <span>Core delivery or personal print</span>
+          </button>
+          <button type="button" class="est-option-btn" data-tier="Commercial Campaign" data-mult="1.6">
+            <strong>Commercial Tier</strong>
+            <span>Multi-channel regional licensing</span>
+          </button>
+          <button type="button" class="est-option-btn" data-tier="Enterprise / Exclusive" data-mult="2.3">
+            <strong>Enterprise / Exclusive</strong>
+            <span>Full buyout & custom architecture</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="est-group">
+        <label class="est-label">3. Production & Technical Add-Ons</label>
+        <div class="est-addon-list">
+          <label class="est-addon-item">
+            <input type="checkbox" class="est-addon" value="Field Expedition Shoot (+$250)" data-cost="250">
+            <span>On-Location Field Shoot (+$250)</span>
+          </label>
+          <label class="est-addon-item">
+            <input type="checkbox" class="est-addon" value="Interactive 3D WebGL Hero (+$200)" data-cost="200">
+            <span>3D WebGL Interactive Hero (+$200)</span>
+          </label>
+          <label class="est-addon-item">
+            <input type="checkbox" class="est-addon" value="Archival Print & Certificate (+$95)" data-cost="95">
+            <span>Signed Archival Print + COA (+$95)</span>
+          </label>
+          <label class="est-addon-item">
+            <input type="checkbox" class="est-addon" value="Editorial Lookbook PDF (+$150)" data-cost="150">
+            <span>Editorial Lookbook Spread (+$150)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="est-input-row">
+        <input type="text" id="est-client-name" class="est-input" placeholder="Your Name / Organization">
+        <input type="text" id="est-reference-note" class="est-input" placeholder="Artwork Title or Project Brief (Optional)">
+      </div>
+
+      <div class="est-summary-box">
+        <div class="est-price-display">
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted);">Estimated Investment Range</div>
+          <div class="est-usd" id="est-usd-output">$450 – $560 USD</div>
+          <div class="est-zmw" id="est-zmw-output">≈ K12,150 – K15,120 ZMW (Indicative Rate)</div>
+        </div>
+        <button type="button" id="est-send-whatsapp" class="est-submit-btn">
+          <i class="fab fa-whatsapp"></i> Send Brief via WhatsApp
+        </button>
+      </div>
     </div>
   </div>
 
@@ -2347,20 +2665,22 @@
 
     renderGallery();
 
-    // 9. Lightbox
+    // 9. Lightbox & Direct Link to Print Estimator
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const modalCaption = document.getElementById('modal-caption');
     const seriesBadge = document.getElementById('modal-series-badge');
     const printBtn = document.getElementById('print-request-btn');
     const closeBtn = document.querySelector('.modal-close');
+    let activeArtworkTitle = '';
 
     document.querySelectorAll('.expandable').forEach(img => {
       img.addEventListener('click', function() {
         if (!modal) return;
         modal.style.display = 'flex';
         modalImg.src = this.currentSrc || this.src;
-        modalCaption.textContent = this.alt || 'Fine Art Work';
+        activeArtworkTitle = this.alt || 'Fine Art Work';
+        modalCaption.textContent = activeArtworkTitle;
 
         const parent = this.closest('.portfolio-card') || this.closest('.showcase-card');
         if (parent?.classList.contains('portfolio-card')) {
@@ -2370,9 +2690,12 @@
         } else {
           seriesBadge.textContent = 'Editorial Lookbook Spread';
         }
-
-        printBtn.href = `https://wa.me/260763533205?text=${encodeURIComponent(`Hello Ben, I am interested in licensing/inquiring about: "${this.alt}" (Phoenix View Media).`)}`;
       });
+    });
+
+    printBtn?.addEventListener('click', () => {
+      if (modal) modal.style.display = 'none';
+      openEstimatorModal('print', `Print / License Inquiry: "${activeArtworkTitle}"`);
     });
 
     closeBtn?.addEventListener('click', () => modal.style.display = 'none');
@@ -2416,10 +2739,105 @@
     readerCloseBtn?.addEventListener('click', () => readerModal.style.display = 'none');
     readerModal?.addEventListener('click', (e) => { if (e.target === readerModal) readerModal.style.display = 'none'; });
 
+    // 10B. B2B COMMISSION & PRINT LICENSING ESTIMATOR ENGINE
+    const estimatorModal = document.getElementById('estimator-modal');
+    const estimatorCloseBtn = document.getElementById('estimator-close-btn');
+    const serviceBtns = document.querySelectorAll('#est-service-grid .est-option-btn');
+    const tierBtns = document.querySelectorAll('#est-tier-grid .est-option-btn');
+    const addonCheckboxes = document.querySelectorAll('.est-addon');
+    const usdOutput = document.getElementById('est-usd-output');
+    const zmwOutput = document.getElementById('est-zmw-output');
+    const refInput = document.getElementById('est-reference-note');
+    const clientInput = document.getElementById('est-client-name');
+    const sendWhatsappBtn = document.getElementById('est-send-whatsapp');
+
+    let estState = {
+      serviceName: 'Custom Web App',
+      basePrice: 450,
+      tierName: 'Standard / Editorial',
+      multiplier: 1.0
+    };
+
+    function recalculateEstimate() {
+      let addonsTotal = 0;
+      addonCheckboxes.forEach(cb => {
+        if (cb.checked) addonsTotal += Number(cb.dataset.cost || 0);
+      });
+
+      const minUsd = Math.round((estState.basePrice * estState.multiplier) + addonsTotal);
+      const maxUsd = Math.round(minUsd * 1.25);
+      const zmwRate = 27.0;
+      const minZmw = (minUsd * zmwRate).toLocaleString();
+      const maxZmw = (maxUsd * zmwRate).toLocaleString();
+
+      if (usdOutput) usdOutput.textContent = `$${minUsd.toLocaleString()} – $${maxUsd.toLocaleString()} USD`;
+      if (zmwOutput) zmwOutput.textContent = `≈ K${minZmw} – K${maxZmw} ZMW (Indicative Rate)`;
+    }
+
+    window.openEstimatorModal = function(presetService = 'web', prefillNote = '') {
+      serviceBtns.forEach(btn => {
+        if (btn.dataset.service === presetService) {
+          btn.click();
+        }
+      });
+      if (refInput) refInput.value = prefillNote;
+      recalculateEstimate();
+      if (estimatorModal) estimatorModal.style.display = 'flex';
+    };
+
+    serviceBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        serviceBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        estState.serviceName = btn.querySelector('strong').textContent;
+        estState.basePrice = Number(btn.dataset.base || 450);
+        recalculateEstimate();
+      });
+    });
+
+    tierBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tierBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        estState.tierName = btn.dataset.tier;
+        estState.multiplier = Number(btn.dataset.mult || 1);
+        recalculateEstimate();
+      });
+    });
+
+    addonCheckboxes.forEach(cb => cb.addEventListener('change', recalculateEstimate));
+
+    sendWhatsappBtn?.addEventListener('click', () => {
+      const selectedAddons = Array.from(addonCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+
+      const clientName = clientInput?.value.trim() || 'Prospective Client';
+      const note = refInput?.value.trim() || 'None specified';
+      const priceText = usdOutput?.textContent || '';
+
+      const message = [
+        `Hello Ben (Phoenix View Media),`,
+        `I'd like to discuss a project / licensing inquiry:`,
+        `• Client / Org: ${clientName}`,
+        `• Track: ${estState.serviceName}`,
+        `• Scope Tier: ${estState.tierName}`,
+        `• Add-Ons: ${selectedAddons.length ? selectedAddons.join(', ') : 'None'}`,
+        `• Reference / Notes: ${note}`,
+        `• Portal Estimate: ${priceText}`
+      ].join('\n');
+
+      window.open(`https://wa.me/260763533205?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+    });
+
+    estimatorCloseBtn?.addEventListener('click', () => estimatorModal.style.display = 'none');
+    estimatorModal?.addEventListener('click', (e) => { if (e.target === estimatorModal) estimatorModal.style.display = 'none'; });
+
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
         if (modal) modal.style.display = 'none';
         if (readerModal) readerModal.style.display = 'none';
+        if (estimatorModal) estimatorModal.style.display = 'none';
       }
     });
 
