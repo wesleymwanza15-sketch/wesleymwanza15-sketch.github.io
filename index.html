@@ -10,8 +10,8 @@
   <!-- Primary SEO -->
   <title>Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media</title>
   <meta name="title" content="Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media">
-  <meta name="description" content="Official platform of Ben Wesley Mwanza (phoenix_view_bwm), Visual Archivist, Developer, and CMA 2026 Best Documentary Photography Nominee. Founder of Phoenix View Media.">
-  <meta name="keywords" content="Ben Wesley Mwanza, Visual Archivist, Developer, phoenix_view_bwm, Phoenix View Media, CMA 2026 best documentary photography, Zambian photographer, App developer Lusaka, Creative Director Zambia">
+  <meta name="description" content="Official platform of Ben Wesley Mwanza (phoenix_view_bwm), Visual Archivist & Developer, and CMA 2026 Best Documentary Photography Nominee. Founder of Phoenix View Media.">
+  <meta name="keywords" content="Ben Wesley Mwanza, Visual Archivist & Developer, phoenix_view_bwm, Phoenix View Media, CMA 2026 best documentary photography, Zambian photographer, App developer Lusaka, Creative Director Zambia">
   <meta name="author" content="Ben Wesley Mwanza">
   <meta name="robots" content="index, follow">
 
@@ -175,19 +175,40 @@
     .header-nav {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
       list-style: none;
     }
     .header-nav a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-weight: 500;
       transition: var(--transition);
     }
     .header-nav a:hover {
+      color: var(--accent-gold-light);
+    }
+    .header-action-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-press-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-main);
+      padding: 6px 13px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      transition: var(--transition);
+    }
+    .header-press-btn:hover {
+      border-color: var(--accent-gold);
       color: var(--accent-gold-light);
     }
     .header-commission-btn {
@@ -206,7 +227,7 @@
       background: var(--accent-gold);
       color: #050507;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       .header-nav { display: none; }
     }
 
@@ -252,7 +273,7 @@
       color: var(--accent-gold-light);
       background: rgba(197, 160, 89, 0.1);
     }
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       .mobile-quick-nav { display: block; }
     }
 
@@ -263,7 +284,7 @@
       position: relative;
       z-index: 1;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       .container { padding-top: 145px; }
     }
 
@@ -333,6 +354,12 @@
       margin-bottom: 24px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
       backdrop-filter: var(--glass-blur);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .cma-badge-tag:hover {
+      border-color: var(--accent-gold);
+      background: rgba(197, 160, 89, 0.16);
     }
     .hero-content h1 {
       font-family: var(--font-serif);
@@ -538,6 +565,26 @@
     .accolade-card p {
       font-size: 0.86rem;
       color: var(--text-muted);
+    }
+    .accolade-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      background: rgba(197, 160, 89, 0.1);
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      color: var(--accent-gold-light);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: var(--transition);
+    }
+    .accolade-link:hover {
+      background: var(--accent-gold);
+      color: #050507;
     }
 
     /* Story */
@@ -972,7 +1019,7 @@
       text-transform: uppercase;
       backdrop-filter: var(--glass-blur);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-      z-index: 1000;
+      z-index: 10005;
       opacity: 0;
       transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.5s ease;
       pointer-events: none;
@@ -1200,6 +1247,109 @@
     }
     .est-submit-btn:hover { transform: translateY(-2px); opacity: 0.94; }
 
+    /* ===== PRESS KIT & CMA 2026 CREDENTIALS MODAL ===== */
+    .press-credential-banner {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.14), rgba(15, 15, 19, 0.9));
+      border: 1px solid rgba(197, 160, 89, 0.45);
+      border-radius: 10px;
+      padding: 22px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+    .press-credential-banner h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--accent-gold-light);
+      margin-bottom: 6px;
+    }
+    .press-credential-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .press-bio-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+    .press-bio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .press-bio-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .copy-bio-btn {
+      background: rgba(197, 160, 89, 0.12);
+      border: 1px solid rgba(197, 160, 89, 0.45);
+      color: var(--accent-gold-light);
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: var(--transition);
+    }
+    .copy-bio-btn:hover {
+      background: var(--accent-gold);
+      color: #050507;
+    }
+    .press-facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .press-fact-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 12px 14px;
+    }
+    .press-fact-card span {
+      display: block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-gold);
+      margin-bottom: 3px;
+    }
+    .press-fact-card strong {
+      font-size: 0.86rem;
+      color: var(--text-main);
+    }
+    .press-download-btn {
+      background: var(--accent-gold);
+      color: #050507;
+      border: none;
+      padding: 13px 24px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+    }
+    .press-download-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+    }
+
     /* Footer */
     footer {
       text-align: center; padding: 56px 20px;
@@ -1209,7 +1359,7 @@
     }
     footer p { margin-bottom: 10px; }
     .footer-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-    .footer-link { color: var(--accent-gold); text-decoration: none; letter-spacing: 0.04em; }
+    .footer-link { color: var(--accent-gold); text-decoration: none; letter-spacing: 0.04em; background: none; border: none; font-size: inherit; }
 
     /* Reveal */
     .reveal {
@@ -1229,6 +1379,7 @@
       .audio-btn span:nth-child(2) { max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
       .estimator-card { padding: 24px 18px; }
       .est-input-row { grid-template-columns: 1fr; }
+      .press-credential-banner { grid-template-columns: 1fr; }
     }
   </style>
 
@@ -1253,14 +1404,18 @@
         <li><a href="#editorial-pane">Screenplays</a></li>
         <li><a href="#lookbooks-pane">Lookbooks</a></li>
         <li><a href="#lab-pane">WebGL Lab</a></li>
-        <li><button type="button" class="header-commission-btn" onclick="openEstimatorModal('web')">Commission</button></li>
       </ul>
     </nav>
+    <div class="header-action-group">
+      <button type="button" class="header-press-btn" onclick="openPressModal()">Press Kit</button>
+      <button type="button" class="header-commission-btn" onclick="openEstimatorModal('web')">Commission</button>
+    </div>
   </header>
 
   <!-- MOBILE STICKY QUICK-JUMP PILL BAR -->
   <nav class="mobile-quick-nav" aria-label="Mobile quick navigation">
     <div class="mobile-quick-nav-track">
+      <button type="button" class="mobile-nav-pill gold-pill" onclick="openPressModal()"><i class="fas fa-id-badge"></i> Press Kit</button>
       <button type="button" class="mobile-nav-pill gold-pill" onclick="openEstimatorModal('web')"><i class="fas fa-calculator"></i> Estimator</button>
       <a href="#about" class="mobile-nav-pill">Story</a>
       <a href="#photography-pane" class="mobile-nav-pill" onclick="openDisciplineTab('photography-pane', false); return false;">Photography</a>
@@ -1311,9 +1466,9 @@
       <canvas id="hero-atmosphere-canvas" aria-hidden="true"></canvas>
 
       <div class="hero-content">
-        <div class="cma-badge-tag">
+        <button type="button" class="cma-badge-tag" onclick="openPressModal()">
           <i class="fas fa-award"></i> 2026 Creative Media Awards — Best Documentary Photography Nominee
-        </div>
+        </button>
         <h1>Ben Wesley Mwanza</h1>
         <p class="tagline">Visual Archivist & Developer — the world is like a canvas, grab your brush, let's paint!</p>
         <div class="hero-cta-row">
@@ -1322,6 +1477,9 @@
           </button>
           <button class="hero-secondary-cta" type="button" onclick="openEstimatorModal('web')">
             <i class="fas fa-file-invoice-dollar"></i> Estimate Project / Print
+          </button>
+          <button class="hero-secondary-cta" type="button" onclick="openPressModal()">
+            <i class="fas fa-newspaper"></i> Press Kit & Credentials
           </button>
         </div>
       </div>
@@ -1370,6 +1528,7 @@
         <i class="fas fa-award"></i>
         <h4>CMA 2026 Nomination</h4>
         <p>Shortlisted Nominee for Best Documentary Photography, recognizing exceptional regional visual storytelling.</p>
+        <button type="button" class="accolade-link" onclick="openPressModal()"><i class="fas fa-id-card"></i> View Media Credentials</button>
       </div>
       <div class="accolade-card">
         <i class="fas fa-code-branch"></i>
@@ -2208,6 +2367,8 @@
       <a href="mailto:benmwanza15@gmail.com" class="footer-link">benmwanza15@gmail.com</a>
       <span>•</span>
       <a href="https://wa.me/260763533205" target="_blank" rel="noopener" class="footer-link">+260 76 3533205</a>
+      <span>•</span>
+      <button type="button" class="footer-link" onclick="openPressModal()">Official Press Kit & CMA 2026 Credentials</button>
     </div>
     <p>&copy; 2026 Phoenix View Media. All rights reserved.</p>
   </footer>
@@ -2321,6 +2482,78 @@
         </div>
         <button type="button" id="est-send-whatsapp" class="est-submit-btn">
           <i class="fab fa-whatsapp"></i> Send Brief via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRESS KIT & CMA 2026 MEDIA CREDENTIALS MODAL -->
+  <div id="press-modal" class="estimator-modal" role="dialog" aria-modal="true" aria-label="Press Kit and CMA 2026 Media Credentials">
+    <div class="estimator-card">
+      <div class="estimator-header">
+        <div>
+          <span class="showcase-tag" style="margin-bottom: 6px;">Verified Media Dossier // 2026</span>
+          <h2>Press Kit & CMA 2026 Credentials</h2>
+        </div>
+        <button type="button" class="estimator-close" id="press-close-btn" aria-label="Close Press Kit">&times;</button>
+      </div>
+
+      <div class="press-credential-banner">
+        <div>
+          <h3>2026 Creative Media Awards — Shortlisted Nominee</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Recognized in the <strong>Best Documentary Photography</strong> category for regional visual archiving, macro environmental studies, and Zambian landscape narratives.</p>
+          <div class="press-credential-meta">
+            <span class="meta-badge badge-verified">✓ Verified Nominee</span>
+            <span class="meta-badge badge-artist">Lumiere Convention Centre, Lusaka</span>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <i class="fas fa-award" style="font-size: 2.6rem; color: var(--accent-gold);"></i>
+        </div>
+      </div>
+
+      <div class="press-facts-grid">
+        <div class="press-fact-card">
+          <span>Primary Identity</span>
+          <strong>Ben Wesley Mwanza</strong>
+        </div>
+        <div class="press-fact-card">
+          <span>Professional Title</span>
+          <strong>Visual Archivist & Developer</strong>
+        </div>
+        <div class="press-fact-card">
+          <span>Creative Handle</span>
+          <strong>@phoenix_view_bwm</strong>
+        </div>
+        <div class="press-fact-card">
+          <span>Production Brand</span>
+          <strong>Phoenix View Media (Lusaka, ZM)</strong>
+        </div>
+      </div>
+
+      <div class="press-bio-box">
+        <div class="press-bio-header">
+          <span class="est-label" style="margin: 0;">Short Press Bio (50 Words — Festival & Exhibition Ready)</span>
+          <button type="button" class="copy-bio-btn" data-copy-target="short-bio-text"><i class="fas fa-copy"></i> Copy Bio</button>
+        </div>
+        <p class="press-bio-text" id="short-bio-text">Ben Wesley Mwanza (phoenix_view_bwm) is a Lusaka-based Visual Archivist & Developer and founder of Phoenix View Media. Shortlisted for Best Documentary Photography at the 2026 Creative Media Awards, his practice bridges macro environmental photography, documentary screenwriting, and custom-coded digital platforms preserving Zambian landscapes and cultural heritage.</p>
+      </div>
+
+      <div class="press-bio-box">
+        <div class="press-bio-header">
+          <span class="est-label" style="margin: 0;">Full Media & Grant Profile (140 Words)</span>
+          <button type="button" class="copy-bio-btn" data-copy-target="long-bio-text"><i class="fas fa-copy"></i> Copy Profile</button>
+        </div>
+        <p class="press-bio-text" id="long-bio-text">Ben Wesley Mwanza—known creatively as phoenix_view_bwm and "the passing photographer"—is a Zambian Visual Archivist & Developer operating at the intersection of documentary lens production and front-end software architecture. Through his creative media brand, Phoenix View Media, he documents overlooked ecosystems, rural transit corridors, and cultural stories across Zambia, including acclaimed photo-editorial series from Chipata Forest, Chadiza, and Victoria Falls. A shortlisted nominee for Best Documentary Photography at the 2026 Creative Media Awards in Lusaka, Mwanza also authors original screenplays and documentary pitch bibles, including The Frontline Keepers: Zambia's Wildlife War and Game of Couples, alongside interactive digital publications and web systems.</p>
+      </div>
+
+      <div class="est-summary-box">
+        <div>
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent-gold); font-weight: 600;">Direct Press & Media Desk</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 3px;">benmwanza15@gmail.com • +260 76 3533205</div>
+        </div>
+        <button type="button" id="download-press-kit-btn" class="press-download-btn">
+          <i class="fas fa-download"></i> Download Press Kit (.HTML)
         </button>
       </div>
     </div>
@@ -2441,7 +2674,6 @@
       const ctx = canvas.getContext('2d');
       let width, height, dpr;
       let particles = [];
-      let animationFrameId;
       let isVisible = true;
 
       const pointer = { x: null, y: null, targetX: null, targetY: null, radius: 160 };
@@ -2550,7 +2782,7 @@
         }
 
         drawConnections();
-        animationFrameId = requestAnimationFrame(render);
+        requestAnimationFrame(render);
       }
 
       function updatePointer(clientX, clientY) {
@@ -2776,9 +3008,7 @@
 
     window.openEstimatorModal = function(presetService = 'web', prefillNote = '') {
       serviceBtns.forEach(btn => {
-        if (btn.dataset.service === presetService) {
-          btn.click();
-        }
+        if (btn.dataset.service === presetService) btn.click();
       });
       if (refInput) refInput.value = prefillNote;
       recalculateEstimate();
@@ -2833,11 +3063,101 @@
     estimatorCloseBtn?.addEventListener('click', () => estimatorModal.style.display = 'none');
     estimatorModal?.addEventListener('click', (e) => { if (e.target === estimatorModal) estimatorModal.style.display = 'none'; });
 
+    // 10C. PRESS KIT & CMA 2026 CREDENTIALS MODAL ENGINE
+    const pressModal = document.getElementById('press-modal');
+    const pressCloseBtn = document.getElementById('press-close-btn');
+    const downloadPressKitBtn = document.getElementById('download-press-kit-btn');
+
+    window.openPressModal = function() {
+      if (pressModal) pressModal.style.display = 'flex';
+    };
+
+    pressCloseBtn?.addEventListener('click', () => pressModal.style.display = 'none');
+    pressModal?.addEventListener('click', (e) => { if (e.target === pressModal) pressModal.style.display = 'none'; });
+
+    document.querySelectorAll('.copy-bio-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetEl = document.getElementById(btn.dataset.copyTarget);
+        if (!targetEl) return;
+        navigator.clipboard?.writeText(targetEl.textContent.trim()).then(() => {
+          showCustomToast('✓ Press Biography Copied to Clipboard');
+        });
+      });
+    });
+
+    downloadPressKitBtn?.addEventListener('click', () => {
+      const shortBio = document.getElementById('short-bio-text')?.textContent.trim() || '';
+      const longBio = document.getElementById('long-bio-text')?.textContent.trim() || '';
+
+      const pressHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Press Kit — Ben Wesley Mwanza | Phoenix View Media (2026)</title>
+<style>
+  body { font-family: Georgia, serif; color: #141418; max-width: 820px; margin: 40px auto; padding: 0 24px; line-height: 1.7; }
+  .header { border-bottom: 2px solid #9e7427; padding-bottom: 18px; margin-bottom: 28px; }
+  .tag { font-family: sans-serif; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #9e7427; font-weight: bold; }
+  h1 { font-size: 32px; margin: 6px 0; font-weight: normal; }
+  h2 { font-size: 18px; text-transform: uppercase; letter-spacing: 0.1em; color: #9e7427; border-bottom: 1px solid #ddd; padding-bottom: 6px; margin-top: 28px; font-family: sans-serif; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-family: sans-serif; font-size: 14px; }
+  .box { background: #f8f7f3; border: 1px solid #e2dfd5; padding: 14px; border-radius: 6px; }
+  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #ddd; font-family: sans-serif; font-size: 12px; color: #555; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="tag">Official Media Dossier &amp; Credentials // 2026</div>
+    <h1>Ben Wesley Mwanza</h1>
+    <div>Visual Archivist &amp; Developer • Founder, Phoenix View Media</div>
+  </div>
+
+  <h2>Key Credentials &amp; Fact Sheet</h2>
+  <div class="grid">
+    <div class="box"><strong>Recognition:</strong><br>2026 Creative Media Awards — Shortlisted Nominee (Best Documentary Photography)</div>
+    <div class="box"><strong>Creative Handle &amp; Brand:</strong><br>@phoenix_view_bwm / Phoenix View Media</div>
+    <div class="box"><strong>Base of Operations:</strong><br>Lusaka, Zambia</div>
+    <div class="box"><strong>Direct Media Contact:</strong><br>benmwanza15@gmail.com | +260 76 3533205</div>
+  </div>
+
+  <h2>Short Press Biography (50 Words)</h2>
+  <p>${shortBio}</p>
+
+  <h2>Full Editorial &amp; Institutional Profile</h2>
+  <p>${longBio}</p>
+
+  <h2>Selected Works &amp; Slate (2025–2026)</h2>
+  <ul>
+    <li><strong>Documentary Photography Series:</strong> Chipata Forest: A Nature Series, A Painted World Series, Crimson Tones, Zambian Horizons: From Chipata to the Thundering Mist.</li>
+    <li><strong>Documentary Pitch Deck:</strong> The Frontline Keepers: Zambia's Wildlife War (Co-Directed with Khangelani Dhlamini).</li>
+    <li><strong>Feature Screenplays:</strong> Game of Couples; Thunder on the Edge (Victoria Falls).</li>
+    <li><strong>Digital Publications &amp; Systems:</strong> One's Conversation With Life (1st &amp; 2nd Interactive Web Editions), Phoenix View Digital Media Portal.</li>
+  </ul>
+
+  <div class="footer">
+    &copy; 2026 Phoenix View Media. All photography and written works are 100% original human-authored productions.
+  </div>
+</body>
+</html>`;
+
+      const blob = new Blob([pressHtml], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Phoenix_View_Media_Press_Kit_2026.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showCustomToast('✓ Press Kit Downloaded');
+    });
+
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
         if (modal) modal.style.display = 'none';
         if (readerModal) readerModal.style.display = 'none';
         if (estimatorModal) estimatorModal.style.display = 'none';
+        if (pressModal) pressModal.style.display = 'none';
       }
     });
 
@@ -2892,12 +3212,16 @@
       requestAnimationFrame(monitorAudioFrequencies);
     }
 
-    function showToast(title) {
+    function showCustomToast(text) {
       if (!toast) return;
-      toast.textContent = `🎵 Now Playing: ${title}`;
+      toast.textContent = text;
       toast.classList.add('show');
       clearTimeout(toastTimeout);
       toastTimeout = setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    function showToast(title) {
+      showCustomToast(`🎵 Now Playing: ${title}`);
     }
 
     function loadTrack(index) {
@@ -3017,19 +3341,16 @@
       const phoenixGroup = new THREE.Group();
       scene.add(phoenixGroup);
 
-      // Body & Chest
       const bodyGeo = new THREE.ConeGeometry(0.32, 1.5, 16);
       bodyGeo.rotateX(Math.PI * 0.42);
       const bodyMesh = new THREE.Mesh(bodyGeo, goldFeatherMat);
       phoenixGroup.add(bodyMesh);
 
-      // Heart Core Glow
       const coreGeo = new THREE.OctahedronGeometry(0.24, 2);
       const coreMesh = new THREE.Mesh(coreGeo, emberCoreMat);
       coreMesh.position.set(0, 0.05, 0.25);
       phoenixGroup.add(coreMesh);
 
-      // Neck, Head & Crown Crest
       const headGroup = new THREE.Group();
       headGroup.position.set(0, 0.48, 0.62);
       phoenixGroup.add(headGroup);
@@ -3038,7 +3359,6 @@
       headMesh.rotation.x = Math.PI * 0.55;
       headGroup.add(headMesh);
 
-      // 3 Sweeping Crown Feathers
       for (let c = -1; c <= 1; c++) {
         const crestGeo = new THREE.ConeGeometry(0.035, 0.55, 6);
         crestGeo.translate(0, 0.25, 0);
@@ -3049,7 +3369,6 @@
         headGroup.add(crest);
       }
 
-      // Procedural Sculpted Wings (Left & Right Articulated Pivots)
       function createWing(side) {
         const wingPivot = new THREE.Group();
         wingPivot.position.set(side * 0.18, 0.18, 0.22);
@@ -3082,7 +3401,6 @@
       phoenixGroup.add(leftWing);
       phoenixGroup.add(rightWing);
 
-      // Flowing Tail Plumage Ribbons
       const tailFeathers = [];
       for (let t = -2; t <= 2; t++) {
         const tailLen = 2.1 - Math.abs(t) * 0.25;
@@ -3096,7 +3414,6 @@
         tailFeathers.push({ mesh: tailMesh, offset: t * 0.9, baseZ: t * 0.14 });
       }
 
-      // Orbiting Astrolabe Energy Rings
       const ringGeo1 = new THREE.TorusGeometry(2.15, 0.012, 12, 96);
       const ringMat = new THREE.MeshBasicMaterial({ color: 0xc5a059, transparent: true, opacity: 0.35 });
       const ring1 = new THREE.Mesh(ringGeo1, ringMat);
@@ -3108,7 +3425,6 @@
       ring2.rotation.y = Math.PI * 0.25;
       scene.add(ring2);
 
-      // Multi-Particle Rising Ember Field (160 Living Particles)
       const emberCount = 160;
       const emberPositions = new Float32Array(emberCount * 3);
       const emberSpeeds = [];
@@ -3137,7 +3453,6 @@
       const emberSystem = new THREE.Points(emberGeo, emberPointMat);
       scene.add(emberSystem);
 
-      // Interactive State: Dragging, Hovering, Auto-Glide & Tap Burst Flare
       let isDragging = false;
       let prevPointer = { x: 0, y: 0 };
       let rotVelocity = { x: 0, y: 0 };
