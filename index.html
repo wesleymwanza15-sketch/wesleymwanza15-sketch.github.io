@@ -1402,6 +1402,7 @@
         <li><a href="#about">Story</a></li>
         <li><a href="#photography-pane">Photography</a></li>
         <li><a href="#editorial-pane">Screenplays</a></li>
+        <li><a href="#literature-pane">Literature</a></li>
         <li><a href="#lookbooks-pane">Lookbooks</a></li>
         <li><a href="#lab-pane">WebGL Lab</a></li>
       </ul>
@@ -1421,6 +1422,7 @@
       <a href="#photography-pane" class="mobile-nav-pill" onclick="openDisciplineTab('photography-pane', false); return false;">Photography</a>
       <a href="#apps-pane" class="mobile-nav-pill" onclick="openDisciplineTab('apps-pane', false); return false;">Apps</a>
       <a href="#editorial-pane" class="mobile-nav-pill" onclick="openDisciplineTab('editorial-pane', false); return false;">Screenplays</a>
+      <a href="#literature-pane" class="mobile-nav-pill" onclick="openDisciplineTab('literature-pane', false); return false;">Literature</a>
       <a href="#lookbooks-pane" class="mobile-nav-pill" onclick="openDisciplineTab('lookbooks-pane', false); return false;">Lookbooks</a>
       <a href="#services-pane" class="mobile-nav-pill" onclick="openDisciplineTab('services-pane', false); return false;">Services</a>
       <a href="#lab-pane" class="mobile-nav-pill" onclick="openDisciplineTab('lab-pane', true); return false;">3D Lab</a>
@@ -1536,9 +1538,9 @@
         <p>Combining custom software engineering, mobile-first logistics tools, and static portfolio deployments.</p>
       </div>
       <div class="accolade-card">
-        <i class="fas fa-film"></i>
-        <h4>Cinematic & Editorial</h4>
-        <p>Author of original screenplays, documentary series bibles, and high-concept publication lookbooks.</p>
+        <i class="fas fa-book"></i>
+        <h4>Interactive Literature</h4>
+        <p>Author of published digital books distributed 100% free of charge to readers worldwide.</p>
       </div>
     </div>
 
@@ -1569,7 +1571,8 @@
       <button class="discipline-btn active" data-tab="photography-pane"><i class="fas fa-camera"></i> Photography Series</button>
       <button class="discipline-btn" data-tab="apps-pane"><i class="fas fa-code"></i> App Systems & Architecture</button>
       <button class="discipline-btn" data-tab="editorial-pane"><i class="fas fa-pen-nib"></i> Screenwriting & Editorial</button>
-      <button class="discipline-btn" data-tab="lookbooks-pane"><i class="fas fa-book-open"></i> Editorial Lookbooks</button>
+      <button class="discipline-btn" data-tab="literature-pane"><i class="fas fa-book-open"></i> Literature & Books</button>
+      <button class="discipline-btn" data-tab="lookbooks-pane"><i class="fas fa-images"></i> Editorial Lookbooks</button>
       <button class="discipline-btn" data-tab="services-pane"><i class="fas fa-briefcase"></i> Business Solutions</button>
       <button class="discipline-btn" data-tab="lab-pane"><i class="fas fa-flask"></i> Project Laboratory</button>
     </div>
@@ -1993,6 +1996,35 @@
             </div>
           </div>
           <button class="action-btn reader-btn" data-doc="victoria-falls-script"><i class="fas fa-book-open"></i> Read Full Script Bible</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Literature & Interactive Books Pane -->
+    <div id="literature-pane" class="discipline-pane">
+      <div class="section-header">
+        <h2>Literature & Interactive Digital Books</h2>
+        <p>Reflective philosophical prose, poetry, and fully coded interactive web books distributed 100% free of charge.</p>
+      </div>
+      <div class="showcase-grid">
+        <div class="showcase-card reveal">
+          <div>
+            <span class="showcase-tag">Interactive Web Book // 2nd Edition</span>
+            <h3>One's Conversation With Life</h3>
+            <p>A deeply reflective literary work exploring human existence, philosophical inquiry, and inner dialogue. Published as a fully coded, interactive HTML web book hosted on GitHub Pages.</p>
+            <div style="border-left: 2px solid var(--accent-gold); padding: 10px 14px; margin: 14px 0; background: rgba(197, 160, 89, 0.04);">
+              <p style="font-size: 0.8rem; color: var(--accent-gold-light); margin: 0; font-style: italic;">"Distributed completely free of charge to all readers—knowledge and reflection belong to everyone."</p>
+            </div>
+            <div class="tech-stack-badges">
+              <span class="tech-pill">Interactive HTML Book</span>
+              <span class="tech-pill">Philosophical Prose</span>
+              <span class="tech-pill">100% Free Access</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px;">
+            <a href="https://wesleymwanza15-sketch.github.io/aphoenixjourney-" target="_blank" rel="noopener" class="action-btn" style="margin-top: 0;"><i class="fas fa-external-link-alt"></i> Launch Interactive Book</a>
+            <button type="button" class="action-btn reader-btn" data-doc="book-conversation" style="margin-top: 0; background: rgba(255,255,255,0.04);"><i class="fas fa-book-reader"></i> Read Preface & Excerpt</button>
+          </div>
         </div>
       </div>
     </div>
@@ -2487,7 +2519,7 @@
     </div>
   </div>
 
-  <!-- PRESS KIT & CMA 2026 MEDIA CREDENTIALS MODAL -->
+  <!-- PRESS KIT & CMA 2026 CREDENTIALS MODAL -->
   <div id="press-modal" class="estimator-modal" role="dialog" aria-modal="true" aria-label="Press Kit and CMA 2026 Media Credentials">
     <div class="estimator-card">
       <div class="estimator-header">
@@ -2956,6 +2988,17 @@
         <div class="subtitle">Victoria Falls Feature Film Screenplay Concept & Bible</div>
         <p><strong>Logline:</strong> When a high-stakes archival recovery mission intersects with a historic heritage heist at the roaring gorges of Victoria Falls, an independent archivist and a local ranger must race against time through mist, rainforest trails, and border currents to protect a priceless historical artifact.</p>
         <p><strong>Act I — The Descent into the Smoke:</strong> Sweeping aerial cinematography over the Batoka Gorge during peak rainy season. The sheer volume of water generates the iconic cloud known locally as <em>Mosi-oa-Tunya</em> (The Smoke That Thunders).</p>
+      `,
+      "book-conversation": `
+        <h2>One's Conversation With Life</h2>
+        <div class="subtitle">Second Edition (Interactive Web Book) — Preface & Excerpt</div>
+        <p><strong>Author's Note:</strong> This book was created as an interactive digital web experience hosted on GitHub Pages. In alignment with my core creative philosophy, <em>One's Conversation With Life</em> is distributed completely free of charge to any reader seeking reflection, poetry, and philosophical dialogue.</p>
+        <p><strong>Excerpt:</strong> "We spend our lives chasing echoes of tomorrow while forgetting that today is the only room where breath exists. To converse with life is to listen before speaking, to observe the quiet shifting of light across an old wall, and to recognize that the self is an unfolding archive rather than a fixed monument."</p>
+        <p style="text-align: center; margin-top: 24px;">
+          <a href="https://wesleymwanza15-sketch.github.io/aphoenixjourney-" target="_blank" rel="noopener" class="print-inquiry-btn" style="display: inline-flex; text-decoration: none;">
+            <i class="fas fa-external-link-alt"></i> Launch Full Interactive Book Online
+          </a>
+        </p>
       `
     };
 
