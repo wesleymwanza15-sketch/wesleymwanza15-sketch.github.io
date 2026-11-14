@@ -286,6 +286,31 @@
       text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
     }
 
+    /* Hero Quick-Launch CTA Button */
+    .hero-lab-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      background: rgba(197, 160, 89, 0.14);
+      border: 1px solid rgba(197, 160, 89, 0.65);
+      color: var(--accent-gold-light);
+      padding: 11px 24px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      backdrop-filter: var(--glass-blur);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-gold-glow);
+      transition: var(--transition);
+    }
+    .hero-lab-cta:hover {
+      background: var(--accent-gold);
+      color: #050507;
+      transform: translateY(-2px);
+    }
+
     /* ===== HORIZONTAL CINEMA REEL STRIP ===== */
     .cinema-reel-section {
       margin: 50px 0;
@@ -657,7 +682,7 @@
     }
     .action-btn:hover { background: var(--accent-gold); color: #050507; }
 
-    /* WebGL Studio Canvas Box Container */
+    /* WebGL Studio Canvas Box Container & Interactive HUD */
     .lab-canvas-container {
       background: radial-gradient(circle at center, #140d07 0%, #030305 75%);
       border: 1px solid rgba(197, 160, 89, 0.35);
@@ -675,6 +700,58 @@
       cursor: grabbing;
     }
     canvas { display: block; width: 100%; height: 100%; }
+
+    .lab-hud-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px 20px;
+      z-index: 5;
+    }
+    .lab-hud-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .lab-hud-hint {
+      background: rgba(10, 10, 14, 0.75);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      color: var(--accent-gold-light);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+    .lab-hud-controls {
+      display: flex;
+      gap: 10px;
+      pointer-events: auto;
+      align-self: flex-end;
+    }
+    .lab-hud-btn {
+      background: rgba(12, 12, 16, 0.85);
+      border: 1px solid rgba(197, 160, 89, 0.5);
+      color: var(--accent-gold-light);
+      padding: 7px 14px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+      transition: var(--transition);
+    }
+    .lab-hud-btn:hover {
+      background: var(--accent-gold);
+      color: #050507;
+    }
 
     /* Strategic Roadmap Section */
     .strategy-section {
@@ -959,6 +1036,9 @@
         </div>
         <h1>Ben Wesley Mwanza</h1>
         <p class="tagline">Visual Archivist & Developer — the world is like a canvas, grab your brush, let's paint!</p>
+        <button id="hero-launch-phoenix" class="hero-lab-cta" type="button">
+          <i class="fas fa-fire"></i> Launch Interactive 3D Phoenix
+        </button>
       </div>
     </header>
 
@@ -1771,6 +1851,16 @@
             <p>Interactive 3D golden Phoenix with flapping wings, orbiting astrolabe energy rings, and a rising 160-particle ember field. Drag to rotate, tap or click to trigger a Phoenix ember flare!</p>
             <div class="lab-canvas-container" id="labCanvasContainer">
               <canvas id="labCanvas"></canvas>
+              <div class="lab-hud-overlay">
+                <div class="lab-hud-top">
+                  <span class="lab-hud-hint"><i class="fas fa-hand-pointer"></i> Tap to Ignite • Drag to Orbit</span>
+                  <span class="lab-hud-hint" id="lab-mode-badge">Mode: Auto-Glide</span>
+                </div>
+                <div class="lab-hud-controls">
+                  <button type="button" class="lab-hud-btn" id="lab-orbit-toggle"><i class="fas fa-sync-alt"></i> Toggle Hover</button>
+                  <button type="button" class="lab-hud-btn" id="lab-ignite-btn"><i class="fas fa-bolt"></i> Ignite Flare</button>
+                </div>
+              </div>
             </div>
             <div class="tech-stack-badges">
               <span class="tech-pill">Three.js WebGL</span>
@@ -1915,14 +2005,35 @@
       });
     }
 
-    // 4. Discipline Tabs
+    // 4. Discipline Tabs & Hero Quick-Launch Helper
+    function openDisciplineTab(tabId, triggerFlare = false) {
+      const targetBtn = document.querySelector(`.discipline-btn[data-tab="${tabId}"]`);
+      const targetPane = document.getElementById(tabId);
+      if (!targetBtn || !targetPane) return;
+
+      document.querySelectorAll('.discipline-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.discipline-pane').forEach(p => p.classList.remove('active'));
+      targetBtn.classList.add('active');
+      targetPane.classList.add('active');
+
+      targetPane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (triggerFlare && typeof window.ignitePhoenixLab === 'function') {
+        setTimeout(() => window.ignitePhoenixLab(), 450);
+      }
+    }
+
     document.querySelectorAll('.discipline-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.discipline-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.discipline-pane').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.dataset.tab)?.classList.add('active');
+        openDisciplineTab(btn.dataset.tab, false);
       });
+    });
+
+    document.getElementById('hero-launch-phoenix')?.addEventListener('click', () => {
+      openDisciplineTab('lab-pane', true);
+    });
+    document.querySelector('.header-nav a[href="#lab-pane"]')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      openDisciplineTab('lab-pane', true);
     });
 
     // 5. Hero Slider
@@ -2540,12 +2651,13 @@
       const emberSystem = new THREE.Points(emberGeo, emberPointMat);
       scene.add(emberSystem);
 
-      // Interactive State: Dragging & Tap Burst Flare
+      // Interactive State: Dragging, Hovering, Auto-Glide & Tap Burst Flare
       let isDragging = false;
       let prevPointer = { x: 0, y: 0 };
       let rotVelocity = { x: 0, y: 0 };
       let targetRotation = { x: 0.1, y: -0.35 };
       let flareEnergy = 0;
+      let autoOrbit = true;
 
       function triggerPhoenixFlare() {
         flareEnergy = 1.0;
@@ -2563,6 +2675,19 @@
         }
         emberGeo.attributes.position.needsUpdate = true;
       }
+
+      window.ignitePhoenixLab = triggerPhoenixFlare;
+
+      const modeBadge = document.getElementById('lab-mode-badge');
+      document.getElementById('lab-ignite-btn')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        triggerPhoenixFlare();
+      });
+      document.getElementById('lab-orbit-toggle')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        autoOrbit = !autoOrbit;
+        if (modeBadge) modeBadge.textContent = autoOrbit ? 'Mode: Auto-Glide' : 'Mode: Hover Lock';
+      });
 
       let pointerDownTime = 0;
       let pointerDownPos = { x: 0, y: 0 };
@@ -2626,7 +2751,7 @@
         rightWing.rotation.y = -Math.cos(t * flapSpeed) * 0.18;
 
         phoenixGroup.position.y = Math.sin(t * 2.2) * 0.16 + flareEnergy * 0.25;
-        if (!isDragging) {
+        if (!isDragging && autoOrbit) {
           targetRotation.y += 0.004 + flareEnergy * 0.03;
         }
         phoenixGroup.rotation.y += (targetRotation.y - phoenixGroup.rotation.y) * 0.08;
