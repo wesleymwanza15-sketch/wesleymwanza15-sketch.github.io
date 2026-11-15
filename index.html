@@ -10,8 +10,8 @@
   <!-- Primary SEO -->
   <title>Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media</title>
   <meta name="title" content="Ben Wesley Mwanza | Visual Archivist & Developer | Phoenix View Media">
-  <meta name="description" content="Official platform of Ben Wesley Mwanza (phoenix_view_bwm), Visual Archivist & Developer, and CMA 2026 Best Documentary Photography Nominee. Founder of Phoenix View Media.">
-  <meta name="keywords" content="Ben Wesley Mwanza, Visual Archivist & Developer, phoenix_view_bwm, Phoenix View Media, CMA 2026 best documentary photography, Zambian photographer, App developer Lusaka, Creative Director Zambia">
+  <meta name="description" content="Official platform of Ben Wesley Mwanza (phoenix_view_bwm), Visual Archivist & Developer, and CMA 2026 Best Documentary Photography Nominee. Founder of Phoenix View Media Creative Archive & Collaboration Hub.">
+  <meta name="keywords" content="Ben Wesley Mwanza, Visual Archivist & Developer, phoenix_view_bwm, Phoenix View Media, CMA 2026 best documentary photography, Zambian photographer, Creative Archive Zambia, Model Booking Lusaka, Scriptwriters Zambia">
   <meta name="author" content="Ben Wesley Mwanza">
   <meta name="robots" content="index, follow">
 
@@ -19,8 +19,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Phoenix View Media">
   <meta property="og:url" content="https://wesleymwanza15-sketch.github.io/">
-  <meta property="og:title" content="Ben Wesley Mwanza — Visual Archivist & Developer">
-  <meta property="og:description" content="Explore photography series, app system architectures, institutional grant roadmaps, and B2B digital services by Ben Wesley Mwanza (Phoenix View Media).">
+  <meta property="og:title" content="Phoenix View Media — Creative Internet Archive & Collaboration Space">
+  <meta property="og:description" content="Explore photography series, models, animators, filmmakers, scriptwriters, app architectures, and book writers at Phoenix View Media.">
   <meta property="og:image" content="https://wesleymwanza15-sketch.github.io/images/20260416_165634.jpeg">
 
   <!-- JSON-LD Structured Data for Enhanced SEO -->
@@ -39,7 +39,7 @@
       "@type": "Organization",
       "name": "Phoenix View Media"
     },
-    "knowsAbout": ["Documentary Photography", "Software Architecture", "Screenwriting", "Cultural Grants", "Interactive Web Books"]
+    "knowsAbout": ["Documentary Photography", "Software Architecture", "Screenwriting", "Cultural Grants", "Interactive Web Books", "Creative Talent Curation"]
   }
   </script>
 
@@ -147,13 +147,13 @@
       left: 50%;
       transform: translateX(-50%);
       width: calc(100% - 48px);
-      max-width: 1280px;
+      max-width: 1320px;
       background: rgba(10, 10, 14, 0.82);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1px solid rgba(197, 160, 89, 0.3);
       border-radius: 8px;
-      padding: 12px 28px;
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -166,24 +166,25 @@
     }
     .header-brand {
       font-family: var(--font-serif);
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       letter-spacing: 0.08em;
       color: var(--accent-gold);
       text-decoration: none;
       text-transform: uppercase;
+      white-space: nowrap;
     }
     .header-nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
       list-style: none;
     }
     .header-nav a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       font-weight: 500;
       transition: var(--transition);
     }
@@ -193,18 +194,18 @@
     .header-action-group {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
     .header-press-btn {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: var(--text-main);
-      padding: 6px 13px;
+      padding: 6px 12px;
       border-radius: 4px;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       transition: var(--transition);
     }
     .header-press-btn:hover {
@@ -215,19 +216,19 @@
       background: rgba(197, 160, 89, 0.14);
       border: 1px solid rgba(197, 160, 89, 0.55);
       color: var(--accent-gold-light);
-      padding: 6px 14px;
+      padding: 6px 13px;
       border-radius: 4px;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       transition: var(--transition);
     }
     .header-commission-btn:hover {
       background: var(--accent-gold);
       color: #050507;
     }
-    @media (max-width: 960px) {
+    @media (max-width: 1080px) {
       .header-nav { display: none; }
     }
 
@@ -273,7 +274,7 @@
       color: var(--accent-gold-light);
       background: rgba(197, 160, 89, 0.1);
     }
-    @media (max-width: 960px) {
+    @media (max-width: 1080px) {
       .mobile-quick-nav { display: block; }
     }
 
@@ -352,10 +353,10 @@
       margin: 0 auto;
     }
 
-    /* Hero Action Strip (Placed Underneath Hero Section) */
+    /* Hero Action Strip */
     .hero-action-strip {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       margin-bottom: 56px;
     }
@@ -365,10 +366,10 @@
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
-      padding: 28px 24px;
+      padding: 26px 22px;
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       cursor: pointer;
       box-shadow: 0 12px 35px rgba(0,0,0,0.4);
       transition: var(--transition);
@@ -380,23 +381,23 @@
       box-shadow: 0 20px 45px rgba(0,0,0,0.6), 0 0 20px var(--accent-gold-glow);
     }
     .strip-action-icon {
-      width: 52px; height: 52px;
+      width: 50px; height: 50px;
       border-radius: 10px;
       background: rgba(197, 160, 89, 0.12);
       border: 1px solid rgba(197, 160, 89, 0.4);
       display: flex; align-items: center; justify-content: center;
       color: var(--accent-gold-light);
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       flex-shrink: 0;
     }
     .strip-action-text h4 {
       font-family: var(--font-serif);
-      font-size: 1.15rem;
-      color: #fff;
+      font-size: 1.12rem;
+      color: var(--text-main);
       margin-bottom: 4px;
     }
     .strip-action-text p {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -580,10 +581,10 @@
     .story-right strong { color: var(--text-main); font-weight: 600; }
 
     /* Tabs & Filters */
-    .discipline-nav, .portfolio-filters {
+    .discipline-nav, .portfolio-filters, .hub-filters {
       display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 24px auto 44px;
     }
-    .discipline-btn, .filter-btn {
+    .discipline-btn, .filter-btn, .hub-filter-btn {
       background: var(--card-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
@@ -598,7 +599,8 @@
       transition: var(--transition);
     }
     .discipline-btn:hover, .discipline-btn.active,
-    .filter-btn:hover, .filter-btn.active {
+    .filter-btn:hover, .filter-btn.active,
+    .hub-filter-btn:hover, .hub-filter-btn.active {
       background: rgba(197, 160, 89, 0.14);
       color: var(--accent-gold-light);
       border-color: var(--accent-gold);
@@ -606,7 +608,8 @@
       font-weight: 600;
     }
     [data-theme="light"] .discipline-btn.active,
-    [data-theme="light"] .filter-btn.active {
+    [data-theme="light"] .filter-btn.active,
+    [data-theme="light"] .hub-filter-btn.active {
       background: var(--accent-gold);
       color: #fff;
     }
@@ -630,6 +633,8 @@
       color: var(--text-muted);
       font-size: 0.92rem;
       letter-spacing: 0.02em;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
     /* Grids & Cards */
@@ -638,7 +643,7 @@
       grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
       gap: 26px;
     }
-    .portfolio-card, .showcase-card, .strategy-card {
+    .portfolio-card, .showcase-card, .strategy-card, .creator-card, .guestbook-card {
       background: var(--card-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
@@ -649,8 +654,8 @@
       transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s ease;
       contain: layout paint style;
     }
-    .portfolio-card.hidden { display: none !important; }
-    .portfolio-card:hover, .showcase-card:hover, .strategy-card:hover {
+    .portfolio-card.hidden, .creator-card.hidden { display: none !important; }
+    .portfolio-card:hover, .showcase-card:hover, .strategy-card:hover, .creator-card:hover, .guestbook-card:hover {
       border-color: var(--card-border-hover);
       box-shadow: 0 22px 50px rgba(0, 0, 0, 0.65), 0 0 24px var(--accent-gold-glow);
     }
@@ -734,7 +739,7 @@
       letter-spacing: 0.14em;
     }
 
-    .showcase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 26px; }
+    .showcase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 26px; }
     .showcase-card { padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
     .showcase-tag {
       display: inline-block;
@@ -792,6 +797,172 @@
       margin-top: 18px;
     }
     .action-btn:hover { background: var(--accent-gold); color: #050507; }
+
+    /* ===== CREATIVE ARCHIVE & COLLABORATION DIRECTORY CARDS ===== */
+    .creator-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .creator-media-box {
+      position: relative;
+      height: 240px;
+      background: #07070a;
+      overflow: hidden;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .creator-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .creator-card:hover .creator-media-box img {
+      transform: scale(1.05);
+    }
+    .creator-script-preview {
+      height: 100%;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: radial-gradient(circle at top right, rgba(197, 160, 89, 0.14), rgba(8, 8, 12, 0.96));
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--accent-gold-light);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .creator-role-pill {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(10, 10, 14, 0.88);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold-light);
+      padding: 4px 11px;
+      border-radius: 4px;
+      font-size: 0.66rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      backdrop-filter: blur(8px);
+    }
+    .creator-body {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .creator-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .creator-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+    .creator-body p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .creator-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--card-border);
+    }
+    .book-talent-btn {
+      background: var(--accent-gold);
+      color: #050507;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: var(--transition);
+    }
+    .book-talent-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* ===== VISITOR GUESTBOOK / REFLECTION WALL ===== */
+    .guestbook-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .guestbook-layout { grid-template-columns: 1fr; }
+    }
+    .guestbook-form-box {
+      background: var(--card-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .guestbook-form-box h3 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .guestbook-wall-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .guestbook-card {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .guestbook-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.02rem;
+      color: var(--text-main);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .guestbook-author {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--card-border);
+      padding-top: 12px;
+      font-size: 0.75rem;
+    }
+    .guestbook-author strong {
+      color: var(--accent-gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .guestbook-author span {
+      color: var(--text-muted);
+    }
 
     /* WebGL Studio Canvas Box Container & Interactive HUD */
     .lab-canvas-container {
@@ -1056,7 +1227,7 @@
     .reader-close { position: absolute; top: 25px; right: 25px; color: var(--text-muted); font-size: 1.8rem; cursor: pointer; line-height: 1; }
     .reader-close:hover { color: var(--text-main); }
 
-    /* ===== B2B COMMISSION & PRINT LICENSING ESTIMATOR MODAL ===== */
+    /* ===== MODALS (ESTIMATOR, PRESS KIT, TALENT SUBMISSION, TALENT BOOKING) ===== */
     .estimator-modal {
       display: none;
       position: fixed; inset: 0;
@@ -1098,7 +1269,7 @@
       border: none;
     }
     .estimator-close:hover { color: var(--accent-gold); }
-    .est-group { margin-bottom: 22px; }
+    .est-group { margin-bottom: 20px; }
     .est-label {
       display: block;
       font-size: 0.72rem;
@@ -1106,7 +1277,7 @@
       text-transform: uppercase;
       letter-spacing: 0.14em;
       color: var(--accent-gold);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .est-options-grid {
       display: grid;
@@ -1162,19 +1333,27 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
-    .est-input {
+    .est-input, .est-select, .est-textarea {
       width: 100%;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--card-border);
       color: var(--text-main);
-      padding: 10px 14px;
+      padding: 11px 14px;
       border-radius: 6px;
       font-size: 0.85rem;
       font-family: inherit;
     }
-    .est-input:focus {
+    .est-select option {
+      background: #101014;
+      color: #f4f4f6;
+    }
+    .est-textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+    .est-input:focus, .est-select:focus, .est-textarea:focus {
       outline: none;
       border-color: var(--accent-gold);
     }
@@ -1218,7 +1397,7 @@
     }
     .est-submit-btn:hover { transform: translateY(-2px); opacity: 0.94; }
 
-    /* ===== PRESS KIT & CMA 2026 CREDENTIALS MODAL ===== */
+    /* Press Kit Styles */
     .press-credential-banner {
       background: linear-gradient(135deg, rgba(197, 160, 89, 0.14), rgba(15, 15, 19, 0.9));
       border: 1px solid rgba(197, 160, 89, 0.45);
@@ -1371,14 +1550,14 @@
       <ul class="header-nav">
         <li><a href="#about">Story</a></li>
         <li><a href="#photography-pane">Photography</a></li>
+        <li><a href="#creative-hub-section">Creative Archive</a></li>
         <li><a href="#journal-section">Journal</a></li>
-        <li><a href="#editorial-pane">Screenplays</a></li>
-        <li><a href="#literature-pane">Literature</a></li>
-        <li><a href="#lookbooks-pane">Lookbooks</a></li>
-        <li><a href="#lab-pane">WebGL Lab</a></li>
+        <li><a href="#guestbook-section">Guestbook</a></li>
+        <li><a href="#lab-pane">3D Lab</a></li>
       </ul>
     </nav>
     <div class="header-action-group">
+      <button type="button" class="header-press-btn" onclick="openSubmissionModal()">+ Submit Work</button>
       <button type="button" class="header-press-btn" onclick="openPressModal()">Press Kit</button>
       <button type="button" class="header-commission-btn" onclick="openEstimatorModal('web')">Commission</button>
     </div>
@@ -1387,15 +1566,13 @@
   <!-- MOBILE STICKY QUICK-JUMP PILL BAR -->
   <nav class="mobile-quick-nav" aria-label="Mobile quick navigation">
     <div class="mobile-quick-nav-track">
-      <button type="button" class="mobile-nav-pill gold-pill" onclick="openPressModal()"><i class="fas fa-id-badge"></i> Press Kit</button>
-      <button type="button" class="mobile-nav-pill gold-pill" onclick="openEstimatorModal('web')"><i class="fas fa-calculator"></i> Estimator</button>
-      <a href="#about" class="mobile-nav-pill">Story</a>
-      <a href="#photography-pane" class="mobile-nav-pill" onclick="openDisciplineTab('photography-pane', false); return false;">Photography</a>
+      <button type="button" class="mobile-nav-pill gold-pill" onclick="openSubmissionModal()"><i class="fas fa-plus"></i> Join Archive</button>
+      <a href="#creative-hub-section" class="mobile-nav-pill">Creative Hub</a>
+      <a href="#guestbook-section" class="mobile-nav-pill">Guestbook</a>
       <a href="#journal-section" class="mobile-nav-pill">Journal</a>
-      <a href="#apps-pane" class="mobile-nav-pill" onclick="openDisciplineTab('apps-pane', false); return false;">Apps</a>
+      <a href="#photography-pane" class="mobile-nav-pill" onclick="openDisciplineTab('photography-pane', false); return false;">Photography</a>
       <a href="#editorial-pane" class="mobile-nav-pill" onclick="openDisciplineTab('editorial-pane', false); return false;">Screenplays</a>
       <a href="#literature-pane" class="mobile-nav-pill" onclick="openDisciplineTab('literature-pane', false); return false;">Literature</a>
-      <a href="#lookbooks-pane" class="mobile-nav-pill" onclick="openDisciplineTab('lookbooks-pane', false); return false;">Lookbooks</a>
       <a href="#lab-pane" class="mobile-nav-pill" onclick="openDisciplineTab('lab-pane', true); return false;">3D Lab</a>
     </div>
   </nav>
@@ -1446,18 +1623,25 @@
   <div class="container">
     <!-- ACTION STRIP PLACED UNDERNEATH HERO SECTION -->
     <div class="hero-action-strip reveal">
+      <div class="strip-action-card" onclick="document.getElementById('creative-hub-section').scrollIntoView({behavior:'smooth'})">
+        <div class="strip-action-icon"><i class="fas fa-users"></i></div>
+        <div class="strip-action-text">
+          <h4>Explore Creative Archive</h4>
+          <p>Book Models, Writers & Filmmakers</p>
+        </div>
+      </div>
+      <div class="strip-action-card" onclick="openSubmissionModal()">
+        <div class="strip-action-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <div class="strip-action-text">
+          <h4>Publish Your Portfolio</h4>
+          <p>Photographers, Models & Authors</p>
+        </div>
+      </div>
       <div class="strip-action-card" id="hero-launch-phoenix">
         <div class="strip-action-icon"><i class="fas fa-fire"></i></div>
         <div class="strip-action-text">
           <h4>Launch 3D Phoenix</h4>
           <p>Interactive WebGL Studio Engine</p>
-        </div>
-      </div>
-      <div class="strip-action-card" onclick="openEstimatorModal('web')">
-        <div class="strip-action-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-        <div class="strip-action-text">
-          <h4>Estimate Project / Print</h4>
-          <p>Commercial B2B & Licensing Desk</p>
         </div>
       </div>
       <div class="strip-action-card" onclick="openPressModal()">
@@ -1512,9 +1696,9 @@
         <button type="button" class="accolade-link" onclick="openPressModal()"><i class="fas fa-id-card"></i> View Media Credentials</button>
       </div>
       <div class="accolade-card">
-        <i class="fas fa-code-branch"></i>
-        <h4>Full-Stack Architecture</h4>
-        <p>Combining custom software engineering, mobile-first logistics tools, and static portfolio deployments.</p>
+        <i class="fas fa-globe-africa"></i>
+        <h4>Creative Internet Archive</h4>
+        <p>An open collaborative ecosystem uniting models, photographers, animators, scriptwriters, and authors.</p>
       </div>
       <div class="accolade-card">
         <i class="fas fa-book"></i>
@@ -1540,7 +1724,7 @@
 
           <p>That thought stayed with me. It made me wonder: <em>How do we hold onto who we are right now? How do we keep today alive for the person we become tomorrow?</em></p>
           <p>Then I looked at the camera and the code editor, and asked myself: <em>How can I combine these two worlds?</em></p>
-          <p>That moment birthed my answer. Welcome to a world of frozen frames and digital systems—preserved through the View of Ben Wesley Mwanza.</p>
+          <p>That moment birthed my answer—and expanded <strong>Phoenix View Media</strong> into an open creative internet archive where photographers, models, filmmakers, scriptwriters, animators, and authors can showcase their craft and collaborate together.</p>
         </div>
       </div>
     </section>
@@ -1897,8 +2081,177 @@
       </div>
     </div>
 
+    <!-- ===== CREATIVE INTERNET ARCHIVE & COLLABORATION DIRECTORY ===== -->
+    <section id="creative-hub-section" style="padding: 72px 0; border-top: 1px solid var(--card-border); margin-top: 64px;">
+      <div class="section-header reveal">
+        <span class="showcase-tag">Open Creative Network // Showcase & Booking</span>
+        <h2>Phoenix Creative Archive & Collaboration Hub</h2>
+        <p>A curated creative internet space where photographers, models, filmmakers, scriptwriters, animators, book authors, and copywriters publish their work to connect, collaborate, and get booked.</p>
+        <div style="margin-top: 22px;">
+          <button type="button" class="book-talent-btn" onclick="openSubmissionModal()">
+            <i class="fas fa-plus-circle"></i> Post Your Work to the Archive
+          </button>
+        </div>
+      </div>
+
+      <div class="hub-filters reveal">
+        <button class="hub-filter-btn active" data-hub-filter="all">All Creative Industries</button>
+        <button class="hub-filter-btn" data-hub-filter="models">Models & Talent</button>
+        <button class="hub-filter-btn" data-hub-filter="photographers">Photographers</button>
+        <button class="hub-filter-btn" data-hub-filter="film">Film & Scriptwriters</button>
+        <button class="hub-filter-btn" data-hub-filter="animation">Animation & Visual FX</button>
+        <button class="hub-filter-btn" data-hub-filter="writers">Book Writers & Copywriters</button>
+      </div>
+
+      <div class="showcase-grid" id="creative-directory-grid">
+        <!-- Entry 1: Documentary & Film Co-Director -->
+        <div class="creator-card reveal" data-hub-category="film">
+          <div class="creator-media-box">
+            <span class="creator-role-pill">Film & Documentary</span>
+            <img src="images/20251220_172010.jpeg" alt="Khangelani Dhlamini Documentary Work" class="expandable" loading="lazy">
+          </div>
+          <div class="creator-body">
+            <div>
+              <div class="creator-meta-row">
+                <span><i class="fas fa-map-marker-alt"></i> Zimbabwe / Cross-Border</span>
+                <span>Verified Partner</span>
+              </div>
+              <h3>Khangelani Dhlamini</h3>
+              <p>Co-director and documentary filmmaker collaborating on cross-border wildlife and conservation narratives including <em>The Frontline Keepers: Zambia’s Wildlife War</em>.</p>
+              <div class="tech-stack-badges">
+                <span class="tech-pill">Documentary Directing</span>
+                <span class="tech-pill">Field Production</span>
+              </div>
+            </div>
+            <div class="creator-actions">
+              <button type="button" class="book-talent-btn" onclick="openBookingModal('Khangelani Dhlamini', 'Film & Documentary Directing')">
+                <i class="fas fa-calendar-check"></i> Request Collaboration
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 2: Animation & Documentary Producer -->
+        <div class="creator-card reveal" data-hub-category="animation">
+          <div class="creator-media-box">
+            <span class="creator-role-pill">Animation & Film</span>
+            <img src="images/20260407_131225.jpeg" alt="Melvin Sikazwe Animation Showcase" class="expandable" loading="lazy">
+          </div>
+          <div class="creator-body">
+            <div>
+              <div class="creator-meta-row">
+                <span><i class="fas fa-map-marker-alt"></i> Lusaka, Zambia</span>
+                <span>CMA Network</span>
+              </div>
+              <h3>Melvin Sikazwe</h3>
+              <p>Animator and documentary producer crafting visual storytelling, animated sequences, and regional narrative productions in Lusaka.</p>
+              <div class="tech-stack-badges">
+                <span class="tech-pill">2D / 3D Animation</span>
+                <span class="tech-pill">Documentary Production</span>
+              </div>
+            </div>
+            <div class="creator-actions">
+              <button type="button" class="book-talent-btn" onclick="openBookingModal('Melvin Sikazwe', 'Animation & Documentary Production')">
+                <i class="fas fa-calendar-check"></i> Book / Collaborate
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 3: Editorial & Fashion Model Showcase -->
+        <div class="creator-card reveal" data-hub-category="models">
+          <div class="creator-media-box">
+            <span class="creator-role-pill">Models & Talent</span>
+            <img src="images/Monochrome Minimalist Fashion Instagram Story_20260805_110509_0000.jpeg" alt="Editorial Model Portfolio" class="expandable" loading="lazy">
+          </div>
+          <div class="creator-body">
+            <div>
+              <div class="creator-meta-row">
+                <span><i class="fas fa-map-marker-alt"></i> Lusaka & Livingstone</span>
+                <span>Open Roster</span>
+              </div>
+              <h3>Editorial & Lookbook Models</h3>
+              <p>Models can upload their portfolio portraits and lookbook frames directly to Phoenix View Media so agencies, brands, and photographers can scout and book them for shoots.</p>
+              <div class="tech-stack-badges">
+                <span class="tech-pill">Fashion & Lookbooks</span>
+                <span class="tech-pill">Commercial Campaigns</span>
+              </div>
+            </div>
+            <div class="creator-actions">
+              <button type="button" class="book-talent-btn" onclick="openBookingModal('Editorial Model Roster', 'Model Booking for Shoot / Campaign')">
+                <i class="fas fa-camera-retro"></i> Book a Model
+              </button>
+              <button type="button" class="action-btn" style="margin-top:0;" onclick="openSubmissionModal('models')">
+                <i class="fas fa-upload"></i> Post Model Photos
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 4: Travel & Documentary Photographer -->
+        <div class="creator-card reveal" data-hub-category="photographers">
+          <div class="creator-media-box">
+            <span class="creator-role-pill">Photographers</span>
+            <img src="images/20260407_130529.jpeg" alt="Sula Shekinah Sinyangwa Visuals" class="expandable" loading="lazy">
+          </div>
+          <div class="creator-body">
+            <div>
+              <div class="creator-meta-row">
+                <span><i class="fas fa-map-marker-alt"></i> Zambia</span>
+                <span>Expedition Creator</span>
+              </div>
+              <h3>Sula Shekinah Sinyangwa</h3>
+              <p>Tour guide, videographer, and visual content creator documenting Zambian destinations, cultural expeditions, and outdoor travel stories.</p>
+              <div class="tech-stack-badges">
+                <span class="tech-pill">Travel Videography</span>
+                <span class="tech-pill">Expedition Guiding</span>
+              </div>
+            </div>
+            <div class="creator-actions">
+              <button type="button" class="book-talent-btn" onclick="openBookingModal('Sula Shekinah Sinyangwa', 'Travel Videography & Expedition Shoot')">
+                <i class="fas fa-calendar-check"></i> Book Shoot
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 5: Scriptwriters, Book Writers & Copywriters -->
+        <div class="creator-card reveal" data-hub-category="writers">
+          <div class="creator-media-box">
+            <span class="creator-role-pill">Writers & Copywriters</span>
+            <div class="creator-script-preview">
+              "EXT. BATOKA GORGE — DAWN<br>Mist rises like silver smoke from the chasm as the archivist opens the weathered ledger..."
+            </div>
+          </div>
+          <div class="creator-body">
+            <div>
+              <div class="creator-meta-row">
+                <span><i class="fas fa-map-marker-alt"></i> Pan-African & Global</span>
+                <span>Literary Vault</span>
+              </div>
+              <h3>Scriptwriters, Authors & Copywriters</h3>
+              <p>A dedicated space for screenwriters, novelists, poets, and brand copywriters to publish excerpts, loglines, and copy portfolios for producers and publishers to discover.</p>
+              <div class="tech-stack-badges">
+                <span class="tech-pill">Screenplays</span>
+                <span class="tech-pill">Book Writing</span>
+                <span class="tech-pill">Brand Copywriting</span>
+              </div>
+            </div>
+            <div class="creator-actions">
+              <button type="button" class="book-talent-btn" onclick="openBookingModal('Phoenix Writers Desk', 'Scriptwriting / Copywriting Commission')">
+                <i class="fas fa-pen-fancy"></i> Commission Writer
+              </button>
+              <button type="button" class="action-btn" style="margin-top:0;" onclick="openSubmissionModal('writers')">
+                <i class="fas fa-upload"></i> Post Script / Writing
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== DYNAMIC FIELD JOURNAL / EXPEDITION BLOG SECTION ===== -->
-    <section id="journal-section" style="padding: 64px 0; border-top: 1px solid var(--card-border); margin-top: 64px;">
+    <section id="journal-section" style="padding: 64px 0; border-top: 1px solid var(--card-border); margin-top: 32px;">
       <div class="section-header reveal">
         <h2>Field Journal & Expedition Notes</h2>
         <p>Short reflections, field notes, and behind-the-lens stories from photography travels across Zambia.</p>
@@ -2095,195 +2448,6 @@
         </div>
         <div class="showcase-card reveal">
           <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 02</span>
-            <h3>Botanical Textures & Scarlet Tones</h3>
-            <img src="images/1_20261023_121000_0000.jpeg" alt="Lookbook Plate 02" class="expandable" loading="lazy" decoding="async">
-            <p>A closer look at the organic lines and rich chromatic tones designed for publication layout.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Lookbook Spread</span><span class="tech-pill">Macro Art</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 03</span>
-            <h3>Silent Rhythm of the Countryside</h3>
-            <img src="images/2_20261023_121001_0001.jpeg" alt="Lookbook Plate 03" class="expandable" loading="lazy" decoding="async">
-            <p>Balancing whitespace, structured typography, and high-impact macro imagery.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Editorial Design</span><span class="tech-pill">Typography</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 04</span>
-            <h3>Highland Shadows & Foliage</h3>
-            <img src="images/4_20261023_121001_0003.jpeg" alt="Lookbook Plate 04" class="expandable" loading="lazy" decoding="async">
-            <p>Study of shadow framing and organic geometry within nature series spreads.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Publication Layout</span><span class="tech-pill">Art Direction</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 05</span>
-            <h3>Verdant Horizons & Deep Forest</h3>
-            <img src="images/5_20261023_121001_0004.jpeg" alt="Lookbook Plate 05" class="expandable" loading="lazy" decoding="async">
-            <p>Wide perspective editorial spread featuring deep green foliage and natural lighting.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Landscape Spread</span><span class="tech-pill">Editorial Copy</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 06</span>
-            <h3>Canopy Perspectives & Twilight Glow</h3>
-            <img src="images/6_20261023_121001_0005.jpeg" alt="Lookbook Plate 06" class="expandable" loading="lazy" decoding="async">
-            <p>Editorial arrangement capturing woodland atmosphere and ambient forest lighting.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Canopy Series</span><span class="tech-pill">Lookbook Layout</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Editorial Lookbook — Plate 07</span>
-            <h3>Botanical Macro Geometry</h3>
-            <img src="images/7_20261023_121001_0006.jpeg" alt="Lookbook Plate 07" class="expandable" loading="lazy" decoding="async">
-            <p>High-resolution botanical close-ups prepared for print and digital publication.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Macro Detail</span><span class="tech-pill">Print Ready</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Unseen World — Spread 01</span>
-            <h3>Forest Floor Exploration: Opening Plate</h3>
-            <img src="images/1_20261008_115127_0000.jpeg" alt="Unseen World Opening Plate" class="expandable" loading="lazy" decoding="async">
-            <p>Title spread introducing readers to macro micro-ecosystems and natural soil layers.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Editorial Lead</span><span class="tech-pill">Storytelling</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Unseen World — Spread 02</span>
-            <h3>Micro Ecosystems & Soil Texture</h3>
-            <img src="images/3_20261008_115127_0002.jpeg" alt="Unseen World Spread 02" class="expandable" loading="lazy" decoding="async">
-            <p>Macro analysis of organic textures and forest floor biodiversity.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Field Research</span><span class="tech-pill">Macro Lens</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Unseen World — Spread 04</span>
-            <h3>Architectural Soil Burrows</h3>
-            <img src="images/4_20261008_115127_0003.jpeg" alt="Unseen World Spread 04" class="expandable" loading="lazy" decoding="async">
-            <p>Documenting insect architecture and subtle environmental shifts on the forest floor.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Documentary Frame</span><span class="tech-pill">Editorial</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Unseen World — Spread 05</span>
-            <h3>Concluding Field Notes</h3>
-            <img src="images/5_20261008_115128_0004.jpeg" alt="Unseen World Spread 05" class="expandable" loading="lazy" decoding="async">
-            <p>Summary spread combining prose, macro imagery, and publication closing layout.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Closing Spread</span><span class="tech-pill">Prose & Copy</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">EXPLORE Series — Plate 02</span>
-            <h3>Mountain Ridge Silhouette</h3>
-            <img src="images/2_20261002_091657_0001.jpeg" alt="Mountain Ridge Silhouette" class="expandable" loading="lazy" decoding="async">
-            <p>Cinematic mountain ridge silhouette captured during peak sunset glow.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Landscape</span><span class="tech-pill">Silhouette</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">EXPLORE Series — Plate 03</span>
-            <h3>Highland Peak Exploration</h3>
-            <img src="images/3_20261002_091657_0002.jpeg" alt="Highland Peak Exploration" class="expandable" loading="lazy" decoding="async">
-            <p>Dramatic vista layout from the mountain series editorial compilation.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Vista Spread</span><span class="tech-pill">Fine Art</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">EXPLORE Series — Plate 04</span>
-            <h3>Solitary Expedition Path</h3>
-            <img src="images/4_20261002_091657_0003.jpeg" alt="Solitary Expedition Path" class="expandable" loading="lazy" decoding="async">
-            <p>Editorial framing of winding trails and remote highland exploration.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Travel Series</span><span class="tech-pill">Editorial Layout</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">EXPLORE Series — Plate 05</span>
-            <h3>Highland Canopy & Evening Sky</h3>
-            <img src="images/5_20261002_091657_0004.jpeg" alt="Highland Canopy Spread" class="expandable" loading="lazy" decoding="async">
-            <p>Closing magazine plate highlighting sky gradients and high-contrast canopy lines.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Sky Gradients</span><span class="tech-pill">Magazine Plate</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Modern Minimal Plate I</span>
-            <h3>White & Black Light Modern Minimal — Plate I</h3>
-            <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035035_0000.jpeg" alt="White and Black Light Modern Minimal Plate I" class="expandable" loading="lazy" decoding="async">
-            <p>Light modern minimal aesthetic layout emphasizing clean lines, crisp contrast, and sophisticated typography.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Light Minimal</span><span class="tech-pill">Plate I</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Modern Minimal Plate II</span>
-            <h3>White & Black Light Modern Minimal — Plate II</h3>
-            <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0001.jpeg" alt="White and Black Light Modern Minimal Plate II" class="expandable" loading="lazy" decoding="async">
-            <p>Balanced whitespace composition tailored for high-end digital editorial portfolios and layout frames.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Whitespace</span><span class="tech-pill">Plate II</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Modern Minimal Plate III</span>
-            <h3>White & Black Light Modern Minimal — Plate III</h3>
-            <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0002.jpeg" alt="White and Black Light Modern Minimal Plate III" class="expandable" loading="lazy" decoding="async">
-            <p>Refined publication spread featuring structured content blocks, subtle framing, and elegant typography.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Structured Grid</span><span class="tech-pill">Plate III</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Modern Minimal Plate IV</span>
-            <h3>White & Black Light Modern Minimal — Plate IV</h3>
-            <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0004.jpeg" alt="White and Black Light Modern Minimal Plate IV" class="expandable" loading="lazy" decoding="async">
-            <p>Clean minimal visual curation designed for contemporary artistic profiles and lookbook presentation.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Modern Minimal</span><span class="tech-pill">Plate IV</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Modern Minimal Plate V</span>
-            <h3>White & Black Light Modern Minimal — Plate V</h3>
-            <img src="images/White and Black Light Modern Minimal Photography Photography Online Portfol_20260823_035036_0005.jpeg" alt="White and Black Light Modern Minimal Plate V" class="expandable" loading="lazy" decoding="async">
-            <p>Concluding plate of the light minimalist series focusing on tonal depth and visual balance.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Tonal Balance</span><span class="tech-pill">Plate V</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Team Story Introduction I</span>
-            <h3>White Black Minimalist Team Profile I</h3>
-            <img src="images/White Black Minimalist Team Introduction Instagram Story_20260805_104415_0000.jpeg" alt="Team Profile I" class="expandable" loading="lazy" decoding="async">
-            <p>Clean minimalist layout highlighting creative collaboration, team structure, and leadership presentation.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Team Profile</span><span class="tech-pill">Instagram Story</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
-            <span class="showcase-tag">Team Story Introduction II</span>
-            <h3>White Black Minimalist Team Profile II</h3>
-            <img src="images/White Black Minimalist Team Introduction Instagram Story_20260805_110829_0000.jpeg" alt="Team Profile II" class="expandable" loading="lazy" decoding="async">
-            <p>Secondary professional introduction spread optimized for digital storytelling and partner highlights.</p>
-          </div>
-          <div class="tech-stack-badges"><span class="tech-pill">Collaboration</span><span class="tech-pill">Story Layout</span></div>
-        </div>
-        <div class="showcase-card reveal">
-          <div>
             <span class="showcase-tag">Monochrome Lookbook Story</span>
             <h3>Monochrome Minimalist Fashion Lookbook</h3>
             <img src="images/Monochrome Minimalist Fashion Instagram Story_20260805_110509_0000.jpeg" alt="Monochrome Fashion Story" class="expandable" loading="lazy" decoding="async">
@@ -2378,6 +2542,68 @@
       </div>
     </div>
 
+    <!-- ===== VISITOR'S GUESTBOOK / REFLECTION WALL ===== -->
+    <section id="guestbook-section" style="padding: 72px 0; border-top: 1px solid var(--card-border); margin-top: 64px;">
+      <div class="section-header reveal">
+        <span class="showcase-tag">Living Exhibition Ledger</span>
+        <h2>Visitor Reflection Wall & Guestbook</h2>
+        <p>Like the hardcover ledger at the entrance of a gallery—leave a thought on a photograph, screenplay, or book passage that moved you.</p>
+      </div>
+
+      <div class="guestbook-layout">
+        <div class="guestbook-form-box reveal">
+          <h3>Sign the Archive Ledger</h3>
+          <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 18px;">Your reflection appears immediately on the wall below, with an option to send it directly to Ben's studio desk.</p>
+          <form id="guestbook-form">
+            <div class="est-group">
+              <label class="est-label" for="gb-name">Your Name or Handle</label>
+              <input type="text" id="gb-name" class="est-input" placeholder="e.g., Mwila Banda or @creative_soul" required>
+            </div>
+            <div class="est-group">
+              <label class="est-label" for="gb-location">City / Country</label>
+              <input type="text" id="gb-location" class="est-input" placeholder="e.g., Lusaka, Zambia">
+            </div>
+            <div class="est-group">
+              <label class="est-label" for="gb-message">Your Reflection or Note</label>
+              <textarea id="gb-message" class="est-textarea" placeholder="Which photograph, journal entry, or creative work spoke to you?" required></textarea>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button type="submit" class="book-talent-btn" style="flex: 1; justify-content: center;">
+                <i class="fas fa-feather-alt"></i> Post to Wall
+              </button>
+              <button type="button" id="gb-send-wa" class="action-btn" style="margin-top: 0;">
+                <i class="fab fa-whatsapp"></i> Send to Ben
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="guestbook-wall-grid" id="guestbook-wall-grid">
+          <div class="guestbook-card reveal">
+            <div class="guestbook-quote">"The Chipata Forest macro series feels like stepping into a quiet cathedral after rain. Truly timeless visual archiving."</div>
+            <div class="guestbook-author">
+              <strong>Chanda M.</strong>
+              <span>Lusaka, Zambia</span>
+            </div>
+          </div>
+          <div class="guestbook-card reveal">
+            <div class="guestbook-quote">"Reading Paths: One’s Conversation With Life reminded me to slow down and pay attention to who I am becoming today."</div>
+            <div class="guestbook-author">
+              <strong>Tariro K.</strong>
+              <span>Harare, Zimbabwe</span>
+            </div>
+          </div>
+          <div class="guestbook-card reveal">
+            <div class="guestbook-quote">"Having one creative space where photographers, scriptwriters, and models can showcase work together is exactly what Southern Africa needs."</div>
+            <div class="guestbook-author">
+              <strong>David N.</strong>
+              <span>Ndola, Zambia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Strategic Roadmap & Eco-System Pillars -->
     <section class="strategy-section">
       <div class="section-header reveal">
@@ -2429,6 +2655,8 @@
       <span>•</span>
       <a href="https://wa.me/260763533205" target="_blank" rel="noopener" class="footer-link">+260 76 3533205</a>
       <span>•</span>
+      <button type="button" class="footer-link" onclick="openSubmissionModal()">Join Creative Archive</button>
+      <span>•</span>
       <button type="button" class="footer-link" onclick="openPressModal()">Official Press Kit & CMA 2026 Credentials</button>
     </div>
     <p>&copy; 2026 Phoenix View Media. All rights reserved.</p>
@@ -2441,7 +2669,7 @@
     <div id="modal-caption" style="text-align: center; margin-top: 12px; color: #fff; font-family: var(--font-serif); font-size: 1.15rem;"></div>
     <div class="modal-metadata-box">
       <span class="meta-badge badge-verified">✓ Verified Original</span>
-      <span class="meta-badge badge-artist">Ben Wesley Mwanza</span>
+      <span class="meta-badge badge-artist">Phoenix View Archive</span>
       <span id="modal-series-badge" class="meta-badge badge-series">Series Work</span>
     </div>
     <button id="print-request-btn" type="button" class="print-inquiry-btn">
@@ -2454,6 +2682,108 @@
     <div class="reader-card">
       <span class="reader-close" aria-label="Close">&times;</span>
       <div id="reader-body"></div>
+    </div>
+  </div>
+
+  <!-- ===== SUBMIT CREATIVE WORK TO ARCHIVE MODAL ===== -->
+  <div id="submission-modal" class="estimator-modal" role="dialog" aria-modal="true" aria-label="Submit Work to Phoenix Creative Archive">
+    <div class="estimator-card">
+      <div class="estimator-header">
+        <div>
+          <span class="showcase-tag" style="margin-bottom: 6px;">Phoenix Creative Archive // Creator Onboarding</span>
+          <h2>Publish Your Work & Join the Hub</h2>
+        </div>
+        <button type="button" class="estimator-close" id="submission-close-btn" aria-label="Close Submission Modal">&times;</button>
+      </div>
+
+      <form id="creator-submission-form">
+        <div class="est-input-row">
+          <div>
+            <label class="est-label" for="sub-name">Creator / Artist Name *</label>
+            <input type="text" id="sub-name" class="est-input" placeholder="Full Name or Stage Handle" required>
+          </div>
+          <div>
+            <label class="est-label" for="sub-category">Creative Industry *</label>
+            <select id="sub-category" class="est-select" required>
+              <option value="models">Model & Editorial Talent</option>
+              <option value="photographers">Photographer / Visual Artist</option>
+              <option value="film">Filmmaker / Scriptwriter</option>
+              <option value="animation">Animator / Visual FX Artist</option>
+              <option value="writers">Book Writer / Copywriter</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="est-input-row">
+          <div>
+            <label class="est-label" for="sub-location">City & Country *</label>
+            <input type="text" id="sub-location" class="est-input" placeholder="e.g., Lusaka, Zambia" required>
+          </div>
+          <div>
+            <label class="est-label" for="sub-media-url">Portfolio Photo URL or Instagram/Drive Link</label>
+            <input type="url" id="sub-media-url" class="est-input" placeholder="https://...">
+          </div>
+        </div>
+
+        <div class="est-group">
+          <label class="est-label" for="sub-bio">Short Bio, Script Logline, or Booking Specialties *</label>
+          <textarea id="sub-bio" class="est-textarea" placeholder="Describe your creative work, modeling measurements/style, script genre, or copywriting focus so collaborators can book you..." required></textarea>
+        </div>
+
+        <div class="est-summary-box">
+          <div style="max-width: 420px;">
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent-gold); font-weight: 600;">Instant Preview + Curation Desk</div>
+            <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 3px;">Publishes immediately to your session grid and prepares a direct submission for permanent archival listing.</div>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button type="submit" class="book-talent-btn">
+              <i class="fas fa-check-circle"></i> Preview on Wall
+            </button>
+            <button type="button" id="sub-send-whatsapp" class="est-submit-btn">
+              <i class="fab fa-whatsapp"></i> Submit to Ben for Listing
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== TALENT & COLLABORATION BOOKING MODAL ===== -->
+  <div id="booking-modal" class="estimator-modal" role="dialog" aria-modal="true" aria-label="Book or Collaborate with Talent">
+    <div class="estimator-card">
+      <div class="estimator-header">
+        <div>
+          <span class="showcase-tag" style="margin-bottom: 6px;">Phoenix View Media // Booking & Talent Desk</span>
+          <h2 id="booking-modal-title">Book / Collaborate</h2>
+        </div>
+        <button type="button" class="estimator-close" id="booking-close-btn" aria-label="Close Booking Modal">&times;</button>
+      </div>
+
+      <div class="est-input-row">
+        <div>
+          <label class="est-label" for="book-client-name">Your Name / Production House *</label>
+          <input type="text" id="book-client-name" class="est-input" placeholder="Name or Brand">
+        </div>
+        <div>
+          <label class="est-label" for="book-date">Preferred Shoot / Project Date</label>
+          <input type="text" id="book-date" class="est-input" placeholder="e.g., December 2026 or Flexible">
+        </div>
+      </div>
+
+      <div class="est-group">
+        <label class="est-label" for="book-brief">Project Brief & Collaboration Details</label>
+        <textarea id="book-brief" class="est-textarea" placeholder="Share details about the photoshoot, film script, animation project, or campaign..."></textarea>
+      </div>
+
+      <div class="est-summary-box">
+        <div>
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent-gold); font-weight: 600;">Direct Talent Coordination</div>
+          <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 3px;">Routed via Phoenix View Media Talent Desk (+260 76 3533205)</div>
+        </div>
+        <button type="button" id="book-confirm-whatsapp" class="est-submit-btn">
+          <i class="fab fa-whatsapp"></i> Send Booking Request
+        </button>
+      </div>
     </div>
   </div>
 
@@ -2660,13 +2990,13 @@
     // 3. 3D Tilt
     function initTilt() {
       if (prefersReducedMotion || window.innerWidth < 900) return;
-      document.querySelectorAll('.portfolio-card, .showcase-card, .strategy-card, .accolade-card, .strip-action-card').forEach(card => {
+      document.querySelectorAll('.portfolio-card, .showcase-card, .strategy-card, .accolade-card, .strip-action-card, .creator-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
-          const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -5;
-          const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 5;
+          const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -4;
+          const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 4;
           card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
         }, { passive: true });
         card.addEventListener('mouseleave', () => {
@@ -2705,16 +3035,6 @@
       e.preventDefault();
       window.openDisciplineTab('lab-pane', true);
     });
-
-    // Highlight active mobile quick nav pill on scroll
-    const mobilePills = document.querySelectorAll('.mobile-nav-pill');
-    window.addEventListener('scroll', () => {
-      let scrollPos = window.scrollY + 200;
-      if (scrollPos > document.getElementById('lab-pane')?.offsetTop) {
-        mobilePills.forEach(p => p.classList.remove('active'));
-        document.querySelector('.mobile-nav-pill[href="#lab-pane"]')?.classList.add('active');
-      }
-    }, { passive: true });
 
     // 5. Hero Slider
     const slides = document.querySelectorAll('.hero-slider .slide');
@@ -2958,6 +3278,215 @@
 
     renderGallery();
 
+    // 8B. CREATIVE INTERNET ARCHIVE FILTER & SUBMISSION ENGINE
+    const hubFilterBtns = document.querySelectorAll('.hub-filter-btn');
+    const directoryGrid = document.getElementById('creative-directory-grid');
+
+    function filterCreativeHub(category) {
+      document.querySelectorAll('.creator-card').forEach(card => {
+        if (category === 'all' || card.dataset.hubCategory === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    hubFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        hubFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterCreativeHub(btn.dataset.hubFilter);
+      });
+    });
+
+    const submissionModal = document.getElementById('submission-modal');
+    const submissionCloseBtn = document.getElementById('submission-close-btn');
+    const submissionForm = document.getElementById('creator-submission-form');
+    const subCategorySelect = document.getElementById('sub-category');
+
+    window.openSubmissionModal = function(presetCat = 'models') {
+      if (subCategorySelect) subCategorySelect.value = presetCat;
+      if (submissionModal) submissionModal.style.display = 'flex';
+    };
+
+    submissionCloseBtn?.addEventListener('click', () => submissionModal.style.display = 'none');
+    submissionModal?.addEventListener('click', (e) => { if (e.target === submissionModal) submissionModal.style.display = 'none'; });
+
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+    }
+
+    submissionForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('sub-name').value.trim();
+      const cat = subCategorySelect.value;
+      const catLabel = subCategorySelect.options[subCategorySelect.selectedIndex].text;
+      const loc = document.getElementById('sub-location').value.trim();
+      const mediaUrl = document.getElementById('sub-media-url').value.trim();
+      const bio = document.getElementById('sub-bio').value.trim();
+
+      if (!name || !bio) return;
+
+      const isImage = /\.(jpeg|jpg|png|webp|gif)(\?.*)?$/i.test(mediaUrl);
+      const mediaBlock = isImage
+        ? `<img src="${escapeHtml(mediaUrl)}" alt="${escapeHtml(name)}" class="expandable">`
+        : `<div class="creator-script-preview">"${escapeHtml(bio.slice(0, 140))}${bio.length > 140 ? '...' : ''}"</div>`;
+
+      const card = document.createElement('div');
+      card.className = 'creator-card reveal active';
+      card.dataset.hubCategory = cat;
+      card.innerHTML = `
+        <div class="creator-media-box">
+          <span class="creator-role-pill">${escapeHtml(catLabel)}</span>
+          ${mediaBlock}
+        </div>
+        <div class="creator-body">
+          <div>
+            <div class="creator-meta-row">
+              <span><i class="fas fa-map-marker-alt"></i> ${escapeHtml(loc)}</span>
+              <span>New Submission</span>
+            </div>
+            <h3>${escapeHtml(name)}</h3>
+            <p>${escapeHtml(bio)}</p>
+            <div class="tech-stack-badges">
+              <span class="tech-pill">${escapeHtml(catLabel)}</span>
+              ${mediaUrl ? `<a href="${escapeHtml(mediaUrl)}" target="_blank" rel="noopener" class="tech-pill" style="color:var(--accent-gold-light);text-decoration:none;">Portfolio Link ↗</a>` : ''}
+            </div>
+          </div>
+          <div class="creator-actions">
+            <button type="button" class="book-talent-btn" onclick="openBookingModal('${escapeHtml(name)}', '${escapeHtml(catLabel)}')">
+              <i class="fas fa-calendar-check"></i> Book / Collaborate
+            </button>
+          </div>
+        </div>
+      `;
+
+      directoryGrid?.prepend(card);
+      submissionModal.style.display = 'none';
+      submissionForm.reset();
+      document.getElementById('creative-hub-section')?.scrollIntoView({ behavior: 'smooth' });
+      showCustomToast('✓ Profile Added to Creative Archive Preview');
+    });
+
+    document.getElementById('sub-send-whatsapp')?.addEventListener('click', () => {
+      const name = document.getElementById('sub-name')?.value.trim() || 'New Creator';
+      const catLabel = subCategorySelect?.options[subCategorySelect.selectedIndex]?.text || 'Creative';
+      const loc = document.getElementById('sub-location')?.value.trim() || 'Not specified';
+      const mediaUrl = document.getElementById('sub-media-url')?.value.trim() || 'Will share media files directly';
+      const bio = document.getElementById('sub-bio')?.value.trim() || 'Interested in joining Phoenix View Media Archive';
+
+      const msg = [
+        `Hello Ben (Phoenix View Media),`,
+        `I would like to publish my creative profile to the Phoenix Creative Archive:`,
+        `• Name / Handle: ${name}`,
+        `• Industry: ${catLabel}`,
+        `• Location: ${loc}`,
+        `• Portfolio / Media Link: ${mediaUrl}`,
+        `• Bio / Specialties: ${bio}`
+      ].join('\n');
+
+      window.open(`https://wa.me/260763533205?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    });
+
+    // 8C. TALENT BOOKING MODAL ENGINE
+    const bookingModal = document.getElementById('booking-modal');
+    const bookingCloseBtn = document.getElementById('booking-close-btn');
+    const bookingTitleEl = document.getElementById('booking-modal-title');
+    let activeBookingTarget = { name: '', role: '' };
+
+    window.openBookingModal = function(talentName, roleLabel) {
+      activeBookingTarget = { name: talentName, role: roleLabel };
+      if (bookingTitleEl) bookingTitleEl.textContent = `Book / Collaborate: ${talentName}`;
+      if (bookingModal) bookingModal.style.display = 'flex';
+    };
+
+    bookingCloseBtn?.addEventListener('click', () => bookingModal.style.display = 'none');
+    bookingModal?.addEventListener('click', (e) => { if (e.target === bookingModal) bookingModal.style.display = 'none'; });
+
+    document.getElementById('book-confirm-whatsapp')?.addEventListener('click', () => {
+      const client = document.getElementById('book-client-name')?.value.trim() || 'Prospective Collaborator';
+      const date = document.getElementById('book-date')?.value.trim() || 'Flexible';
+      const brief = document.getElementById('book-brief')?.value.trim() || 'Interested in booking / collaborating.';
+
+      const msg = [
+        `Hello Phoenix View Media Talent Desk,`,
+        `I'd like to request a booking / collaboration:`,
+        `• Talent / Roster: ${activeBookingTarget.name} (${activeBookingTarget.role})`,
+        `• Client / Brand: ${client}`,
+        `• Preferred Date: ${date}`,
+        `• Project Brief: ${brief}`
+      ].join('\n');
+
+      window.open(`https://wa.me/260763533205?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    });
+
+    // 8D. VISITOR GUESTBOOK / REFLECTION WALL ENGINE
+    const guestbookForm = document.getElementById('guestbook-form');
+    const guestbookGrid = document.getElementById('guestbook-wall-grid');
+    const GB_STORAGE_KEY = 'phoenix_view_guestbook_entries_v1';
+
+    function renderSavedGuestbookEntries() {
+      if (!guestbookGrid) return;
+      try {
+        const saved = JSON.parse(localStorage.getItem(GB_STORAGE_KEY) || '[]');
+        saved.forEach(entry => {
+          const card = document.createElement('div');
+          card.className = 'guestbook-card reveal active';
+          card.innerHTML = `
+            <div class="guestbook-quote">"${escapeHtml(entry.message)}"</div>
+            <div class="guestbook-author">
+              <strong>${escapeHtml(entry.name)}</strong>
+              <span>${escapeHtml(entry.location || 'Visitor')}</span>
+            </div>
+          `;
+          guestbookGrid.prepend(card);
+        });
+      } catch (e) {}
+    }
+
+    renderSavedGuestbookEntries();
+
+    guestbookForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('gb-name').value.trim();
+      const location = document.getElementById('gb-location').value.trim() || 'Visitor';
+      const message = document.getElementById('gb-message').value.trim();
+      if (!name || !message) return;
+
+      const card = document.createElement('div');
+      card.className = 'guestbook-card reveal active';
+      card.innerHTML = `
+        <div class="guestbook-quote">"${escapeHtml(message)}"</div>
+        <div class="guestbook-author">
+          <strong>${escapeHtml(name)}</strong>
+          <span>${escapeHtml(location)}</span>
+        </div>
+      `;
+      guestbookGrid?.prepend(card);
+
+      try {
+        const existing = JSON.parse(localStorage.getItem(GB_STORAGE_KEY) || '[]');
+        existing.push({ name, location, message, date: new Date().toISOString() });
+        localStorage.setItem(GB_STORAGE_KEY, JSON.stringify(existing.slice(-20)));
+      } catch (e) {}
+
+      guestbookForm.reset();
+      showCustomToast('✓ Reflection Added to the Wall');
+    });
+
+    document.getElementById('gb-send-wa')?.addEventListener('click', () => {
+      const name = document.getElementById('gb-name')?.value.trim() || 'Visitor';
+      const location = document.getElementById('gb-location')?.value.trim() || 'Global';
+      const message = document.getElementById('gb-message')?.value.trim();
+      if (!message) {
+        showCustomToast('Write a short reflection first');
+        return;
+      }
+      const waText = `Guestbook Reflection for Phoenix View Media:\n"${message}"\n— ${name} (${location})`;
+      window.open(`https://wa.me/260763533205?text=${encodeURIComponent(waText)}`, '_blank', 'noopener');
+    });
+
     // 9. Lightbox & Direct Link to Print Estimator
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
@@ -2967,23 +3496,24 @@
     const closeBtn = document.querySelector('.modal-close');
     let activeArtworkTitle = '';
 
-    document.querySelectorAll('.expandable').forEach(img => {
-      img.addEventListener('click', function() {
-        if (!modal) return;
-        modal.style.display = 'flex';
-        modalImg.src = this.currentSrc || this.src;
-        activeArtworkTitle = this.alt || 'Fine Art Work';
-        modalCaption.textContent = activeArtworkTitle;
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('.expandable');
+      if (!img || !modal) return;
+      modal.style.display = 'flex';
+      modalImg.src = img.currentSrc || img.src;
+      activeArtworkTitle = img.alt || 'Fine Art Work';
+      modalCaption.textContent = activeArtworkTitle;
 
-        const parent = this.closest('.portfolio-card') || this.closest('.showcase-card');
-        if (parent?.classList.contains('portfolio-card')) {
-          const cat = parent.dataset.category;
-          seriesBadge.textContent = cat === 'road' ? 'Road & Journey Series' :
-                                    cat === 'nature' ? 'Nature Series' : 'Painted World Series';
-        } else {
-          seriesBadge.textContent = 'Editorial Lookbook Spread';
-        }
-      });
+      const parent = img.closest('.portfolio-card') || img.closest('.showcase-card') || img.closest('.creator-card');
+      if (parent?.classList.contains('portfolio-card')) {
+        const cat = parent.dataset.category;
+        seriesBadge.textContent = cat === 'road' ? 'Road & Journey Series' :
+                                  cat === 'nature' ? 'Nature Series' : 'Painted World Series';
+      } else if (parent?.classList.contains('creator-card')) {
+        seriesBadge.textContent = 'Phoenix Creative Archive';
+      } else {
+        seriesBadge.textContent = 'Editorial Lookbook Spread';
+      }
     });
 
     printBtn?.addEventListener('click', () => {
@@ -3221,7 +3751,7 @@
     <li><strong>Documentary Photography Series:</strong> Chipata Forest: A Nature Series, A Painted World Series, Crimson Tones, Zambian Horizons: From Chipata to the Thundering Mist.</li>
     <li><strong>Documentary Pitch Deck:</strong> The Frontline Keepers: Zambia's Wildlife War (Co-Directed with Khangelani Dhlamini).</li>
     <li><strong>Feature Screenplays:</strong> Game of Couples; Thunder on the Edge (Victoria Falls).</li>
-    <li><strong>Digital Publications &amp; Systems:</strong> Paths: One’s Conversation With Life (Second Edition), Phoenix View Digital Media Portal.</li>
+    <li><strong>Digital Publications &amp; Systems:</strong> Paths: One’s Conversation With Life (Second Edition), Phoenix View Creative Archive &amp; Collaboration Hub.</li>
   </ul>
 
   <div class="footer">
@@ -3248,6 +3778,8 @@
         if (readerModal) readerModal.style.display = 'none';
         if (estimatorModal) estimatorModal.style.display = 'none';
         if (pressModal) pressModal.style.display = 'none';
+        if (submissionModal) submissionModal.style.display = 'none';
+        if (bookingModal) bookingModal.style.display = 'none';
       }
     });
 
@@ -3284,9 +3816,7 @@
         dataArray = new Uint8Array(analyser.frequencyBinCount);
         isAnalyzerInitialized = true;
         monitorAudioFrequencies();
-      } catch (e) {
-        console.warn("Web Audio API context restricted:", e);
-      }
+      } catch (e) {}
     }
 
     function monitorAudioFrequencies() {
@@ -3335,7 +3865,7 @@
         audioLabel.textContent = playlist[currentTrackIndex].title;
         showToast(playlist[currentTrackIndex].title);
         initAudioAnalyzer();
-      }).catch(error => {
+      }).catch(() => {
         audioLabel.textContent = "Soundtrack: Off";
         audioIcon.textContent = "🎵";
       });
@@ -3391,7 +3921,6 @@
       renderer.setSize(getWidth(), getHeight());
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-      // Multi-Point Studio Lighting Rig
       const ambientLight = new THREE.AmbientLight(0xffeedd, 0.9);
       scene.add(ambientLight);
 
@@ -3407,7 +3936,6 @@
       rimLight.position.set(0, 5, -5);
       scene.add(rimLight);
 
-      // Materials
       const goldFeatherMat = new THREE.MeshPhysicalMaterial({
         color: 0xd4a24c,
         emissive: 0x3a1800,
@@ -3427,7 +3955,6 @@
         side: THREE.DoubleSide
       });
 
-      // Build Articulated 3D Phoenix Group
       const phoenixGroup = new THREE.Group();
       scene.add(phoenixGroup);
 
