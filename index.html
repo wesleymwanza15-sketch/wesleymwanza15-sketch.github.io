@@ -1371,6 +1371,7 @@
       <ul class="header-nav">
         <li><a href="#about">Story</a></li>
         <li><a href="#photography-pane">Photography</a></li>
+        <li><a href="#journal-section">Journal</a></li>
         <li><a href="#editorial-pane">Screenplays</a></li>
         <li><a href="#literature-pane">Literature</a></li>
         <li><a href="#lookbooks-pane">Lookbooks</a></li>
@@ -1390,11 +1391,11 @@
       <button type="button" class="mobile-nav-pill gold-pill" onclick="openEstimatorModal('web')"><i class="fas fa-calculator"></i> Estimator</button>
       <a href="#about" class="mobile-nav-pill">Story</a>
       <a href="#photography-pane" class="mobile-nav-pill" onclick="openDisciplineTab('photography-pane', false); return false;">Photography</a>
+      <a href="#journal-section" class="mobile-nav-pill">Journal</a>
       <a href="#apps-pane" class="mobile-nav-pill" onclick="openDisciplineTab('apps-pane', false); return false;">Apps</a>
       <a href="#editorial-pane" class="mobile-nav-pill" onclick="openDisciplineTab('editorial-pane', false); return false;">Screenplays</a>
       <a href="#literature-pane" class="mobile-nav-pill" onclick="openDisciplineTab('literature-pane', false); return false;">Literature</a>
       <a href="#lookbooks-pane" class="mobile-nav-pill" onclick="openDisciplineTab('lookbooks-pane', false); return false;">Lookbooks</a>
-      <a href="#services-pane" class="mobile-nav-pill" onclick="openDisciplineTab('services-pane', false); return false;">Services</a>
       <a href="#lab-pane" class="mobile-nav-pill" onclick="openDisciplineTab('lab-pane', true); return false;">3D Lab</a>
     </div>
   </nav>
@@ -1548,7 +1549,7 @@
     <div class="discipline-nav reveal">
       <button class="discipline-btn active" data-tab="photography-pane"><i class="fas fa-camera"></i> Photography Series</button>
       <button class="discipline-btn" data-tab="apps-pane"><i class="fas fa-code"></i> App Systems & Architecture</button>
-      <button class="discipline-btn" data-tab="editorial-pane"><i class="fas fa-pen-nib"></i> Screenwriting & Editorial</button>
+      <button class="discipline-btn" data-tab="editorial-pane"><i class="fas fa-pen-nib"></i> Screenwriters & Editorial</button>
       <button class="discipline-btn" data-tab="literature-pane"><i class="fas fa-book-open"></i> Literature & Books</button>
       <button class="discipline-btn" data-tab="lookbooks-pane"><i class="fas fa-images"></i> Editorial Lookbooks</button>
       <button class="discipline-btn" data-tab="services-pane"><i class="fas fa-briefcase"></i> Business Solutions</button>
@@ -1895,6 +1896,57 @@
         <button id="next-page-btn" class="page-btn">Next →</button>
       </div>
     </div>
+
+    <!-- ===== DYNAMIC FIELD JOURNAL / EXPEDITION BLOG SECTION ===== -->
+    <section id="journal-section" style="padding: 64px 0; border-top: 1px solid var(--card-border); margin-top: 64px;">
+      <div class="section-header reveal">
+        <h2>Field Journal & Expedition Notes</h2>
+        <p>Short reflections, field notes, and behind-the-lens stories from photography travels across Zambia.</p>
+      </div>
+      <div class="showcase-grid">
+        <div class="showcase-card reveal">
+          <div>
+            <span class="showcase-tag">Field Note // Chipata Forest</span>
+            <h3>Rainy-Season Canopies & Macro Perspectives</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 15px;">Navigating the deep green trails of Chipata Forest during the rainy season. Exploring how the moisture transforms the forest floor into a living canvas of intricate textures and dewdrops.</p>
+            <div class="tech-stack-badges">
+              <span class="tech-pill">Chipata Expedition</span>
+              <span class="tech-pill">Macro Study</span>
+              <span class="tech-pill">April 2026</span>
+            </div>
+          </div>
+          <button class="action-btn reader-btn" data-doc="journal-chipata"><i class="fas fa-book-open"></i> Read Full Journal Note</button>
+        </div>
+
+        <div class="showcase-card reveal">
+          <div>
+            <span class="showcase-tag">Field Note // Victoria Falls</span>
+            <h3>Thunder on the Edge: Capturing the Mist</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 15px;">Standing at the Knife Edge Bridge while Mosi-oa-Tunya roars below. Capturing the interplay of heavy water vapor, twilight sunlight, and human silhouettes against the gorge.</p>
+            <div class="tech-stack-badges">
+              <span class="tech-pill">Victoria Falls</span>
+              <span class="tech-pill">Cinematic Light</span>
+              <span class="tech-pill">March 2026</span>
+            </div>
+          </div>
+          <button class="action-btn reader-btn" data-doc="journal-victoria"><i class="fas fa-book-open"></i> Read Full Journal Note</button>
+        </div>
+
+        <div class="showcase-card reveal">
+          <div>
+            <span class="showcase-tag">Field Note // Lusaka Corridor</span>
+            <h3>The Passing Photographer: Highways & Solitude</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 15px;">Reflections on transit and movement along the highway corridors. Why the open road remains one of the purest spaces for observing human journeys and transient beauty.</p>
+            <div class="tech-stack-badges">
+              <span class="tech-pill">Road Series</span>
+              <span class="tech-pill">Philosophical Prose</span>
+              <span class="tech-pill">February 2026</span>
+            </div>
+          </div>
+          <button class="action-btn reader-btn" data-doc="journal-highway"><i class="fas fa-book-open"></i> Read Full Journal Note</button>
+        </div>
+      </div>
+    </section>
 
     <!-- Apps Pane -->
     <div id="apps-pane" class="discipline-pane">
@@ -2942,7 +2994,7 @@
     closeBtn?.addEventListener('click', () => modal.style.display = 'none');
     modal?.addEventListener('click', (e) => { if (e.target === modal || e.target === closeBtn) modal.style.display = 'none'; });
 
-    // 10. Document Reader Modal
+    // 10. Document Reader Modal & Journal Entries
     const readerModal = document.getElementById('reader-modal');
     const readerBody = document.getElementById('reader-body');
     const readerCloseBtn = document.querySelector('.reader-close');
@@ -2976,6 +3028,24 @@
             <i class="fas fa-external-link-alt"></i> Launch 2nd Edition Interactive Book Online
           </a>
         </p>
+      `,
+      "journal-chipata": `
+        <h2>Rainy-Season Canopies & Macro Perspectives</h2>
+        <div class="subtitle">Field Journal // Chipata Forest Expedition // April 2026</div>
+        <p>There is a profound stillness in Chipata Forest right after a heavy rainy-season downpour. The air smells of damp earth and crushed foliage, and every leaf becomes a lens reflecting the overcast sky.</p>
+        <p>Working with macro perspectives here requires patience. You have to slow your breathing, lock your focus, and wait for the wind to settle so the dewdrop on a fern frond remains completely sharp. In these moments, the forest doesn't feel like a backdrop—it feels like an ancient, breathing archive.</p>
+      `,
+      "journal-victoria": `
+        <h2>Thunder on the Edge: Capturing the Mist</h2>
+        <div class="subtitle">Field Journal // Victoria Falls & Knife Edge Bridge // March 2026</div>
+        <p>The roar of Mosi-oa-Tunya vibrates through the soles of your feet before you even catch your first glimpse of the gorge. Standing on the Knife Edge Bridge, the mist is relentless—it drenches your gear within seconds and creates an ethereal, glowing twilight even at midday.</p>
+        <p>Photographing couples and landscapes here is about embracing the unpredictability. The water vapor catches the sun rays at impossible angles, turning ordinary light into painted streaks of gold and silver across the basalt cliffs.</p>
+      `,
+      "journal-highway": `
+        <h2>The Passing Photographer: Highways & Solitude</h2>
+        <div class="subtitle">Field Journal // Lusaka Transit Corridor // February 2026</div>
+        <p>People often ask me why I carry my camera along ordinary transit routes and highways. They look at the tarmac and see only distance between cities.</p>
+        <p>I see motion. I see the way the asphalt cuts through rolling hills like a black ribbon, framing travelers walking toward the horizon. To be 'the passing photographer' is to accept that we are all temporary inhabitants of the road—capturing fragments of life before the bend takes them out of sight.</p>
       `
     };
 
