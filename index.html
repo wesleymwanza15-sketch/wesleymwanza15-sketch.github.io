@@ -1035,6 +1035,160 @@
       color: #050507;
     }
 
+    /* ===== PARTNERSHIPS & SPONSORSHIP SECTION ===== */
+    .pvm-sponsor-section {
+      padding: 64px 0;
+      border-top: 1px solid var(--card-border);
+      margin-top: 64px;
+    }
+    .pvm-sponsor-header {
+      max-width: 760px;
+      margin: 0 auto 2.75rem auto;
+      text-align: center;
+    }
+    .pvm-sponsor-eyebrow {
+      display: inline-block;
+      background: rgba(197, 160, 89, 0.1);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      color: var(--accent-gold);
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 14px;
+    }
+    .pvm-sponsor-title {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: 2.35rem;
+      letter-spacing: 0.015em;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+    .pvm-sponsor-lead {
+      font-size: 0.94rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .pvm-sponsor-proof {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .pvm-proof-pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(197, 160, 89, 0.1);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      color: var(--accent-gold-light);
+    }
+    .pvm-tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 26px;
+      margin-bottom: 2.5rem;
+    }
+    .pvm-tier-card {
+      background: var(--card-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+    .pvm-tier-card:hover {
+      border-color: var(--card-border-hover);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.65), 0 0 24px var(--accent-gold-glow);
+    }
+    .pvm-tier-card.featured {
+      border-color: rgba(197, 160, 89, 0.55);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 22px var(--accent-gold-glow);
+    }
+    .pvm-tier-tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .pvm-tier-name {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      margin: 0 0 6px 0;
+      font-weight: 400;
+      color: var(--text-main);
+    }
+    .pvm-tier-audience {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin: 0 0 18px 0;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .pvm-tier-list {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      padding-left: 1.15rem;
+      margin: 0 0 22px 0;
+    }
+    .pvm-tier-list li {
+      margin-bottom: 8px;
+    }
+    .pvm-tier-list strong {
+      color: var(--text-main);
+    }
+    .pvm-tier-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: 4px;
+      border: 1px solid var(--accent-gold);
+      color: #050507;
+      background: var(--accent-gold);
+      transition: var(--transition);
+    }
+    .pvm-tier-btn:hover {
+      background: transparent;
+      color: var(--accent-gold-light);
+    }
+    .pvm-sponsor-footer {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.84rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+    .pvm-sponsor-footer strong {
+      color: var(--text-main);
+    }
+    .pvm-sponsor-footer a {
+      color: var(--accent-gold-light);
+      text-decoration: underline;
+    }
+
     /* Strategic Roadmap Section */
     .strategy-section {
       padding: 64px 0;
@@ -1553,6 +1707,7 @@
         <li><a href="#creative-hub-section">Creative Archive</a></li>
         <li><a href="#journal-section">Journal</a></li>
         <li><a href="#guestbook-section">Guestbook</a></li>
+        <li><a href="#partnerships">Partnerships</a></li>
         <li><a href="#lab-pane">3D Lab</a></li>
       </ul>
     </nav>
@@ -1568,6 +1723,7 @@
     <div class="mobile-quick-nav-track">
       <button type="button" class="mobile-nav-pill gold-pill" onclick="openSubmissionModal()"><i class="fas fa-plus"></i> Join Archive</button>
       <a href="#creative-hub-section" class="mobile-nav-pill">Creative Hub</a>
+      <a href="#partnerships" class="mobile-nav-pill">Partnerships</a>
       <a href="#guestbook-section" class="mobile-nav-pill">Guestbook</a>
       <a href="#journal-section" class="mobile-nav-pill">Journal</a>
       <a href="#photography-pane" class="mobile-nav-pill" onclick="openDisciplineTab('photography-pane', false); return false;">Photography</a>
@@ -2624,6 +2780,87 @@
       </div>
     </section>
 
+    <!-- ===== PHOENIX VIEW MEDIA: PARTNERSHIPS & SPONSORSHIP SECTION ===== -->
+    <section id="partnerships" class="pvm-sponsor-section">
+      <div class="pvm-sponsor-header reveal">
+        <div class="pvm-sponsor-eyebrow">Partnerships &amp; Field Sponsorships</div>
+        <h2 class="pvm-sponsor-title">Back Visual Storytelling Across Zambia</h2>
+        <p class="pvm-sponsor-lead">
+          Phoenix View Media documents Zambia’s landscapes, heritage, and human stories through
+          editorial photography, short-form documentary reels, and interactive digital books.
+          Partner with the archive to bring overlooked stories into print and digital motion.
+        </p>
+        <div class="pvm-sponsor-proof">
+          <span class="pvm-proof-pill">2026 Creative Media Awards Nominee</span>
+          <span class="pvm-proof-pill">Editorial Lookbooks &amp; Digital Books</span>
+          <span class="pvm-proof-pill">Based in Lusaka, Zambia</span>
+        </div>
+      </div>
+
+      <div class="pvm-tier-grid">
+        <!-- Tier 1 -->
+        <article class="pvm-tier-card reveal">
+          <div>
+            <div class="pvm-tier-tag">Tier 01 &bull; Hospitality &amp; Travel</div>
+            <h3 class="pvm-tier-name">Field &amp; Expedition Partner</h3>
+            <p class="pvm-tier-audience">Ideal for lodges, tour operators &amp; transport partners</p>
+            <ul class="pvm-tier-list">
+              <li><strong>Your Support:</strong> Hosted stay, meals, park entry, or transit for a 2–4 day assignment.</li>
+              <li><strong>Deliverables:</strong> 15–20 high-resolution edited editorial images &amp; 2 vertical reels.</li>
+              <li><strong>Visibility:</strong> Dedicated editorial lookbook feature on Phoenix View Media &amp; social tags.</li>
+            </ul>
+          </div>
+          <a class="pvm-tier-btn" href="mailto:benmwanza15@gmail.com?subject=Field%20%26%20Expedition%20Partnership%20Inquiry">
+            <i class="fas fa-compass"></i> Host an Expedition
+          </a>
+        </article>
+
+        <!-- Tier 2 -->
+        <article class="pvm-tier-card featured reveal">
+          <div>
+            <div class="pvm-tier-tag">Tier 02 &bull; Brands, NGOs &amp; Culture</div>
+            <h3 class="pvm-tier-name">Documentary Series Sponsor</h3>
+            <p class="pvm-tier-audience">Ideal for brands, cultural institutions &amp; conservation groups</p>
+            <ul class="pvm-tier-list">
+              <li><strong>Your Support:</strong> Direct production grant or gear backing for a themed documentary series.</li>
+              <li><strong>Deliverables:</strong> 30+ licensed editorial images + co-branded interactive digital publication.</li>
+              <li><strong>Visibility:</strong> Permanent sponsor credit in the archive &amp; behind-the-scenes showcase.</li>
+            </ul>
+          </div>
+          <a class="pvm-tier-btn" href="mailto:benmwanza15@gmail.com?subject=Documentary%20Series%20Sponsorship%20Inquiry">
+            <i class="fas fa-film"></i> Sponsor a Series
+          </a>
+        </article>
+
+        <!-- Tier 3 -->
+        <article class="pvm-tier-card reveal">
+          <div>
+            <div class="pvm-tier-tag">Tier 03 &bull; Community &amp; Readers</div>
+            <h3 class="pvm-tier-name">Archive Patron</h3>
+            <p class="pvm-tier-audience">Ideal for readers, art collectors &amp; fellow creatives</p>
+            <ul class="pvm-tier-list">
+              <li><strong>Your Support:</strong> Micro-contributions toward field transport, mobile data &amp; archiving.</li>
+              <li><strong>Recognition:</strong> Name featured on the Phoenix View Media Patrons Wall.</li>
+              <li><strong>Access:</strong> Early digital access to upcoming photo-editorial editions &amp; field notes.</li>
+            </ul>
+          </div>
+          <a class="pvm-tier-btn" href="mailto:benmwanza15@gmail.com?subject=Archive%20Patron%20Support">
+            <i class="fas fa-heart"></i> Become a Patron
+          </a>
+        </article>
+      </div>
+
+      <div class="pvm-sponsor-footer reveal">
+        <p>
+          <strong>Licensing &amp; Media Kit:</strong> Sponsored deliverables include non-exclusive digital, website,
+          and organic social media usage rights with photographer credit (commercial print or paid ad licensing available on request).
+          For full media kits or custom commissions, reach out directly at
+          <a href="mailto:benmwanza15@gmail.com">benmwanza15@gmail.com</a>.
+        </p>
+      </div>
+    </section>
+    <!-- ===== END PARTNERSHIPS SECTION ===== -->
+
     <!-- Strategic Roadmap & Eco-System Pillars -->
     <section class="strategy-section">
       <div class="section-header reveal">
@@ -3010,7 +3247,7 @@
     // 3. 3D Tilt
     function initTilt() {
       if (prefersReducedMotion || window.innerWidth < 900) return;
-      document.querySelectorAll('.portfolio-card, .showcase-card, .strategy-card, .accolade-card, .strip-action-card, .creator-card').forEach(card => {
+      document.querySelectorAll('.portfolio-card, .showcase-card, .strategy-card, .accolade-card, .strip-action-card, .creator-card, .pvm-tier-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
